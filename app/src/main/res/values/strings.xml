@@ -1,0 +1,124 @@
+<resources>
+    <string name="app_name">Commit</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="addnew_header">添加新问卷 </string>
+    <string name="addnew_l1">被问询人信息 </string>
+    <string name="addnew_l2">性别 </string>
+    <string name="addnew_l2_1">女</string>
+    <string name="addnew_l2_2">男</string>
+    <string name="addnew_l3">日期</string>
+    <string name="addnew_l4">时间</string>
+    <string name="addnew_l5">地点</string>
+    <string name="addnew_l6">创建账户</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_ok">Settings</string>
+    <string name="action_search">Search</string>
+    <string name="splash_title">COMMIT 问询系统</string>
+    <string name="splash_bottom">COMMIT </string>
+    <string name="splash_content">COMMIT是一个中国、越南、缅甸、老挝、泰国和柬埔寨六国发起建立的区域反拐合作机制，中文称之为“湄公河次区域六国政府反对拐卖人口合作进程”。合作进程的主要活动是召开区域内6个国家的政府、非政府和联合国相关机构之间的反拐会议，促进次区域反拐行动与国际合作。</string>
+
+
+
+    <string name="page3_l1">基本询问</string>
+    <string name="page3_l2">Do you have a passport or any other ID? </string>
+    <string name="page3_l3">( 你有护照或其它身份证件吗？）</string>
+    <string name="page3_l4">答案</string>
+    <string name="page3_l4_1">Yes (是)</string>
+    <string name="page3_l4_2">No (否)</string>
+    <string name="page3_button1">全屏</string>
+    <string name="page3_button2">分享</string>
+    <string name="page3_button3">播放</string>
+    <string name="page3_button4">下一步</string>
+
+    <string name="page4_l1">Instead of replacing formal interrogation with official interpretation/translation, the purpose of the following questions is for police in interview to enable respondents/potential VoTs to talk in their own language about the situation they are in, and what assistance they need, in order to preliminarily identify VoTs and timely help those in need.</string>
+    <string name="page4_l2">下面这些用于受害人翻译辅助软件的问题不能替代正式调查或者正式的翻译， 其目的是在翻译到来、正式调查开展之前，为识别外籍救助对象的语言、处境和需求提供基本问题和信息，以初步确认拐卖受害人，为救助对象提供及时有针对性的帮助。</string>
+    <string name="page4_l3">Informing interviewee 告知</string>
+    <string name="page4_l4">Please do not be afraid, we are not here to interrogate you, but to know some information related to your health and safety, in order to better help you. </string>
+    <string name="page4_l5">You will hear several questions, you only need to answer "yes" or "no",</string>
+    <string name="page4_l6">After hearing the question, please nod to answer "yes" or shake head to answer “no”.</string>
+    <string name="page4_l7">请不要害怕，我们不是在这里审问你，而是需要了解一些和你的健康和安全有关的事情，以便更好的帮助你。</string>
+    <string name="page4_l8">你会听到几组问题，你只需要回答“是”或“不是”</string>
+    <string name="page4_l9">听到问题后，请点头回答“是”或者 请摇头回答“不是”。</string>
+
+    <string name="page5_l1">基本询问</string>
+    <string name="page5_l2">Where are you from? </string>
+    <string name="page5_l3">你是哪里人？）</string>
+
+    <string name="language">选择语言</string>
+
+    <string name="page8_l1">警方初步排查适用</string>
+    <string name="page8_version">Version 2.0</string>
+    <string name="page8_l2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolistique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam erat....</string>
+
+    <string name="page10_l1">ListName</string>
+    <string name="page10_content">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</string>
+    <string name="Female">女</string>
+    <string name="Male">男</string>
+
+
+    <string name="question_policy_vn">Xin chào!\nỨng dụng này được thiết kế để hỗ trợ lực lượng cảnh sát chúng tôi xác định chị/em có bất kỳ nhu cầu cần hỗ trợ khẩn cấp nào không. Ứng dụng này bao gồm 13 câu hỏi “Có/Không” bằng thứ tiếng của chị/em , chị/em có thể trả lời các câu hỏi bằng cách nhấp chuột chọn câu trả lời thích hợp hiển thị trên màn hình. Nếu không tiện trả lời câu hỏi nào, chị/em có thể bỏ qua bằng cách chọn nút “Bỏ qua”\n
+    Dựa trên thông tin chị/em mô tả về hoàn cảnh của mình, chúng tôi sẽ đưa ra các gợi ý về dịch vụ y tế chăm sóc sức khỏe hoặc các dịch vụ tư vấn, hỗ trợ cho chị/em. Nếu chị/em thực sự đang trong hoàn cảnh đặc biệt khó khăn, chúng tôi sẽ đề xuất đưa chị/em tới nơi an toàn hơn để có thể trao đổi kỹ hơn về nhu cầu cần hỗ trợ của chị/em, tại đó sẽ có phiên dịch hỗ trợ chuyển ngữ.
+
+Chúng tôi đảm bảo sẽ không tiết lộ những thông tin trong câu trả lời của chị/em với bất kỳ người nào quen biết với chị/em, trừ khi được chị/em cho phép.</string>
+    <string name="question_policy_lao">ສະບາຍດີ!\n
+ໃບສະໝັກນີ້ແມ່ນຖືກສ້າງຂື້ນ ເພື່ອຊ່ວຍເຮັດໃຫ້ພວກເຮົາຮູ້ວ່າທ່ານມີຄວາມຕ້ອງການ ຄວາມຊ່ວຍເຫຼືອແບບຮີບດ່ວນບໍ. ໃນເອກະສານນີ້ແມ່ນມີຄຳຖາມທັງໝົດ 13 ຂໍ້  ທີ່ເປັນພາສາຂອງທ່ານ ເຊິ່ງເປັນຄຳຖາມ ປິດ (ໝາຍຄວາມວ່າໃຫ້ຕອບ ແມ່ນ ຫຼື ບໍ່ແມ່ນ)ເທົ່ານັ້ນ, ທ່ານສາມາດຕອບໂດຍການກົດເອົາຄຳຕອບ ທີ່ເໝາະສົມເທິງໜ້າຈໍ. ຖ້າທ່ານບໍ່ສະດວກໃນການຕອບບາງຄຳຖາມ, ທ່ານສາມາດ ຂ້າມໄປຂໍ້ຕໍ່ໄປໂດຍການກົດປຸ່ມ ‘ຂ້າມ ຫລື skip’. </string>
+    <string name="question_policy_my">မဂၤလာပါ !\nယခုေလွ်ာက္လႊာသည္ သင့္တြင္လက္တေလာ/အေစာတလွ်င္ ကူညီပ့ံပိုးမႈလိုအပ္မႈရွိ/မရွိ
+
+သိေစရန္အတြက္ ေသခ်ာစြာ စဥ္စားျပီးေရးဆြဲထားျခင္းျဖစ္ပါသည္။
+
+ဤေလွ်ာက္လႊာတြင္ ဟုတ္သည္/မဟုတ္ပါ ေျဖရမည့္ ေမးခြန္း (၁၃)ခု ျ
+
+မန္မာဘာသာျဖင့္ ပါ၀င္ပါသည္။ ၄င္းေမးခြန္းမ်ားကိုေျဖဆိုရာတြင္ အေျဖ ႏွ
+
+စ္ခုထဲမွ တစ္ခုမဟုတ္တစ္ခုအား ႏိွပ္ျပီးေရြးခ်ယ္ ေပးရပါမည္။ အကယ္၍အခ်ိဳ
+
+႔ေမးခြန္းမ်ားအားေျဖၾကားရန္ သက္ေတာင့္ သက္သာမရွိပါက “ေက်ာ္္ပါ”
+
+ဆိုေသာခလုပ္ကိုႏွိပ္၍ ေက်ာ္သြားႏိုင္ပါသည္။ \n\nသင္၏ေျပာျပခ်က္ႏွင့္အေျခအေနေပၚမူတည္္၍ သင့္အား
+
+က်န္းမာေရးေစာင့္ေရွာက္မႈ ႏွင့္ ေ
+
+ဆြးေႏြးလမ္းညႊန္မႈအားျပဳလုပ္ေပးမည္ျဖစ္ပါသည္။ အကယ္၍သင္သည္အလြန္ခက္ခဲ
+
+သည့္ အေျခအေနရွိသည္ဟုယူဆရပါက သင့္အားေဘးကင္းလံုျခံဳေသာ ေ
+
+နရာသို႔ ေရြ ႔ေျပာင္းကာ အေသးစိတ္ေမးျမန္းမႈမ်ား ကိုစကားျပန္၏
+
+အကူအညီ ျဖင့္ျပဳလုပ္ေပးပါ မည္ဟုအၾကံေပးလုိပါသည္။\n\n
+    သင္၏ေျဖၾကားခ်က္မ်ားကိုလည္း သင္၏ခြင့္ျပဳခ်က္မရဘဲ
+
+အျခားသင္သိေသာသူမ်ားအား ေဆြးေႏြးေျပာၾကားမႈ မျပဳပါဟု ကၽႊႏုပ္တို႔
+
+ဘက္မွအာမခံပါသည္။</string>
+    <string name="question_policy_km">ជំរាបសួរ​!​\nបែបបទនេះត្រូវ​បានបង្កើតឡើងដើម្បី​ជួយឱ្យយើង​កំណត់ថាតើ​អ្នក​ត្រូវការ​ការគាំទ្រ​ជាបន្ទាន់ដែរទេ។ ទម្រង់នេះមាន​សំណួរ​ចម្លើយខ្លីៗចំនួន១៣សំណួរជា​ភាសារខ្មែរ​ ​ដែលអ្នកអាចឆ្លើយ​ដោយគ្រាន់តែចុចលើ​ចម្លើយដែលសមស្រប។ ប្រសិនបើអ្នកមិនចង់ឆ្លើយសំណួរ​មួយចំនួន អ្នក​មានសេរីភាពក្នុងការ​លុបពួកវា​ដោយចុចលើ​ “រំលង” ​។
+   អាស្រ័យលើ​របៀបដែលអ្នក​រៀបរាប់អំពី​ស្ថានភាពរបស់អ្នក​ យើងអាច​ស្នើឱ្យមានការគាំទ្រផ្នែកសេវា​សុខភាព ឬ​ការផ្តល់ប្រឹក្សា​ដល់អ្នក។ ប្រសិនបើលោកអ្នក​ហាក់កំពុងស្ថិត​ក្នុងស្ថានភាព​លំបាកខ្លាំងក្លា ​យើងនឹង​ស្នើឱ្យ​នាំអ្នក​ទៅកន្លែង​ដែលមានសុវត្ថិភាព​សម្រាប់ការសន្ទនាស៊ីជម្រៅបន្ថែមទៀត​អំពីសេចក្តីត្រូវការ​ការគាំពារ​របស់អ្នកដោយមានអ្នកបកប្រែភាសាខ្មែរផងដែរ។</string>
+    <string name="question_policy_cn">你好！\n该软件用于帮助我们确定你是否需要紧急帮助。问卷使用你的母语，有13个问题需要点击回答是或否，如果你不愿回答某些问题可通过点击“跳过”忽略。\n\n通过你的回答，我们会建议给你提供医疗或心理咨询支持，如果你的处境非常困难，我们会建议把你送到比较安全的地方，进行深度地交流并提供翻译服务。
+\n\n除非经你同意，我们不会与你熟悉的人讨论你的回答，你也可以拒绝询问。
+</string>
+
+
+    <string name="question_policy_vn1">Đã sẵn sàng ?</string>
+    <string name="question_policy_lao1">ທ່ານເຫັນດີບໍ່ຖ້າຈະເລີ່ມສຳພາດເລີຍ?</string>
+    <string name="question_policy_my1">ေမးခြန္းစေျဖရန္ အဆင္သင့္ျဖစ္ပါျပီလား?</string>
+    <string name="question_policy_km1">​តើអ្នក​យល់ព្រមដើម្បីចាប់ផ្តើម​សំណួរ​ទេ?</string>
+    <string name="question_policy_cn1">你愿意开始询问吗？\n</string>
+
+
+    <string name="title_mekong_tracking">COORDINATED MEKONG MINISTERIAL INITIATIVE AGAINST TRAFFICKING</string>
+    <string name="quetion_gov_cn">同意办证：谢谢你的配合，我们根据你描述的情况和你提供的证明材料，同意为你办理结婚证，请你们耐心等候。在此期间如果你有问题或者要改变主意，请及时告知。</string>
+    <string name="quetion_gov_cn1">疑似拐卖：根据你的情况，我们认为你可能被人欺骗甚至拐卖了。我们暂时不能为你办理结婚手续。而且为了保护你的人身安全，我们会联系公安人员，保护你不受威胁你的人伤害。如果你需要我们也可以联系你的大使馆，通过他们让你跟你的家人取得联系。（报警*****；救助******；大使馆*******），请你耐心等候。</string>
+    <string name="quetion_gov_vn">Đồng ý cấp phát giấy xác nhận đăng ký kết hôn: Cảm ơn sự hợp tác của chị/em, dựa vào thông tin về hoàn cảnh và những giấy tờ mà chị/em cung cấp, chúng tôi đồng ý sẽ cấp phát giấy chứng nhận đăng ký kết hôn, chị/em vui lòng kiên nhẫn chờ đợi. Nếu gặp phải bất kỳ vấn đề, vướng mắc gì hoặc thay đổi quyết định trong thời gian chờ đợi, đề nghị chị/em kịp thời thông báo cho chúng tôi.</string>
+    <string name="quetion_gov_vn1">Nguy cơ cao bị BB: Theo thông tin mô tả hoàn cảnh của chị/em, chúng tôi cho rằng chị/em có thể bị lừa và thậm chí có thể bị buôn bán. Trước mắt chúng tôi không thể cấp phát giấy chứng nhận đăng ký kết hôn cho chị/em. Chúng tôi sẽ liên hệ với công an địa phương để bảo vệ chị/em khỏi những đối tượng đang cố làm hại chị/em. Nếu chị/em muốn, chúng tôi có thể liên hệ với Đại sứ quán của chị/em để chị/em có thể liên lạc về với gia đình của mình ở quên nhà. Cung cấp thông tin chuyển tuyến (số điện thoại và địa chỉ…) để hỗ trợ (của cảnh sát, nhà tạm lánh, đại sứ quán…), chị/em vui lòng kiên nhẫn chờ đợi.</string>
+    <string name="quetion_gov_lao">ຂອບໃຈໃນການໃຫ້ຄວາມຮ່ວມມືຂອງທ່ານ, ອິງຕາມການອະທິບາຍສະພາບການຂອງທ່ານ ແລະ ຂໍ້ມູນຕ່າງໆທີ່ທ່ານໄດ້ສະໜອງໃຫ້,  ພວກຂ້າພະເຈົ້າເຫັນດີທີ່ຈະເຮັດໃບຍັ້ງຍືນການແຕ່ງງານໃຫ້ທ່ານ, ກະລຸນາລໍຖ້າ. ຖ້າທ່ານມີປັນຫາ ຫຼື ປ່ຽນໃຈໃນລະຫວ່າງຊ່ວງເວລາທີ່ປະກອບເອກະສານນີ້ ກະລຸນາແຈ້ງໃຫ້ພວກຂ້າພະເຈົ້າຊາບໃນທັນທີ.</string>
+    <string name="quetion_gov_lao1">ອິງຕາມສະພາບການຂອງທ່ານ, ພວກຂ້າພະເຈົ້າຄິດວ່າທ່ານແມ່ນຖືກຫຼອກລວງ ແລະ ຖືກຄ້າມະນຸດ. ພວກຂ້າພະເຈົ້າບໍ່ສາມາດເຮັດໃບຍັ້ງຍືນການແຕ່ງງານໃຫ້ທ່ານໄດ້. ພວກຂ້າພະເຈົ້າຈະຕິດຕໍ່ກັບເຈົ້າໜ້າທີ່ຕຳຫຼວດທ້ອງຖີ່ນເພື່ອປ້ອງກັນທ່ານຈາກພວກທີ່ຈະທຳຮ້າຍທ່ານ. ຖ້າທ່ານຕ້ອງການ, ພວກຂ້າພະເຈົ້າຈະຕິດຕໍ່ຫາສະຖານທູດຂອງທ່ານເພື່ອໃຫ້ທ່ານສາມາດຕິດຕໍ່ກັບຄອບຄົວຂອງທ່ານ ທີ່ຢູ່ໃນປະເທດທ່ານໄດ້.ຂໍ້ມູນໃນການສົ່ງຕໍ່ (ເບີໂທລະສັບ, ທີ່ຢູ່ ແລະ ອື່ນໆ) ໃນການຊ່ວຍເຫຼືອ (ຕຳຫຼວດ, ສູນພັກເຊົາ, ສະຖານທູດ, ແລະ ອື່ນໆ). ກະລຸນາລໍຖ້າ.</string>
+    <string name="quetion_gov_my">ယခုလိ္ုပူးေပါင္းေဆာင္ရြက္သည့္အတြက္ေက်းဇူးတင္ပါသည္။သင္ေျပာျပသည့္သင့္အေျခအေန ႏွင့္ သင္ပ့ံပုိးေပးေသာအရာ၀တၴဳ/အေထာက္အထားမ်ားေၾကာင့္ သင့္အားလက္ထပ္စာခ်ဳပ္ထုပ္ေပးရန္ သေဘာတူပါသည္။ ခဏေလးစိတ္ရွည္စြာနဲ႔ေစာင့္ေပးပါ။ အကယ္၍ ယခုေစာင့္ေနစဥ္အတြင္း သင့္စိတ္ေျပာင္းသာြးလ်ွင္(သ႔)ိုအျခားျပႆနာတစ္စံုတစ္ခုရိွပါကကၽႏြုပ္တုိ႔ကုိအခ်ိန္မီွေျပာပါ။</string>
+    <string name="quetion_gov_my1">သင့္အေျခအေနအရ သင္သည္လိမ္လည္လွည့္ျဖားျခင္း ႏွင့္ လူကုန္ကူးခံရသည္ဟု ကၽႏြ ုပ္တ႔ို ထင္ျမင္ယူဆရသည္။ အခုလက္တေလာမွာသင့္အားလက္ထပ္စာခ်ဳပ္ထုပ္မေပးႏုိင္ေသးပါ။ သင့္အား အႏၲရာယ္ျပဳႏိုင္ဖြယ္ရွိေသာသူမ်ားလက္မွ ကာကြယ္ႏိုင္ရန္အတြက္ နယ္ေျမခံ ရဲအရာရွိ ႏွင့္ဆက္သြယ္ ေပးပါမည္။ အကယ္၍ သင္ဆႏၵရွိလ်င္ သင့္မိသားစုႏွင့္အဆက္အသြယ္ရရွိရန္ အတြက္သင့္ႏိုင္ငံပိုင္ သံရုံးအားဆက္သြယ္အေၾကာင္းၾကားေပးပါမည္။ လႊဲေျပာင္းပ႔ေုိဆာင္ျခင္းသတင္းအခ်က္အလက္ (ဖုန္းနံပါတ္ ႏွင့္ လိပ္စာ....စသည္) ပ့ံပိုးကူညီရန္အတြက္ ( ရဲ ၊ ေစာင့္ေရွာက္ေရးေဂဟာ၊ သံရံုး...စသည္) ခဏေလးစိတ္ရွည္စြာနဲ႔ေစာင့္ေပးပါ။</string>
+    <string name="quetion_gov_km">អរគុណសម្រាប់ការសហការ។ ផ្អែកទៅតាមការរៀបរាប់ពីស្ថានភាព និងវត្ថុតាងដែលអ្នកផ្តល់ឱ្យ យើងយល់ព្រមចេញសំបុត្រអាពាហ៍ពិពាហ៍ឱ្យអ្នក សូមមេត្តារង់ចាំ។ ប្រសិនបើអ្នកមានបញ្ហា ឬប្តូរចិត្តក្នុងអំឡុងពេលនេះ សូមផ្តល់ព័ត៌មានមកយើងខ្ញុំឱ្យទាន់ពេលវេលា។</string>
+    <string name="quetion_gov_km1">យោងទៅតាមស្ថានភាពរបស់អ្នក យើងគិតថាអ្នកប្រហែលជាត្រូវបានគេបោកបញ្ឆោត ឬត្រូវបានគេជួញដូរ។ យើងមិនអាចផ្ដល់សំបុត្រអាពាហ៍ពិពាហ៍ជូនអ្នកពេលនេះទេ។ យើងនឹងទាក់ទងមន្រ្តីប៉ូលីសក្នុងតំបន់ដើម្បីការពារអ្នក។</string>
+
+</resources>

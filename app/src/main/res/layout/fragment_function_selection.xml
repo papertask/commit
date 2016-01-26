@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="5">
+
+    <RelativeLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+
+        <ImageView
+            android:layout_marginTop="5dp"
+            android:padding="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo_new"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.9">
+
+        <TextView
+            android:id="@+id/header_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:paddingTop="-3dp"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:gravity="center"
+            android:textSize="13sp"
+            android:text="本应用由两份语音问卷组成，分别为公安部门和民政婚姻登记工作人员使用，询问外籍人员，排查拐卖受害人。"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/header_top"
+            android:text="请按键进入相应版块。"
+            android:textColor="#000"
+            android:textStyle="bold"
+            />
+    </RelativeLayout>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/police"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="15dp"
+        android:layout_weight="1.6">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <TextView
+                android:id="@+id/policy_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:paddingTop="8dp"
+                android:textColor="#000"
+                android:layout_centerHorizontal="true"
+                android:text="公安使用APP简介："
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/policy_title"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:text="本问卷适用于公安机关干警，接到或者遇到疑似被拐的外籍人员时，在语言不通和正式立案调查之前，对其进行初步筛查，以及时识别其国籍、处境和需求，为提供解救、救助转介、遣返等后续工作提供基础信息。" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="15dp"
+        android:layout_weight="1.6"
+        android:id="@+id/government"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/gov_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:paddingTop="8dp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:text="婚姻登记APP简介：" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/gov_title"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="8dp"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:text="本问卷用于涉外婚姻登记处工作人员办理中国公民与外籍人员婚姻登记时，在语言不通的情况下，了解其结婚的真实意愿，以加强涉外婚姻登记管理，避免“涉外婚姻”登记被跨国骗婚、强迫婚姻等犯罪利用，同时为需要的外籍公民提供相关救助信息。" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

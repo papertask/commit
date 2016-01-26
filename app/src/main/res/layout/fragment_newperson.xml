@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="30dp"
+    tools:context=".MainActivity">
+
+     <com.joooonho.SelectableRoundedImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/img_avatar"
+        android:layout_below="@+id/header_space"
+        android:scaleType="centerCrop"
+        app:sriv_left_top_corner_radius="16dip"
+        app:sriv_right_top_corner_radius="0dip"
+        app:sriv_left_bottom_corner_radius="48dip"
+        app:sriv_right_bottom_corner_radius="16dip"
+        app:sriv_border_width="1dp"
+        app:sriv_border_color="#ff9c10"
+        app:sriv_oval="true"
+        android:src="@drawable/icon_camera"
+        android:layout_centerHorizontal="true"
+
+        />
+
+    <!--<com.interview.iso.view.cropoverlay.CropOverlayView-->
+        <!--android:id="@+id/crop_overlay"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content" />-->
+
+    <TextView
+        android:id="@+id/txtaddnewl1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/img_avatar"
+        android:layout_marginLeft="10dp"
+        android:text="@string/addnew_l1" />
+
+    <EditText
+        android:id="@+id/edtName"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txtaddnewl1"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="13dp"
+        android:imeOptions="actionDone"
+        android:paddingLeft="10dp"
+        android:singleLine="true"
+        android:background="#FFFF"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#DCDCDC"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="13dp"
+        android:layout_marginTop="-5dp"
+        android:layout_below="@+id/edtName"
+        />
+    <RelativeLayout
+        android:id="@+id/ll_l2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/edtName"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/txtadnew_l2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:paddingRight="30dp"
+            android:text="@string/addnew_l2"
+            android:layout_centerVertical="true"/>
+
+        <RadioGroup
+            android:id="@+id/rdog_addnew_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_centerVertical="true"
+            >
+
+            <RadioButton
+                android:id="@+id/rdoaddnew1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="#ff9c10"
+                android:checked="true"
+                android:paddingRight="30dp"
+                android:text="@string/addnew_l2_1" />
+
+            <RadioButton
+                android:id="@+id/rdoaddnew2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="#ff9c10"
+                android:text="@string/addnew_l2_2" />
+        </RadioGroup>
+
+    </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#DCDCDC"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="13dp"
+        android:layout_below="@+id/ll_l2"
+        android:layout_marginTop="6dp"/>
+    <TextView
+        android:id="@+id/txtaddnewl3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/ll_l2"
+        android:layout_marginLeft="10dp"
+        android:paddingTop="10dp"
+        android:text="@string/addnew_l3" />
+
+    <TextView
+        android:id="@+id/tvBirthday"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txtaddnewl3"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="13dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="8dp"
+        android:singleLine="true"
+        android:textStyle="bold" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#DCDCDC"
+        android:layout_marginTop="-5dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="13dp"
+        android:layout_below="@+id/tvBirthday"
+        />
+    <TextView
+        android:id="@+id/txtaddnewl4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tvBirthday"
+        android:layout_marginLeft="10dp"
+        android:paddingTop="10dp"
+        android:text="@string/addnew_l4" />
+
+    <TextView
+        android:id="@+id/tvInterviewDate"
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txtaddnewl4"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="13dp"
+        android:paddingLeft="10dp"
+        android:singleLine="true"
+        android:text=""
+        android:textStyle="bold"
+        android:paddingTop="8dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="13dp"
+        android:layout_marginTop="-5dp"
+        android:layout_below="@+id/tvInterviewDate"
+        android:background="#DCDCDC"
+        />
+
+    <TextView
+        android:id="@+id/txtaddnewl5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tvInterviewDate"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/addnew_l5" />
+
+    <RelativeLayout
+        android:id="@+id/rl_l6"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/txtaddnewl5"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/edtaddnew_l5"
+            android:layout_width="fill_parent"
+            android:layout_height="39dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"
+            android:drawableRight="@drawable/icon_location"
+            android:imeOptions="actionDone"
+            android:maxLines="1"
+            android:paddingLeft="10dp"
+            android:paddingRight="8dp"
+            android:background="#FFFF"
+             />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#DCDCDC"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"
+            android:layout_marginTop="-5dp"
+            android:layout_below="@+id/edtaddnew_l5"
+            />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_l6"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/buttoncustom"
+        android:stateListAnimator="@null"
+        android:text="@string/addnew_l6"
+        android:textColor="@color/White"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/btn_next"/>
+
+</RelativeLayout>
+</ScrollView>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="White">#ffffff</color>
+    <color name="vline">#ff9c10</color>
+    <color name="header">#ff6600</color>
+    <color name="transparent">#00000000</color>
+    <color name="colorPrimary">#FF8903</color>
+    <color name="colorPrimaryDark">#ff4400</color>
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="windowBackground">#FFFFFF</color>
+    <color name="navigationBarColor">#000000</color>
+    <color name="colorAccent">#FF80AB</color>
+    <color name="menuleft">#80ff6600</color>
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="CountryCodes" >
+        <item>VN,Việt Nam,越南语</item>
+        <item>LAO,Laos,老挝语</item>
+        <item>MY,Myanmar,缅甸语</item>
+        <item>KM,Khmer,高棉语</item>
+    </string-array>
+    <declare-styleable name="CropOverlayView">
+        <attr name="guideLines" format="boolean"/>
+        <attr name="marginTop" format="dimension"/>
+        <attr name="marginSide" format="dimension"/>
+        <attr name="minWidth" format="dimension"/>
+        <attr name="maxWidth" format="dimension"/>
+    </declare-styleable>
+    <string-array name="chapters">
+        <item>拐卖案件范畴与定性</item>
+        <item>拐卖案件管辖</item>
+        <item>拐卖案件立案</item>
+        <item>拐卖案件侦查</item>
+        <item>拐卖案件证据</item>
+        <item>追诉时效</item>
+        <item>拐卖受害人解救及安置</item>
+        <item>受害人保护</item>
+        <item>涉外案件</item>
+        <item>拐卖案件的跨部门协作</item>
+    </string-array>
+</resources>

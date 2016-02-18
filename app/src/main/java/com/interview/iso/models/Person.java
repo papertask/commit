@@ -2,7 +2,8 @@ package com.interview.iso.models;
 
 public class Person {
 	private int nID=0;
-	private String strName;
+	private String strLastName;
+	private String strFirstName;
 	private String strGender;
 	private String strAdd;	
 	private String strBirthday;
@@ -26,18 +27,26 @@ public class Person {
 	}
 	public Person(){
 		 nID=0;
-		 strName="";
-		 strGender="";
+		 strLastName="";
+		strFirstName="";
+		strGender="";
 		 strAdd="";
 		 strBirthday="";
 		 strTime="";
 	}
-	public String getName() {
-		return strName;
+	public String getFirstName() {
+		return strFirstName;
 	}
-	public void setName(String strName) {
-		this.strName = strName;
-	}	
+	public void setFirstName(String strFirstName) {
+		this.strFirstName = strFirstName;
+	}
+	public String getLastName() {
+		return strLastName;
+	}
+	public void setLastName(String strLastName) {
+		this.strLastName = strLastName;
+	}
+
 	public String getGender() {
 		return strGender;
 	}

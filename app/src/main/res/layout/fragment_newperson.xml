@@ -9,13 +9,32 @@
     android:layout_height="match_parent"
     android:layout_marginTop="30dp"
     tools:context=".MainActivity">
+    <TextView
+        android:id="@+id/txtaddnewl11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:textColor="@color/vline"
+        android:layout_marginLeft="10dp"
+        android:text="@string/addnew_l11" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#DCDCDC"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="5dp"
+
+        android:layout_below="@+id/txtaddnewl11"
+        />
 
      <com.joooonho.SelectableRoundedImageView
+
         android:layout_width="70dp"
         android:layout_height="70dp"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/img_avatar"
-        android:layout_below="@+id/header_space"
+        android:layout_below="@+id/txtaddnewl11"
         android:scaleType="centerCrop"
         app:sriv_left_top_corner_radius="16dip"
         app:sriv_right_top_corner_radius="0dip"
@@ -26,7 +45,8 @@
         app:sriv_oval="true"
         android:src="@drawable/icon_camera"
         android:layout_centerHorizontal="true"
-
+        android:layout_marginBottom="20px"
+         android:layout_marginTop="15dp"
         />
 
     <!--<com.interview.iso.view.cropoverlay.CropOverlayView-->
@@ -41,10 +61,30 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/img_avatar"
         android:layout_marginLeft="10dp"
+        android:textColor="@color/vline"
         android:text="@string/addnew_l1" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#DCDCDC"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/txtaddnewl1"
+        />
+    <TextView
+        android:id="@+id/txtaddnew_lastname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txtaddnewl1"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:paddingTop="5dp"
+        android:text="@string/addnew_lastname" />
 
     <EditText
-        android:id="@+id/edtName"
+        android:id="@+id/edtFirstName"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_alignParentLeft="true"
@@ -55,6 +95,7 @@
         android:paddingLeft="10dp"
         android:singleLine="true"
         android:background="#FFFF"
+        android:layout_marginTop="30dp"
         />
     <TextView
         android:layout_width="match_parent"
@@ -63,14 +104,45 @@
         android:layout_marginLeft="13dp"
         android:layout_marginRight="13dp"
         android:layout_marginTop="-5dp"
-        android:layout_below="@+id/edtName"
+        android:layout_below="@+id/edtFirstName"
+        />
+    <TextView
+        android:id="@+id/txtaddnewl333"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/edtFirstName"
+        android:layout_marginLeft="10dp"
+        android:paddingTop="10dp"
+        android:text="@string/addnew_l3" />
+
+    <TextView
+        android:id="@+id/edtLastName"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txtaddnewl333"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="13dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="8dp"
+        android:singleLine="true"
+        android:textStyle="bold" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#DCDCDC"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="13dp"
+        android:layout_marginTop="-5dp"
+        android:layout_below="@+id/tvaddnewLastName"
         />
     <RelativeLayout
         android:id="@+id/ll_l2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/edtName"
+        android:layout_below="@+id/tvaddnewLastName"
         android:paddingTop="10dp">
 
         <TextView
@@ -238,7 +310,7 @@
         android:stateListAnimator="@null"
         android:text="@string/addnew_l6"
         android:textColor="@color/White"
-        />
+        android:nestedScrollingEnabled="false" />
     <View
         android:layout_width="match_parent"
         android:layout_height="50dp"

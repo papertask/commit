@@ -68,7 +68,7 @@ public class NewQuestionnaireFragment extends BaseFragment {
     private String date="";
     private String time="";
     private DBHelper db;
-    private EditText edtName,edtAdd;
+    private EditText edtFirstName,edtLastName, edtAdd;
     private TextView tvTime,tvDate;
     private RadioGroup rdoGender;
     int selectDatefrom = -1;
@@ -90,7 +90,9 @@ public class NewQuestionnaireFragment extends BaseFragment {
 //        imgCamera.requestLayout();
         btnCreateAccount.setOnClickListener(myAddClickListener);
 
-        edtName = (EditText)rootView.findViewById(R.id.edtName);
+        edtFirstName = (EditText)rootView.findViewById(R.id.edtFirstName);
+        edtLastName = (EditText)rootView.findViewById(R.id.edtLastName);
+
         tvDate = (TextView)rootView.findViewById(R.id.tvInterviewDate);
         tvTime = (TextView)rootView.findViewById(R.id.tvBirthday);
         edtAdd = (EditText)rootView.findViewById(R.id.edtaddnew_l5);
@@ -110,7 +112,7 @@ public class NewQuestionnaireFragment extends BaseFragment {
                 hasChange = true;
             }
         });
-        edtName.addTextChangedListener(new TextWatcher() {
+        edtLastName.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -171,14 +173,15 @@ public class NewQuestionnaireFragment extends BaseFragment {
             try{
                 switch (v.getId()){
                     case R.id.btn_next:
-                        if(edtName.getText().length()>0 && tvDate.getText().length()>0 & tvTime.getText().length()>0 & edtAdd.getText().length()>0)
+                        if(edtLastName.getText().length()>0 && edtFirstName.getText().length()>0 && tvDate.getText().length()>0 & tvTime.getText().length()>0 & edtAdd.getText().length()>0)
                         {
                             int idxgender_selected = rdoGender.indexOfChild(rdoGender.findViewById(rdoGender.getCheckedRadioButtonId()));
                             String strGender="";
                             if(idxgender_selected==0) strGender="Female";
                             else strGender="Male";
                             Person pr = new Person();
-                            pr.setName(edtName.getText().toString());
+                            pr.setLastName(edtLastName.getText().toString());
+                            pr.setFirstName(edtFirstName.getText().toString());
                             pr.setBirthDay(tvTime.getText().toString());
                             pr.setTime(tvDate.getText().toString());
                             pr.setAdd(edtAdd.getText().toString());
@@ -376,14 +379,15 @@ public class NewQuestionnaireFragment extends BaseFragment {
     }
     boolean isStored = false;
     public void storeInterviewer(){
-        if(edtName.getText().length()>0 && tvDate.getText().length()>0 & tvTime.getText().length()>0 & edtAdd.getText().length()>0)
+        if(edtFirstName.getText().length()>0 && edtLastName.getText().length()>0 && tvDate.getText().length()>0 & tvTime.getText().length()>0 & edtAdd.getText().length()>0)
         {
             int idxgender_selected = rdoGender.indexOfChild(rdoGender.findViewById(rdoGender.getCheckedRadioButtonId()));
             String strGender="";
             if(idxgender_selected==0) strGender="Female";
             else strGender="Male";
             Person pr = new Person();
-            pr.setName(edtName.getText().toString());
+            pr.setFirstName(edtFirstName.getText().toString());
+            pr.setLastName(edtLastName.getText().toString());
             pr.setBirthDay(tvTime.getText().toString());
             pr.setTime(tvDate.getText().toString());
             pr.setAdd(edtAdd.getText().toString());

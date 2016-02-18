@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="White">#ffffff</color>
-    <color name="vline">#ff9c10</color>
+    <color name="vline">#FF8903</color>
     <color name="header">#ff6600</color>
     <color name="transparent">#00000000</color>
     <color name="colorPrimary">#FF8903</color>

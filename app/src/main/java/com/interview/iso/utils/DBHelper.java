@@ -36,7 +36,8 @@ public class DBHelper extends SQLiteOpenHelper {
     
     // Common column names
     private static final String KEY_ID = "id";
-    private static final String KEY_NAME = "name";
+    private static final String KEY_FIRSTNAME = "firstname";
+    private static final String KEY_LASTNAME = "lastname";
     private static final String KEY_BIRTHDAY = "birthday";
     private static final String KEY_ADD = "address";
     private static final String KEY_PHONE = "phone";
@@ -51,8 +52,8 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String KEY_INTERVIEW_TYPE = "interview_type";
     ///////Statement Create Table
     private static final String CREATE_TABLE_PERSON = "CREATE TABLE "
-    + TABLE_PERSON + "(" + KEY_ID + " INTEGER PRIMARY KEY  AUTOINCREMENT," + KEY_NAME
-    + " TEXT," + KEY_AVATAR + " TEXT," + KEY_BIRTHDAY + " TEXT," + KEY_INTERVIEW_DATE
+    + TABLE_PERSON + "(" + KEY_ID + " INTEGER PRIMARY KEY  AUTOINCREMENT," + KEY_FIRSTNAME
+    + " TEXT," + KEY_LASTNAME + " TEXT," + KEY_AVATAR + " TEXT," + KEY_BIRTHDAY + " TEXT," + KEY_INTERVIEW_DATE
     + " TEXT," + KEY_INTERVIEW_TYPE
     + " INTEGER," + KEY_ADD + " TEXT," + KEY_PHONE + " TEXT," + KEY_GENDER
     + " TEXT" + ")";
@@ -95,7 +96,8 @@ public class DBHelper extends SQLiteOpenHelper {
     public long createPerson(Person ans) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(KEY_NAME, ans.getName());
+        values.put(KEY_FIRSTNAME, ans.getFirstName());
+        values.put(KEY_LASTNAME, ans.getLastName());
         values.put(KEY_BIRTHDAY, ans.getBirthDay());
         values.put(KEY_INTERVIEW_DATE, ans.getTime());
         values.put(KEY_ADD, ans.getAdd());
@@ -122,7 +124,8 @@ public class DBHelper extends SQLiteOpenHelper {
         
         Person td = new Person();
         td.setID(c.getInt(c.getColumnIndex(KEY_ID)));
-        td.setName((c.getString(c.getColumnIndex(KEY_NAME))));
+        td.setFirstName((c.getString(c.getColumnIndex(KEY_FIRSTNAME))));
+        td.setLastName((c.getString(c.getColumnIndex(KEY_LASTNAME))));
         td.setAdd((c.getString(c.getColumnIndex(KEY_ADD))));
         td.setGender((c.getString(c.getColumnIndex(KEY_GENDER))));
         td.setAvatar((c.getString(c.getColumnIndex(KEY_AVATAR))));
@@ -137,7 +140,7 @@ public class DBHelper extends SQLiteOpenHelper {
     private long CheckExistPerson(Person person) {
         SQLiteDatabase db = this.getReadableDatabase();
         String selectQuery = "SELECT  ID FROM " + TABLE_PERSON + " WHERE "
-        + KEY_NAME + " = '" + person.getName() + "' and "+ KEY_BIRTHDAY +" = '" + person.getBirthDay() + "'" ;
+        + KEY_FIRSTNAME + " = '" + person.getFirstName() + "' and "+  KEY_LASTNAME + " = '" + person.getLastName() + "' and "+ KEY_BIRTHDAY +" = '" + person.getBirthDay() + "'" ;
         
         Log.e(LOG, selectQuery);
         Cursor c = db.rawQuery(selectQuery, null);
@@ -166,7 +169,8 @@ public class DBHelper extends SQLiteOpenHelper {
             do {
                 Person td = new Person();
                 td.setID(c.getInt(c.getColumnIndex(KEY_ID)));
-                td.setName(c.getString(c.getColumnIndex(KEY_NAME)));
+                td.setFirstName(c.getString(c.getColumnIndex(KEY_FIRSTNAME)));
+                td.setLastName(c.getString(c.getColumnIndex(KEY_LASTNAME)));
                 td.setAdd(c.getString(c.getColumnIndex(KEY_ADD)));
                 td.setGender(c.getString(c.getColumnIndex(KEY_GENDER)));
                 td.setAvatar(c.getString(c.getColumnIndex(KEY_AVATAR)));
@@ -182,8 +186,8 @@ public class DBHelper extends SQLiteOpenHelper {
     
     public List<Person> searchPerson(String term) {
         List<Person> lstAns = new ArrayList<Person>();
-        String selectQuery = "SELECT  * FROM " + TABLE_PERSON + " WHERE " + KEY_NAME + " LIKE '%"
-        + term + "%' OR " + KEY_INTERVIEW_DATE + " LIKE '%" + term + "%' OR "
+        String selectQuery = "SELECT  * FROM " + TABLE_PERSON + " WHERE " + KEY_FIRSTNAME + " LIKE '%"
+        + term + "%' OR " + KEY_LASTNAME + " LIKE '%" + term + "%' OR " + KEY_INTERVIEW_DATE + " LIKE '%" + term + "%' OR "
         + KEY_ADD + " LIKE '%" + term + "%'";
         
         SQLiteDatabase db = this.getReadableDatabase();
@@ -193,7 +197,9 @@ public class DBHelper extends SQLiteOpenHelper {
             do {
                 Person td = new Person();
                 td.setID(c.getInt(c.getColumnIndex(KEY_ID)));
-                td.setName((c.getString(c.getColumnIndex(KEY_NAME))));
+                td.setFirstName((c.getString(c.getColumnIndex(KEY_FIRSTNAME))));
+                td.setLastName((c.getString(c.getColumnIndex(KEY_LASTNAME))));
+
                 // td.setPhone((c.getString(c.getColumnIndex(KEY_PHONE))));
                 td.setAdd((c.getString(c.getColumnIndex(KEY_ADD))));
                 // td.setOld((c.getString(c.getColumnIndex(KEY_OLD))));
@@ -211,7 +217,8 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         
         ContentValues values = new ContentValues();
-        values.put(KEY_NAME, ans.getName());
+        values.put(KEY_FIRSTNAME, ans.getFirstName());
+        values.put(KEY_LASTNAME, ans.getLastName());
         values.put(KEY_ADD, ans.getAdd());
         values.put(KEY_BIRTHDAY, ans.getBirthDay());
         values.put(KEY_INTERVIEW_DATE, ans.getTime());

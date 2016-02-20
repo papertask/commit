@@ -94,6 +94,10 @@ public class NewQuestionnaireFragment extends BaseFragment {
         edtLastName = (EditText)rootView.findViewById(R.id.edtLastName);
 
         tvDate = (TextView)rootView.findViewById(R.id.tvInterviewDate);
+
+
+
+        
         tvTime = (TextView)rootView.findViewById(R.id.tvBirthday);
         edtAdd = (EditText)rootView.findViewById(R.id.edtaddnew_l5);
         edtAdd.addTextChangedListener(new TextWatcher() {

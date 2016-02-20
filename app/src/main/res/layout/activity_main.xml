@@ -17,7 +17,9 @@
             android:id="@+id/toolbar"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:background="#FFFF">
+            android:background="#FFFF"
+            >
+
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -31,7 +33,7 @@
                     android:layout_centerVertical="true"
                     android:layout_centerHorizontal="true"
                     android:text="title"
-                    android:textColor="#000"
+                    android:textColor="@color/vline"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:gravity="left"
@@ -65,8 +67,15 @@
                     android:visibility="gone"
 
                     />
+
             </RelativeLayout>
+
         </android.support.v7.widget.Toolbar>
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:background="#DCDCDC"
+            android:layout_below="@+id/title"/>
         <FrameLayout
             android:id="@+id/content_frame"
             android:layout_width="fill_parent"

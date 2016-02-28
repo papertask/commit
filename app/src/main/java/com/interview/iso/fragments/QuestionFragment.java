@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -40,6 +41,7 @@ public class QuestionFragment extends BaseFragment {
     Map<Integer, Question> mListQuestion;
     int current_question = 0;
     TextView tv_question_en, tv_question_cn,tv_question_basic_cn,tv_question_basic_en,tv_header;
+    LinearLayout lnYes, lnNo;
     Button btn_play_audio;
     public static MediaPlayer mPlayer;
     Map<String, Boolean> mAnswer;
@@ -53,12 +55,16 @@ public class QuestionFragment extends BaseFragment {
         //Button btn_fullScreen = (Button) rootView.findViewById(R.id.btn_zoom);
         Button btn_share = (Button) rootView.findViewById(R.id.btn_share_intent);
         btn_play_audio = (Button) rootView.findViewById(R.id.btn_play_audio);
-        Button btn_next = (Button) rootView.findViewById(R.id.next);
+        LinearLayout btn_next = (LinearLayout) rootView.findViewById(R.id.next);
         tv_question_cn = (TextView) rootView.findViewById(R.id.tv_question_cn);
         tv_question_en = (TextView) rootView.findViewById(R.id.tv_question_en);
         tv_question_basic_cn = (TextView) rootView.findViewById(R.id.basic_query_cn);
         tv_question_basic_en = (TextView) rootView.findViewById(R.id.basic_query_en);
         tv_header = (TextView)rootView.findViewById(R.id.header);
+        lnYes = (LinearLayout)rootView.findViewById(R.id.ln_yes);
+        lnNo = (LinearLayout)rootView.findViewById(R.id.ln_no);
+        lnYes.setOnClickListener(onClickListener);
+        lnNo.setOnClickListener(onClickListener);
         if(AppData.getInstance().getLanguage().equals("lao"))
         {
             Typeface tf_mm3 = Typeface.createFromAsset(getActivity().getAssets(), "fonts/lao.ttf");
@@ -197,6 +203,37 @@ public class QuestionFragment extends BaseFragment {
         @Override
         public void onClick(View v) {
             switch (v.getId()) {
+                case R.id.ln_yes:
+                    if(current_question>=0){
+                        MainActivity mainActivity = (MainActivity)getActivity();
+                        mainActivity.updateActionBar(true);
+                    }
+                    if(mPlayer!=null && mPlayer.isPlaying()) {
+                        mPlayer.reset();
+                        Drawable img = getContext().getResources().getDrawable(R.drawable.button_broadcast);
+                        btn_play_audio.setCompoundDrawablesWithIntrinsicBounds(img, null, null, null);
+                    }
+                    if (AppData.getInstance().getApptype() == Constants.POLICY_TYPE)
+                        loadNextStep_Policy1(true);
+                    else
+                        loadNextStep_Government1(true);
+                    break;
+                case R.id.ln_no:
+                    if(current_question>=0){
+                        MainActivity mainActivity = (MainActivity)getActivity();
+                        mainActivity.updateActionBar(true);
+                    }
+                    if(mPlayer!=null && mPlayer.isPlaying()) {
+                        mPlayer.reset();
+                        Drawable img = getContext().getResources().getDrawable(R.drawable.button_broadcast);
+                        btn_play_audio.setCompoundDrawablesWithIntrinsicBounds(img, null, null, null);
+                    }
+                    if (AppData.getInstance().getApptype() == Constants.POLICY_TYPE)
+                        loadNextStep_Policy1(false);
+                    else
+                        loadNextStep_Government1(false);
+
+                    break;
                 case R.id.next:
                     if(current_question>=0){
                         MainActivity mainActivity = (MainActivity)getActivity();
@@ -352,7 +389,55 @@ public class QuestionFragment extends BaseFragment {
         }
         tv_question_cn.setText(current_number + ". " + mListQuestion.get(current_question).question_cn);
     }
+    public void loadNextStep_Policy1(Boolean value) {
+        tv_question_basic_en.setText("");
+        tv_question_basic_cn.setVisibility(View.GONE);
+        if (mAnswer == null)
+            mAnswer = new HashMap<>();
+        if (current_question > -1) {
+            if (value)
+                mAnswer.put(current_question + 1 + "", true);
+            else
+                mAnswer.put(current_question + 1 + "", false);
+        }else {
+            RadioButton rdNo = (RadioButton) rootView.findViewById(R.id.rd_no);
+            rdNo.setVisibility(View.VISIBLE);
+        }
+        if (current_question >= 12) {
+            Policy_Extra_Process();
+            return;
+        }
+        if(mPlayer==null)
+            mPlayer = new MediaPlayer();
+        if (mPlayer.isPlaying()) {
+            mPlayer.pause();
+            Drawable img = getContext().getResources().getDrawable(R.drawable.button_broadcast);
+            btn_play_audio.setCompoundDrawablesWithIntrinsicBounds(img, null, null, null);
+        }
+        if (current_question == 0) {
+            if (radioGroup.getCheckedRadioButtonId() == R.id.rd_no)
+                current_question += 3;
+            else
+                current_question++;
+        } else {
+            ++current_question;
+        }
 
+        mQueueQuestion.add(current_question);
+        radioGroup.check(0);
+        Integer current_number = current_question + 1;
+        if (AppData.getInstance().getLanguage().equals("vn")) {
+            tv_question_en.setText(mListQuestion.get(current_question).question_vn);
+
+        } else if (AppData.getInstance().getLanguage().equals("my")) {
+            tv_question_en.setText(mListQuestion.get(current_question).question_my);
+        } else if (AppData.getInstance().getLanguage().equals("lao")) {
+            tv_question_en.setText(mListQuestion.get(current_question).question_lao);
+        }else if (AppData.getInstance().getLanguage().equals("km")){
+            tv_question_en.setText(mListQuestion.get(current_question).question_km);
+        }
+        tv_question_cn.setText(current_number + ". " + mListQuestion.get(current_question).question_cn);
+    }
     public void loadNextStep_Government() {
         tv_header.setVisibility(View.GONE);
         if(current_question<1){
@@ -371,6 +456,76 @@ public class QuestionFragment extends BaseFragment {
         if (current_question == 3) {
             //store current and play audio
             if (radioGroup.getCheckedRadioButtonId() == R.id.rd_yes) {
+                {
+                    mAnswer.put(current_question + 1 + "", true);
+                }
+            } else {
+                mAnswer.put(current_question + 1 + "", false);
+            }
+            MainActivity activity = (MainActivity) getActivity();
+            mAnswer = new TreeMap<String, Boolean>(mAnswer);
+            JSONObject json = new JSONObject(mAnswer);
+            DBHelper db = new DBHelper(activity);
+            db.createAnswer(AppData.getInstance().getPersonID(), json.toString());
+            String filename = String.format("Sound/government/%s/%d.mp3",AppData.getInstance().getLanguage(),current_question);
+            Play(filename);
+            //Drawable img = getContext().getResources().getDrawable(R.drawable.icon_pause);
+            // btn_play_audio.setCompoundDrawablesWithIntrinsicBounds(img, null, null, null);
+            current_question++;
+            mQueueQuestion.add(current_question);
+            loadNextStep_Government();
+            return;
+        }
+        if (mPlayer!=null && mPlayer.isPlaying()) {
+            mPlayer.pause();
+            mPlayer = new MediaPlayer();
+            Drawable img = getContext().getResources().getDrawable(R.drawable.button_broadcast);
+            btn_play_audio.setCompoundDrawablesWithIntrinsicBounds(img, null, null, null);
+        }
+        if (mAnswer == null)
+            mAnswer = new HashMap<>();
+        if (radioGroup.getCheckedRadioButtonId() == R.id.rd_yes) {
+            {
+                mAnswer.put(current_question + 1 + "", true);
+            }
+        } else {
+            mAnswer.put(current_question + 1 + "", false);
+        }
+        radioGroup.check(0);
+        current_question++;
+        mQueueQuestion.add(current_question);
+        if (AppData.getInstance().getLanguage().equals("vn")) {
+            tv_question_en.setText(mListQuestion.get(current_question).question_vn);
+
+        } else if (AppData.getInstance().getLanguage().equals("my")) {
+            tv_question_en.setText(mListQuestion.get(current_question).question_my);
+        } else if (AppData.getInstance().getLanguage().equals("lao")) {
+            tv_question_en.setText(mListQuestion.get(current_question).question_lao);
+        }else if (AppData.getInstance().getLanguage().equals("km")){
+            tv_question_en.setText(mListQuestion.get(current_question).question_km);
+        }
+        tv_question_cn.setText(mListQuestion.get(current_question).question_cn);
+
+    }
+
+    public void loadNextStep_Government1(Boolean value) {
+        tv_header.setVisibility(View.GONE);
+        if(current_question<1){
+            RadioButton rdNo = (RadioButton) rootView.findViewById(R.id.rd_no);
+            rdNo.setVisibility(View.VISIBLE);
+        }
+        if (current_question > 3) {
+            MainActivity activity = (MainActivity) getActivity();
+            DBHelper db = new DBHelper(activity);
+            Person person = db.getPerson(AppData.getInstance().getPersonID());
+            AppData.getInstance().setPerson_selection(person);
+            Pause();
+            activity.didSelectMenuItem(new MenuItem("问卷内容", 0, "QuestionnaireDetailMarriage", "detail"));
+            return;
+        }
+        if (current_question == 3) {
+            //store current and play audio
+            if (value) {
                 {
                     mAnswer.put(current_question + 1 + "", true);
                 }

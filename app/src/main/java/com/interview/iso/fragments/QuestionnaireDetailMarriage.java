@@ -1,9 +1,12 @@
 package com.interview.iso.fragments;
 
 import android.content.Context;
+import android.content.res.AssetFileDescriptor;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.DisplayMetrics;
@@ -11,8 +14,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.interview.iso.R;
@@ -41,6 +44,7 @@ public class QuestionnaireDetailMarriage extends Fragment {
     private List<ResultQuestion> mList;
     private ExpandableHeightListView mListView;
     SelectableRoundedImageView rdAvatar;
+    private  int number;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -50,6 +54,34 @@ public class QuestionnaireDetailMarriage extends Fragment {
         TextView tvInterviewDate = (TextView)rootView.findViewById(R.id.tv_interviewDate);
         TextView tvGender = (TextView)rootView.findViewById(R.id.tv_gender);
         TextView tvExtraText = (TextView)rootView.findViewById(R.id.extra_information);
+        TextView tvLocation = (TextView)rootView.findViewById(R.id.tv_location);
+        TextView tvName = (TextView)rootView.findViewById(R.id.tv_name);
+        TextView lblResult = (TextView) rootView.findViewById(R.id.lbl_result);
+        TextView tvResultCn = (TextView) rootView.findViewById(R.id.tv_result_cn);
+        TextView tvResult = (TextView) rootView.findViewById(R.id.tv_result);
+        ImageView imgPlayAnounce = (ImageView) rootView.findViewById(R.id.img_play_anounce);
+        imgPlayAnounce.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(QuestionFragment.mPlayer==null)
+                    QuestionFragment.mPlayer = new MediaPlayer();
+                if (QuestionFragment.mPlayer.isPlaying()) {
+                    QuestionFragment.mPlayer.pause();
+                    QuestionFragment.mPlayer = new MediaPlayer();
+                    Drawable img = getContext().getResources().getDrawable(R.drawable.button_broadcast);
+                    //btn_play_audio.setCompoundDrawablesWithIntrinsicBounds(img, null, null, null);
+                } else {
+                    String file_name;
+                    if (number == 1) {
+                        file_name = "1.mp3";
+                    } else {
+                        file_name = "2.mp3";
+                    }
+                    Play(file_name);
+                }
+            }
+        });
+
         Person person = AppData.getInstance().getPerson_selection();
         if(person.getAvatarPath()!=null && !person.getAvatarPath().equals(""))
             setFullImageFromFilePath(person.getAvatarPath(), rdAvatar);
@@ -59,10 +91,12 @@ public class QuestionnaireDetailMarriage extends Fragment {
             tvGender.setText(getString(R.string.Male));
         else
             tvGender.setText(getString(R.string.Female));
+        tvName.setText(person.getFirstName()+" "+person.getLastName());
+        tvLocation.setText(person.getAdd());
 
         DBHelper db = new DBHelper(getActivity());
         Answer answer = db.getListQuestionByPersion(person.getID());
-        int number = 0;
+        number = 0;
         if(answer!= null) {
             JSONObject object = answer.convertToJsonArray();
 //        Map<String , Boolean> mResult;
@@ -82,10 +116,17 @@ public class QuestionnaireDetailMarriage extends Fragment {
             }
         }
 
-        if(number == 1)
-            tvExtraText.setText(getString(R.string.quetion_gov_cn));
-        else
-            tvExtraText.setText(getString(R.string.quetion_gov_cn1));
+        if(number == 1) {
+            //tvExtraText.setText(getString(R.string.quetion_gov_cn));
+            lblResult.setText("同意办证：");
+            tvResultCn.setText(getString(R.string.quetion_gov_cn));
+            tvResult.setText(getString(R.string.quetion_gov_vn));
+        }
+        else {
+            lblResult.setText("疑似拐卖: ");
+            tvResultCn.setText(getString(R.string.quetion_gov_cn1));
+            tvResult.setText(getString(R.string.quetion_gov_vn1));
+        }
 
         QuestionDetailAdapter adapter = new QuestionDetailAdapter(getActivity(),mList,person);
         mListView.setAdapter(adapter);
@@ -93,6 +134,43 @@ public class QuestionnaireDetailMarriage extends Fragment {
 
         return rootView;
     }
+    public void Play(String fileName) {
+
+        try {
+            if (QuestionFragment.mPlayer==null)
+                QuestionFragment.mPlayer= new MediaPlayer();
+            QuestionFragment.mPlayer.reset();
+            AssetFileDescriptor descriptor = getActivity().getAssets().openFd(fileName);
+            long start = descriptor.getStartOffset();
+            long end = descriptor.getLength();
+            if(start == end)
+            {
+                Drawable img = getContext().getResources().getDrawable(R.drawable.button_broadcast);
+                return;
+            }
+            //update paused
+
+            QuestionFragment.mPlayer.setDataSource(descriptor.getFileDescriptor(), start, end);
+            QuestionFragment.mPlayer.prepare();
+            QuestionFragment.mPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mp) {
+                    Drawable img = getContext().getResources().getDrawable(R.drawable.button_broadcast);
+                }
+            });
+            QuestionFragment.mPlayer.start();
+
+        } catch (Exception ex) {
+            Drawable img = getContext().getResources().getDrawable(R.drawable.button_broadcast);
+            if(QuestionFragment.mPlayer!=null && QuestionFragment.mPlayer.isPlaying())
+                QuestionFragment.mPlayer.pause();
+        }
+    }
+    public void Pause(){
+        if(QuestionFragment.mPlayer!=null && QuestionFragment.mPlayer.isPlaying())
+            QuestionFragment.mPlayer.pause();
+    }
+
     class ResultQuestion {
         public String id;
         public boolean result;
@@ -171,6 +249,7 @@ public class QuestionnaireDetailMarriage extends Fragment {
                 viewHoler = new ViewHoler();
                 viewHoler.tvContent = (TextView)convertView.findViewById(R.id.question_content);
                 viewHoler.tvID =(TextView)convertView.findViewById(R.id.quest_number);
+                viewHoler.btnResult =(Button)convertView.findViewById(R.id.question_result);
                 convertView.setTag(viewHoler);
             }else {
                 viewHoler = (ViewHoler)convertView.getTag();
@@ -178,13 +257,18 @@ public class QuestionnaireDetailMarriage extends Fragment {
 
             ResultQuestion resultQuestion = mResult.get(position);
             if(resultQuestion!=null){
-                viewHoler.tvID.setText(Integer.parseInt(resultQuestion.id) + ".");
+                viewHoler.tvID.setText(resultQuestion.id);
 
                     Question question = mListQuest.get(Integer.parseInt(resultQuestion.id)-1);
-                    if (resultQuestion.result)
-                        viewHoler.tvContent.setText(question.question_cn + "   -是");
-                    else
-                        viewHoler.tvContent.setText(question.question_cn + "   -否");
+                if (resultQuestion.result) {
+                    viewHoler.tvContent.setText(question.question_cn);
+                    viewHoler.btnResult.setText("是");
+                    viewHoler.btnResult.setBackgroundResource(R.drawable.buttoncustom);
+                } else {
+                    viewHoler.tvContent.setText(question.question_cn);
+                    viewHoler.btnResult.setText("否");
+                    viewHoler.btnResult.setBackgroundResource(R.drawable.buttoncustom_green);
+                }
 
             }
 
@@ -193,6 +277,7 @@ public class QuestionnaireDetailMarriage extends Fragment {
         class ViewHoler {
             TextView tvContent;
             TextView tvID;
+            Button btnResult;
         }
         class MyCompare implements Comparator<ResultQuestion> {
 

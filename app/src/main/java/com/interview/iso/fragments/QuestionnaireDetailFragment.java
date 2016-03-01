@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
@@ -78,7 +79,7 @@ public class QuestionnaireDetailFragment extends BaseFragment {
                     try {
                         ResultQuestion resultQuestion = new ResultQuestion();
                         resultQuestion.id = key.next();
-                        resultQuestion.result = object.getBoolean(resultQuestion.id);
+                        resultQuestion.result = object.getInt(resultQuestion.id);
                         if (Integer.parseInt(resultQuestion.id) > 0 && Integer.parseInt(resultQuestion.id) < 14) {
                             mList.add(resultQuestion);
                         } else {
@@ -99,7 +100,7 @@ public class QuestionnaireDetailFragment extends BaseFragment {
     }
     class ResultQuestion {
         public String id;
-        public boolean result;
+        public int result;
     }
     private void setFullImageFromFilePath(final String imagePath, final ImageView imageView) {
 
@@ -184,12 +185,16 @@ public class QuestionnaireDetailFragment extends BaseFragment {
                 viewHoler.tvID.setText(resultQuestion.id);
                 Question question = mListQuest.get(Integer.parseInt(resultQuestion.id)-1);
                 viewHoler.tvContent.setText(question.question_cn);
-                if(resultQuestion.result) {
+                if(resultQuestion.result == 1) {
                     viewHoler.btnResult.setText("是");
                     viewHoler.btnResult.setBackgroundResource(R.drawable.buttoncustom);
-                }else {
+                }else if(resultQuestion.result == 0) {
                     viewHoler.btnResult.setText("否");
                     viewHoler.btnResult.setBackgroundResource(R.drawable.buttoncustom_green);
+                }else {
+                    viewHoler.btnResult.setText("跳过");
+                    viewHoler.btnResult.setTextColor(Color.BLACK);
+                    viewHoler.btnResult.setBackgroundResource(R.drawable.buttoncustom_black);
                 }
             }
 
@@ -262,12 +267,15 @@ public class QuestionnaireDetailFragment extends BaseFragment {
             if(resultQuestion!=null){
                 Question question = mListQuest.get(Integer.parseInt(resultQuestion.id)-1);
                 viewHoler.tvContent.setText(question.question_cn);
-                if(resultQuestion.result) {
+                if(resultQuestion.result == 1) {
                     viewHoler.btnResult.setText("是");
                     viewHoler.btnResult.setBackgroundResource(R.drawable.buttoncustom);
-                }else {
+                }else if(resultQuestion.result == 0) {
                     viewHoler.btnResult.setText("否");
                     viewHoler.btnResult.setBackgroundResource(R.drawable.buttoncustom_green);
+                }else {
+                    viewHoler.btnResult.setText("跳过");
+                    viewHoler.btnResult.setBackgroundResource(R.drawable.buttoncustom_white);
                 }
                 if (resultQuestion.id.equals("15") || resultQuestion.id.equals("17")) {
                     viewHoler.btnContact.setText("联系有关部门");

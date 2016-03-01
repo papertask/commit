@@ -122,19 +122,19 @@
             android:id="@+id/ln_action_question"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="40dp"
             android:orientation="vertical">
 
             <LinearLayout
                 android:id="@+id/ln_yes"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
-                android:layout_marginBottom="50dp"
+                android:layout_marginBottom="30dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:layout_marginTop="0dp"
-                android:clickable="true"
                 android:background="@drawable/buttoncustom"
+                android:clickable="true"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -162,52 +162,95 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/ln_no"
+            <RelativeLayout
+
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginBottom="50dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginTop="0dp"
-                android:clickable="true"
-                android:background="@drawable/buttoncustom_green"
-                android:gravity="center"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/ln_no"
+                    android:layout_width="130dp"
+                    android:layout_height="55dp"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/buttoncustom_green"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
 
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_centerInParent="true"
-                    android:layout_marginRight="10dp"
-                    android:contentDescription=""
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/no" />
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="10dp"
+                        android:contentDescription=""
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/no" />
 
-                <TextView
-                    android:id="@+id/btn_no"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:background="@android:color/transparent"
-                    android:text="否"
-                    android:textColor="#FFFF"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/btn_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:background="@android:color/transparent"
+                        android:text="否"
+                        android:textColor="#FFFF"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
 
 
-            </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ln_skip"
+                    android:layout_width="130dp"
+                    android:layout_height="55dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:background="@drawable/buttoncustom_white"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="30dp"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="10dp"
+                        android:contentDescription=""
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/arrow_orange" />
+
+                    <TextView
+                        android:id="@+id/btn_skip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:background="@android:color/transparent"
+                        android:text="跳过"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+            </RelativeLayout>
 
         </LinearLayout>
 
         <RelativeLayout
-            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="20dp"
             android:paddingLeft="15dp"
-            android:paddingRight="15dp">
+            android:paddingRight="15dp"
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/tv_quest_desc"
@@ -255,8 +298,8 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="10dp"
-            android:visibility="gone"
             android:orientation="horizontal"
+            android:visibility="gone"
             android:weightSum="3">
             <!--<Button-->
             <!--android:id="@+id/btn_zoom"-->
@@ -300,11 +343,11 @@
             android:layout_height="55dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal"
-            android:gravity="center"
+            android:layout_marginTop="30dp"
             android:background="@drawable/buttoncustom"
-            android:clickable="true">
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="horizontal">
 
             <ImageView
                 android:layout_width="24dp"
@@ -319,9 +362,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
+                android:text=" 下一个"
                 android:textColor="#FFFF"
                 android:textSize="20sp"
-                android:text=" 下一个"
                 android:textStyle="bold" />
         </LinearLayout>
 

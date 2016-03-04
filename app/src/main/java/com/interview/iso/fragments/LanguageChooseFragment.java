@@ -44,9 +44,9 @@ public class LanguageChooseFragment extends BaseFragment {
                 String code = item.split(",")[0];
                 AppData.getInstance().setLanguage(code.toLowerCase());
                 if(AppData.getInstance().getApptype()== Constants.POLICY_TYPE)
-                    mainActivity.didSelectMenuItem(new MenuItem("公安问卷",0,"QuestionFragment","question"));
+                    mainActivity.didSelectMenuItem(new MenuItem("公安问卷","QuestionFragment","question", 0));
                 else
-                    mainActivity.didSelectMenuItem(new MenuItem("婚姻登记问卷",0,"QuestionFragment","question"));
+                    mainActivity.didSelectMenuItem(new MenuItem("婚姻登记问卷", "QuestionFragment","question", 0));
             }
         });
         return rootView;

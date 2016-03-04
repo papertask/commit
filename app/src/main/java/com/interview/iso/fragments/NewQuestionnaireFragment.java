@@ -193,7 +193,7 @@ public class NewQuestionnaireFragment extends BaseFragment {
                             Log.d("current Person",AppData.getInstance().getPersonID() + "");
                             //next question
                             MainActivity activity = (MainActivity) getActivity();
-                            activity.didSelectMenuItem(new MenuItem(getString(R.string.language),0,"LanguageChooseFragment","Language"));
+                            activity.didSelectMenuItem(new MenuItem(getString(R.string.language), "LanguageChooseFragment","Language", 0));
 
                         }else{ ShowMessage("请填写所有信息。",0); return;}
                         break;

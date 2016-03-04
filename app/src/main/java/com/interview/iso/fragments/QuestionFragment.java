@@ -437,7 +437,7 @@ public class QuestionFragment extends BaseFragment {
             Person person = db.getPerson(AppData.getInstance().getPersonID());
             AppData.getInstance().setPerson_selection(person);
             Pause();
-            activity.didSelectMenuItem(new MenuItem("问卷内容", 0, "QuestionnaireDetailMarriage", "detail"));
+            activity.didSelectMenuItem(new MenuItem("问卷内容",  "QuestionnaireDetailMarriage", "detail", 0));
             return;
         }
         if (current_question == 3) {
@@ -510,7 +510,7 @@ public class QuestionFragment extends BaseFragment {
             Person person = db.getPerson(AppData.getInstance().getPersonID());
             AppData.getInstance().setPerson_selection(person);
             Pause();
-            activity.didSelectMenuItem(new MenuItem("问卷内容", 0, "QuestionnaireDetailMarriage", "detail"));
+            activity.didSelectMenuItem(new MenuItem("问卷内容", "QuestionnaireDetailMarriage", "detail", 0));
             return;
         }
         if (current_question == 3) {
@@ -653,7 +653,7 @@ public class QuestionFragment extends BaseFragment {
         Person person = db.getPerson(AppData.getInstance().getPersonID());
         AppData.getInstance().setPerson_selection(person);
 
-        activity.didSelectMenuItem(new MenuItem("问卷内容", 0, "QuestionnaireDetailFragment", "NewQuestionnaire"));
+        activity.didSelectMenuItem(new MenuItem("问卷内容",  "QuestionnaireDetailFragment", "NewQuestionnaire", 0));
     }
 
     private void shareIntent() {

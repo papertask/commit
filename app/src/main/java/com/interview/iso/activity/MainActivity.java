@@ -17,9 +17,11 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.interview.iso.R;
@@ -44,6 +46,12 @@ public class MainActivity extends CameraActivity implements FragmentManager.OnBa
     Toolbar mToolbar;
     TextView mTitle;
     ImageButton mSearch,mTick,mBack;
+    TextView[] mMenus;
+    int MENU_TIWEN = 0, MENU_LIEBIAO = 1, MENU_FANYI = 2, MENU_BUMEN = 3, MENU_SHIGUAN = 4, MENU_ZHENGCE = 5, MENU_BANGZHU = 6;
+    RelativeLayout sg_submenu;
+    ImageView img_sg_dropdown;
+    RelativeLayout zc_submenu;
+    ImageView img_zc_dropdown;
 
     public static MainActivity shareActivity;
     @Override
@@ -88,37 +96,92 @@ public class MainActivity extends CameraActivity implements FragmentManager.OnBa
             mDrawerToggle.syncState();
         }
 
-        setupMenu();
+        // Initialize left menu textviews
+        mMenus = new TextView[7];
+        mMenus[MENU_TIWEN]      = (TextView)findViewById(R.id.menu_tiwen);
+        mMenus[MENU_LIEBIAO]    = (TextView)findViewById(R.id.menu_liebiao);
+        mMenus[MENU_FANYI]      = (TextView)findViewById(R.id.menu_fanyi);
+        mMenus[MENU_BUMEN]      = (TextView)findViewById(R.id.menu_bumen);
+        mMenus[MENU_SHIGUAN]    = (TextView)findViewById(R.id.menu_shiguan);
+        mMenus[MENU_ZHENGCE]    = (TextView)findViewById(R.id.menu_zhengce);
+        mMenus[MENU_BANGZHU]    = (TextView)findViewById(R.id.menu_bangzhu);
+
+        // Initialize submenus
+        sg_submenu = (RelativeLayout)findViewById(R.id.container_shiguan_sub);
+        zc_submenu = (RelativeLayout)findViewById(R.id.container_zhengce_sub);
+
+        // Initialize dropdown buttons
+        img_zc_dropdown = (ImageView) findViewById(R.id.img_zhengce_dropdown);
+        img_sg_dropdown = (ImageView) findViewById(R.id.img_shiguan_dropdown);
+
+        didSelectMenuItem(new MenuItem("开始提问", "NewQuestionnaireFragment","add_new", 0));
     }
-    MenuAdapter mMainMenuAdapter;
-    public void setupMenu() {
 
-        // Build menu items
-        ArrayList<MenuItem> menuItems = new ArrayList<>();
+    public void reset_textbox_color(int num) {
+        for (int i = MENU_TIWEN; i <= MENU_BANGZHU; i ++) {
+            mMenus[i].setTextColor(getResources().getColor(R.color.menuForecolor));
+        }
 
-        menuItems.add(new MenuItem("功能选择",R.drawable.icon_selectfunc, "FunctionSelectFragment","function_select"));
-        menuItems.add(new MenuItem("添加新问卷", R.drawable.icon_candidate, "NewQuestionnaireFragment", "add_new"));
-        menuItems.add(new MenuItem("问卷列表", R.drawable.icon_list, "ListNameFragment","list_interviewer" ));
-        menuItems.add(new MenuItem("打拐指南", R.drawable.icon_tut, "BookTutorialFragment","Tutorial"));
-        menuItems.add(new MenuItem("COMMIT指标产出", R.drawable.icon_tut, "CommitHelpFragment","Help"));
-        mMainMenuAdapter = new MenuAdapter(this, menuItems);
-        mMenuListView = (ListView)findViewById(R.id.left_menu);
-        mMenuListView.setAdapter(mMainMenuAdapter);
+        if (num != -1)
+            mMenus[num].setTextColor(getResources().getColor(R.color.colorPrimary));
 
-        mMenuListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> av, View view, int position, long l) {
-                MenuItem menuItem = (MenuItem) mMainMenuAdapter.getItem(position);
-                mSelectedMenuIndex = position;
-                MainActivity.this.didSelectMenuItem(menuItem);
+        if ( num != MENU_SHIGUAN && num != MENU_ZHENGCE ) {
+            sg_submenu.setVisibility(View.GONE);
+        }
+    }
 
-                mDrawerLayout.closeDrawers();
-            }
-
-        });
-
-        didSelectMenuItem(new MenuItem("添加新问卷", R.drawable.icon_newlist,"NewQuestionnaireFragment","add_new"));
+    public void perform_action(View v) {
+        int str_id = v.getId();
+        switch(str_id) {
+            case R.id.container_tiwen:  // 开始提问
+                didSelectMenuItem(new MenuItem("开始提问", "NewQuestionnaireFragment","add_new", 0));
+                break;
+            case R.id.container_liebiao:
+                didSelectMenuItem(new MenuItem("答卷列表", "ListNameFragment", "list_interviewer", 0));
+                break;
+            case R.id.container_fanyi:
+                didSelectMenuItem(new MenuItem("联系翻译", "ListNameFragment", "translate", 0));
+                break;
+            case R.id.container_bangzhu:
+                didSelectMenuItem(new MenuItem("关于本软件", "ListNameFragment", "about", 0));
+                break;
+            case R.id.container_bumen:
+                didSelectMenuItem(new MenuItem("联系有关部门", "ListNameFragment", "section", 0));
+                break;
+            case R.id.container_shiguan:
+                reset_textbox_color(MENU_SHIGUAN);
+                if (sg_submenu.getVisibility() == View.GONE) {
+                    sg_submenu.setVisibility(View.VISIBLE);
+                    img_sg_dropdown.setImageResource(R.drawable.menu_sub_open);
+                } else {
+                    sg_submenu.setVisibility(View.GONE);
+                    img_sg_dropdown.setImageResource(R.drawable.menu_sub_close);
+                }
+                break;
+            case R.id.container_zhengce:
+                reset_textbox_color(MENU_ZHENGCE);
+                if (zc_submenu.getVisibility() == View.GONE) {
+                    zc_submenu.setVisibility(View.VISIBLE);
+                    img_zc_dropdown.setImageResource(R.drawable.menu_sub_open);
+                } else {
+                    zc_submenu.setVisibility(View.GONE);
+                    img_zc_dropdown.setImageResource(R.drawable.menu_sub_close);
+                }
+                break;
+            default:
+                didSelectMenuItem(new MenuItem("等一等", "NewQuestionnaireFragment", "", 0));
+                break;
+        }
 
     }
+
+    public void close_menu(View v) {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        }
+    }
+
     public void didSelectMenuItem(MenuItem item){
         final Fragment fragment = item.fragment(this);
         if(QuestionFragment.mPlayer!=null) {
@@ -132,25 +195,71 @@ public class MainActivity extends CameraActivity implements FragmentManager.OnBa
                 mSearch.setVisibility(View.GONE);
                 mBack.setVisibility(View.GONE);
                 mTick.setBackgroundResource(R.drawable.icon_tick);
+                reset_textbox_color(MENU_TIWEN);
                 mTick.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        NewQuestionnaireFragment frAddNew = (NewQuestionnaireFragment)fragment;
+                        NewQuestionnaireFragment frAddNew = (NewQuestionnaireFragment) fragment;
                         frAddNew.storeInterviewer();
                     }
                 });
-            }else if(item.identifier.equals("list_interviewer")){
+                close_menu(null);
+            }else if(item.identifier.equals("list_interviewer")) {
                 mTick.setVisibility(View.GONE);
                 mBack.setVisibility(View.GONE);
                 mSearch.setVisibility(View.VISIBLE);
                 mSearch.setBackgroundResource(R.drawable.icon_search);
+                reset_textbox_color(MENU_LIEBIAO);
                 mSearch.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        ListNameFragment frListName = (ListNameFragment)fragment;
+                        ListNameFragment frListName = (ListNameFragment) fragment;
                         frListName.updateSearch();
                     }
                 });
+                close_menu(null);
+            } else if (item.identifier.equals("translate")) {
+                mTick.setVisibility(View.GONE);
+                mBack.setVisibility(View.GONE);
+                mSearch.setVisibility(View.VISIBLE);
+                mSearch.setBackgroundResource(R.drawable.icon_search);
+                reset_textbox_color(MENU_FANYI);
+                mSearch.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        ListNameFragment frListName = (ListNameFragment) fragment;
+                        frListName.updateSearch();
+                    }
+                });
+                close_menu(null);
+            } else if (item.identifier.equals("section")) {
+                mTick.setVisibility(View.GONE);
+                mBack.setVisibility(View.GONE);
+                mSearch.setVisibility(View.VISIBLE);
+                mSearch.setBackgroundResource(R.drawable.icon_search);
+                reset_textbox_color(MENU_BUMEN);
+                mSearch.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        ListNameFragment frListName = (ListNameFragment) fragment;
+                        frListName.updateSearch();
+                    }
+                });
+                close_menu(null);
+            } else if (item.identifier.equals("about")) {
+                mTick.setVisibility(View.GONE);
+                mBack.setVisibility(View.GONE);
+                mSearch.setVisibility(View.VISIBLE);
+                mSearch.setBackgroundResource(R.drawable.icon_search);
+                reset_textbox_color(MENU_BANGZHU);
+                mSearch.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        ListNameFragment frListName = (ListNameFragment) fragment;
+                        frListName.updateSearch();
+                    }
+                });
+                close_menu(null);
             }else if(item.identifier.equals("question")) {
                 mSearch.setVisibility(View.GONE);
                 mTick.setVisibility(View.GONE);
@@ -160,15 +269,16 @@ public class MainActivity extends CameraActivity implements FragmentManager.OnBa
                     @Override
                     public void onClick(View v) {
                         //show
-                        QuestionFragment frListName = (QuestionFragment)fragment;
+                        QuestionFragment frListName = (QuestionFragment) fragment;
                         frListName.doBackQuestion();
                     }
                 });
 
-            }else {
+            } else {
                 mSearch.setVisibility(View.GONE);
                 mTick.setVisibility(View.GONE);
                 mBack.setVisibility(View.GONE);
+                close_menu(null);
             }
             mTitle.setText(item.getTitle());
             FragmentManager fragmentManager = getSupportFragmentManager();
@@ -286,7 +396,7 @@ public class MainActivity extends CameraActivity implements FragmentManager.OnBa
             }else {
                 holder =(ViewHolder) v.getTag();
             }
-            holder.ivIcon.setImageResource(menuItem.mIconResource);
+            // holder.ivIcon.setImageResource(menuItem.mIconResource);
             holder.tvName.setText(menuItem.mTitle);
             return v;
         }

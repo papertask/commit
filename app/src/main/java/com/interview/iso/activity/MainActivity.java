@@ -32,8 +32,10 @@ import com.interview.iso.fragments.HelpFragment;
 import com.interview.iso.fragments.ListNameFragment;
 import com.interview.iso.fragments.NewQuestionnaireFragment;
 import com.interview.iso.fragments.QuestionFragment;
+import com.interview.iso.models.Person;
 import com.interview.iso.utils.AppData;
 import com.interview.iso.utils.Constants;
+import com.interview.iso.utils.DBHelper;
 import com.interview.iso.utils.DataPreferenceManager;
 
 import java.util.ArrayList;
@@ -54,6 +56,8 @@ public class MainActivity extends CameraActivity implements FragmentManager.OnBa
     ImageView img_sg_dropdown;
     RelativeLayout zc_submenu;
     ImageView img_zc_dropdown;
+    FrameLayout container_cnt_questions;
+    TextView txt_cnt_questions;
 
     public static MainActivity shareActivity;
 
@@ -73,6 +77,8 @@ public class MainActivity extends CameraActivity implements FragmentManager.OnBa
         mSearch = (ImageButton) findViewById(R.id.button_search);
         mTick = (ImageButton) findViewById(R.id.button_tick);
         mBack = (ImageButton) findViewById(R.id.button_back);
+        container_cnt_questions = (FrameLayout) findViewById(R.id.container_dajuanshu);
+        txt_cnt_questions = (TextView) findViewById(R.id.txt_dajuanshu);
         if (toolbar != null) {
             setSupportActionBar(toolbar);
             // enabling action bar app icon and behaving it as toggle button
@@ -92,6 +98,7 @@ public class MainActivity extends CameraActivity implements FragmentManager.OnBa
                 /** Called when a drawer has settled in a completely open state. */
                 @Override
                 public void onDrawerOpened(View drawerView) {
+                    updateCountQuestions();
                     super.onDrawerOpened(drawerView);
                 }
             };
@@ -118,6 +125,7 @@ public class MainActivity extends CameraActivity implements FragmentManager.OnBa
         img_zc_dropdown = (ImageView) findViewById(R.id.img_zhengce_dropdown);
         img_sg_dropdown = (ImageView) findViewById(R.id.img_shiguan_dropdown);
 
+        updateCountQuestions();
         didSelectMenuItem(new MenuItem(getResources().getString(R.string.addnew_header), "NewQuestionnaireFragment", "add_new", 0));
     }
 
@@ -190,10 +198,23 @@ public class MainActivity extends CameraActivity implements FragmentManager.OnBa
             case R.id.container_zhengce_sub_gongan:
                 didSelectMenuItem(new MenuItem(getResources().getString(R.string.menu_police_crackdown_guide), "PoliceGuideFragment", "police_guide", 0));
                 break;
+            case R.id.container_zhengce_sub_minzheng:
+                didSelectMenuItem(new MenuItem(getResources().getString(R.string.menu_people_rescue_procedure), "PeopleGovFragment", "police_guide", 0));
+                break;
+            case R.id.container_zhengce_sub_shouhai:
+                didSelectMenuItem(new MenuItem(getResources().getString(R.string.menu_trafficking_victims_indicators), "PeopleGovFragment", "police_guide", 0));
+                break;
+            case R.id.container_zhengce_sub_guojidingyi:
+                didSelectMenuItem(new MenuItem(getResources().getString(R.string.menu_legal_definition), "GovInternationalFragment", "police_guide", 0));
+                break;
+            case R.id.container_zhengce_sub_guojiajihua:
+                didSelectMenuItem(new MenuItem(getResources().getString(R.string.menu_anti_trafficking_plan), "GovTraffickingPlanFragment", "police_guide", 0));
+                break;
             default:
                 didSelectMenuItem(new MenuItem("等一等", "NewQuestionnaireFragment", "", 0));
                 break;
         }
+        updateCountQuestions();
 
     }
 
@@ -201,6 +222,19 @@ public class MainActivity extends CameraActivity implements FragmentManager.OnBa
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
+        }
+    }
+
+    public void updateCountQuestions() {
+        DBHelper db = new DBHelper( this );
+
+        List<Person> mListPerson = db.getAllPerson();
+
+        if (mListPerson.size() > 0) {
+            txt_cnt_questions.setText(Integer.toString(mListPerson.size()));
+            container_cnt_questions.setVisibility(View.VISIBLE);
+        } else {
+            container_cnt_questions.setVisibility(View.GONE);
         }
     }
 
@@ -284,6 +318,9 @@ public class MainActivity extends CameraActivity implements FragmentManager.OnBa
                 reset_textbox_color(MENU_SHIGUAN);
                 close_menu(null);
             } else if ( item.identifier.equals("police_guide")) {
+                reset_textbox_color(MENU_ZHENGCE);
+                close_menu(null);
+            } else if (item.identifier.equals("people_gov")) {
                 reset_textbox_color(MENU_ZHENGCE);
                 close_menu(null);
             } else {

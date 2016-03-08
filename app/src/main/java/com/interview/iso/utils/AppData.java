@@ -19,6 +19,7 @@ import java.util.TreeMap;
 
 /**
  * Created by lu.nguyenvan2 on 10/27/2015.
+ * Modfiied by Castorim on 3/8/2016.
  */
 public class AppData {
 
@@ -27,6 +28,15 @@ public class AppData {
     public int getApptype() {
         return apptype;
     }
+
+    private int int_police_guide_title_id = 0;
+    private int int_police_guide_content_id = 0;
+
+    public int getPoliceChapterTitleId() { return int_police_guide_title_id; }
+    public int getPoliceChapterContentId() { return int_police_guide_content_id; }
+
+    public void setPoliceChapterTitleId( int iIndex ) { this.int_police_guide_title_id = iIndex; }
+    public void setPoliceChapterContentId( int iIndex ) { this.int_police_guide_content_id = iIndex; }
 
     public void setApptype(int apptype) {
         this.apptype = apptype;

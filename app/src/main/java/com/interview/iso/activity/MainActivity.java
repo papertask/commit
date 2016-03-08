@@ -187,6 +187,9 @@ public class MainActivity extends CameraActivity implements FragmentManager.OnBa
             case R.id.container_shiguan_sub_thai:
                 didSelectMenuItem(new MenuItem(getResources().getString(R.string.menu_link_embassy), "MyanmarEmbassyFragment", "submenu_shiguan", 0));
                 break;
+            case R.id.container_zhengce_sub_gongan:
+                didSelectMenuItem(new MenuItem(getResources().getString(R.string.menu_police_crackdown_guide), "PoliceGuideFragment", "police_guide", 0));
+                break;
             default:
                 didSelectMenuItem(new MenuItem("等一等", "NewQuestionnaireFragment", "", 0));
                 break;
@@ -279,6 +282,9 @@ public class MainActivity extends CameraActivity implements FragmentManager.OnBa
                 close_menu(null);
             } else if ( item.identifier.equals("submenu_shiguan")) {
                 reset_textbox_color(MENU_SHIGUAN);
+                close_menu(null);
+            } else if ( item.identifier.equals("police_guide")) {
+                reset_textbox_color(MENU_ZHENGCE);
                 close_menu(null);
             } else {
                 mSearch.setVisibility(View.GONE);

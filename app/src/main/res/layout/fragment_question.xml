@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="fill_parent">
 
-    <LinearLayout
+    <RelativeLayout
+        android:id="@+id/container_top"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:paddingBottom="20dp">
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -30,9 +30,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="8dp"
-            android:paddingTop="20dp">
+            android:layout_height="wrap_content">
 
             <Button
                 android:id="@+id/btn_play_audio"
@@ -40,6 +38,7 @@
                 android:layout_height="80dp"
                 android:layout_centerHorizontal="true"
                 android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_weight="1.5"
                 android:background="@drawable/oval_play"
                 android:drawablePadding="5dp"
@@ -55,140 +54,164 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_below="@+id/btn_play_audio"
-                android:layout_marginBottom="20dp"
                 android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginTop="20dp"
-                android:background="#D8D8D8" />
+                android:layout_marginRight="15dp" />
+        </RelativeLayout>
+    </RelativeLayout>
 
-            <TextView
-                android:id="@+id/basic_query_cn"
+    <ScrollView
+        android:id="@+id/scrollview_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/container_bottom"
+        android:layout_below="@+id/container_top">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="10dp">
+
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/space_bottom"
-                android:gravity="left"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp"
-                android:paddingTop="5dp"
-                android:textSize="16sp"
-                android:visibility="gone" />
+                android:paddingLeft="8dp"
+                android:paddingTop="20dp">
 
-            <TextView
-                android:id="@+id/tv_question_cn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/basic_query_cn"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp"
-                android:paddingTop="5dp"
-                android:text="Do you have a passport or any other ID?"
-                android:textSize="18sp" />
+                <TextView
+                    android:id="@+id/basic_query_cn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="5dp"
+                    android:textSize="16sp"
+                    android:visibility="gone" />
 
-            <TextView
-                android:id="@+id/header"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_question_cn"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:text="\n告知/Informing:\n"
-                android:textStyle="bold"
-                android:visibility="gone" />
+                <TextView
+                    android:id="@+id/tv_question_cn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/basic_query_cn"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="5dp"
+                    android:text="Do you have a passport or any other ID?"
+                    android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/basic_query_en"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/header"
-                android:gravity="left"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp"
-                android:text=""
-                android:textSize="16sp"
-                android:visibility="gone" />
+                <TextView
+                    android:id="@+id/header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_question_cn"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:text="\n告知/Informing:\n"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
 
-            <TextView
-                android:id="@+id/tv_question_en"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/basic_query_en"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp"
-                android:text=""
-                android:textSize="18sp" />
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/basic_query_en"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/header"
+                    android:gravity="left"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:text=""
+                    android:textSize="16sp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tv_question_en"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/basic_query_en"
+                    android:ellipsize="end"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:text=""
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/container_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
 
         <LinearLayout
             android:id="@+id/ln_action_question"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="20dp"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:id="@+id/ln_yes"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginBottom="30dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginTop="0dp"
-                android:background="@drawable/buttoncustom"
-                android:clickable="true"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_centerInParent="true"
-                    android:layout_marginRight="10dp"
-                    android:contentDescription=""
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/yes" />
-
-                <TextView
-                    android:id="@+id/btn_yes"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:background="@android:color/transparent"
-                    android:text="是"
-                    android:textColor="#FFFF"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
-
-
-            </LinearLayout>
 
             <RelativeLayout
-
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+
+                <LinearLayout
+                    android:id="@+id/ln_yes"
+                    android:layout_width="110dp"
+                    android:layout_height="36dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/buttoncustom"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="10dp"
+                        android:contentDescription=""
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/yes" />
+
+                    <TextView
+                        android:id="@+id/btn_yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:background="@android:color/transparent"
+                        android:text="是"
+                        android:textColor="#FFFF"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/ln_no"
-                    android:layout_width="130dp"
-                    android:layout_height="55dp"
-                    android:layout_marginBottom="30dp"
-                    android:layout_marginLeft="30dp"
+                    android:layout_width="110dp"
+                    android:layout_height="36dp"
+                    android:layout_marginBottom="10dp"
                     android:layout_marginRight="30dp"
-
+                    android:layout_alignParentRight="true"
                     android:layout_marginTop="0dp"
                     android:background="@drawable/buttoncustom_green"
                     android:clickable="true"
                     android:gravity="center"
                     android:orientation="horizontal">
 
-
                     <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
                         android:layout_centerInParent="true"
                         android:layout_marginRight="10dp"
                         android:contentDescription=""
-                        android:scaleType="centerCrop"
+                        android:scaleType="fitCenter"
                         android:src="@drawable/no" />
 
                     <TextView
@@ -199,55 +222,121 @@
                         android:background="@android:color/transparent"
                         android:text="否"
                         android:textColor="#FFFF"
-                        android:textSize="22sp"
+                        android:textSize="20sp"
                         android:textStyle="bold" />
-
-
                 </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/ln_skip"
-                    android:layout_width="130dp"
-                    android:layout_height="55dp"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginRight="30dp"
-                    android:background="@drawable/buttoncustom_white"
-                    android:clickable="true"
-                    android:gravity="center"
-                    android:orientation="horizontal">
 
-
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="30dp"
-                        android:layout_centerInParent="true"
-                        android:layout_marginRight="10dp"
-                        android:contentDescription=""
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/arrow_orange" />
-
-                    <TextView
-                        android:id="@+id/btn_skip"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:background="@android:color/transparent"
-                        android:text="跳过"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="22sp"
-                        android:textStyle="bold" />
-
-
-                </LinearLayout>
             </RelativeLayout>
 
+            <LinearLayout
+                android:id="@+id/ln_skip"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/buttoncustom_white"
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="28dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginRight="10dp"
+                    android:contentDescription=""
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/arrow_orange" />
+
+                <TextView
+                    android:id="@+id/btn_skip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@android:color/transparent"
+                    android:text="跳过"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/ln_yes_ma"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/buttoncustom_green"
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginRight="10dp"
+                    android:contentDescription=""
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/yes" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@android:color/transparent"
+                    android:text="是"
+                    android:textColor="#FFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ln_no_ma"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/buttoncustom"
+                android:clickable="true"
+                android:layout_marginTop="20dp"
+                android:visibility="gone"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginRight="10dp"
+                    android:contentDescription=""
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/no" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@android:color/transparent"
+                    android:text="否"
+                    android:textColor="#FFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
         </LinearLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="20dp"
+            android:paddingBottom="20dp"
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
             android:visibility="gone">
@@ -288,7 +377,6 @@
 
             </RadioGroup>
         </RelativeLayout>
-
 
         <LinearLayout
             android:id="@+id/rl_l6"
@@ -338,35 +426,131 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/next"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/buttoncustom"
-            android:clickable="true"
-            android:gravity="center"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content">
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="30dp"
-                android:layout_centerInParent="true"
-                android:layout_marginRight="5dp"
-                android:contentDescription=""
-                android:scaleType="centerInside"
-                android:src="@drawable/arrow" />
+            <LinearLayout
+                android:id="@+id/next"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/buttoncustom"
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="24dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginRight="5dp"
+                    android:contentDescription=""
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/arrow" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text=" 下一个"
+                    android:textColor="#FFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/container_q_13_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text=" 下一个"
-                android:textColor="#FFFF"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-        </LinearLayout>
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="@string/q13_confirm"
+                android:id="@+id/textView2"
+                android:layout_gravity="center_horizontal"
+                android:textSize="28sp" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="40dp">
+                <LinearLayout
+                    android:id="@+id/btn_13_yes"
+                    android:layout_width="110dp"
+                    android:layout_height="36dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:background="@drawable/buttoncustom_green"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
-    </LinearLayout>
-</ScrollView>
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="10dp"
+                        android:contentDescription=""
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/yes" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:background="@android:color/transparent"
+                        android:text="是"
+                        android:textColor="#FFFF"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/btn_13_no"
+                    android:layout_width="110dp"
+                    android:layout_height="36dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/buttoncustom"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="10dp"
+                        android:contentDescription=""
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/no" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:background="@android:color/transparent"
+                        android:text="否"
+                        android:textColor="#FFFF"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

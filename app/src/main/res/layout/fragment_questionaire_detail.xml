@@ -112,24 +112,24 @@
             android:weightSum="2">
 
             <Button
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_width="10dp"
+                android:layout_height="36dp"
                 android:layout_marginRight="3dp"
                 android:layout_weight="1"
                 android:background="@drawable/buttoncustom"
                 android:text="删除"
                 android:textColor="@color/White"
-                android:textSize="20sp" />
+                android:textSize="18sp" />
 
             <Button
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="36dp"
                 android:layout_marginLeft="3dp"
                 android:layout_weight="1"
                 android:background="@drawable/buttoncustom_white"
                 android:text="分享"
                 android:textColor="@color/colorPrimary"
-                android:textSize="20sp" />
+                android:textSize="18sp" />
         </LinearLayout>
 
         <View

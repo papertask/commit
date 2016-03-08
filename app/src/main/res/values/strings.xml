@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Commit</string>
+    <string name="app_version">Version 1.0</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -8,7 +9,7 @@
     <string name="addnew_header">添加新问卷 </string>
     <string name="addnew_l11">照片 </string>
 
-    <string name="addnew_l1">被问询人信息 </string>
+    <string name="addnew_l1">基本信息 </string>
     <string name="addnew_l2">性别 </string>
     <string name="addnew_l2_1">女</string>
     <string name="addnew_l2_2">男</string>
@@ -70,13 +71,20 @@
     <string name="Male">男</string>
 
 
-    <string name="question_policy_vn">Xin chào!\nỨng dụng này được thiết kế để hỗ trợ lực lượng cảnh sát chúng tôi xác định chị/em có bất kỳ nhu cầu cần hỗ trợ khẩn cấp nào không. Ứng dụng này bao gồm 13 câu hỏi “Có/Không” bằng thứ tiếng của chị/em , chị/em có thể trả lời các câu hỏi bằng cách nhấp chuột chọn câu trả lời thích hợp hiển thị trên màn hình. Nếu không tiện trả lời câu hỏi nào, chị/em có thể bỏ qua bằng cách chọn nút “Bỏ qua”\n
-    Dựa trên thông tin chị/em mô tả về hoàn cảnh của mình, chúng tôi sẽ đưa ra các gợi ý về dịch vụ y tế chăm sóc sức khỏe hoặc các dịch vụ tư vấn, hỗ trợ cho chị/em. Nếu chị/em thực sự đang trong hoàn cảnh đặc biệt khó khăn, chúng tôi sẽ đề xuất đưa chị/em tới nơi an toàn hơn để có thể trao đổi kỹ hơn về nhu cầu cần hỗ trợ của chị/em, tại đó sẽ có phiên dịch hỗ trợ chuyển ngữ.
+    <string name="question_policy_vn">\n\nXin chào!\nỨng dụng này được thiết kế để hỗ trợ lực lượng cảnh sát chúng tôi xác định chị/em có bất kỳ nhu cầu cần hỗ trợ khẩn cấp nào không. Ứng dụng này bao gồm 13 câu hỏi “Có/Không” bằng thứ tiếng của chị/em , chị/em có thể trả lời các câu hỏi bằng cách nhấp chuột chọn câu trả lời thích hợp hiển thị trên màn hình. Nếu không tiện trả lời câu hỏi nào, chị/em có thể bỏ qua bằng cách chọn nút “Bỏ qua”</string>
+    <string name="question_policy_vn_1">\n\nDựa trên thông tin chị/em mô tả về hoàn cảnh của mình, chúng tôi sẽ đưa ra các gợi ý về dịch vụ y tế chăm sóc sức khỏe hoặc các dịch vụ tư vấn, hỗ trợ cho chị/em. Nếu chị/em thực sự đang trong hoàn cảnh đặc biệt khó khăn, chúng tôi sẽ đề xuất đưa chị/em tới nơi an toàn hơn để có thể trao đổi kỹ hơn về nhu cầu cần hỗ trợ của chị/em, tại đó sẽ có phiên dịch hỗ trợ chuyển ngữ.
 
-Chúng tôi đảm bảo sẽ không tiết lộ những thông tin trong câu trả lời của chị/em với bất kỳ người nào quen biết với chị/em, trừ khi được chị/em cho phép.</string>
-    <string name="question_policy_lao">ສະບາຍດີ!\n
+Chúng tôi đảm bảo sẽ không tiết lộ những thông tin trong câu trả lời của chị/em với bất kỳ người nào quen biết với chị/em, trừ khi được chị/em cho phép.
+</string>
+    <string name="question_policy_vn_2">\n\nChị/em đã sẵn sàng trả lời các câu hỏi chưa?\n\n</string>
+
+    <string name="question_policy_lao">\n\nສະບາຍດີ!\n
 ໃບສະໝັກນີ້ແມ່ນຖືກສ້າງຂື້ນ ເພື່ອຊ່ວຍເຮັດໃຫ້ພວກເຮົາຮູ້ວ່າທ່ານມີຄວາມຕ້ອງການ ຄວາມຊ່ວຍເຫຼືອແບບຮີບດ່ວນບໍ. ໃນເອກະສານນີ້ແມ່ນມີຄຳຖາມທັງໝົດ 13 ຂໍ້  ທີ່ເປັນພາສາຂອງທ່ານ ເຊິ່ງເປັນຄຳຖາມ ປິດ (ໝາຍຄວາມວ່າໃຫ້ຕອບ ແມ່ນ ຫຼື ບໍ່ແມ່ນ)ເທົ່ານັ້ນ, ທ່ານສາມາດຕອບໂດຍການກົດເອົາຄຳຕອບ ທີ່ເໝາະສົມເທິງໜ້າຈໍ. ຖ້າທ່ານບໍ່ສະດວກໃນການຕອບບາງຄຳຖາມ, ທ່ານສາມາດ ຂ້າມໄປຂໍ້ຕໍ່ໄປໂດຍການກົດປຸ່ມ ‘ຂ້າມ ຫລື skip’. </string>
-    <string name="question_policy_my">မဂၤလာပါ !\nယခုေလွ်ာက္လႊာသည္ သင့္တြင္လက္တေလာ/အေစာတလွ်င္ ကူညီပ့ံပိုးမႈလိုအပ္မႈရွိ/မရွိ
+
+    <string name="question_policy_lao_1">\n\nອີງຕາມການບອກເລົ່າສະພາບການຂອງທ່ານ, ພວກເຮົາຈະສະເໜີໃຫ້ການຊ່ວຍເຫຼືອດ້ານການບໍລິການສຸຂະພາບ ຫຼື ການໃຫ້ຄຳປຶກສາ. ຖ້າທ່ານຢູ່ໃນສະພາບທີ່ມີຄວາມຫຍຸ້ງຍາກ, ພວກເຮົາຈະພາທ່ານໄປສະຖານທີ່ທີ່ປອດໄພເພື່ອການສຳພາດແບບລົງເລີກໂດຍຈະມີນາຍຜູ່ແປພາສາສະເພາະ ເພື່ອໃຫ້ເຂົ້າເຖິງຄວາມຕ້ອງການຂອງທ່ານ.. </string>
+    <string name="question_policy_lao_2">\n\nກະລຸນາເຊື່ອໝັ້ນວ່າພວກເຮົາຈະບໍ່ເອົາຂໍ້ມູນຕ່າງໆທີ່ທ່ານໄດ້ຕອບນີ້ໄປບອກ ກັບບຸກຄົນຜູ່ອື່ນໆທີ່ມີຄວາມລື້ງເຄີຍກັບທ່ານ, ນອກຈາກວ່າທ່ານຈະເປັນຜູ່ອານຸຍາດ (ຍີນຍອມ). \n\n</string>
+
+    <string name="question_policy_my">\n\nမဂၤလာပါ !\nယခုေလွ်ာက္လႊာသည္ သင့္တြင္လက္တေလာ/အေစာတလွ်င္ ကူညီပ့ံပိုးမႈလိုအပ္မႈရွိ/မရွိ
 
 သိေစရန္အတြက္ ေသခ်ာစြာ စဥ္စားျပီးေရးဆြဲထားျခင္းျဖစ္ပါသည္။
 
@@ -88,7 +96,8 @@ Chúng tôi đảm bảo sẽ không tiết lộ những thông tin trong câu t
 
 ႔ေမးခြန္းမ်ားအားေျဖၾကားရန္ သက္ေတာင့္ သက္သာမရွိပါက “ေက်ာ္္ပါ”
 
-ဆိုေသာခလုပ္ကိုႏွိပ္၍ ေက်ာ္သြားႏိုင္ပါသည္။ \n\nသင္၏ေျပာျပခ်က္ႏွင့္အေျခအေနေပၚမူတည္္၍ သင့္အား
+ဆိုေသာခလုပ္ကိုႏွိပ္၍ ေက်ာ္သြားႏိုင္ပါသည္။</string>
+    <string name="question_policy_my_1">\n\nသင္၏ေျပာျပခ်က္ႏွင့္အေျခအေနေပၚမူတည္္၍ သင့္အား
 
 က်န္းမာေရးေစာင့္ေရွာက္မႈ ႏွင့္ ေ
 
@@ -98,17 +107,19 @@ Chúng tôi đảm bảo sẽ không tiết lộ những thông tin trong câu t
 
 နရာသို႔ ေရြ ႔ေျပာင္းကာ အေသးစိတ္ေမးျမန္းမႈမ်ား ကိုစကားျပန္၏
 
-အကူအညီ ျဖင့္ျပဳလုပ္ေပးပါ မည္ဟုအၾကံေပးလုိပါသည္။\n\n
-    သင္၏ေျဖၾကားခ်က္မ်ားကိုလည္း သင္၏ခြင့္ျပဳခ်က္မရဘဲ
+အကူအညီ ျဖင့္ျပဳလုပ္ေပးပါ မည္ဟုအၾကံေပးလုိပါသည္။</string>
+    <string name="question_policy_my_2">\n\nသင္၏ေျဖၾကားခ်က္မ်ားကိုလည္း သင္၏ခြင့္ျပဳခ်က္မရဘဲ
 
 အျခားသင္သိေသာသူမ်ားအား ေဆြးေႏြးေျပာၾကားမႈ မျပဳပါဟု ကၽႊႏုပ္တို႔
 
-ဘက္မွအာမခံပါသည္။</string>
-    <string name="question_policy_km">ជំរាបសួរ​!​\nបែបបទនេះត្រូវ​បានបង្កើតឡើងដើម្បី​ជួយឱ្យយើង​កំណត់ថាតើ​អ្នក​ត្រូវការ​ការគាំទ្រ​ជាបន្ទាន់ដែរទេ។ ទម្រង់នេះមាន​សំណួរ​ចម្លើយខ្លីៗចំនួន១៣សំណួរជា​ភាសារខ្មែរ​ ​ដែលអ្នកអាចឆ្លើយ​ដោយគ្រាន់តែចុចលើ​ចម្លើយដែលសមស្រប។ ប្រសិនបើអ្នកមិនចង់ឆ្លើយសំណួរ​មួយចំនួន អ្នក​មានសេរីភាពក្នុងការ​លុបពួកវា​ដោយចុចលើ​ “រំលង” ​។
-   អាស្រ័យលើ​របៀបដែលអ្នក​រៀបរាប់អំពី​ស្ថានភាពរបស់អ្នក​ យើងអាច​ស្នើឱ្យមានការគាំទ្រផ្នែកសេវា​សុខភាព ឬ​ការផ្តល់ប្រឹក្សា​ដល់អ្នក។ ប្រសិនបើលោកអ្នក​ហាក់កំពុងស្ថិត​ក្នុងស្ថានភាព​លំបាកខ្លាំងក្លា ​យើងនឹង​ស្នើឱ្យ​នាំអ្នក​ទៅកន្លែង​ដែលមានសុវត្ថិភាព​សម្រាប់ការសន្ទនាស៊ីជម្រៅបន្ថែមទៀត​អំពីសេចក្តីត្រូវការ​ការគាំពារ​របស់អ្នកដោយមានអ្នកបកប្រែភាសាខ្មែរផងដែរ។</string>
-    <string name="question_policy_cn">你好！\n该软件用于帮助我们确定你是否需要紧急帮助。问卷使用你的母语，有13个问题需要点击回答是或否，如果你不愿回答某些问题可通过点击“跳过”忽略。\n\n通过你的回答，我们会建议给你提供医疗或心理咨询支持，如果你的处境非常困难，我们会建议把你送到比较安全的地方，进行深度地交流并提供翻译服务。
-\n\n除非经你同意，我们不会与你熟悉的人讨论你的回答，你也可以拒绝询问。
-</string>
+ဘက္မွအာမခံပါသည္။
+    \n\n</string>
+    <string name="question_policy_km">\n\nជំរាបសួរ!\nបែបបទនេះត្រូវបានបង្កើតឡើងដើម្បីជួយឱ្យយើងកំណត់ថាតើអ្នកត្រូវការការគាំទ្រជាបន្ទាន់ដែរទេ។ទម្រង់នេះមានសំណួរចម្លើយខ្លីៗចំនួន១៣សំណួរជាភាសារខ្មែរ ដែលអ្នកអាចឆ្លើយដោយគ្រាន់តែចុចលើចម្លើយដែលសមស្រប។ប្រសិនបើអ្នកមិនចង់ឆ្លើយសំណួរមួយចំនួនអ្នកមានសេរីភាពក្នុងការលុបពួកវាដោយចុចលើ“រំលង”។</string>
+    <string name="question_policy_km_1">\n\nអាស្រ័យលើរបៀបដែលអ្នករៀបរាប់អំពីស្ថានភាពរបស់អ្នក យើងអាចស្នើឱ្យមានការគាំទ្រផ្នែកសេវាសុខភាពឬការផ្តល់ប្រឹក្សាដល់អ្នក។ប្រសិនបើលោកអ្នកហាក់កំពុងស្ថិតក្នុងស្ថានភាពលំបាកខ្លាំងក្លាយើងនឹងស្នើឱ្យនាំអ្នកទៅកន្លែងដែលមានសុវត្ថិភាពសម្រាប់ការសន្ទនាស៊ីជម្រៅបន្ថែមទៀតអំពីសេចក្តីត្រូវការការគាំពាររបស់អ្នកដោយមានអ្នកបកប្រែភាសាខ្មែរផងដែរ។</string>
+    <string name="question_policy_km_2">\n\nសូមមេត្តាជឿជាក់ថាយើងនឹងមិនពិភាក្សាចម្លើយរបស់អ្នកជាមួយនឹងអ្នកផ្សេងដែលស្គាល់អ្នកនោះទេ លុះត្រាតែអ្នកយល់ព្រមឱ្យធ្វើ។\n\n</string>
+    <string name="question_policy_cn">你好！\n该软件用于帮助我们确定你是否需要紧急帮助。问卷使用你的母语，有13个问题需要点击回答是或否，如果你不愿回答某些问题可通过点击“跳过”忽略。</string>
+    <string name="question_policy_cn_1">\n\n\n通过你的回答，我们会建议给你提供医疗或心理咨询支持，如果你的处境非常困难，我们会建议把你送到比较安全的地方，进行深度地交流并提供翻译服务。</string>
+    <string name="question_policy_cn_2">\n\n\n除非经你同意，我们不会与你熟悉的人讨论你的回答，你也可以拒绝询问。</string>
 
 
     <string name="question_policy_vn1">Đã sẵn sàng ?</string>
@@ -130,4 +141,29 @@ Chúng tôi đảm bảo sẽ không tiết lộ những thông tin trong câu t
     <string name="quetion_gov_km">អរគុណសម្រាប់ការសហការ។ ផ្អែកទៅតាមការរៀបរាប់ពីស្ថានភាព និងវត្ថុតាងដែលអ្នកផ្តល់ឱ្យ យើងយល់ព្រមចេញសំបុត្រអាពាហ៍ពិពាហ៍ឱ្យអ្នក សូមមេត្តារង់ចាំ។ ប្រសិនបើអ្នកមានបញ្ហា ឬប្តូរចិត្តក្នុងអំឡុងពេលនេះ សូមផ្តល់ព័ត៌មានមកយើងខ្ញុំឱ្យទាន់ពេលវេលា។</string>
     <string name="quetion_gov_km1">យោងទៅតាមស្ថានភាពរបស់អ្នក យើងគិតថាអ្នកប្រហែលជាត្រូវបានគេបោកបញ្ឆោត ឬត្រូវបានគេជួញដូរ។ យើងមិនអាចផ្ដល់សំបុត្រអាពាហ៍ពិពាហ៍ជូនអ្នកពេលនេះទេ។ យើងនឹងទាក់ទងមន្រ្តីប៉ូលីសក្នុងតំបន់ដើម្បីការពារអ្នក។</string>
 
+    <string name="menu_add_question">开始提问</string>
+    <string name="menu_question_list">答卷列表</string>
+    <string name="menu_link_translate">联系翻译</string>
+    <string name="menu_link_related_section">联系有关部门</string>
+    <string name="menu_link_embassy">联系使馆</string>
+    <string name="menu_link_government">相关政策</string>
+    <string name="menu_function_select">功能选择</string>
+    <string name="menu_about">关于本软件</string>
+
+    <string name="menu_police_crackdown_guide">公安打拐指南</string>
+    <string name="menu_people_rescue_procedure">民政救助规程</string>
+    <string name="menu_trafficking_victims_indicators">拐卖受害人识别指标</string>
+    <string name="menu_legal_definition">国际国内法律定义</string>
+    <string name="menu_anti_trafficking_plan">国家反拐行动计划</string>
+
+    <string name="menu_vietnam_embassy">越南使馆信息</string>
+    <string name="menu_laos_embassy">老挝使馆信息</string>
+    <string name="menu_cambodia_embassy">柬埔寨使馆信息</string>
+    <string name="menu_myanmar_embassy">缅甸使馆信息</string>
+    <string name="q13_confirm">基本问询已完成，是否生成答卷和建议？</string>
+    <string name="button_delete">删除</string>
+    <string name="button_share">分享</string>
+
+    <string name="page_about">本软件的开发得到公安部、民政部及相关省公安厅民政厅的大力支持。\n\n鉴于此类软件开发和应用的经验有限，目前本软件处于测试阶段。\n\n关于软件功能和使用的反馈信息及改善建议，欢迎联系联合国反拐合作行动项目（UN-ACT）中国办公室。\n\n\n电   话： 010-64203307\n微   信：18811411217\n微信号：UN-ACT</string>
+    <string name="section_phone_1">(86) 10 6626 4971</string>
 </resources>

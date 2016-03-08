@@ -9,51 +9,70 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1.6"
-        >
+        android:layout_marginTop="50dp">
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="45dp"
-            android:paddingRight="45dp"
+            android:paddingLeft="60dp"
+            android:paddingRight="60dp"
             android:layout_centerInParent="true"
             android:src="@drawable/logo_new"
-            />
+            android:scaleType="fitCenter" />
 
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1.4"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.9"
         >
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="20dp"
-            android:paddingLeft="25dp"
-            android:paddingRight="25dp"
-            android:paddingBottom="10dp"
-            android:textSize="16sp"
-            android:gravity="left|center_vertical"
-            android:textDirection="anyRtl"
-            android:text="COMMIT是一个中国、越南、缅甸、老挝、泰国和柬埔寨六国发起建立的区域反拐合作机制，中文称之为“湄公河次区域六国政府反对拐卖人口合作进程”。合作进程的主要活动是召开区域内6个国家的政府、非政府和联合国相关机构之间的反拐会议，促进次区域反拐行动与国际合作。"
-            android:layout_centerVertical="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="COMMIT 问询系统"
+            android:id="@+id/txt_splash_commit"
+            android:text="COMMIT"
             android:textStyle="bold"
             android:textColor="#000"
-            android:textSize="22sp"
+            android:textSize="40sp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_splash_commit"
+            android:id="@+id/txt_splash_comment"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:paddingBottom="10dp"
+            android:textSize="20sp"
+            android:textDirection="anyRtl"
+            android:text="湄公河次区域合作反拐进程"
+            android:layout_alignParentLeft="true"
+            android:textAlignment="center" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_splash_comment"
+            android:paddingTop="40dp"
+            android:paddingLeft="25dp"
+            android:textColor="@color/colorPrimary"
+            android:paddingRight="25dp"
+            android:textSize="24sp"
+            android:textDirection="anyRtl"
+            android:text="拐卖受害人初步识别语音软件"
+            android:layout_alignParentLeft="true"
+            android:textAlignment="center" />
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_gravity="center_vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/app_version"
+            android:textAlignment="center"
+            android:textSize="18sp" />
     </RelativeLayout>
 </LinearLayout>

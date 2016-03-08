@@ -17,8 +17,7 @@
             android:id="@+id/toolbar"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:background="#FFFF"
-            >
+            android:background="#FFFF">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -29,14 +28,13 @@
                     android:id="@+id/title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
                     android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="left"
                     android:text="title"
                     android:textColor="@color/vline"
                     android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:gravity="left"
-                    />
+                    android:textStyle="bold" />
 
                 <ImageButton
                     android:id="@+id/button_search"
@@ -70,17 +68,18 @@
             </RelativeLayout>
 
         </android.support.v7.widget.Toolbar>
+
         <View
             android:layout_width="wrap_content"
             android:layout_height="1dp"
-            android:background="#DCDCDC"
-            android:layout_below="@+id/title"/>
+            android:layout_below="@+id/title"
+            android:background="#DCDCDC" />
+
         <FrameLayout
             android:id="@+id/content_frame"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:background="#FFFF"
-            >
+            android:background="#FFFF">
 
         </FrameLayout>
 
@@ -97,501 +96,538 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <FrameLayout
                     android:id="@+id/toolbar_close"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:background="#FFFF"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
                     android:layout_alignParentLeft="true"
-                    android:layout_marginLeft="0dp"
                     android:layout_alignParentTop="true"
-                    android:layout_marginTop="0dp">
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="0dp"
+                    android:background="#FFFF"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp">
 
 
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="30dp"
-                        android:paddingLeft="10dp"
-                        android:background="#FFFF">
+                        android:background="#FFFF"
+                        android:paddingLeft="10dp">
 
                         <ImageView
                             android:id="@+id/button_close"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
-                            android:paddingTop="0dp"
-                            android:paddingLeft="0dp"
-                            android:src="@drawable/menu_close"
                             android:clickable="true"
                             android:onClick="close_menu"
-                            />
+                            android:paddingLeft="0dp"
+                            android:paddingTop="0dp"
+                            android:src="@drawable/menu_close" />
 
                     </RelativeLayout>
 
                 </FrameLayout>
+
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_alignParentLeft="true"
-                    android:layout_marginLeft="0dp"
-                    android:layout_below="@+id/toolbar_close">
+                    android:layout_below="@+id/toolbar_close"
+                    android:layout_marginLeft="0dp">
+
                     <FrameLayout
+                        android:id="@+id/container_tiwen"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/container_tiwen"
                         android:clickable="true"
-                        android:onClick="perform_action"
-                        >
+                        android:onClick="perform_action">
+
                         <TextView
+                            android:id="@+id/menu_tiwen"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="开始提问"
-                            android:id="@+id/menu_tiwen"
-                            android:layout_gravity="center_horizontal|top"
-                            android:textColor="@color/menuForecolor"
-                            android:textSize="24dp"
-                            android:paddingLeft="20dp"
                             android:layout_alignParentLeft="true"
                             android:layout_alignParentStart="true"
+                            android:layout_gravity="center_horizontal|top"
+                            android:paddingBottom="10dp"
+                            android:paddingLeft="20dp"
                             android:paddingTop="10dp"
-                            android:paddingBottom="10dp" />
+                            android:text="@string/menu_add_question"
+                            android:textColor="@color/menuForecolor"
+                            android:textSize="24dp" />
                     </FrameLayout>
 
                     <FrameLayout
+                        android:id="@+id/container_liebiao"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/container_tiwen"
                         android:layout_centerHorizontal="true"
-                        android:paddingRight="10dp"
                         android:clickable="true"
                         android:onClick="perform_action"
-                        android:id="@+id/container_liebiao">
+                        android:paddingRight="10dp">
+
                         <TextView
+                            android:id="@+id/menu_liebiao"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="答卷列表"
-                            android:id="@+id/menu_liebiao"
-                            android:layout_gravity="center_horizontal|top"
-                            android:textColor="@color/menuForecolor"
-                            android:textSize="24dp"
-                            android:paddingLeft="20dp"
                             android:layout_alignParentLeft="true"
                             android:layout_alignParentStart="true"
+                            android:layout_gravity="center_horizontal|top"
+                            android:paddingBottom="10dp"
+                            android:paddingLeft="20dp"
                             android:paddingTop="10dp"
-                            android:paddingBottom="10dp" />
+                            android:text="@string/menu_question_list"
+                            android:textColor="@color/menuForecolor"
+                            android:textSize="24dp" />
+
                         <FrameLayout
+                            android:id="@+id/container_dajuanshu"
                             android:layout_width="36dp"
                             android:layout_height="36dp"
-                            android:id="@+id/container_dajuanshu"
-                            android:layout_marginTop="5dp"
                             android:layout_gravity="right"
+                            android:layout_marginTop="5dp"
                             android:background="@drawable/menu_count">
 
                             <TextView
+                                android:id="@+id/txt_dajuanshu"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:text="2"
-                                android:id="@+id/txt_dajuanshu"
                                 android:layout_gravity="center"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:text="2"
                                 android:textColor="@color/White"
-                                android:textSize="12dp"
-                                android:gravity="center_vertical|center_horizontal" />
+                                android:textSize="12dp" />
                         </FrameLayout>
                     </FrameLayout>
 
                     <FrameLayout
+                        android:id="@+id/container_fanyi"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/container_liebiao"
-                        android:id="@+id/container_fanyi"
+                        android:layout_centerHorizontal="true"
                         android:clickable="true"
-                        android:onClick="perform_action"
-                        android:layout_centerHorizontal="true">
+                        android:onClick="perform_action">
+
                         <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="联系翻译"
                             android:id="@+id/menu_fanyi"
-                            android:layout_gravity="center_horizontal"
-                            android:textColor="@color/menuForecolor"
-                            android:textSize="24dp"
-                            android:paddingLeft="20dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
+                            android:layout_gravity="center_horizontal"
+                            android:paddingBottom="10dp"
+                            android:paddingLeft="20dp"
                             android:paddingTop="10dp"
-                            android:paddingBottom="10dp" />
+                            android:text="@string/menu_link_translate"
+                            android:textColor="@color/menuForecolor"
+                            android:textSize="24dp" />
                     </FrameLayout>
 
                     <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/container_fanyi"
-                        android:layout_alignParentLeft="true"
-                        android:clickable="true"
-                        android:onClick="perform_action"
                         android:id="@+id/container_bumen"
-                        android:layout_alignParentStart="true">
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/container_fanyi"
+                        android:clickable="true"
+                        android:onClick="perform_action">
+
                         <TextView
+                            android:id="@+id/menu_bumen"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="联系有关部门"
-                            android:id="@+id/menu_bumen"
-                            android:layout_gravity="center_horizontal"
-                            android:textColor="@color/menuForecolor"
-                            android:textSize="24dp"
-                            android:paddingLeft="20dp"
                             android:layout_alignParentLeft="true"
                             android:layout_alignParentStart="true"
+                            android:layout_gravity="center_horizontal"
+                            android:paddingBottom="10dp"
+                            android:paddingLeft="20dp"
                             android:paddingTop="10dp"
-                            android:paddingBottom="10dp" />
+                            android:text="@string/menu_link_related_section"
+                            android:textColor="@color/menuForecolor"
+                            android:textSize="24dp" />
                     </FrameLayout>
 
                     <FrameLayout
+                        android:id="@+id/container_shiguan"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/container_bumen"
                         android:layout_alignParentLeft="true"
-                        android:id="@+id/container_shiguan"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/container_bumen"
                         android:clickable="true"
-                        android:onClick="perform_action"
-                        android:layout_alignParentStart="true">
+                        android:onClick="perform_action">
+
                         <TextView
+                            android:id="@+id/menu_shiguan"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="联系使馆"
-                            android:id="@+id/menu_shiguan"
-                            android:layout_gravity="center_horizontal"
-                            android:textColor="@color/menuForecolor"
-                            android:textSize="24dp"
-                            android:paddingLeft="20dp"
                             android:layout_alignParentLeft="true"
                             android:layout_alignParentStart="true"
+                            android:layout_gravity="center_horizontal"
+                            android:paddingBottom="10dp"
+                            android:paddingLeft="20dp"
                             android:paddingTop="10dp"
-                            android:paddingBottom="10dp" />
+                            android:text="@string/menu_link_embassy"
+                            android:textColor="@color/menuForecolor"
+                            android:textSize="24dp" />
+
                         <FrameLayout
+                            android:id="@+id/container_dropdown_1"
                             android:layout_width="48dp"
                             android:layout_height="48dp"
-                            android:id="@+id/container_dropdown_1"
                             android:layout_gravity="right"
                             android:paddingRight="10dp">
 
                             <ImageView
+                                android:id="@+id/img_shiguan_dropdown"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:id="@+id/img_shiguan_dropdown"
                                 android:layout_gravity="center"
-                                android:src="@drawable/menu_sub_close"
                                 android:clickable="true"
-                                android:gravity="center_vertical|center_horizontal" />
+                                android:gravity="center_vertical|center_horizontal"
+                                android:src="@drawable/menu_sub_close" />
                         </FrameLayout>
                     </FrameLayout>
 
                     <RelativeLayout
+                        android:id="@+id/container_shiguan_sub"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/container_shiguan"
-                        android:id="@+id/container_shiguan_sub"
                         android:visibility="gone">
 
                         <FrameLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:onClick="perform_action"
-                            android:layout_alignParentLeft="true"
                             android:id="@+id/container_shiguan_sub_vietnam"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
                             android:clickable="true"
-                            android:layout_alignParentStart="true">
+                            android:onClick="perform_action">
+
                             <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="越南使馆信息"
                                 android:id="@+id/menu_sub_vietnam"
-                                android:layout_gravity="center_horizontal"
-                                android:textColor="@color/menuForecolor"
-                                android:textSize="16dp"
-                                android:paddingLeft="40dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:layout_alignParentLeft="true"
                                 android:layout_alignParentStart="true"
-                                android:paddingTop="10dp"
+                                android:layout_gravity="center_horizontal"
                                 android:paddingBottom="10dp"
-                                />
+                                android:paddingLeft="40dp"
+                                android:paddingTop="10dp"
+                                android:text="@string/menu_vietnam_embassy"
+                                android:textColor="@color/menuForecolor"
+                                android:textSize="16dp" />
                         </FrameLayout>
 
                         <FrameLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/container_shiguan_sub_vietnam"
-                            android:layout_alignParentLeft="true"
                             android:id="@+id/container_shiguan_sub_laos"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/container_shiguan_sub_vietnam"
                             android:clickable="true"
-                            android:onClick="perform_action"
-                            android:layout_alignParentStart="true">
+                            android:onClick="perform_action">
+
                             <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="老挝使馆信息"
                                 android:id="@+id/menu_sub_laos"
-                                android:layout_gravity="center_horizontal"
-                                android:textColor="@color/menuForecolor"
-                                android:textSize="16dp"
-                                android:paddingLeft="40dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:layout_alignParentLeft="true"
                                 android:layout_alignParentStart="true"
-                                android:paddingTop="10dp"
+                                android:layout_gravity="center_horizontal"
                                 android:paddingBottom="10dp"
-                                />
+                                android:paddingLeft="40dp"
+                                android:paddingTop="10dp"
+                                android:text="@string/menu_laos_embassy"
+                                android:textColor="@color/menuForecolor"
+                                android:textSize="16dp" />
                         </FrameLayout>
 
                         <FrameLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/container_shiguan_sub_laos"
-                            android:layout_alignParentLeft="true"
                             android:id="@+id/container_shiguan_sub_cambodia"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/container_shiguan_sub_laos"
                             android:clickable="true"
-                            android:onClick="perform_action"
-                            android:layout_alignParentStart="true">
+                            android:onClick="perform_action">
+
                             <TextView
+                                android:id="@+id/menu_sub_cambodia"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="柬埔寨使馆信息"
-                                android:id="@+id/menu_sub_cambodia"
-                                android:layout_gravity="center_horizontal"
-                                android:textColor="@color/menuForecolor"
-                                android:textSize="16dp"
-                                android:paddingLeft="40dp"
                                 android:layout_alignParentLeft="true"
                                 android:layout_alignParentStart="true"
-                                android:paddingTop="10dp"
+                                android:layout_gravity="center_horizontal"
                                 android:paddingBottom="10dp"
-                                />
+                                android:paddingLeft="40dp"
+                                android:paddingTop="10dp"
+                                android:text="@string/menu_cambodia_embassy"
+                                android:textColor="@color/menuForecolor"
+                                android:textSize="16dp" />
                         </FrameLayout>
 
                         <FrameLayout
+                            android:id="@+id/container_shiguan_sub_thai"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/container_shiguan_sub_cambodia"
                             android:layout_alignParentLeft="true"
-                            android:id="@+id/container_shiguan_sub_thai"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/container_shiguan_sub_cambodia"
                             android:clickable="true"
-                            android:onClick="perform_action"
-                            android:layout_alignParentStart="true">
+                            android:onClick="perform_action">
+
                             <TextView
+                                android:id="@+id/menu_sub_thai"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="缅甸使馆信息"
-                                android:id="@+id/menu_sub_thai"
-                                android:layout_gravity="center_horizontal"
-                                android:textColor="@color/menuForecolor"
-                                android:textSize="16dp"
-                                android:paddingLeft="40dp"
                                 android:layout_alignParentLeft="true"
                                 android:layout_alignParentStart="true"
-                                android:paddingTop="10dp"
+                                android:layout_gravity="center_horizontal"
                                 android:paddingBottom="10dp"
-                                />
+                                android:paddingLeft="40dp"
+                                android:paddingTop="10dp"
+                                android:text="@string/menu_myanmar_embassy"
+                                android:textColor="@color/menuForecolor"
+                                android:textSize="16dp" />
                         </FrameLayout>
 
                     </RelativeLayout>
 
                     <FrameLayout
+                        android:id="@+id/container_zhengce"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/container_shiguan_sub"
                         android:layout_alignParentLeft="true"
-                        android:id="@+id/container_zhengce"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/container_shiguan_sub"
                         android:clickable="true"
-                        android:onClick="perform_action"
-                        android:layout_alignParentStart="true">
+                        android:onClick="perform_action">
+
                         <TextView
+                            android:id="@+id/menu_zhengce"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="相关政策"
-                            android:id="@+id/menu_zhengce"
-                            android:layout_gravity="center_horizontal"
-                            android:textColor="@color/menuForecolor"
-                            android:textSize="24dp"
-                            android:paddingLeft="20dp"
                             android:layout_alignParentLeft="true"
                             android:layout_alignParentStart="true"
+                            android:layout_gravity="center_horizontal"
+                            android:paddingBottom="10dp"
+                            android:paddingLeft="20dp"
                             android:paddingTop="10dp"
-                            android:paddingBottom="10dp" />
+                            android:text="@string/menu_link_government"
+                            android:textColor="@color/menuForecolor"
+                            android:textSize="24dp" />
+
                         <FrameLayout
+                            android:id="@+id/container_dropdown_2"
                             android:layout_width="48dp"
                             android:layout_height="48dp"
-                            android:id="@+id/container_dropdown_2"
                             android:layout_gravity="right"
                             android:paddingRight="10dp">
 
                             <ImageView
+                                android:id="@+id/img_zhengce_dropdown"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:id="@+id/img_zhengce_dropdown"
                                 android:layout_gravity="center"
-                                android:src="@drawable/menu_sub_close"
                                 android:clickable="true"
-                                android:gravity="center_vertical|center_horizontal" />
+                                android:gravity="center_vertical|center_horizontal"
+                                android:src="@drawable/menu_sub_close" />
                         </FrameLayout>
                     </FrameLayout>
 
                     <RelativeLayout
+                        android:id="@+id/container_zhengce_sub"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/container_zhengce"
-                        android:id="@+id/container_zhengce_sub"
                         android:visibility="gone">
 
                         <FrameLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:onClick="perform_action"
-                            android:layout_alignParentLeft="true"
                             android:id="@+id/container_zhengce_sub_gongan"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
                             android:clickable="true"
-                            android:layout_alignParentStart="true">
+                            android:onClick="perform_action">
+
                             <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="公安打拐指南"
                                 android:id="@+id/menu_sub_gongan"
-                                android:layout_gravity="center_horizontal"
-                                android:textColor="@color/menuForecolor"
-                                android:textSize="16dp"
-                                android:paddingLeft="40dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:layout_alignParentLeft="true"
                                 android:layout_alignParentStart="true"
-                                android:paddingTop="10dp"
+                                android:layout_gravity="center_horizontal"
                                 android:paddingBottom="10dp"
-                                />
+                                android:paddingLeft="40dp"
+                                android:paddingTop="10dp"
+                                android:text="@string/menu_police_crackdown_guide"
+                                android:textColor="@color/menuForecolor"
+                                android:textSize="16dp" />
                         </FrameLayout>
 
                         <FrameLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/container_zhengce_sub_gongan"
-                            android:layout_alignParentLeft="true"
                             android:id="@+id/container_zhengce_sub_minzheng"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/container_zhengce_sub_gongan"
                             android:clickable="true"
-                            android:onClick="perform_action"
-                            android:layout_alignParentStart="true">
+                            android:onClick="perform_action">
+
                             <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="民政救助规程"
                                 android:id="@+id/menu_sub_minzheng"
-                                android:layout_gravity="center_horizontal"
-                                android:textColor="@color/menuForecolor"
-                                android:textSize="16dp"
-                                android:paddingLeft="40dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:layout_alignParentLeft="true"
                                 android:layout_alignParentStart="true"
-                                android:paddingTop="10dp"
+                                android:layout_gravity="center_horizontal"
                                 android:paddingBottom="10dp"
-                                />
+                                android:paddingLeft="40dp"
+                                android:paddingTop="10dp"
+                                android:text="@string/menu_people_rescue_procedure"
+                                android:textColor="@color/menuForecolor"
+                                android:textSize="16dp" />
                         </FrameLayout>
 
                         <FrameLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/container_zhengce_sub_minzheng"
-                            android:layout_alignParentLeft="true"
                             android:id="@+id/container_zhengce_sub_shouhai"
-                            android:onClick="perform_action"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/container_zhengce_sub_minzheng"
                             android:clickable="true"
-                            android:layout_alignParentStart="true">
+                            android:onClick="perform_action">
+
                             <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="拐卖受害人识别指标"
                                 android:id="@+id/menu_sub_shouhai"
-                                android:layout_gravity="center_horizontal"
-                                android:textColor="@color/menuForecolor"
-                                android:textSize="16dp"
-                                android:paddingLeft="40dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:layout_alignParentLeft="true"
                                 android:layout_alignParentStart="true"
-                                android:paddingTop="10dp"
+                                android:layout_gravity="center_horizontal"
                                 android:paddingBottom="10dp"
-                                />
+                                android:paddingLeft="40dp"
+                                android:paddingTop="10dp"
+                                android:text="@string/menu_trafficking_victims_indicators"
+                                android:textColor="@color/menuForecolor"
+                                android:textSize="16dp" />
                         </FrameLayout>
 
                         <FrameLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/container_zhengce_sub_shouhai"
-                            android:layout_alignParentLeft="true"
                             android:id="@+id/container_zhengce_sub_guojidingyi"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/container_zhengce_sub_shouhai"
                             android:clickable="true"
-                            android:onClick="perform_action"
-                            android:layout_alignParentStart="true">
+                            android:onClick="perform_action">
+
                             <TextView
+                                android:id="@+id/menu_sub_guojidingyi"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="国际国内法律定义"
-                                android:id="@+id/menu_sub_guojidingyi"
-                                android:layout_gravity="center_horizontal"
-                                android:textColor="@color/menuForecolor"
-                                android:textSize="16dp"
-                                android:paddingLeft="40dp"
                                 android:layout_alignParentLeft="true"
                                 android:layout_alignParentStart="true"
-                                android:paddingTop="10dp"
+                                android:layout_gravity="center_horizontal"
                                 android:paddingBottom="10dp"
-                                />
+                                android:paddingLeft="40dp"
+                                android:paddingTop="10dp"
+                                android:text="@string/menu_legal_definition"
+                                android:textColor="@color/menuForecolor"
+                                android:textSize="16dp" />
                         </FrameLayout>
 
                         <FrameLayout
+                            android:id="@+id/container_zhengce_sub_guojiajihua"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/container_zhengce_sub_guojidingyi"
                             android:layout_alignParentLeft="true"
-                            android:id="@+id/container_zhengce_sub_guojiajihua"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/container_zhengce_sub_guojidingyi"
                             android:clickable="true"
-                            android:onClick="perform_action"
-                            android:layout_alignParentStart="true">
+                            android:onClick="perform_action">
+
                             <TextView
+                                android:id="@+id/menu_sub_guojiajihua"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="国家反拐行动计划"
-                                android:id="@+id/menu_sub_guojiajihua"
-                                android:layout_gravity="center_horizontal"
-                                android:textColor="@color/menuForecolor"
-                                android:textSize="16dp"
-                                android:paddingLeft="40dp"
                                 android:layout_alignParentLeft="true"
                                 android:layout_alignParentStart="true"
-                                android:paddingTop="10dp"
+                                android:layout_gravity="center_horizontal"
                                 android:paddingBottom="10dp"
-                                />
+                                android:paddingLeft="40dp"
+                                android:paddingTop="10dp"
+                                android:text="@string/menu_anti_trafficking_plan"
+                                android:textColor="@color/menuForecolor"
+                                android:textSize="16dp" />
                         </FrameLayout>
                     </RelativeLayout>
 
                     <FrameLayout
+                        android:id="@+id/container_function_select"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/container_zhengce_sub"
                         android:layout_alignParentLeft="true"
-                        android:id="@+id/container_bangzhu"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/container_zhengce_sub"
                         android:clickable="true"
-                        android:onClick="perform_action"
-                        android:layout_alignParentStart="true">
+                        android:onClick="perform_action">
+
                         <TextView
+                            android:id="@+id/menu_function_select"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="关于本软件"
-                            android:id="@+id/menu_bangzhu"
-                            android:layout_gravity="center_horizontal"
-                            android:textColor="@color/menuForecolor"
-                            android:textSize="24dp"
-                            android:paddingLeft="20dp"
                             android:layout_alignParentLeft="true"
                             android:layout_alignParentStart="true"
+                            android:layout_gravity="center_horizontal"
+                            android:paddingBottom="10dp"
+                            android:paddingLeft="20dp"
                             android:paddingTop="10dp"
-                            android:paddingBottom="10dp" />
+                            android:text="@string/menu_function_select"
+                            android:textColor="@color/menuForecolor"
+                            android:textSize="24dp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/container_bangzhu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/container_function_select"
+                        android:clickable="true"
+                        android:onClick="perform_action">
+
+                        <TextView
+                            android:id="@+id/menu_bangzhu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_gravity="center_horizontal"
+                            android:paddingBottom="10dp"
+                            android:paddingLeft="20dp"
+                            android:paddingTop="10dp"
+                            android:text="@string/menu_about"
+                            android:textColor="@color/menuForecolor"
+                            android:textSize="24dp" />
                     </FrameLayout>
 
                 </RelativeLayout>

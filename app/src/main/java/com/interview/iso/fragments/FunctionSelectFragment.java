@@ -2,12 +2,10 @@ package com.interview.iso.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import com.interview.iso.R;
 import com.interview.iso.activity.MainActivity;
@@ -53,7 +51,7 @@ public class FunctionSelectFragment extends BaseFragment {
             DataPreferenceManager.getInstance(getActivity()).writeBooleanData(Constants.APP_USED,true);
             MainActivity activity = (MainActivity)getActivity();
             //if(v.getId() == R.id.police)
-                activity.didSelectMenuItem(new MenuItem("添加新问卷", "NewQuestionnaireFragment","add_new", 0));
+                activity.didSelectMenuItem(new MenuItem(getResources().getString(R.string.addnew_header), "NewQuestionnaireFragment","add_new", 0));
             //else
              //   activity.didSelectMenuItem(new MenuItem("添加新问卷",0,"NewQuestionnaireFragment","add_new"));
         }

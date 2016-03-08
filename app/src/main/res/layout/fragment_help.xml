@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFF"
+    android:weightSum="2">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.4"
+        android:layout_marginTop="30dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="60dp"
+            android:paddingRight="60dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/logo_new"
+            android:scaleType="fitCenter" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:layout_marginTop="10dp"
+        >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_splash_comment"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:paddingBottom="10dp"
+            android:textSize="24sp"
+            android:textDirection="anyRtl"
+            android:text="拐卖受害人初步识别语音软件"
+            android:layout_alignParentLeft="true"
+            android:textAlignment="center" />
+        <FrameLayout
+            android:layout_width="24dp"
+            android:background="#FF0000"
+            android:layout_below="@+id/txt_splash_comment"
+            android:layout_height="1dp"
+            android:layout_centerInParent="true"></FrameLayout>
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_splash_comment"
+            android:paddingTop="40dp"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:textSize="16sp"
+            android:textDirection="anyRtl"
+            android:text="@string/page_about"
+            android:layout_alignParentLeft="true" />
+    </RelativeLayout>
+
+</LinearLayout>

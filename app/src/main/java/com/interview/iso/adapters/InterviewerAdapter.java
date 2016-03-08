@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.app.Activity;
@@ -68,7 +69,8 @@ public class InterviewerAdapter extends BaseAdapter {
             holder.tvName = (TextView)convertView.findViewById(R.id.tvName);
             holder.tvDesc = (TextView)convertView.findViewById(R.id.tvDesc);
             holder.rdCheck =(SelectableRoundedImageView)convertView.findViewById(R.id.image_avatar);
-            holder.ivDelete = (ImageView)convertView.findViewById(R.id.icon_delete);
+            holder.ivDelete = (LinearLayout)convertView.findViewById(R.id.icon_delete);
+            holder.ivShare = (LinearLayout) convertView.findViewById(R.id.icon_share);
             holder.ivDelete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -86,19 +88,32 @@ public class InterviewerAdapter extends BaseAdapter {
                         }
                     });
                     adb.show();
-
-
+                }
+            });
+            holder.ivShare.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v) {
+                    AlertDialog.Builder adb =	 new AlertDialog.Builder((Activity) v.getContext());
+                    adb.setTitle("分享");
+                    adb.setMessage("确定分享这个问卷？");
+                    //final int positionToRemove = position;
+                    adb.setNegativeButton("取消", null);
+                    adb.setPositiveButton("确定", new AlertDialog.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                        }
+                    });
+                    adb.show();
                 }
             });
             convertView.setTag(holder);
         }else
             holder = (ViewHolder)convertView.getTag();
         if(person.getInterview_type()== Constants.POLICY_TYPE)
-            holder.tvDesc.setText("警方排查");
+            holder.tvName.setText("警方排查");
         else
-            holder.tvDesc.setText("外籍人员在华登记询问");
+            holder.tvName.setText("外籍人员在华登记询问");
 
-        holder.tvName.setText(person.getTime());
+        holder.tvDesc.setText(person.getTime());
 
         //holder.rdCheck.setChecked(true);
         if(person.getAvatarPath()!=null && !person.getAvatarPath().equals("")){
@@ -111,7 +126,8 @@ public class InterviewerAdapter extends BaseAdapter {
         TextView tvName;
         TextView tvDesc;
         SelectableRoundedImageView rdCheck;
-        ImageView ivDelete;
+        LinearLayout ivDelete;
+        LinearLayout ivShare;
     }
     private void setFullImageFromFilePath(final String imagePath,final ImageView imageView,long delay) {
 

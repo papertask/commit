@@ -279,15 +279,26 @@ public class QuestionnaireDetailFragment extends BaseFragment {
                 }
                 if (resultQuestion.id.equals("15") || resultQuestion.id.equals("17")) {
                     viewHoler.btnContact.setText("联系有关部门");
+                    viewHoler.btnContact.setVisibility(View.VISIBLE);
                 } else if (resultQuestion.id.equals("14")) {
                     viewHoler.btnContact.setText("联系翻译");
-                } else if (resultQuestion.id.equals("16")) {
+                    viewHoler.btnContact.setVisibility(View.VISIBLE);
+                } else {
                     viewHoler.btnContact.setVisibility(View.GONE);
                 }
+
+                viewHoler.btnContact.setOnClickListener(new View.OnClickListener(){
+
+                    @Override
+                    public void onClick(View v) {
+                        ViewHoler viewHolder = (ViewHoler)v.getParent();
+                    }
+                });
             }
 
             return convertView;
         }
+
         class ViewHoler {
             TextView tvContent;
             Button btnResult;

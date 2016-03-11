@@ -166,7 +166,7 @@
                     android:layout_marginLeft="30dp"
                     android:layout_marginRight="30dp"
                     android:layout_marginTop="0dp"
-                    android:background="@drawable/buttoncustom"
+                    android:background="@drawable/buttoncustom_green"
                     android:clickable="true"
                     android:gravity="center"
                     android:orientation="horizontal">
@@ -200,7 +200,7 @@
                     android:layout_marginRight="30dp"
                     android:layout_alignParentRight="true"
                     android:layout_marginTop="0dp"
-                    android:background="@drawable/buttoncustom_green"
+                    android:background="@drawable/buttoncustom"
                     android:clickable="true"
                     android:gravity="center"
                     android:orientation="horizontal">

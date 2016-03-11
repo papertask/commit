@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -74,68 +73,75 @@
             android:layout_marginTop="5dp"
             android:background="#DCDCDC" />
 
-        <TextView
-            android:id="@+id/txtaddnew_lastname"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/txtaddnewl1"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
-            android:paddingTop="5dp"
-            android:text="@string/addnew_lastname" />
-
-        <EditText
-            android:id="@+id/edtFirstName"
+        <LinearLayout
+            android:id="@+id/container_new_name"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_alignParentLeft="true"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/txtaddnewl1"
-            android:layout_marginLeft="13dp"
-            android:layout_marginRight="13dp"
-            android:layout_marginTop="30dp"
-            android:background="#FFFF"
-            android:imeOptions="actionDone"
-            android:paddingLeft="10dp"
-            android:singleLine="true" />
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/txtaddnew_lastname"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:text="@string/addnew_lastname" />
+
+            <EditText
+                android:id="@+id/edtFirstName"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="13dp"
+                android:background="#FFFF"
+                android:imeOptions="actionDone"
+                android:paddingLeft="10dp"
+                android:singleLine="true" />
+        </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_below="@+id/edtFirstName"
+            android:layout_below="@+id/container_new_name"
             android:layout_marginLeft="13dp"
             android:layout_marginRight="13dp"
             android:layout_marginTop="-5dp"
             android:background="#DCDCDC" />
 
-        <TextView
-            android:id="@+id/txtaddnewl333"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/edtFirstName"
-            android:layout_marginLeft="10dp"
-            android:paddingTop="5dp"
-            android:text="@string/addnew_l3" />
-
-        <EditText
-            android:id="@+id/edtLastName"
+        <LinearLayout
+            android:id="@+id/container_new_position"
             android:layout_width="match_parent"
-            android:layout_height="38dp"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/txtaddnewl333"
-            android:layout_marginLeft="13dp"
-            android:layout_marginRight="13dp"
-            android:background="#FFFF"
-            android:paddingLeft="10dp"
-            android:paddingTop="8dp"
-            android:singleLine="true"
-            android:textStyle="bold" />
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/container_new_name"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/txtaddnewl333"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:text="@string/addnew_l3" />
+
+            <EditText
+                android:id="@+id/edtLastName"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="13dp"
+                android:background="#FFFF"
+                android:paddingLeft="10dp"
+                android:singleLine="true" />
+        </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_below="@+id/edtLastName"
+            android:layout_below="@+id/container_new_position"
             android:layout_marginLeft="13dp"
             android:layout_marginRight="13dp"
             android:layout_marginTop="-5dp"
@@ -146,7 +152,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_below="@+id/edtLastName"
+            android:layout_below="@+id/container_new_position"
             android:paddingTop="10dp">
 
             <TextView
@@ -154,7 +160,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="20dp"
                 android:paddingRight="30dp"
                 android:text="@string/addnew_l2" />
 
@@ -171,17 +177,17 @@
                     android:id="@+id/rdoaddnew2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingRight="50dp"
                     android:buttonTint="#ff9c10"
+                    android:paddingRight="50dp"
                     android:text="@string/addnew_l2_2" />
 
                 <RadioButton
                     android:id="@+id/rdoaddnew1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingRight="30dp"
                     android:buttonTint="#ff9c10"
                     android:checked="true"
+                    android:paddingRight="30dp"
                     android:text="@string/addnew_l2_1" />
 
 
@@ -195,121 +201,137 @@
             android:layout_below="@+id/ll_l2"
             android:layout_marginLeft="13dp"
             android:layout_marginRight="13dp"
-            android:layout_marginTop="6dp"
-            android:background="#DCDCDC" />
-
-        <TextView
-            android:id="@+id/txtaddnewl3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/ll_l2"
-            android:layout_marginLeft="10dp"
-            android:paddingTop="10dp"
-            android:text="@string/addnew_l3" />
-
-        <TextView
-            android:id="@+id/tvBirthday"
-            android:layout_width="match_parent"
-            android:layout_height="38dp"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/txtaddnewl3"
-            android:layout_marginLeft="13dp"
-            android:layout_marginRight="13dp"
-            android:paddingLeft="10dp"
-            android:paddingTop="8dp"
-            android:singleLine="true"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_below="@+id/tvBirthday"
-            android:layout_marginLeft="13dp"
-            android:layout_marginRight="13dp"
-            android:layout_marginTop="-5dp"
-            android:background="#DCDCDC" />
-
-        <TextView
-            android:id="@+id/txtaddnewl4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/tvBirthday"
-            android:layout_marginLeft="10dp"
-            android:paddingTop="10dp"
-            android:text="@string/addnew_l4" />
-
-        <TextView
-            android:id="@+id/tvInterviewDate"
-            android:layout_width="match_parent"
-            android:layout_height="37dp"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/txtaddnewl4"
-            android:layout_marginLeft="13dp"
-            android:layout_marginRight="13dp"
-            android:paddingLeft="10dp"
-            android:paddingTop="8dp"
-            android:singleLine="true"
-            android:text=""
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_below="@+id/tvInterviewDate"
-            android:layout_marginLeft="13dp"
-            android:layout_marginRight="13dp"
-            android:layout_marginTop="-5dp"
-            android:background="#DCDCDC" />
-
-        <TextView
-            android:id="@+id/txtaddnewl5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/tvInterviewDate"
-            android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
-            android:text="@string/addnew_l5" />
+            android:background="#DCDCDC" />
 
-        <RelativeLayout
-            android:id="@+id/rl_l6"
+        <LinearLayout
+            android:id="@+id/container_new_address"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_below="@+id/txtaddnewl5"
-            android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/edtaddnew_l5"
-                android:layout_width="fill_parent"
-                android:layout_height="39dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="13dp"
-                android:layout_marginRight="13dp"
-                android:background="#FFFF"
-                android:drawableRight="@drawable/icon_location"
-                android:imeOptions="actionDone"
-                android:maxLines="1"
-                android:paddingLeft="10dp"
-                android:paddingRight="8dp" />
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_l2"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            android:padding="10dp">
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_below="@+id/edtaddnew_l5"
-                android:layout_marginLeft="13dp"
-                android:layout_marginRight="13dp"
-                android:layout_marginTop="-5dp"
-                android:background="#DCDCDC" />
+                android:id="@+id/txtaddnewl3"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:text="生日" />
 
-        </RelativeLayout>
+            <TextView
+                android:id="@+id/tvBirthday"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="13dp"
+                android:paddingTop="10dp"
+                android:paddingLeft="10dp"
+                android:singleLine="true" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/container_new_address"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"
+            android:layout_marginTop="-5dp"
+            android:background="#DCDCDC" />
+
+        <LinearLayout
+            android:id="@+id/container_new_city"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/container_new_address"
+            android:orientation="horizontal"
+            android:layout_marginTop="-5dp"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/txtaddnewl4"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:text="@string/addnew_l4" />
+
+            <TextView
+                android:id="@+id/tvInterviewDate"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="13dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:singleLine="true"
+                android:text="" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/container_new_city"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"
+            android:layout_marginTop="-5dp"
+            android:background="#DCDCDC" />
+
+        <LinearLayout
+            android:id="@+id/container_new_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/container_new_city"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/txtaddnewl5"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:text="@string/addnew_l5" />
+
+            <RelativeLayout
+                android:id="@+id/rl_l6"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/edtaddnew_l5"
+                    android:layout_width="fill_parent"
+                    android:layout_height="38dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginRight="13dp"
+                    android:background="#FFFF"
+                    android:drawableRight="@drawable/icon_location"
+                    android:imeOptions="actionDone"
+                    android:maxLines="1"
+                    android:paddingLeft="10dp" />
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/container_new_location"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"
+            android:layout_marginTop="-5dp"
+            android:background="#DCDCDC" />
 
         <Button
             android:id="@+id/btn_next"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/rl_l6"
+            android:layout_below="@+id/container_new_location"
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"

@@ -78,7 +78,7 @@
                 android:id="@+id/txt_seperator"
                 android:layout_height="1dp"
                 android:layout_below="@+id/policy_title"
-                android:background="#ff0000">
+                android:background="@color/colorPrimary">
 
             </FrameLayout>
             <TextView
@@ -123,7 +123,7 @@
                 android:id="@+id/txt_seperator_1"
                 android:layout_height="1dp"
                 android:layout_below="@+id/gov_title"
-                android:background="#ff0000">
+                android:background="@color/colorPrimary">
 
             </FrameLayout>
             <TextView

@@ -8,6 +8,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.interview.iso.R;
+import com.interview.iso.activity.MainActivity;
+import com.interview.iso.base.MenuItem;
 import com.interview.iso.utils.AppData;
 
 
@@ -31,6 +33,14 @@ public class PoliceGuideChapterFragment extends BaseFragment {
         } else {
             imgTable.setVisibility(View.GONE);
         }
+        MainActivity activity = (MainActivity) getActivity();
+        activity.updateActionBar(true);
         return rootView;
+    }
+
+
+    public void doBackAction() {
+        MainActivity activity = (MainActivity) getActivity();
+        activity.didSelectMenuItem(new MenuItem(getResources().getString(R.string.menu_police_crackdown_guide), "PoliceGuideFragment", "police_guide", 0));
     }
 }

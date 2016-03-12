@@ -73,7 +73,7 @@
 
     <string name="question_policy_vn">\n\nXin chào!\nỨng dụng này được thiết kế để hỗ trợ lực lượng cảnh sát chúng tôi xác định chị/em có bất kỳ nhu cầu cần hỗ trợ khẩn cấp nào không. Ứng dụng này bao gồm 13 câu hỏi “Có/Không” bằng thứ tiếng của chị/em , chị/em có thể trả lời các câu hỏi bằng cách nhấp chuột chọn câu trả lời thích hợp hiển thị trên màn hình. Nếu không tiện trả lời câu hỏi nào, chị/em có thể bỏ qua bằng cách chọn nút “Bỏ qua”</string>
     <string name="question_policy_vn_1">\n\nDựa trên thông tin chị/em mô tả về hoàn cảnh của mình, chúng tôi sẽ đưa ra các gợi ý về dịch vụ y tế chăm sóc sức khỏe hoặc các dịch vụ tư vấn, hỗ trợ cho chị/em. Nếu chị/em thực sự đang trong hoàn cảnh đặc biệt khó khăn, chúng tôi sẽ đề xuất đưa chị/em tới nơi an toàn hơn để có thể trao đổi kỹ hơn về nhu cầu cần hỗ trợ của chị/em, tại đó sẽ có phiên dịch hỗ trợ chuyển ngữ.
-
+\n
 Chúng tôi đảm bảo sẽ không tiết lộ những thông tin trong câu trả lời của chị/em với bất kỳ người nào quen biết với chị/em, trừ khi được chị/em cho phép.
 </string>
     <string name="question_policy_vn_2">\n\nChị/em đã sẵn sàng trả lời các câu hỏi chưa?\n\n</string>
@@ -130,16 +130,51 @@ Chúng tôi đảm bảo sẽ không tiết lộ những thông tin trong câu t
 
 
     <string name="title_mekong_tracking">COORDINATED MEKONG MINISTERIAL INITIATIVE AGAINST TRAFFICKING</string>
-    <string name="quetion_gov_cn">谢谢你的配合，我们根据你描述的情况和你提供的证明材料，同意为你办理结婚证，请你们耐心等候。在此期间如果你有问题或者要改变主意，请及时告知。</string>
-    <string name="quetion_gov_cn1">根据你的情况，我们认为你可能被人欺骗甚至拐卖了。我们暂时不能为你办理结婚手续。而且为了保护你的人身安全，我们会联系公安人员，保护你不受威胁你的人伤害。如果你需要我们也可以联系你的大使馆，通过他们让你跟你的家人取得联系。（报警*****；救助******；大使馆*******），请你耐心等候。</string>
-    <string name="quetion_gov_vn">Đồng ý cấp phát giấy xác nhận đăng ký kết hôn: Cảm ơn sự hợp tác của chị/em, dựa vào thông tin về hoàn cảnh và những giấy tờ mà chị/em cung cấp, chúng tôi đồng ý sẽ cấp phát giấy chứng nhận đăng ký kết hôn, chị/em vui lòng kiên nhẫn chờ đợi. Nếu gặp phải bất kỳ vấn đề, vướng mắc gì hoặc thay đổi quyết định trong thời gian chờ đợi, đề nghị chị/em kịp thời thông báo cho chúng tôi.</string>
-    <string name="quetion_gov_vn1">Nguy cơ cao bị BB: Theo thông tin mô tả hoàn cảnh của chị/em, chúng tôi cho rằng chị/em có thể bị lừa và thậm chí có thể bị buôn bán. Trước mắt chúng tôi không thể cấp phát giấy chứng nhận đăng ký kết hôn cho chị/em. Chúng tôi sẽ liên hệ với công an địa phương để bảo vệ chị/em khỏi những đối tượng đang cố làm hại chị/em. Nếu chị/em muốn, chúng tôi có thể liên hệ với Đại sứ quán của chị/em để chị/em có thể liên lạc về với gia đình của mình ở quên nhà. Cung cấp thông tin chuyển tuyến (số điện thoại và địa chỉ…) để hỗ trợ (của cảnh sát, nhà tạm lánh, đại sứ quán…), chị/em vui lòng kiên nhẫn chờ đợi.</string>
-    <string name="quetion_gov_lao">ຂອບໃຈໃນການໃຫ້ຄວາມຮ່ວມມືຂອງທ່ານ, ອິງຕາມການອະທິບາຍສະພາບການຂອງທ່ານ ແລະ ຂໍ້ມູນຕ່າງໆທີ່ທ່ານໄດ້ສະໜອງໃຫ້,  ພວກຂ້າພະເຈົ້າເຫັນດີທີ່ຈະເຮັດໃບຍັ້ງຍືນການແຕ່ງງານໃຫ້ທ່ານ, ກະລຸນາລໍຖ້າ. ຖ້າທ່ານມີປັນຫາ ຫຼື ປ່ຽນໃຈໃນລະຫວ່າງຊ່ວງເວລາທີ່ປະກອບເອກະສານນີ້ ກະລຸນາແຈ້ງໃຫ້ພວກຂ້າພະເຈົ້າຊາບໃນທັນທີ.</string>
-    <string name="quetion_gov_lao1">ອິງຕາມສະພາບການຂອງທ່ານ, ພວກຂ້າພະເຈົ້າຄິດວ່າທ່ານແມ່ນຖືກຫຼອກລວງ ແລະ ຖືກຄ້າມະນຸດ. ພວກຂ້າພະເຈົ້າບໍ່ສາມາດເຮັດໃບຍັ້ງຍືນການແຕ່ງງານໃຫ້ທ່ານໄດ້. ພວກຂ້າພະເຈົ້າຈະຕິດຕໍ່ກັບເຈົ້າໜ້າທີ່ຕຳຫຼວດທ້ອງຖີ່ນເພື່ອປ້ອງກັນທ່ານຈາກພວກທີ່ຈະທຳຮ້າຍທ່ານ. ຖ້າທ່ານຕ້ອງການ, ພວກຂ້າພະເຈົ້າຈະຕິດຕໍ່ຫາສະຖານທູດຂອງທ່ານເພື່ອໃຫ້ທ່ານສາມາດຕິດຕໍ່ກັບຄອບຄົວຂອງທ່ານ ທີ່ຢູ່ໃນປະເທດທ່ານໄດ້.ຂໍ້ມູນໃນການສົ່ງຕໍ່ (ເບີໂທລະສັບ, ທີ່ຢູ່ ແລະ ອື່ນໆ) ໃນການຊ່ວຍເຫຼືອ (ຕຳຫຼວດ, ສູນພັກເຊົາ, ສະຖານທູດ, ແລະ ອື່ນໆ). ກະລຸນາລໍຖ້າ.</string>
-    <string name="quetion_gov_my">ယခုလိ္ုပူးေပါင္းေဆာင္ရြက္သည့္အတြက္ေက်းဇူးတင္ပါသည္။သင္ေျပာျပသည့္သင့္အေျခအေန ႏွင့္ သင္ပ့ံပုိးေပးေသာအရာ၀တၴဳ/အေထာက္အထားမ်ားေၾကာင့္ သင့္အားလက္ထပ္စာခ်ဳပ္ထုပ္ေပးရန္ သေဘာတူပါသည္။ ခဏေလးစိတ္ရွည္စြာနဲ႔ေစာင့္ေပးပါ။ အကယ္၍ ယခုေစာင့္ေနစဥ္အတြင္း သင့္စိတ္ေျပာင္းသာြးလ်ွင္(သ႔)ိုအျခားျပႆနာတစ္စံုတစ္ခုရိွပါကကၽႏြုပ္တုိ႔ကုိအခ်ိန္မီွေျပာပါ။</string>
-    <string name="quetion_gov_my1">သင့္အေျခအေနအရ သင္သည္လိမ္လည္လွည့္ျဖားျခင္း ႏွင့္ လူကုန္ကူးခံရသည္ဟု ကၽႏြ ုပ္တ႔ို ထင္ျမင္ယူဆရသည္။ အခုလက္တေလာမွာသင့္အားလက္ထပ္စာခ်ဳပ္ထုပ္မေပးႏုိင္ေသးပါ။ သင့္အား အႏၲရာယ္ျပဳႏိုင္ဖြယ္ရွိေသာသူမ်ားလက္မွ ကာကြယ္ႏိုင္ရန္အတြက္ နယ္ေျမခံ ရဲအရာရွိ ႏွင့္ဆက္သြယ္ ေပးပါမည္။ အကယ္၍ သင္ဆႏၵရွိလ်င္ သင့္မိသားစုႏွင့္အဆက္အသြယ္ရရွိရန္ အတြက္သင့္ႏိုင္ငံပိုင္ သံရုံးအားဆက္သြယ္အေၾကာင္းၾကားေပးပါမည္။ လႊဲေျပာင္းပ႔ေုိဆာင္ျခင္းသတင္းအခ်က္အလက္ (ဖုန္းနံပါတ္ ႏွင့္ လိပ္စာ....စသည္) ပ့ံပိုးကူညီရန္အတြက္ ( ရဲ ၊ ေစာင့္ေရွာက္ေရးေဂဟာ၊ သံရံုး...စသည္) ခဏေလးစိတ္ရွည္စြာနဲ႔ေစာင့္ေပးပါ။</string>
-    <string name="quetion_gov_km">អរគុណសម្រាប់ការសហការ។ ផ្អែកទៅតាមការរៀបរាប់ពីស្ថានភាព និងវត្ថុតាងដែលអ្នកផ្តល់ឱ្យ យើងយល់ព្រមចេញសំបុត្រអាពាហ៍ពិពាហ៍ឱ្យអ្នក សូមមេត្តារង់ចាំ។ ប្រសិនបើអ្នកមានបញ្ហា ឬប្តូរចិត្តក្នុងអំឡុងពេលនេះ សូមផ្តល់ព័ត៌មានមកយើងខ្ញុំឱ្យទាន់ពេលវេលា។</string>
-    <string name="quetion_gov_km1">យោងទៅតាមស្ថានភាពរបស់អ្នក យើងគិតថាអ្នកប្រហែលជាត្រូវបានគេបោកបញ្ឆោត ឬត្រូវបានគេជួញដូរ។ យើងមិនអាចផ្ដល់សំបុត្រអាពាហ៍ពិពាហ៍ជូនអ្នកពេលនេះទេ។ យើងនឹងទាក់ទងមន្រ្តីប៉ូលីសក្នុងតំបន់ដើម្បីការពារអ្នក។</string>
+    <string name="title_gov_term">外籍人员在华婚姻登记\n基本问询问题</string>
+    <string name="header_gov_term">通过你的回答，我们会建议给你提供医疗或心理咨询支持，如果你的处境非常困难，我们会建议把你送到比较安全的地方，进行深度地交流并提供翻译服务。</string>
+    <string name="quetion_gov_cn">以下问题用于开发涉外婚姻登记语音询问软件，涉外婚姻登记处对申请结婚登记的外籍公民提供基本信息，并询问相关问题，了解涉外婚姻的外籍当事人的真实意愿和想法，以在登记环节加强控制，避免“涉外婚姻”登记被跨国骗婚、强迫婚姻等犯罪利用，穿上合法婚姻的外衣。</string>
+    <string name="quetion_gov_cn1">结婚是婚姻当事人双方的法律行为，双方自愿是婚姻结合的首要条件，根据中国婚姻法第5条规定，结婚必须男女双方完全自愿，不许任何一方对他方加以强迫或包括双方父母在内的任何第三者加以干涉。</string>
+    <string name="title_gov_term_vn">外籍人员在华婚姻登记\n基本问询问题</string>
+    <string name="header_gov_term_vn">Dựa trên thông tin chị/em mô tả về hoàn cảnh của mình, chúng tôi sẽ đưa ra các gợi ý về dịch vụ y tế chăm sóc sức khỏe hoặc các dịch vụ tư vấn, hỗ trợ cho chị/em. Nếu chị/em thực sự đang trong hoàn cảnh đặc biệt khó khăn, chúng tôi sẽ đề xuất đưa chị/em tới nơi an toàn hơn để có thể trao đổi kỹ hơn về nhu cầu cần hỗ trợ của chị/em, tại đó sẽ có phiên dịch hỗ trợ chuyển ngữ.
+\n
+Chúng tôi đảm bảo sẽ không tiết lộ những thông tin trong câu trả lời của chị/em với bất kỳ người nào quen biết với chị/em, trừ khi được chị/em cho phép.
+</string>
+    <string name="quetion_gov_vn">Cáccâuhỏisausẽlàcơhộichonhữngngườiđăngkýkếthônđavănhóabàytỏnhữngdựđịnh, kếhoạcthựcsựcủamình. Nếubịbấtkỳaiđedọa, cưỡngép, épbuộc, chị/emnênkhaibáongaylậptứcvớicánbộcủacơquanquảnlýđăngkýkếthôn. Văn phòngđăngkýkếthôn, làcơquannhànước, sẽliênhệvớicácđơnvịchứcnăngcủabêncảnhsátđểbảovệ chị/em</string>
+    <string name="quetion_gov_vn1">Kếthônlàhànhvihợpphápgiữahaibên. Sựtựnguyệncủahaibênlàđiềukiệntiênquyếttrongkếthôn. Theo cáckhoảnmụccụthểtrongĐiều 5 củaLuậthônnhânnướcCộnghòaNhândânTrung Hoa, việckếthônphảidựatrêntinhthầntựnguyệnhoàntoàngiữađànôngvàphụnữ; khôngthể do ngườinàyépbuộcngườikiakếthônvớimìnhhoặccósự can thiệpcủabênthứba, kểcảcha mẹ.</string>
+    <string name="title_gov_term_lao">外籍人员在华婚姻登记\n基本问询问题</string>
+    <string name="header_gov_term_lao">ອີງຕາມການບອກເລົ່າສະພາບການຂອງທ່ານ, ພວກເຮົາຈະສະເໜີໃຫ້ການຊ່ວຍເຫຼືອດ້ານການບໍລິການສຸຂະພາບ ຫຼື ການໃຫ້ຄຳປຶກສາ. ຖ້າທ່ານຢູ່ໃນສະພາບທີ່ມີຄວາມຫຍຸ້ງຍາກ, ພວກເຮົາຈະພາທ່ານໄປສະຖານທີ່ທີ່ປອດໄພເພື່ອການສຳພາດແບບລົງເລີກໂດຍຈະມີນາຍຜູ່ແປພາສາສະເພາະ ເພື່ອໃຫ້ເຂົ້າເຖິງຄວາມຕ້ອງການຂອງທ່ານ.. </string>
+    <string name="quetion_gov_lao">ບັນດາຄຳຖາມຕໍ່ໄປນີ້ແມ່ນ ຈະຊ່ວຍຜູ່ທີ່ແຕ່ງງານຂ້າມຊາດ ໃຫ້ມີໂອກາດລະບາຍຫືບອກຈຸດປະສົງທີ່ແທ້ຈິງຂອງຕົນ. ຖ້າທ່ານໄດ້ຖືກຂົ່ມຂູ່, ຖືກກົດດັນ ຫຼື ຖືກບັງຄັບໂດຍຜູ່ໃດກໍ່ຕາມ, ກະລຸນາບອກໃຫ້ພະນັກງານລົງທະບຽນຮັບຮູ້ໃນທັນທີ.</string>
+    <string name="quetion_gov_lao1">ການແຕ່ງງານແມ່ນການກະທຳທາງດ້ານກົດໝາຍໂດຍທັງສອງຝ່າຍ. ຄວາມເຕັມໃຈຂອງທັງສອງຝ່າຍແມ່ນສິ່ງທີ່ຈຳເປັນໃນການແຕ່ງງານ. ອິງຕາມບົດບັນຍັດຂອງມາດຕາທີ 5 ຂອງກົດໝາຍວ່າດ້ວຍການແຕ່ງງານຂອງ ສາທາລະນະ ປະຊາຊົນຈີນ, ການແຕ່ງງານແມ່ນຈະຕ້ອງນອນຢູ່ໃນຄວາມເຕັມໃຈຂອງທັງຝ່າຍຍິງ ແລະ ຝ່າຍຊາຍ; ໂດຍບໍ່ໃຫ້ຝ່າຍໃດຝ່າຍໜຶ່ງຖືກບັງຄັບໃຫ້ແຕ່ງງານ, ຫຼື ຖືກບັງຄັບຈາກບຸກຄົນທີສາມ ເຊິ່ງແລະລວມທັງພໍ່ແມ່ຂອງພວກເຂົາເຈົ້າ.</string>
+
+    <string name="title_gov_term_my">外籍人员在华婚姻登记\n基本问询问题</string>
+    <string name="header_gov_term_my">သင္၏ေျပာျပခ်က္ႏွင့္အေျခအေနေပၚမူတည္္၍ သင့္အား
+
+က်န္းမာေရးေစာင့္ေရွာက္မႈ ႏွင့္ ေ
+
+ဆြးေႏြးလမ္းညႊန္မႈအားျပဳလုပ္ေပးမည္ျဖစ္ပါသည္။ အကယ္၍သင္သည္အလြန္ခက္ခဲ
+
+သည့္ အေျခအေနရွိသည္ဟုယူဆရပါက သင့္အားေဘးကင္းလံုျခံဳေသာ ေ
+
+နရာသို႔ ေရြ ႔ေျပာင္းကာ အေသးစိတ္ေမးျမန္းမႈမ်ား ကိုစကားျပန္၏
+
+အကူအညီ ျဖင့္ျပဳလုပ္ေပးပါ မည္ဟုအၾကံေပးလုိပါသည္။</string>
+    <string name="quetion_gov_my">လက္ထပ္ထိမ္းျမားျခင္းဆိုသည္မွာလက္ထပ္ထိမ္းျမားမည့္သူႏွစ္ဦးႏွစ္ဖက္တုိ ႔ သည္   တရားဥပေဒ
+ႏွင့္အညီႏွစ္ဦးသေဘာဆႏၵ တူညီစြာျဖင့္   ထိမ္းျမားမဂၤလာျပဳျခင္းကိုဆိုလိုသည္။  တရုတ္ျပည္သူ ႔
+သမၼ တႏိုင္ ငံ ၏  လက္ထပ္ထိမ္းျမားမႈဆိုင္ရာဥပေဒ  ပုဒ္မ  ၅  အရ  လက္ထပ္ထိမ္းျမားျခင္းသည္
+ထိမ္းျမားမဂၤလာျပဳမည့္  အမ်ဳိးသား  ႏွင့္   အမ်ဳိးသမီး  ႏွစ္ဦးစလံုး၏  ျပီးျပည့္စံုေသာသေဘာတူလိုလားခ်က္
+အေပၚအေျခခံရမည္။  တစ္စံုတစ္ေယာက္ /တစ္ဦးတစ္ေယာက္ကအတင္းအဓၶ မထိမ္းျမားလက္ထပ္မႈ
+ျပဳျခင္း (သို ႔ မဟုတ္ ) မိဘအုပ္ထိန္းသူအပါအ၀င္တတိယလူ၏၀င္ေရာက္စြက္ဖက္ျခင္းမ်ားမရွိေစရ။</string>
+    <string name="quetion_gov_my1">လက္ထပ္ထိမ္းျမားျခင္းဆိုသည္မွာလက္ထပ္ထိမ္းျမားမည့္သူႏွစ္ဦးႏွစ္ဖက္တုိ ႔ သည္   တရားဥပေဒ
+ႏွင့္အညီႏွစ္ဦးသေဘာဆႏၵ တူညီစြာျဖင့္   ထိမ္းျမားမဂၤလာျပဳျခင္းကိုဆိုလိုသည္။  တရုတ္ျပည္သူ ႔
+သမၼ တႏိုင္ ငံ ၏  လက္ထပ္ထိမ္းျမားမႈဆိုင္ရာဥပေဒ  ပုဒ္မ  ၅  အရ  လက္ထပ္ထိမ္းျမားျခင္းသည္
+ထိမ္းျမားမဂၤလာျပဳမည့္  အမ်ဳိးသား  ႏွင့္   အမ်ဳိးသမီး  ႏွစ္ဦးစလံုး၏  ျပီးျပည့္စံုေသာသေဘာတူလိုလားခ်က္
+အေပၚအေျခခံရမည္။  တစ္စံုတစ္ေယာက္ /တစ္ဦးတစ္ေယာက္ကအတင္းအဓၶ မထိမ္းျမားလက္ထပ္မႈ
+ျပဳျခင္း (သို ႔ မဟုတ္ ) မိဘအုပ္ထိန္းသူအပါအ၀င္တတိယလူ၏၀င္ေရာက္စြက္ဖက္ျခင္းမ်ားမရွိေစရ။</string>
+
+    <string name="title_gov_term_km">外籍人员在华婚姻登记\n基本问询问题</string>
+    <string name="header_gov_term_km">អាស្រ័យលើរបៀបដែលអ្នករៀបរាប់អំពីស្ថានភាពរបស់អ្នក យើងអាចស្នើឱ្យមានការគាំទ្រផ្នែកសេវាសុខភាពឬការផ្តល់ប្រឹក្សាដល់អ្នក។ប្រសិនបើលោកអ្នកហាក់កំពុងស្ថិតក្នុងស្ថានភាពលំបាកខ្លាំងក្លាយើងនឹងស្នើឱ្យនាំអ្នកទៅកន្លែងដែលមានសុវត្ថិភាពសម្រាប់ការសន្ទនាស៊ីជម្រៅបន្ថែមទៀតអំពីសេចក្តីត្រូវការការគាំពាររបស់អ្នកដោយមានអ្នកបកប្រែភាសាខ្មែរផងដែរ។</string>
+    <string name="quetion_gov_km">សំណួរខាងក្រោមផ្តល់ឱកាសដល់អ្នកដាក់ពាក្យសុំរៀបអាពាហ៍ពិពាហ៍ឆ្លងដែន បង្ហាញនូវគោលបំណងពិតប្រាកដរបស់ពួកគេ។ប្រសិនបើអ្នកត្រូវបានគេគំរាមកំហែងឬបង្ខំ សូមប្រាប់មន្រ្តីចុះបញ្ជីជាបន្ទាន់។ក្នុងនាមជាទីភ្នាក់ងាររដ្ឋាភិបាលការិយាល័យចុះបញ្ជីអាពាហ៍ពិពាហ៍នឹងទាក់ទងជាមួយនាយកដ្ឋានសន្ដិសុខសាធារណៈដើម្បីការពារអ្នក។</string>
+    <string name="quetion_gov_km1">ការរៀបការ គឺជាទង្វើស្របច្បាប់ដោយភាគីអាពាហ៍ពិពាហ៍។ឆន្ទៈរបស់ភាគីទាំងពីរនេះគឺជារឿងចាំបាច់សម្រាប់ការរៀបការ។បើយោងទៅតាមមាត្រា៥នៃច្បាប់អាពាហ៍ពិពាហ៍របស់សាធារណរដ្ឋប្រជាមានិតចិន ការរៀបអាពាហ៌ពិពាហ៌ត្រូវពឹងផ្អែកលើឆន្ទៈ ទាំងបុរសនិងស្ត្រី ដោយមិនមានការបង្ខំឬជ្រៀតជ្រែកពីភាគីទីបីណាមួយឡើយសូម្បីតែឪពុកម្តាយក៏ដោយ។</string>
 
     <string name="menu_add_question">开始提问</string>
     <string name="menu_question_list">答卷列表</string>
@@ -160,7 +195,8 @@ Chúng tôi đảm bảo sẽ không tiết lộ những thông tin trong câu t
     <string name="menu_laos_embassy">老挝使馆信息</string>
     <string name="menu_cambodia_embassy">柬埔寨使馆信息</string>
     <string name="menu_myanmar_embassy">缅甸使馆信息</string>
-    <string name="q13_confirm">基本问询已完成，是否生成答卷和建议？</string>
+    <string name="q13_confirm_policy">基本问询已完成，是否生成答卷和建议？</string>
+    <string name="q13_confirm_gov">婚姻问卷已完成，是否生成答卷和建议？</string>
     <string name="button_delete">删除</string>
     <string name="button_share">分享</string>
 

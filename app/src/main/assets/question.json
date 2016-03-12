@@ -1,173 +1,173 @@
 {
   "government":[{
     "id":1,
-    "question_en":"Do you know the purpose of your coming here (Marriage Registration Officer)? #Yes, to get marriage certificate #No, someone else let me come here.",
-    "question_cn":"你知道来这里（婚姻登记处）的目的吗？#知道，来办结婚证 #不知道，是别人 让我来的",
-    "question_vn":"Chị/em có biết mục đích của việc mình tới đây không (Cán bộ phụ trách quản lý đăng ký kết hôn)?",
-    "question_lo":"ທ່ານຮູ້ກ່ຽວກັບຈຸດປະສົງໃນການມາບ່ອນນີ້ບໍ່ (ພະນັກງານຈົດທະບຽນການແຕ່ງງານ)?#ຮູ້, ເພື່ອເຮັດໃບຍັ້ງຍືນການແຕ່ງງານ #ບໍ່ຮູ້, ມີບາງຄົນບອກໃຫ້ຂ້ອຍມານີ້.",
-    "question_my":"ဤေနရာ(လက္ထပ္ထိမ္းျမားမႈမွတ္ပံုတင္အရာရွိ)သို႔လာ ေရာက္ရျခင္း၏ရည္ရြယ္ခ်က္ကိုသလား?",
-    "question_km":"តើអ្នកដឹងពីគោលបំណងដែលអ្នកមកទីនេះទេ?"
+    "question_en":"1.Do you know the purpose of your coming here (Marriage Registration Officer)? #Yes, to get marriage certificate #No, someone else let me come here.",
+    "question_cn":"1.你知道来这里（婚姻登记处）的目的吗？",
+    "question_vn":"1.Chị/em có biết mục đích của việc mình tới đây không (Cán bộ phụ trách quản lý đăng ký kết hôn)?",
+    "question_lo":"1.ທ່ານຮູ້ກ່ຽວກັບຈຸດປະສົງໃນການມາບ່ອນນີ້ບໍ່ (ພະນັກງານຈົດທະບຽນການແຕ່ງງານ)?#ຮູ້, ເພື່ອເຮັດໃບຍັ້ງຍືນການແຕ່ງງານ #ບໍ່ຮູ້, ມີບາງຄົນບອກໃຫ້ຂ້ອຍມານີ້.",
+    "question_my":"1.ဤေနရာ(လက္ထပ္ထိမ္းျမားမႈမွတ္ပံုတင္အရာရွိ)သို႔လာ ေရာက္ရျခင္း၏ရည္ရြယ္ခ်က္ကိုသလား?",
+    "question_km":"1.តើអ្នកដឹងពីគោលបំណងដែលអ្នកមកទីនេះទេ?"
   },{
     "id":2,
-    "question_cn":"你是自愿和这名中国男子结婚吗？",
-    "question_en":"Are you voluntarilyto marry him?",
-    "question_vn":"Chị/em có tự nguyện kết hôn với người đàn ông này không?",
-    "question_lo":"ທ່ານມີຄວາມສະໝັກໃຈທີ່ຈະແຕ່ງງານກັບລາວແມ່ນບໍ່?",
-    "question_my":"သင္သည္ထိုအမ်ဳိးသားအားမိမိစိတ္ဆႏၵအရလက္ထပ္ျခင္းဟုတ္ပါသလား?",
-    "question_km":"តើអ្នកស្ម័គ្រចិត្តរៀបការជាមួយគាត់ទេ?"
+    "question_cn":"2.你是自愿和这名中国男子结婚吗？",
+    "question_en":"2.Are you voluntarilyto marry him?",
+    "question_vn":"2.Chị/em có tự nguyện kết hôn với người đàn ông này không?",
+    "question_lo":"2.ທ່ານມີຄວາມສະໝັກໃຈທີ່ຈະແຕ່ງງານກັບລາວແມ່ນບໍ່?",
+    "question_my":"2.သင္သည္ထိုအမ်ဳိးသားအားမိမိစိတ္ဆႏၵအရလက္ထပ္ျခင္းဟုတ္ပါသလား?",
+    "question_km":"2.តើអ្នកស្ម័គ្រចិត្តរៀបការជាមួយគាត់ទេ?"
   },{
     "id":3,
-    "question_cn":"如果你拒绝和这个人结婚或者办理结婚手续，是否会受到任何人的威胁？",
-    "question_en":"If you refuse to marry or to go through marriage procedures, will you be threatened by someone?",
-    "question_vn":"Nếu từ chối kết hôn hoặc từ chối làm các thủ tục kết hôn, chị/em có bị ai đe dọa không?",
-    "question_lo":"ຖ້າທ່ານປະຕິເສດທີ່ຈະແຕ່ງງານ ຫຼື ປະຕິເສດທີຈະເຮັດຕາມຂະບວນການຂອງການແຕ່ງງານ, ທ່ານ ຈະຖືກຂົ່ມຂູ່(ຂົ່ມເຫັງ)ຈາກຜູ່ໃດຜູ່ໜຶ່ງບໍ່?",
-    "question_my":"သင္သည္ထိုအမ်ဳိးသားအားလက္ထက္ရန္ုျငင္းဆိုျခင္း (သို႔မဟုတ္) လက္ထက္သည့္လုပ္ငန္းစဥ္ အတြက္ငင္းဆိုပါက သင္သည္ တစ္စံုတစ္ေယာက္၏ ျခိမ္းေျခာက္ျခင္းခံရမည္လား?",
-    "question_km":"ប្រសិនបើអ្នកបដិសេធមិនរៀបការទៅតាមនីតិវិធីពាហ៍ពិពាហ៍ តើនឹងមានគេគំរាមកំហែងអ្នកទេ?"
+    "question_cn":"3.如果你拒绝和这个人结婚或者办理结婚手续，是否会受到任何人的威胁？",
+    "question_en":"3.If you refuse to marry or to go through marriage procedures, will you be threatened by someone?",
+    "question_vn":"3.Nếu từ chối kết hôn hoặc từ chối làm các thủ tục kết hôn, chị/em có bị ai đe dọa không?",
+    "question_lo":"3.ຖ້າທ່ານປະຕິເສດທີ່ຈະແຕ່ງງານ ຫຼື ປະຕິເສດທີຈະເຮັດຕາມຂະບວນການຂອງການແຕ່ງງານ, ທ່ານ ຈະຖືກຂົ່ມຂູ່(ຂົ່ມເຫັງ)ຈາກຜູ່ໃດຜູ່ໜຶ່ງບໍ່?",
+    "question_my":"3.သင္သည္ထိုအမ်ဳိးသားအားလက္ထက္ရန္ုျငင္းဆိုျခင္း (သို႔မဟုတ္) လက္ထက္သည့္လုပ္ငန္းစဥ္ အတြက္ငင္းဆိုပါက သင္သည္ တစ္စံုတစ္ေယာက္၏ ျခိမ္းေျခာက္ျခင္းခံရမည္လား?",
+    "question_km":"3.ប្រសិនបើអ្នកបដិសេធមិនរៀបការទៅតាមនីតិវិធីពាហ៍ពិពាហ៍ តើនឹងមានគេគំរាមកំហែងអ្នកទេ?"
   },{
     "id":4,
-    "question_cn":"你是否需要帮助保护你的人身安全？",
-    "question_en":"Do you need any help for protection of 2 your personal security?",
-    "question_vn":"Chị/em có cần được bảo vệ vì sự an toàn cá nhân của mình không?",
-    "question_lo":"ທ່ານມີຄວາມຕ້ອງການ ໃຫ້ຊ່ວຍປ້ອງກັນຄວາມປອດໄພ ຂອງທ່ານບໍ່?",
-    "question_my":"သင့္လံုျခံဳမႈအတြက္ ကာကြယ္ေစာင့္ေရွာက္မႈျပဳရန္အကူအညီလိုအပ္ပါသလား?",
-    "question_km":"តើអ្នកត្រូវការជំនួយការពារសុវត្ថិភាពផ្ទាល់ខ្លួនអ្នកទេ?"
+    "question_cn":"4.你是否需要帮助保护你的人身安全？",
+    "question_en":"4.Do you need any help for protection of 2 your personal security?",
+    "question_vn":"4.Chị/em có cần được bảo vệ vì sự an toàn cá nhân của mình không?",
+    "question_lo":"4.ທ່ານມີຄວາມຕ້ອງການ ໃຫ້ຊ່ວຍປ້ອງກັນຄວາມປອດໄພ ຂອງທ່ານບໍ່?",
+    "question_my":"4.သင့္လံုျခံဳမႈအတြက္ ကာကြယ္ေစာင့္ေရွာက္မႈျပဳရန္အကူအညီလိုအပ္ပါသလား?",
+    "question_km":"4.តើអ្នកត្រូវការជំនួយការពារសុវត្ថិភាពផ្ទាល់ខ្លួនអ្នកទេ?"
   }],
   "policy":[{
     "id":1,
-    "question_en":"Were you approached to come to China by other people?",
-    "question_cn":"你是被人介绍到中国来的吗？",
+    "question_en":"1.Were you approached to come to China by other people?",
+    "question_cn":"1.你是被人介绍到中国来的吗？",
     "question_vn":"Có người đã tiếp cận chị/em để chị/em đi sang Trung Quốc phải không?",
-    "question_lo":"ທ່ານ ໄດ້ຖືກຄົນອື່ນຊັກຊວນໃຫ້ເຂົ້າມາປະເທດຈີນຫຼື  ບໍ່?",
-    "question_my":"တရုတ္ျပည္ကိုလာရန္အတြက္ သင္သည္တစ္စံုတစ္ေယာက္၏ ခ်ဥ္းကပ္ျခင္းကိုခံခဲ့ရပါသလား?",
-    "question_km":"តើអ្នកបានចូលមកប្រទេសចិនដោយមានជំនួយពីអ្នកដទៃទេ?"
+    "question_lo":"1.ທ່ານ ໄດ້ຖືກຄົນອື່ນຊັກຊວນໃຫ້ເຂົ້າມາປະເທດຈີນຫຼື  ບໍ່?",
+    "question_my":"1.တရုတ္ျပည္ကိုလာရန္အတြက္ သင္သည္တစ္စံုတစ္ေယာက္၏ ခ်ဥ္းကပ္ျခင္းကိုခံခဲ့ရပါသလား?",
+    "question_km":"1.តើអ្នកបានចូលមកប្រទេសចិនដោយមានជំនួយពីអ្នកដទៃទេ?"
   },{
     "id":2,
-    "question_en":"Were you forced to come to China against your will by these people?",
-    "question_cn":"你是被人强迫或者欺骗带到中国来的吗?",
-    "question_vn":"Những người này có ép buộc chị/em sang Trung Quốc mặc dù chị/em không muốn không?",
-    "question_lo":"ທ່ານໄດ້ຖືກບັງຄັບໃຫ້ມາປະເທດຈີນໂດຍບໍ່ເຕັມໃຈຈາກຄົນເຫຼົ່ານີ້ບໍ່?",
-    "question_my":"သင္၏ဆႏၵ မပါဘဲတစ္စံုတစ္ေယာက္က သင့္အား တရုတ္ျပည္သို႔အဓၶမေခၚေဆာင္ျခင္းခံခဲ့ရပါသလား?",
-    "question_km":"តើអ្នកត្រូវបានគេបង្ខំឱ្យចូលមកប្រទេសចិនប្រឆាំងនឹងឆន្ទៈរបស់អ្នកឬទេ?"
+    "question_en":"2.Were you forced to come to China against your will by these people?",
+    "question_cn":"2.你是被人强迫或者欺骗带到中国来的吗?",
+    "question_vn":"2.Những người này có ép buộc chị/em sang Trung Quốc mặc dù chị/em không muốn không?",
+    "question_lo":"2.ທ່ານໄດ້ຖືກບັງຄັບໃຫ້ມາປະເທດຈີນໂດຍບໍ່ເຕັມໃຈຈາກຄົນເຫຼົ່ານີ້ບໍ່?",
+    "question_my":"2.သင္၏ဆႏၵ မပါဘဲတစ္စံုတစ္ေယာက္က သင့္အား တရုတ္ျပည္သို႔အဓၶမေခၚေဆာင္ျခင္းခံခဲ့ရပါသလား?",
+    "question_km":"2.តើអ្នកត្រូវបានគេបង្ខំឱ្យចូលមកប្រទេសចិនប្រឆាំងនឹងឆន្ទៈរបស់អ្នកឬទេ?"
   },{
     "id":3,
-    "question_en":"Were you told before moving to China that you would be coming to get married here?",
-    "question_cn":"来中国之前，这些人告诉过你，你要来这里结婚吗？",
-    "question_vn":"Trước khi sang Trung Quốc, chị/em có được biết là sang Trung Quốc để kết hôn không?",
-    "question_lo":"ກ່ອນທີ່ທ່ານຈະເດີນທາງມາປະເທດຈີນ ມີໃຜບອກທ່ານບໍ່ ວ່າທ່ານຈະເຂົ້າ ມາແຕ່ງງານຢູ່ນີ້?",
-    "question_my":"သင္သည္ တရုတ္ျပည္သို႔မထြက္ခြာမွီ တရုတ္ျပည္တြင္အိမ္ေထာင္ျပဳရမည္/လက္ထပ္ရမည္ဟု ၾကိဳတင္အသိေပးထားျခင္းခံရပါသလား?",
-    "question_km":"តើមុនពេលមកប្រទេសចិន អ្នកត្រូវបានគេប្រាប់មុនថាអ្នកនឹងត្រូវបានមកទទួលបានរៀបការនៅទីនេះដែរឬទេ?"
+    "question_en":"3.Were you told before moving to China that you would be coming to get married here?",
+    "question_cn":"3.来中国之前，这些人告诉过你，你要来这里结婚吗？",
+    "question_vn":"3.Trước khi sang Trung Quốc, chị/em có được biết là sang Trung Quốc để kết hôn không?",
+    "question_lo":"3.ກ່ອນທີ່ທ່ານຈະເດີນທາງມາປະເທດຈີນ ມີໃຜບອກທ່ານບໍ່ ວ່າທ່ານຈະເຂົ້າ ມາແຕ່ງງານຢູ່ນີ້?",
+    "question_my":"3.သင္သည္ တရုတ္ျပည္သို႔မထြက္ခြာမွီ တရုတ္ျပည္တြင္အိမ္ေထာင္ျပဳရမည္/လက္ထပ္ရမည္ဟု ၾကိဳတင္အသိေပးထားျခင္းခံရပါသလား?",
+    "question_km":"3.តើមុនពេលមកប្រទេសចិន អ្នកត្រូវបានគេប្រាប់មុនថាអ្នកនឹងត្រូវបានមកទទួលបានរៀបការនៅទីនេះដែរឬទេ?"
   },{
     "id":4,
-    "question_en":"Upon arrival in China, have you been forced to marry or live with a man against your will?",
-    "question_cn":"你是被迫嫁给或者跟中国男子生活的吗?",
-    "question_vn":"Khi đặt chân tới Trung Quốc, chị/em có bị ép buộc kết hôn với người không theo ý nguyện của mình không?",
-    "question_lo":"ຕອນທີ່ທ່ານມາຮອດປະເທດຈີນ, ທ່ານໄດ້ຖືກບັງຄັບໃຫ້ແຕ່ງງານ ຫຼື ຢູ່ກັບຜູ່ຊາຍ ໂດຍທີ່ທ່ານບໍ່ເຕັມໃຈບໍ່?",
-    "question_my":"တရုတ္ျပည္ေရာက္သည့္အခါ သင့္ဆႏၵမပါဘဲ သင့္အားအမ်ဳိးသားတစ္ဦးျဖင့္အတင္းအဓၶမေပးစားျခင္း (သို႔မဟုတ္) ၄င္းအမ်ိဳးသားႏွင့္ အတူေနခိုင္းပါသလား?",
-    "question_km":"ពេលមកដល់ប្រទេសចិន តើអ្នកធ្លាប់ត្រូវបានបង្ខំឱ្យរៀបការ ឬរស់នៅជាមួយបុរសណា ប្រឆាំងនឹងឆន្ទៈរបស់អ្នកទេ?"
+    "question_en":"4.Upon arrival in China, have you been forced to marry or live with a man against your will?",
+    "question_cn":"4.你是被迫嫁给或者跟中国男子生活的吗?",
+    "question_vn":"4.Khi đặt chân tới Trung Quốc, chị/em có bị ép buộc kết hôn với người không theo ý nguyện của mình không?",
+    "question_lo":"4.ຕອນທີ່ທ່ານມາຮອດປະເທດຈີນ, ທ່ານໄດ້ຖືກບັງຄັບໃຫ້ແຕ່ງງານ ຫຼື ຢູ່ກັບຜູ່ຊາຍ ໂດຍທີ່ທ່ານບໍ່ເຕັມໃຈບໍ່?",
+    "question_my":"4.တရုတ္ျပည္ေရာက္သည့္အခါ သင့္ဆႏၵမပါဘဲ သင့္အားအမ်ဳိးသားတစ္ဦးျဖင့္အတင္းအဓၶမေပးစားျခင္း (သို႔မဟုတ္) ၄င္းအမ်ိဳးသားႏွင့္ အတူေနခိုင္းပါသလား?",
+    "question_km":"4.ពេលមកដល់ប្រទេសចិន តើអ្នកធ្លាប់ត្រូវបានបង្ខំឱ្យរៀបការ ឬរស់នៅជាមួយបុរសណា ប្រឆាំងនឹងឆន្ទៈរបស់អ្នកទេ?"
   },{
     "id":5,
-    "question_en":"Have you been forced to work or to provide sexual services against your will in China?",
-    "question_cn":"你是否被强迫工作或提供性服务?",
-    "question_vn":"Chị/em có bị cưỡng bức lao động hoặc bị ép buộc làm lao động tình dục không theo ý nguyện của mình tại Trung Quốc không?",
-    "question_lo":"ໃນຕອນທີ່ທ່ານຢູ່ປະເທດຈີນ ທ່ານໄດ້ຖືກບັງຄັບໃຫ້ເຮັດວຽກ ຫຼື ບໍລິການທາງເພດທີ່ທ່ານບໍ່ເຕັມໃຈບໍ່?",
-    "question_my":"တရုတ္ျပည္တြင္သင္သည္ အဓၶအလုပ္ခိုင္းေစျခင္း (သို႔မဟုတ္)လိင္ပိုင္းဆိုင္ရာ၀န္ေဆာင္မႈေပးျခင္းမ်ားကို သင့္ဆႏၵမပါဘဲ လုပ္ေဆာင္ရပါလား?",
-    "question_km":"តើអ្នកធ្លាប់ត្រូវបានគេបង្ខំឱ្យធ្វើការ ឬផ្តល់សេវាផ្លូវភេទប្រឆាំងនឹងឆន្ទៈរបស់អ្នកទេ នៅក្នុងប្រទេសចិន?"
+    "question_en":"5.Have you been forced to work or to provide sexual services against your will in China?",
+    "question_cn":"5.你是否被强迫工作或提供性服务?",
+    "question_vn":"5.Chị/em có bị cưỡng bức lao động hoặc bị ép buộc làm lao động tình dục không theo ý nguyện của mình tại Trung Quốc không?",
+    "question_lo":"5.ໃນຕອນທີ່ທ່ານຢູ່ປະເທດຈີນ ທ່ານໄດ້ຖືກບັງຄັບໃຫ້ເຮັດວຽກ ຫຼື ບໍລິການທາງເພດທີ່ທ່ານບໍ່ເຕັມໃຈບໍ່?",
+    "question_my":"5.တရုတ္ျပည္တြင္သင္သည္ အဓၶအလုပ္ခိုင္းေစျခင္း (သို႔မဟုတ္)လိင္ပိုင္းဆိုင္ရာ၀န္ေဆာင္မႈေပးျခင္းမ်ားကို သင့္ဆႏၵမပါဘဲ လုပ္ေဆာင္ရပါလား?",
+    "question_km":"5.តើអ្នកធ្លាប់ត្រូវបានគេបង្ខំឱ្យធ្វើការ ឬផ្តល់សេវាផ្លូវភេទប្រឆាំងនឹងឆន្ទៈរបស់អ្នកទេ នៅក្នុងប្រទេសចិន?"
   },{
     "id":6,
-    "question_en":"Has anyone exercised control over you in China, such as by threatening to demand money from you, or by threatening to report you to the police?",
-    "question_cn":"到了中国后，有人控制你吗？如要要你还钱、让警察把你抓起来？",
-    "question_vn":"Tại Trung Quốc có ai kiểm soát chị/em không, như là bằng cách đe dọa đòi phải nộp tiền cho họ hoặc đe dọa sẽ trình báo với cảnh sát?",
-    "question_lo":"ຕອນຢູ່ປະເທດຈີນ ທ່ານໄດ້ຖືກຜູ່ໃດຄວບຄຸມບໍ່? ເຊັ່ນການຂົ່ມຂູ່ເອົາເງີນຈາກທ່ານ, ຫຼື ການຂົ່ມຂູ່ວ່າຈະບອກຕຳຫຼວດ.",
-    "question_my":"တရုတ္ျပည္တြင္ သင့္အား ျခိမ္းေျခာက္အၾကပ္ကိုင္ေငြေတာင္းေနသူ(သို႔မဟုတ္) ရဲ တိုင္မည္ဟု ျခိမ္းေျခာက္ ကာထိန္းခ်ဳပ္ေနသူ ရွိပါသလား?",
-    "question_km":"តើធ្លាប់មាននរណាម្នាក់គ្រប់គ្រងលើអ្នក ដូចជាការគំរាមកំហែងទារប្រាក់ពីអ្នក ឬដោយការគំរាមកំហែងរាយការណ៍ទៅប៉ូលីសទេ នៅក្នុងប្រទេសចិន?"
+    "question_en":"6.Has anyone exercised control over you in China, such as by threatening to demand money from you, or by threatening to report you to the police?",
+    "question_cn":"6.到了中国后，有人控制你吗？如要要你还钱、让警察把你抓起来？",
+    "question_vn":"6.Tại Trung Quốc có ai kiểm soát chị/em không, như là bằng cách đe dọa đòi phải nộp tiền cho họ hoặc đe dọa sẽ trình báo với cảnh sát?",
+    "question_lo":"6.ຕອນຢູ່ປະເທດຈີນ ທ່ານໄດ້ຖືກຜູ່ໃດຄວບຄຸມບໍ່? ເຊັ່ນການຂົ່ມຂູ່ເອົາເງີນຈາກທ່ານ, ຫຼື ການຂົ່ມຂູ່ວ່າຈະບອກຕຳຫຼວດ.",
+    "question_my":"6.တရုတ္ျပည္တြင္ သင့္အား ျခိမ္းေျခာက္အၾကပ္ကိုင္ေငြေတာင္းေနသူ(သို႔မဟုတ္) ရဲ တိုင္မည္ဟု ျခိမ္းေျခာက္ ကာထိန္းခ်ဳပ္ေနသူ ရွိပါသလား?",
+    "question_km":"6.តើធ្លាប់មាននរណាម្នាក់គ្រប់គ្រងលើអ្នក ដូចជាការគំរាមកំហែងទារប្រាក់ពីអ្នក ឬដោយការគំរាមកំហែងរាយការណ៍ទៅប៉ូលីសទេ នៅក្នុងប្រទេសចិន?"
   },{
     "id":7,
-    "question_en":"Have you experienced physical abuse or threats of physical abuse in China?",
-    "question_cn":"你在中国是否遭到身体虐待或对你身体虐待的威胁?",
-    "question_vn":"Chị/em có bị lạm dụng thể xác hoặc bị đe dọa lạm dụng thể xác tại Trung Quốc không?",
-    "question_lo":"ຕອນຢູ່ປະເທດຈີນ ທ່ານໄດ້ເຄີຍມີປະສົບການໃນການຖືກທຳຮ້າຍທາງດ້ານຮ່າງກາຍ ຫຼື ຖືກຂົ່ມຂູ່ວ່າຈະທຳຮ້າຍຮ່າງກ່າຍບໍ່?",
-    "question_my":"တရုတ္ျပည္တြင္သင္သည္ကိုယ္ထိလက္ေရာက္ ေစာ္ကားခံရျခင္း (သို႔မဟုတ္)ကိုယ္ထိလက္ေရာက္ ေစာ္ကားခံရမည္ဟု ျခိမ္းေျခာက္ျခင္းခံရ ခဲ့ဘူးပါသလား?",
-    "question_km":"តើនៅប្រទេសចិនអ្នកធ្លាប់ត្រូវបានគេរំលោភបំពានលើរាងកាយ ឬគំរាមរំលោភបំពានរាងកាយទេ?"
+    "question_en":"7.Have you experienced physical abuse or threats of physical abuse in China?",
+    "question_cn":"7.你在中国是否遭到身体虐待或对你身体虐待的威胁?",
+    "question_vn":"7.Chị/em có bị lạm dụng thể xác hoặc bị đe dọa lạm dụng thể xác tại Trung Quốc không?",
+    "question_lo":"7.ຕອນຢູ່ປະເທດຈີນ ທ່ານໄດ້ເຄີຍມີປະສົບການໃນການຖືກທຳຮ້າຍທາງດ້ານຮ່າງກາຍ ຫຼື ຖືກຂົ່ມຂູ່ວ່າຈະທຳຮ້າຍຮ່າງກ່າຍບໍ່?",
+    "question_my":"7.တရုတ္ျပည္တြင္သင္သည္ကိုယ္ထိလက္ေရာက္ ေစာ္ကားခံရျခင္း (သို႔မဟုတ္)ကိုယ္ထိလက္ေရာက္ ေစာ္ကားခံရမည္ဟု ျခိမ္းေျခာက္ျခင္းခံရ ခဲ့ဘူးပါသလား?",
+    "question_km":"7.តើនៅប្រទេសចិនអ្នកធ្លាប់ត្រូវបានគេរំលោភបំពានលើរាងកាយ ឬគំរាមរំលោភបំពានរាងកាយទេ?"
   },{
     "id":8,
-    "question_en":"Have you experienced sexual abuse or threats of sexual abuse in China?",
-    "question_cn":"中国是否遭到性虐待或者性虐待的威胁?",
-    "question_vn":"Chị/em có bị lạm dụng tình dục hoặc bị đe dọa lạm dụng tình dục tại Trung Quốc không?",
-    "question_lo":"ທ່ານໄດ້ເຄີຍມີປະສົບການຖືກລ່ວງລະເມີດທາງເພດບໍ່ ຫຼື ຖຶກຂົ່ມຂູ່ວ່າຈະລ່ວງລະເມີດທາງເພດ?",
-    "question_my":"တရုတ္ျပည္တြင္ သင္သည္လိင္ပိုင္းဆိုင္ရာ ေစာ္ကားခံရျခင္း (သို႔မဟုတ္)လိင္ပိုင္ဆိုင္ရာေစာ္ကားခံရ မည္ဟုျခိမ္းေျခာက္ျခင္း ခံရဘူးပါသလား?",
-    "question_km":"តើនៅក្នុងប្រទេសចិន អ្នកធ្លាប់ត្រូវបានរំលោភបំពានផ្លូវភេទ ឬគំរាមរំលោភបំពានផ្លូវភេទទេ?"
+    "question_en":"8.Have you experienced sexual abuse or threats of sexual abuse in China?",
+    "question_cn":"8.中国是否遭到性虐待或者性虐待的威胁?",
+    "question_vn":"8.Chị/em có bị lạm dụng tình dục hoặc bị đe dọa lạm dụng tình dục tại Trung Quốc không?",
+    "question_lo":"8.ທ່ານໄດ້ເຄີຍມີປະສົບການຖືກລ່ວງລະເມີດທາງເພດບໍ່ ຫຼື ຖຶກຂົ່ມຂູ່ວ່າຈະລ່ວງລະເມີດທາງເພດ?",
+    "question_my":"8.တရုတ္ျပည္တြင္ သင္သည္လိင္ပိုင္းဆိုင္ရာ ေစာ္ကားခံရျခင္း (သို႔မဟုတ္)လိင္ပိုင္ဆိုင္ရာေစာ္ကားခံရ မည္ဟုျခိမ္းေျခာက္ျခင္း ခံရဘူးပါသလား?",
+    "question_km":"8.តើនៅក្នុងប្រទេសចិន អ្នកធ្លាប់ត្រូវបានរំលោភបំពានផ្លូវភេទ ឬគំរាមរំលោភបំពានផ្លូវភេទទេ?"
   },{
     "id":9,
-    "question_en":"Does anyone prevent or restrict you from accessing your passport or other relevant identification papers?",
-    "question_cn":"有人控制你的护照或者其他相关证件?",
-    "question_vn":"Có ai ngăn chặn hoặc ngăn cấm chị/em không được tiếp cận, cầm giữ hộ chiếu hoặc các giấy tờ tùy thân khác của mình không?",
-    "question_lo":"ມີຜູ່ໃດຫ້າມ ຫຼື ຂັດຂວາງ ບໍ່ໃຫ້ທ່ານ ນຳໃຊ້ໜັງເດີນທາງ (ປັດສະປໍ) ຫຼື ເອກະສານຢັ້ງຢືນຕ່າງໆບໍ່?",
-    "question_my":"သင္၏ႏိုင္ငံကူးလက္မွတ္ (သို႔မဟုတ္) အျခားသက္ေသခံအေထာက္အထားမ်ားကိုသိမ္းစည္းထားသူ ရွိပါသလား?",
-    "question_km":"តើមានអ្នកណាទប់ស្កាត់ ឬកំហិតអ្នកក្នុងការដំណើរការលិខិតឆ្លងដែន ឬឯកសារដែលពាក់ព័ន្ធផ្សេងទៀតដែរឬទេ?"
+    "question_en":"9.Does anyone prevent or restrict you from accessing your passport or other relevant identification papers?",
+    "question_cn":"9.有人控制你的护照或者其他相关证件?",
+    "question_vn":"9.Có ai ngăn chặn hoặc ngăn cấm chị/em không được tiếp cận, cầm giữ hộ chiếu hoặc các giấy tờ tùy thân khác của mình không?",
+    "question_lo":"9.ມີຜູ່ໃດຫ້າມ ຫຼື ຂັດຂວາງ ບໍ່ໃຫ້ທ່ານ ນຳໃຊ້ໜັງເດີນທາງ (ປັດສະປໍ) ຫຼື ເອກະສານຢັ້ງຢືນຕ່າງໆບໍ່?",
+    "question_my":"9.သင္၏ႏိုင္ငံကူးလက္မွတ္ (သို႔မဟုတ္) အျခားသက္ေသခံအေထာက္အထားမ်ားကိုသိမ္းစည္းထားသူ ရွိပါသလား?",
+    "question_km":"9.តើមានអ្នកណាទប់ស្កាត់ ឬកំហិតអ្នកក្នុងការដំណើរការលិខិតឆ្លងដែន ឬឯកសារដែលពាក់ព័ន្ធផ្សេងទៀតដែរឬទេ?"
   },{
     "id":10,
-    "question_en":"Does anyone prevent or restrict you from moving around freely in your community?",
-    "question_cn":"有人阻止或限制你的行动自由吗?",
-    "question_vn":"Có ai ngăn chặn hoặc  ngăn cấm chị/em không được di chuyển tự do tại nơi mình cư trú không?",
-    "question_lo":"ມີຜູ່ໃດຫ້າມ ຫຼື ຂັດຂວາງບໍ່ໃຫ້ທ່ານມີອິດສະຫລະໃນການໄປມາຢູ່ຊຸມຊົນຂອງທ່ານບໍ່?",
-    "question_my":"သင့္အား ျပင္ပသို႔ လြတ္လပ္စြာသြားလာျခင္းကိတားျမစ္ပိတ္ပင္ထားသူရွိပါသလား?",
-    "question_km":"តើមានអ្នកណាទប់ស្កាត់ ឬកំហិតសេរីភាពរបស់អ្នកនៅក្នុងសហគមន៍ទេ?"
+    "question_en":"10.Does anyone prevent or restrict you from moving around freely in your community?",
+    "question_cn":"10.有人阻止或限制你的行动自由吗?",
+    "question_vn":"10.Có ai ngăn chặn hoặc  ngăn cấm chị/em không được di chuyển tự do tại nơi mình cư trú không?",
+    "question_lo":"10.ມີຜູ່ໃດຫ້າມ ຫຼື ຂັດຂວາງບໍ່ໃຫ້ທ່ານມີອິດສະຫລະໃນການໄປມາຢູ່ຊຸມຊົນຂອງທ່ານບໍ່?",
+    "question_my":"10.သင့္အား ျပင္ပသို႔ လြတ္လပ္စြာသြားလာျခင္းကိတားျမစ္ပိတ္ပင္ထားသူရွိပါသလား?",
+    "question_km":"10.តើមានអ្នកណាទប់ស្កាត់ ឬកំហិតសេរីភាពរបស់អ្នកនៅក្នុងសហគមន៍ទេ?"
   },{
     "id":11,
-    "question_en":"Does anyone prevent or restrict you from communicating with your family or friends?",
-    "question_cn":"有人阻止或限制你和家人或朋友联系吗?",
-    "question_vn":"Có ai ngăn chặn hoặc ngăn cấm chị/em không được liên lạc với gia đình, bạn bè không?",
-    "question_lo":"ມີຜູ່ໃດຫ້າມ ຫຼື ຂັດຂວາງບໍ່ໃຫ້ທ່ານຕິດຕໍ່ກັບຄອບຄົວ ຫຼື ໝູ່ຄູ່ບໍ່?",
-    "question_my":"သင့္အား မိသားစု ၊ သူငယ္ခ်င္းမ်ား ႏွင့္ ဆက္သြယ္မႈကို တားျမစ္ပိတ္ပင္ထားသူရွိပါသလား?",
-    "question_km":"តើមានអ្នកណាទប់ស្កាត់ឬកំហិតអ្នកពីការប្រាស្រ័យទាក់ទងជាមួយក្រុមគ្រួសារឬមិត្តភក្តិរបស់អ្នកទេ?"
+    "question_en":"11.Does anyone prevent or restrict you from communicating with your family or friends?",
+    "question_cn":"11.有人阻止或限制你和家人或朋友联系吗?",
+    "question_vn":"11.Có ai ngăn chặn hoặc ngăn cấm chị/em không được liên lạc với gia đình, bạn bè không?",
+    "question_lo":"11.ມີຜູ່ໃດຫ້າມ ຫຼື ຂັດຂວາງບໍ່ໃຫ້ທ່ານຕິດຕໍ່ກັບຄອບຄົວ ຫຼື ໝູ່ຄູ່ບໍ່?",
+    "question_my":"11.သင့္အား မိသားစု ၊ သူငယ္ခ်င္းမ်ား ႏွင့္ ဆက္သြယ္မႈကို တားျမစ္ပိတ္ပင္ထားသူရွိပါသလား?",
+    "question_km":"11.តើមានអ្នកណាទប់ស្កាត់ឬកំហិតអ្នកពីការប្រាស្រ័យទាក់ទងជាមួយក្រុមគ្រួសារឬមិត្តភក្តិរបស់អ្នកទេ?"
   },{
     "id":12,
-    "question_en":"Are you generally in a situation in China that you would like to escape from but feel you cannot?",
-    "question_cn":"在中国你是否想逃离，但感觉没有办法?",
-    "question_vn":"Ở Trung Quốc nhìn chung chị/em có đang ở trong tình cảnh muốn bỏ trốn mà cảm thấy không thể làm được không?",
-    "question_lo":"ສະພາບໂດຍທົ່ວໄປຂອງທ່ານ ຕອນຢູ່ປະເທດຈີນ    ທ່ານຮູ້ສຶກວ່າ ຕ້ອງການຫຼົບໜີ ແຕ່ທ່ານ ບໍ່ສາມາດເຮັດໄດ້ແມ່ນບໍ່?",
-    "question_my":"သင္သည္တရုတ္ျပည္မွ ထြက္ေျပးခ်င္ေသာ္လည္း ထြက္ေျပးလို႔ မရသည့္အေျခအေန ျဖစ္ေနပါသလား?",
-    "question_km":"តើជាទូទៅនៅក្នុងប្រទេសចិន អ្នកនៅក្នុងស្ថានភាពមួយដែលអ្នកចង់គេចចេញផុត តែមានអារម្មណ៍ថាអ្នកមិនអាចធ្វើបានឬទេ?"
+    "question_en":"12.Are you generally in a situation in China that you would like to escape from but feel you cannot?",
+    "question_cn":"12.在中国你是否想逃离，但感觉没有办法?",
+    "question_vn":"12.Ở Trung Quốc nhìn chung chị/em có đang ở trong tình cảnh muốn bỏ trốn mà cảm thấy không thể làm được không?",
+    "question_lo":"12.ສະພາບໂດຍທົ່ວໄປຂອງທ່ານ ຕອນຢູ່ປະເທດຈີນ    ທ່ານຮູ້ສຶກວ່າ ຕ້ອງການຫຼົບໜີ ແຕ່ທ່ານ ບໍ່ສາມາດເຮັດໄດ້ແມ່ນບໍ່?",
+    "question_my":"12.သင္သည္တရုတ္ျပည္မွ ထြက္ေျပးခ်င္ေသာ္လည္း ထြက္ေျပးလို႔ မရသည့္အေျခအေန ျဖစ္ေနပါသလား?",
+    "question_km":"12.តើជាទូទៅនៅក្នុងប្រទេសចិន អ្នកនៅក្នុងស្ថានភាពមួយដែលអ្នកចង់គេចចេញផុត តែមានអារម្មណ៍ថាអ្នកមិនអាចធ្វើបានឬទេ?"
   },{
     "id":13,
-    "question_en":"Are you currently having any urgent health problems requiring medical attention that you are unable to access?",
-    "question_cn":"你目前是否有病需要紧急救治，却没有办法获得帮助?",
-    "question_vn":"Hiện tại chị/em có đang gặp phải các vấn đề về sức khỏe cần chữa trị khẩn cấp mà không thể tiếp cận với dịch vụ y tế không?",
-    "question_lo":"ໃນປະຈຸບັນ ທ່ານມີບັນນຫາທາງດ້ານສຸຂະພາບແບບສຸກເສີນທີ່ທ່ານຕ້ອງການ ການປິ່ນປົວທາງການແພດທີ່ທ່ານບໍ່ສາມາດເຂົ້າເຖິງໄດ້ບໍ່?",
-    "question_my":"သင့္တြင္ေဆးကုသမႈခံယူခြင့္မရခဲ့သျဖင့္ လက္တေလာေျဖရွင္းရမည့္က်န္းမာေရးႏွင့္ ပတ္သက္သည့္ ျပႆနာရွိပါသလား?",
-    "question_km":"តើអ្នកកំពុងមានបញ្ហាសុខភាពណាមួយ ដែលតម្រូវឱ្យមានការព្យាបាលបន្ទាន់តែអ្នកមិនអាចធ្វើបានដែរឬទេ?"
+    "question_en":"13.Are you currently having any urgent health problems requiring medical attention that you are unable to access?",
+    "question_cn":"13.你目前是否有病需要紧急救治，却没有办法获得帮助?",
+    "question_vn":"13.Hiện tại chị/em có đang gặp phải các vấn đề về sức khỏe cần chữa trị khẩn cấp mà không thể tiếp cận với dịch vụ y tế không?",
+    "question_lo":"13.ໃນປະຈຸບັນ ທ່ານມີບັນນຫາທາງດ້ານສຸຂະພາບແບບສຸກເສີນທີ່ທ່ານຕ້ອງການ ການປິ່ນປົວທາງການແພດທີ່ທ່ານບໍ່ສາມາດເຂົ້າເຖິງໄດ້ບໍ່?",
+    "question_my":"13.သင့္တြင္ေဆးကုသမႈခံယူခြင့္မရခဲ့သျဖင့္ လက္တေလာေျဖရွင္းရမည့္က်န္းမာေရးႏွင့္ ပတ္သက္သည့္ ျပႆနာရွိပါသလား?",
+    "question_km":"13.តើអ្នកកំពុងមានបញ្ហាសុខភាពណាមួយ ដែលតម្រូវឱ្យមានការព្យាបាលបន្ទាន់តែអ្នកមិនអាចធ្វើបានដែរឬទេ?"
   },{
     "id":14,
-    "question_en":"Your responses suggest that you may be in a very difficult situation. Is it ok if we take you with us for an in-depth interview with a translator about how we can support you?",
-    "question_cn":"你的回答表明你处境困难，是否可以与你进行深度地访谈并提供翻译服务？",
-    "question_vn":"Các câu trả lời của chị/em cho thấychị/em có thể đang ở tình cảnh rất khó khăn. Chị/em có đồng ý nếu chúng tôi đưa chị/em đi phỏng vấn sâu hơn về việc làm thế nào chúng tôi có thể hỗ trợ chị/em, tại đó sẽ có phiên dịch hỗ trợ.",
-    "question_lo":"ການຕອບຂອງທ່ານສະແດງໃຫ້ເຫັນວ່າທ່ານຢູ່ໃນສະພາບການທີ່ຫຍຸ້ງຍາກຫຼາຍ. ມັນຈະເປັນໄປໄດ້ບໍ່ຖ້າພວກພວກເຮົາຈະພາທ່ານໄປນຳເພື່ອການສຳພາດລົງເລີກໂດຍມີນາຍແປພາສາ ຊ່ວຍເຫຼືອທ່ານ?",
-    "question_my":"သင့္အေျဖမ်ားသည္ သင့္အခက္အခဲအားေဖၚေဆာင္ေနပါသည္။ထို႔ေၾကာင့္ သင့္အားေနာက္ဆက္တြဲ ကူညီပံ့ပိုးမႈမ်ားျပဳလုပ္ႏိုင္ရန္အတြက္ ဘာသာျပန္အကူအညီျဖင့္ သင့္အား အေသးစိတ္ေမးျမန္းရန္အတြက္ အဆင္ေျပပါသလား?",
-    "question_km":"ការឆ្លើយតបរបស់អ្នកបានបង្ហាញថា អ្នកអាចកំពុងស្ថិតនៅក្នុងស្ថានភាពលំបាកខ្លាំង។ តើអ្នកយល់ព្រមទេ ប្រសិនបើយើងសុំធ្វើបទសម្ភាសន៍លម្អិតដោយមានអ្នកបកប្រែជាមួយអ្នក អំពីថាតើយើងអាចជួយអ្នកដោយរបៀបណា?"
+    "question_en":"14.Your responses suggest that you may be in a very difficult situation. Is it ok if we take you with us for an in-depth interview with a translator about how we can support you?",
+    "question_cn":"14.你的回答表明你处境困难，是否可以与你进行深度地访谈并提供翻译服务？",
+    "question_vn":"14.Các câu trả lời của chị/em cho thấychị/em có thể đang ở tình cảnh rất khó khăn. Chị/em có đồng ý nếu chúng tôi đưa chị/em đi phỏng vấn sâu hơn về việc làm thế nào chúng tôi có thể hỗ trợ chị/em, tại đó sẽ có phiên dịch hỗ trợ.",
+    "question_lo":"14.ການຕອບຂອງທ່ານສະແດງໃຫ້ເຫັນວ່າທ່ານຢູ່ໃນສະພາບການທີ່ຫຍຸ້ງຍາກຫຼາຍ. ມັນຈະເປັນໄປໄດ້ບໍ່ຖ້າພວກພວກເຮົາຈະພາທ່ານໄປນຳເພື່ອການສຳພາດລົງເລີກໂດຍມີນາຍແປພາສາ ຊ່ວຍເຫຼືອທ່ານ?",
+    "question_my":"14.သင့္အေျဖမ်ားသည္ သင့္အခက္အခဲအားေဖၚေဆာင္ေနပါသည္။ထို႔ေၾကာင့္ သင့္အားေနာက္ဆက္တြဲ ကူညီပံ့ပိုးမႈမ်ားျပဳလုပ္ႏိုင္ရန္အတြက္ ဘာသာျပန္အကူအညီျဖင့္ သင့္အား အေသးစိတ္ေမးျမန္းရန္အတြက္ အဆင္ေျပပါသလား?",
+    "question_km":"14.ការឆ្លើយតបរបស់អ្នកបានបង្ហាញថា អ្នកអាចកំពុងស្ថិតនៅក្នុងស្ថានភាពលំបាកខ្លាំង។ តើអ្នកយល់ព្រមទេ ប្រសិនបើយើងសុំធ្វើបទសម្ភាសន៍លម្អិតដោយមានអ្នកបកប្រែជាមួយអ្នក អំពីថាតើយើងអាចជួយអ្នកដោយរបៀបណា?"
   },{
     "id":15,
-    "question_en":"Would you like to explore options for a return to your home country?",
-    "question_cn":"你是否想回国？",
-    "question_vn":"Chị/em có muốn tìm hiểu về các lựa chọn khác nhau để có thể hồi hương không?",
-    "question_lo":"ທ່ານມີທາງເລືອກສຳລັບການກັບຄືນປະເທດຂອງທ່ານບໍ່?",
-    "question_my":"သင့္မိခင္ႏိုင္ငံသို႔ ျပန္ရန္အတြက္ နည္းလမ္းမ်ားရွာေဖြခ်င္ပါသလား?",
-    "question_km":"តើអ្នកចង់ស្វែងរកជម្រើសដើម្បីវិលត្រឡប់ទៅប្រទេសកំណើតរបស់អ្នកវិញទេ?"
+    "question_en":"15.Would you like to explore options for a return to your home country?",
+    "question_cn":"15.你是否想回国？",
+    "question_vn":"15.Chị/em có muốn tìm hiểu về các lựa chọn khác nhau để có thể hồi hương không?",
+    "question_lo":"15.ທ່ານມີທາງເລືອກສຳລັບການກັບຄືນປະເທດຂອງທ່ານບໍ່?",
+    "question_my":"15.သင့္မိခင္ႏိုင္ငံသို႔ ျပန္ရန္အတြက္ နည္းလမ္းမ်ားရွာေဖြခ်င္ပါသလား?",
+    "question_km":"15.តើអ្នកចង់ស្វែងរកជម្រើសដើម្បីវិលត្រឡប់ទៅប្រទេសកំណើតរបស់អ្នកវិញទេ?"
   },{
     "id":16,
-    "question_en":"Your responses suggest that you may need health care. It is ok if we take you to see a doctor?",
-    "question_cn":"你的回答表明需要就医，我们带你去医院可以吗？",
-    "question_vn":"Câu trả lời của chị/em cho thấy chị/em có thể cần đến chăm sóc y tế. Chị/em có đồng ý nếu chúng tôi đưa đi khám bác sĩ không?",
-    "question_lo":"ການຕອບຂອງທ່ານສະແດງໃຫ້ເຫັນວ່າທ່ານມີຄວາມຕ້ອງການ ການດູແລດ້ານສຸຂະພາບ. ທ່ານຈະເຫັນດີບໍ່ ຖ້າພວກເຮົາ ຈະພາທ່ານໄປພົບທ່ານໝໍ?",
-    "question_my":"သင္သည္က်န္းမာေရးေစာင့္ေရွာက္ရန္လိုအပ္ေနေၾကာင္းသင့္အေျဖမ်ားကေဖၚျပေန ပါသည္။ ကၽြႏုပ္တို႔ သင့္အားဆရာ၀န္ ထံေခၚသြားေပးလွ်င္လက္ခံပါမည္လား?",
-    "question_km":"ការឆ្លើយតបរបស់អ្នកបានបង្ហាញថា អ្នកអាចត្រូវការថែទាំសុខភាព។ តើអ្នកយល់ព្រមទេ ប្រសិនបើយើងនាំអ្នកទៅជួបគ្រូពេទ្យ?"
+    "question_en":"16.Your responses suggest that you may need health care. It is ok if we take you to see a doctor?",
+    "question_cn":"16.你的回答表明需要就医，我们带你去医院可以吗？",
+    "question_vn":"16.Câu trả lời của chị/em cho thấy chị/em có thể cần đến chăm sóc y tế. Chị/em có đồng ý nếu chúng tôi đưa đi khám bác sĩ không?",
+    "question_lo":"16.ການຕອບຂອງທ່ານສະແດງໃຫ້ເຫັນວ່າທ່ານມີຄວາມຕ້ອງການ ການດູແລດ້ານສຸຂະພາບ. ທ່ານຈະເຫັນດີບໍ່ ຖ້າພວກເຮົາ ຈະພາທ່ານໄປພົບທ່ານໝໍ?",
+    "question_my":"16.သင္သည္က်န္းမာေရးေစာင့္ေရွာက္ရန္လိုအပ္ေနေၾကာင္းသင့္အေျဖမ်ားကေဖၚျပေန ပါသည္။ ကၽြႏုပ္တို႔ သင့္အားဆရာ၀န္ ထံေခၚသြားေပးလွ်င္လက္ခံပါမည္လား?",
+    "question_km":"16.ការឆ្លើយតបរបស់អ្នកបានបង្ហាញថា អ្នកអាចត្រូវការថែទាំសុខភាព។ តើអ្នកយល់ព្រមទេ ប្រសិនបើយើងនាំអ្នកទៅជួបគ្រូពេទ្យ?"
   },{
     "id":17,
-    "question_en":"Your responses suggest that it may be beneficial for you to receive counseling support. It is ok if we refer you to talk to a counselor who speaks your language?",
-    "question_cn":"通过你的回答我认为心理咨询或许对你有帮助，我们帮你介绍心理咨询跟你电话里谈谈？",
-    "question_vn":"Câu trả lời của chị/em cho thấy sẽ có lợi cho chị/em nếu được hỗ trợ, tư vấn. Chị/em có đồng ý nếu chúng tôi giới thiệu chị/em gặp và trao đổi với tư vấn viên có thể nói tiếng Việt không?",
-    "question_lo":"ການຕອບຂອງທ່ານສະແດງໃຫ້ເຫັນເຖິງວ່າ ມັນຈະເປັນປະໂຫຍດຕໍ່ຕົວທ່ານ ທີ່ໄດ້ຮັບການໃຫ້ຄຳປຶກສາ. ທ່ານຈະເຫັນດີບໍ່ ຖ້າພວກເຮົາ ຈະ ສົ່ງພາທ່ານໄປລົມກັບຜູ່ໃຫ້ຄຳປຶກສາ ຜູ່ທີ່ສາມາດເວົ້າພາສາຂອງທ່ານ?",
-    "question_my":"သင္၏အေျဖမ်ားအရ ႏွစ္သိမ့္ေဆြးေႏြးအၾကံေပးမႈသည္သင့္အတြက္အက်ဳိးရွိမည္ ျဖစ္ေၾကာင္း ေတြ႔ရွိရသည္။ သင့္မိခင္ဘာသာစကားေျပာႏိုင္သူႏွင့္ ႏွစ္သိမ့္ေဆြးေႏြးအၾကံ ေပးမႈျပဳရန္အတြက္ ကၽြႏုပ္တို႔ စီစဥ္ေပးလွ်င္လက္ခံပါမည္လား?",
-    "question_km":"ការឆ្លើយតបរបស់អ្នកបានបង្ហាញថា វាអាចមានប្រយោជន៍សម្រាប់អ្នកក្នុងការទទួលបានការគាំទ្រប្រឹក្សា។ តើអ្នកយល់ព្រមទេ ប្រសិនបើយើងណែនាំអ្នកទៅប្រឹក្សាជាមួយអ្នកពិគ្រោះយោបល់ដែលនិយាយភាសារបស់អ្នក?"
+    "question_en":"17.Your responses suggest that it may be beneficial for you to receive counseling support. It is ok if we refer you to talk to a counselor who speaks your language?",
+    "question_cn":"17.通过你的回答我认为心理咨询或许对你有帮助，我们帮你介绍心理咨询跟你电话里谈谈？",
+    "question_vn":"17.Câu trả lời của chị/em cho thấy sẽ có lợi cho chị/em nếu được hỗ trợ, tư vấn. Chị/em có đồng ý nếu chúng tôi giới thiệu chị/em gặp và trao đổi với tư vấn viên có thể nói tiếng Việt không?",
+    "question_lo":"17.ການຕອບຂອງທ່ານສະແດງໃຫ້ເຫັນເຖິງວ່າ ມັນຈະເປັນປະໂຫຍດຕໍ່ຕົວທ່ານ ທີ່ໄດ້ຮັບການໃຫ້ຄຳປຶກສາ. ທ່ານຈະເຫັນດີບໍ່ ຖ້າພວກເຮົາ ຈະ ສົ່ງພາທ່ານໄປລົມກັບຜູ່ໃຫ້ຄຳປຶກສາ ຜູ່ທີ່ສາມາດເວົ້າພາສາຂອງທ່ານ?",
+    "question_my":"17.သင္၏အေျဖမ်ားအရ ႏွစ္သိမ့္ေဆြးေႏြးအၾကံေပးမႈသည္သင့္အတြက္အက်ဳိးရွိမည္ ျဖစ္ေၾကာင္း ေတြ႔ရွိရသည္။ သင့္မိခင္ဘာသာစကားေျပာႏိုင္သူႏွင့္ ႏွစ္သိမ့္ေဆြးေႏြးအၾကံ ေပးမႈျပဳရန္အတြက္ ကၽြႏုပ္တို႔ စီစဥ္ေပးလွ်င္လက္ခံပါမည္လား?",
+    "question_km":"17.ការឆ្លើយតបរបស់អ្នកបានបង្ហាញថា វាអាចមានប្រយោជន៍សម្រាប់អ្នកក្នុងការទទួលបានការគាំទ្រប្រឹក្សា។ តើអ្នកយល់ព្រមទេ ប្រសិនបើយើងណែនាំអ្នកទៅប្រឹក្សាជាមួយអ្នកពិគ្រោះយោបល់ដែលនិយាយភាសារបស់អ្នក?"
   }],
   "answer":{
     "yes_en":"Yes",
@@ -185,8 +185,8 @@
   },
   "resultinforming":[{
     "id":1,
-    "en":"Approval of issuing the marriage certificate: Thank you for your cooperation, according to your description of the situation and the material you provided, we agree to issue your marriage certificate, please wait with patience. If you have any problem or change your mind during this period, please let us know in time.",
-    "cn":"同意办证：谢谢你的配合，我们根据你描述的情况和你提供的证明材料，同意为你办理结婚证，请你们耐心等候。在此期间如果你有问题或者要改变主意，请及时告知。",
+    "en":"Approval of issuing the marriage certificate: \nThank you for your cooperation, according to your description of the situation and the material you provided, we agree to issue your marriage certificate, please wait with patience. If you have any problem or change your mind during this period, please let us know in time.",
+    "cn":"同意办证：\n谢谢你的配合，我们根据你描述的情况和你提供的证明材料，同意为你办理结婚证，请你们耐心等候。在此期间如果你有问题或者要改变主意，请及时告知。",
     "vn":"Đồng ý cấp phát giấy xác nhận đăng ký kết hôn: Cảm ơn sự hợp tác của chị/em, dựa vào thông tin về hoàn cảnh và những giấy tờ mà chị/em cung cấp, chúng tôi đồng ý sẽ cấp phát giấy chứng nhận đăng ký kết hôn, chị/em vui lòng kiên nhẫn chờ đợi. Nếu gặp phải bất kỳ vấn đề, vướng mắc gì hoặc thay đổi quyết định trong thời gian chờ đợi, đề nghị chị/em kịp thời thông báo cho chúng tôi.",
     "lo":"ຂອບໃຈໃນການໃຫ້ຄວາມຮ່ວມມືຂອງທ່ານ, ອິງຕາມການອະທິບາຍສະພາບການຂອງທ່ານ ແລະ ຂໍ້ມູນຕ່າງໆທີ່ທ່ານໄດ້ສະໜອງໃຫ້,  ພວກຂ້າພະເຈົ້າເຫັນດີທີ່ຈະເຮັດໃບຍັ້ງຍືນການແຕ່ງງານໃຫ້ທ່ານ, ກະລຸນາລໍຖ້າ. ຖ້າທ່ານມີປັນຫາ ຫຼື ປ່ຽນໃຈໃນລະຫວ່າງຊ່ວງເວລາທີ່ປະກອບເອກະສານນີ້ ກະລຸນາແຈ້ງໃຫ້ພວກຂ້າພະເຈົ້າຊາບໃນທັນທີ. ",
     "my":"ယခုလိ္ုပူးေပါင္းေဆာင္ရြက္သည့္အတြက္ေက်းဇူးတင္ပါသည္။သင္ေျပာျပသည့္သင့္အေျခအေန ႏွင့္ သင္ပ့ံပုိးေပးေသာအရာ၀တၴဳ/အေထာက္အထားမ်ားေၾကာင့္ သင့္အားလက္ထပ္စာခ်ဳပ္ထုပ္ေပးရန္ သေဘာတူပါသည္။ ခဏေလးစိတ္ရွည္စြာနဲ႔ေစာင့္ေပးပါ။ အကယ္၍ ယခုေစာင့္ေနစဥ္အတြင္း သင့္စိတ္ေျပာင္းသာြးလ်ွင္(သ႔)ိုအျခားျပႆနာတစ္စံုတစ္ခုရိွပါကကၽႏြုပ္တုိ႔ကုိအခ်ိန္မီွေျပာပါ။",
@@ -194,10 +194,10 @@
   },{
     "id":2,
     "en":"Potential Trafficking: according to your situation, we think you may be deceived and even trafficked. We can't give you your marriage certificate for the moment. We will contact the local police officers to protect you against those who try to harm you. If you want to, we will also contact your embassy to put you in touch with your family back at home. Referral information (telephone and address etc) for assistance (Police; Shelter; Embassy etc), please wait with patience.",
-    "cn":"疑似拐卖：根据你的情况，我们认为你可能被人欺骗甚至拐卖了。我们暂时不能为你办理结婚手续。而且为了保护你的人身安全，我们会联系公安人员，保护你不受威胁你的人伤害。如果你需要我们也可以联系你的大使馆，通过他们让你跟你的家人取得联系。（报警*****；救助******；大使馆*******），请你耐心等候。",
-    "vn":"Nguy cơ cao bị BB: Theo thông tin mô tả hoàn cảnh của chị/em, chúng tôi cho rằng chị/em có thể bị lừa và thậm chí có thể bị buôn bán. Trước mắt chúng tôi không thể cấp phát giấy chứng nhận đăng ký kết hôn cho chị/em. Chúng tôi sẽ liên hệ với công an địa phương để bảo vệ chị/em khỏi những đối tượng đang cố làm hại chị/em. Nếu chị/em muốn, chúng tôi có thể liên hệ với Đại sứ quán của chị/em để chị/em có thể liên lạc về với gia đình của mình ở quên nhà. Cung cấp thông tin chuyển tuyến (số điện thoại và địa chỉ…) để hỗ trợ (của cảnh sát, nhà tạm lánh, đại sứ quán…), chị/em vui lòng kiên nhẫn chờ đợi.",
-    "lo":"ອິງຕາມສະພາບການຂອງທ່ານ, ພວກຂ້າພະເຈົ້າຄິດວ່າທ່ານແມ່ນຖືກຫຼອກລວງ ແລະ ຖືກຄ້າມະນຸດ. ພວກຂ້າພະເຈົ້າບໍ່ສາມາດເຮັດໃບຍັ້ງຍືນການແຕ່ງງານໃຫ້ທ່ານໄດ້. ພວກຂ້າພະເຈົ້າຈະຕິດຕໍ່ກັບເຈົ້າໜ້າທີ່ຕຳຫຼວດທ້ອງຖີ່ນເພື່ອປ້ອງກັນທ່ານຈາກພວກທີ່ຈະທຳຮ້າຍທ່ານ. ຖ້າທ່ານຕ້ອງການ, ພວກຂ້າພະເຈົ້າຈະຕິດຕໍ່ຫາສະຖານທູດຂອງທ່ານເພື່ອໃຫ້ທ່ານສາມາດຕິດຕໍ່ກັບຄອບຄົວຂອງທ່ານ ທີ່ຢູ່ໃນປະເທດທ່ານໄດ້.ຂໍ້ມູນໃນການສົ່ງຕໍ່ (ເບີໂທລະສັບ, ທີ່ຢູ່ ແລະ ອື່ນໆ) ໃນການຊ່ວຍເຫຼືອ (ຕຳຫຼວດ, ສູນພັກເຊົາ, ສະຖານທູດ, ແລະ ອື່ນໆ). ກະລຸນາລໍຖ້າ.",
-    "my":"သင့္အေျခအေနအရ သင္သည္လိမ္လည္လွည့္ျဖားျခင္း ႏွင့္ လူကုန္ကူးခံရသည္ဟု ကၽႏြ ုပ္တ႔ို ထင္ျမင္ယူဆရသည္။ အခုလက္တေလာမွာသင့္အားလက္ထပ္စာခ်ဳပ္ထုပ္မေပးႏုိင္ေသးပါ။ သင့္အား အႏၲရာယ္ျပဳႏိုင္ဖြယ္ရွိေသာသူမ်ားလက္မွ ကာကြယ္ႏိုင္ရန္အတြက္ နယ္ေျမခံ ရဲအရာရွိ ႏွင့္ဆက္သြယ္ ေပးပါမည္။ အကယ္၍ သင္ဆႏၵရွိလ်င္ သင့္မိသားစုႏွင့္အဆက္အသြယ္ရရွိရန္ အတြက္သင့္ႏိုင္ငံပိုင္ သံရုံးအားဆက္သြယ္အေၾကာင္းၾကားေပးပါမည္။ လႊဲေျပာင္းပ႔ေုိဆာင္ျခင္းသတင္းအခ်က္အလက္ (ဖုန္းနံပါတ္ ႏွင့္ လိပ္စာ....စသည္) ပ့ံပိုးကူညီရန္အတြက္ ( ရဲ ၊ ေစာင့္ေရွာက္ေရးေဂဟာ၊ သံရံုး...စသည္) ခဏေလးစိတ္ရွည္စြာနဲ႔ေစာင့္ေပးပါ။",
-    "km":"យោងទៅតាមស្ថានភាពរបស់អ្នក យើងគិតថាអ្នកប្រហែលជាត្រូវបានគេបោកបញ្ឆោត ឬត្រូវបានគេជួញដូរ។ យើងមិនអាចផ្ដល់សំបុត្រអាពាហ៍ពិពាហ៍ជូនអ្នកពេលនេះទេ។ យើងនឹងទាក់ទងមន្រ្តីប៉ូលីសក្នុងតំបន់ដើម្បីការពារអ្នក។"
+    "cn":"疑似拐卖：\n根据你的情况，我们认为你可能被人欺骗甚至拐卖了。我们暂时不能为你办理结婚手续。而且为了保护你的人身安全，我们会联系公安人员，保护你不受威胁你的人伤害。如果你需要我们也可以联系你的大使馆，通过他们让你跟你的家人取得联系。（报警*****；救助******；大使馆*******），请你耐心等候。",
+    "vn":"Nguy cơ cao bị BB: \nTheo thông tin mô tả hoàn cảnh của chị/em, chúng tôi cho rằng chị/em có thể bị lừa và thậm chí có thể bị buôn bán. Trước mắt chúng tôi không thể cấp phát giấy chứng nhận đăng ký kết hôn cho chị/em. Chúng tôi sẽ liên hệ với công an địa phương để bảo vệ chị/em khỏi những đối tượng đang cố làm hại chị/em. Nếu chị/em muốn, chúng tôi có thể liên hệ với Đại sứ quán của chị/em để chị/em có thể liên lạc về với gia đình của mình ở quên nhà. Cung cấp thông tin chuyển tuyến (số điện thoại và địa chỉ…) để hỗ trợ (của cảnh sát, nhà tạm lánh, đại sứ quán…), chị/em vui lòng kiên nhẫn chờ đợi.",
+    "lo":"ອິງຕາມສະພາບການຂອງທ່ານ, \nພວກຂ້າພະເຈົ້າຄິດວ່າທ່ານແມ່ນຖືກຫຼອກລວງ ແລະ ຖືກຄ້າມະນຸດ. ພວກຂ້າພະເຈົ້າບໍ່ສາມາດເຮັດໃບຍັ້ງຍືນການແຕ່ງງານໃຫ້ທ່ານໄດ້. ພວກຂ້າພະເຈົ້າຈະຕິດຕໍ່ກັບເຈົ້າໜ້າທີ່ຕຳຫຼວດທ້ອງຖີ່ນເພື່ອປ້ອງກັນທ່ານຈາກພວກທີ່ຈະທຳຮ້າຍທ່ານ. ຖ້າທ່ານຕ້ອງການ, ພວກຂ້າພະເຈົ້າຈະຕິດຕໍ່ຫາສະຖານທູດຂອງທ່ານເພື່ອໃຫ້ທ່ານສາມາດຕິດຕໍ່ກັບຄອບຄົວຂອງທ່ານ ທີ່ຢູ່ໃນປະເທດທ່ານໄດ້.ຂໍ້ມູນໃນການສົ່ງຕໍ່ (ເບີໂທລະສັບ, ທີ່ຢູ່ ແລະ ອື່ນໆ) ໃນການຊ່ວຍເຫຼືອ (ຕຳຫຼວດ, ສູນພັກເຊົາ, ສະຖານທູດ, ແລະ ອື່ນໆ). ກະລຸນາລໍຖ້າ.",
+    "my":"သင့္အေျခအေနအရ \nသင္သည္လိမ္လည္လွည့္ျဖားျခင္း ႏွင့္ လူကုန္ကူးခံရသည္ဟု ကၽႏြ ုပ္တ႔ို ထင္ျမင္ယူဆရသည္။ အခုလက္တေလာမွာသင့္အားလက္ထပ္စာခ်ဳပ္ထုပ္မေပးႏုိင္ေသးပါ။ သင့္အား အႏၲရာယ္ျပဳႏိုင္ဖြယ္ရွိေသာသူမ်ားလက္မွ ကာကြယ္ႏိုင္ရန္အတြက္ နယ္ေျမခံ ရဲအရာရွိ ႏွင့္ဆက္သြယ္ ေပးပါမည္။ အကယ္၍ သင္ဆႏၵရွိလ်င္ သင့္မိသားစုႏွင့္အဆက္အသြယ္ရရွိရန္ အတြက္သင့္ႏိုင္ငံပိုင္ သံရုံးအားဆက္သြယ္အေၾကာင္းၾကားေပးပါမည္။ လႊဲေျပာင္းပ႔ေုိဆာင္ျခင္းသတင္းအခ်က္အလက္ (ဖုန္းနံပါတ္ ႏွင့္ လိပ္စာ....စသည္) ပ့ံပိုးကူညီရန္အတြက္ ( ရဲ ၊ ေစာင့္ေရွာက္ေရးေဂဟာ၊ သံရံုး...စသည္) ခဏေလးစိတ္ရွည္စြာနဲ႔ေစာင့္ေပးပါ။",
+    "km":"យោងទៅតាមស្ថានភាពរបស់អ្នក \nយើងគិតថាអ្នកប្រហែលជាត្រូវបានគេបោកបញ្ឆោត ឬត្រូវបានគេជួញដូរ។ យើងមិនអាចផ្ដល់សំបុត្រអាពាហ៍ពិពាហ៍ជូនអ្នកពេលនេះទេ។ យើងនឹងទាក់ទងមន្រ្តីប៉ូលីសក្នុងតំបន់ដើម្បីការពារអ្នក។"
   }]
 }

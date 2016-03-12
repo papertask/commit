@@ -104,7 +104,8 @@ public class PoliceGuideFragment extends BaseFragment {
                     break;
             }
             MainActivity activity = (MainActivity) getActivity();
-            activity.didSelectMenuItem(new MenuItem(getResources().getString(R.string.menu_police_crackdown_guide), "PoliceGuideChapterFragment", "police_guide", 0));
+            activity.didSelectMenuItem(new MenuItem(getResources().getString(R.string.menu_police_crackdown_guide), "PoliceGuideChapterFragment", "police_guide_chapter", 0));
         }
     };
+
 }

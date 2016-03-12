@@ -31,6 +31,8 @@ import com.interview.iso.fragments.FunctionSelectFragment;
 import com.interview.iso.fragments.HelpFragment;
 import com.interview.iso.fragments.ListNameFragment;
 import com.interview.iso.fragments.NewQuestionnaireFragment;
+import com.interview.iso.fragments.PoliceGuideChapterFragment;
+import com.interview.iso.fragments.PoliceGuideFragment;
 import com.interview.iso.fragments.QuestionFragment;
 import com.interview.iso.models.Person;
 import com.interview.iso.utils.AppData;
@@ -292,7 +294,7 @@ public class MainActivity extends CameraActivity implements FragmentManager.OnBa
                 mSearch.setVisibility(View.GONE);
                 mTick.setVisibility(View.GONE);
                 mBack.setVisibility(View.GONE);
-                mBack.setBackgroundResource(R.drawable.ic_back);
+                mBack.setBackgroundResource(R.drawable.btn_back);
                 mBack.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -319,7 +321,20 @@ public class MainActivity extends CameraActivity implements FragmentManager.OnBa
                 close_menu(null);
             } else if ( item.identifier.equals("police_guide")) {
                 reset_textbox_color(MENU_ZHENGCE);
+                mSearch.setVisibility(View.GONE);
+                mTick.setVisibility(View.GONE);
+                mBack.setVisibility(View.GONE);
                 close_menu(null);
+            } else if (item.identifier.equals("police_guide_chapter")) {
+                mBack.setBackgroundResource(R.drawable.btn_back);
+                mBack.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //show
+                        PoliceGuideChapterFragment frListName = (PoliceGuideChapterFragment) fragment;
+                        frListName.doBackAction();
+                    }
+                });
             } else if (item.identifier.equals("people_gov")) {
                 reset_textbox_color(MENU_ZHENGCE);
                 close_menu(null);

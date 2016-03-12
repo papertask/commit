@@ -80,14 +80,62 @@
                 android:paddingTop="20dp">
 
                 <TextView
+                    android:id="@+id/marrage_title_cn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="@string/title_gov_term"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/marrage_title_fo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/marrage_title_cn"
+                    android:layout_marginTop="10dp"
+                    android:padding="5dp"
+                    android:text="@string/title_gov_term"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/marrage_title_cn_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/marrage_title_fo"
+                    android:layout_marginTop="10dp"
+                    android:padding="5dp"
+                    android:text="@string/header_gov_term"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/marrage_title_fo_1"
+                    android:layout_below="@+id/marrage_title_cn_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="10dp"
+                    android:padding="5dp"
+                    android:text="@string/title_gov_term"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    android:visibility="gone" />
+
+                <TextView
                     android:id="@+id/basic_query_cn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_below="@+id/marrage_title_fo_1"
                     android:gravity="left"
                     android:paddingLeft="15dp"
                     android:paddingRight="15dp"
                     android:paddingTop="5dp"
-                    android:textSize="16sp"
+                    android:textSize="18sp"
                     android:visibility="gone" />
 
                 <TextView
@@ -109,8 +157,18 @@
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp"
                     android:text="\n告知/Informing:\n"
-                    android:textStyle="bold"
-                    android:visibility="gone" />
+                    android:visibility="gone"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/question_header_space"
+                    android:visibility="gone"
+                    android:layout_width="30dp"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/header"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="-10dp"
+                    android:background="@color/colorPrimary" />
 
                 <TextView
                     android:id="@+id/basic_query_en"
@@ -121,7 +179,7 @@
                     android:paddingLeft="15dp"
                     android:paddingRight="15dp"
                     android:text=""
-                    android:textSize="16sp"
+                    android:textSize="18sp"
                     android:visibility="gone" />
 
                 <TextView
@@ -150,8 +208,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:paddingBottom="20dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingBottom="20dp">
 
 
             <RelativeLayout
@@ -196,9 +254,9 @@
                     android:id="@+id/ln_no"
                     android:layout_width="110dp"
                     android:layout_height="36dp"
+                    android:layout_alignParentRight="true"
                     android:layout_marginBottom="10dp"
                     android:layout_marginRight="30dp"
-                    android:layout_alignParentRight="true"
                     android:layout_marginTop="0dp"
                     android:background="@drawable/buttoncustom"
                     android:clickable="true"
@@ -263,8 +321,8 @@
 
 
             </LinearLayout>
+
             <LinearLayout
-                android:visibility="gone"
                 android:id="@+id/ln_yes_ma"
                 android:layout_width="match_parent"
                 android:layout_height="36dp"
@@ -274,7 +332,8 @@
                 android:background="@drawable/buttoncustom_green"
                 android:clickable="true"
                 android:gravity="center"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:visibility="gone">
 
                 <ImageView
                     android:layout_width="20dp"
@@ -296,6 +355,7 @@
                     android:textStyle="bold" />
 
             </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/ln_no_ma"
                 android:layout_width="match_parent"
@@ -303,12 +363,12 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/buttoncustom"
                 android:clickable="true"
-                android:layout_marginTop="20dp"
-                android:visibility="gone"
                 android:gravity="center"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:visibility="gone">
 
                 <ImageView
                     android:layout_width="20dp"
@@ -464,30 +524,32 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:visibility="gone"
         android:id="@+id/container_q_13_confirm"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:visibility="gone">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true">
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
 
             <TextView
+                android:id="@+id/txt_confirm_message"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
-                android:text="@string/q13_confirm"
-                android:id="@+id/textView2"
-                android:layout_gravity="center_horizontal"
+                android:text=""
                 android:textSize="28sp" />
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="40dp">
+
                 <LinearLayout
                     android:id="@+id/btn_13_yes"
                     android:layout_width="110dp"
@@ -518,13 +580,14 @@
                         android:textSize="20sp"
                         android:textStyle="bold" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:id="@+id/btn_13_no"
                     android:layout_width="110dp"
                     android:layout_height="36dp"
+                    android:layout_alignParentRight="true"
                     android:layout_marginBottom="10dp"
                     android:layout_marginRight="30dp"
-                    android:layout_alignParentRight="true"
                     android:layout_marginTop="0dp"
                     android:background="@drawable/buttoncustom"
                     android:clickable="true"

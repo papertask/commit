@@ -34,7 +34,7 @@
             android:layout_toLeftOf="@+id/question_result_1"
             android:ellipsize="end"
             android:gravity="center_vertical"
-            android:text="XXXXXXXXXXXXXXXXXXXXXXXXXX"
+            android:text=""
             android:textColor="#000"
             android:textSize="20sp" />
 

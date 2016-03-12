@@ -19,6 +19,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.interview.iso.R;
+import com.interview.iso.activity.MainActivity;
+import com.interview.iso.base.MenuItem;
 import com.interview.iso.models.Answer;
 import com.interview.iso.models.Person;
 import com.interview.iso.models.Question;
@@ -59,25 +61,40 @@ public class QuestionnaireDetailMarriage extends Fragment {
         TextView lblResult = (TextView) rootView.findViewById(R.id.lbl_result);
         TextView tvResultCn = (TextView) rootView.findViewById(R.id.tv_result_cn);
         TextView tvResult = (TextView) rootView.findViewById(R.id.tv_result);
+        TextView lblResult_1 = (TextView) rootView.findViewById(R.id.lbl_result_1);
+        TextView tvResultCn_1 = (TextView) rootView.findViewById(R.id.tv_result_cn_1);
+        TextView tvResult_1 = (TextView) rootView.findViewById(R.id.tv_result_1);
         ImageView imgPlayAnounce = (ImageView) rootView.findViewById(R.id.img_play_anounce);
+
+        Button btnGotoTranslate = (Button) rootView.findViewById(R.id.btn_marrage_translate);
+        Button btnGotoSection = (Button) rootView.findViewById(R.id.btn_marrage_section);
+        Button btnGotoEmbassy = (Button) rootView.findViewById(R.id.btn_marrage_embassy);
+
+        btnGotoEmbassy.setOnClickListener(gotoButtonClickListener);
+        btnGotoSection.setOnClickListener(gotoButtonClickListener);
+        btnGotoTranslate.setOnClickListener(gotoButtonClickListener);
+
         imgPlayAnounce.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ImageView This = (ImageView) v;
                 if(QuestionFragment.mPlayer==null)
                     QuestionFragment.mPlayer = new MediaPlayer();
                 if (QuestionFragment.mPlayer.isPlaying()) {
                     QuestionFragment.mPlayer.pause();
                     QuestionFragment.mPlayer = new MediaPlayer();
-                    Drawable img = getContext().getResources().getDrawable(R.drawable.button_broadcast);
+                    // Drawable img = getContext().getResources().getDrawable(R.drawable.button_broadcast);
                     //btn_play_audio.setCompoundDrawablesWithIntrinsicBounds(img, null, null, null);
+                    This.setImageDrawable(getResources().getDrawable(R.drawable.oval_play));
                 } else {
                     String file_name;
                     if (number == 1) {
-                        file_name = "1.mp3";
+                        file_name = String.format("Sound/%s/%s/r1.mp3", "government", AppData.getInstance().getLanguage());//1
                     } else {
-                        file_name = "2.mp3";
+                        file_name = String.format("Sound/%s/%s/r2.mp3", "government", AppData.getInstance().getLanguage());//1
                     }
                     Play(file_name);
+                    This.setImageDrawable(getResources().getDrawable(R.drawable.button_pause));
                 }
             }
         });
@@ -107,9 +124,10 @@ public class QuestionnaireDetailMarriage extends Fragment {
                     try {
                         ResultQuestion resultQuestion = new ResultQuestion();
                         resultQuestion.id = key.next();
-                        resultQuestion.result = object.getBoolean(resultQuestion.id);
-                        if (!resultQuestion.id.equals("0"))
-                        mList.add(resultQuestion);
+                        resultQuestion.result = object.get(resultQuestion.id) == 1 ? true : false;
+
+                        if (resultQuestion.id.equals("0") == false)
+                            mList.add(resultQuestion);
                     } catch (Exception ex) {
                     }
                 }
@@ -119,13 +137,15 @@ public class QuestionnaireDetailMarriage extends Fragment {
         if(number == 1) {
             //tvExtraText.setText(getString(R.string.quetion_gov_cn));
             lblResult.setText("同意办证：");
-            tvResultCn.setText(getString(R.string.quetion_gov_cn));
-            tvResult.setText(getString(R.string.quetion_gov_vn));
+            tvResultCn.setText(getString(R.string.header_gov_term).substring(3));
+            if (AppData.getInstance().getLanguage().equals("vn")) {
+                tvResult.setText(getString(R.string.header_gov_term_vn).substring(3));
+            }
         }
         else {
             lblResult.setText("疑似拐卖: ");
-            tvResultCn.setText(getString(R.string.quetion_gov_cn1));
-            tvResult.setText(getString(R.string.quetion_gov_vn1));
+            tvResultCn.setText(getString(R.string.quetion_gov_cn1).substring(3));
+            tvResult.setText(getString(R.string.quetion_gov_vn1).substring(3));
         }
 
         QuestionDetailAdapter adapter = new QuestionDetailAdapter(getActivity(),mList,person);
@@ -206,6 +226,27 @@ public class QuestionnaireDetailMarriage extends Fragment {
         float px = dp * (metrics.densityDpi / 160f);
         return px;
     }
+
+    public View.OnClickListener gotoButtonClickListener = new View.OnClickListener() {
+
+        @Override
+        public void onClick(View v) {
+            MainActivity activity = (MainActivity) getActivity();
+            switch (v.getId()) {
+                case R.id.btn_marrage_translate:
+                    activity.didSelectMenuItem(new MenuItem(getResources().getString(R.string.menu_link_translate), "TranslatorFragment", "translate", 0));
+                    break;
+                case R.id.btn_marrage_embassy:
+                    activity.didSelectMenuItem(new MenuItem(getResources().getString(R.string.menu_link_embassy), "CamEmbassyFragment", "submenu_shiguan", 0));
+                    break;
+                case R.id.btn_marrage_section:
+                    activity.didSelectMenuItem(new MenuItem(getResources().getString(R.string.menu_link_related_section), "SectionFragment", "section", 0));
+                    break;
+                default:
+                    break;
+            }
+        }
+    };
 
     class QuestionDetailAdapter extends BaseAdapter {
 

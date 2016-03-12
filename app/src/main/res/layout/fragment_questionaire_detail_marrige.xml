@@ -111,6 +111,7 @@
                 android:layout_marginBottom="3dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal"
                 android:paddingLeft="1.5dp"
                 android:paddingRight="1.5dp"
@@ -118,7 +119,7 @@
 
                 <Button
                     android:layout_width="0dp"
-                    android:layout_height="30dp"
+                    android:layout_height="40dp"
                     android:layout_marginRight="3dp"
                     android:layout_weight="1"
                     android:background="@drawable/buttoncustom"
@@ -128,7 +129,7 @@
 
                 <Button
                     android:layout_width="0dp"
-                    android:layout_height="30dp"
+                    android:layout_height="40dp"
                     android:layout_marginLeft="3dp"
                     android:layout_weight="1"
                     android:background="@drawable/buttoncustom_white"
@@ -209,7 +210,43 @@
                     android:text="Dong y"
                     android:textSize="20sp" />
 
+                <ImageView
+                    android:visibility="gone"
+                    android:id="@+id/img_play_anounce_1"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center_horizontal"
+                    android:clickable="true"
+                    android:src="@drawable/oval_play" />
+
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/lbl_result_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="同意办证:"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/tv_result_cn_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="谢谢你的配合"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/tv_result_1"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="60dp"
+                    android:text="Dong y"
+                    android:textSize="20sp" />
+
                 <Button
+                    android:id="@+id/btn_marrage_translate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
@@ -221,6 +258,7 @@
                     android:textSize="20sp" />
 
                 <Button
+                    android:id="@+id/btn_marrage_section"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
@@ -232,6 +270,7 @@
                     android:textSize="20sp" />
 
                 <Button
+                    android:id="@+id/btn_marrage_embassy"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="50dp"

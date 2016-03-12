@@ -22,7 +22,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="40dp">
+                android:layout_marginRight="10dp">
 
                 <TextView
                     android:id="@+id/title"
@@ -30,8 +30,10 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
+                    android:textAlignment="center"
                     android:gravity="left"
-                    android:text="title"
+                    android:text="aaa"
+                    android:layout_marginRight="30dp"
                     android:textColor="@color/vline"
                     android:textSize="18sp"
                     android:textStyle="bold" />

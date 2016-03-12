@@ -16,6 +16,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.interview.iso.R;
+import com.interview.iso.activity.MainActivity;
+import com.interview.iso.base.MenuItem;
 import com.interview.iso.models.Answer;
 import com.interview.iso.models.Person;
 import com.interview.iso.models.Question;
@@ -252,48 +254,55 @@ public class QuestionnaireDetailFragment extends BaseFragment {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             convertView = null;
-            ViewHoler viewHoler;
-            if (convertView == null) {
-                convertView = inflater.inflate(R.layout.question_result_item_1, parent, false);
-                viewHoler = new ViewHoler();
-                viewHoler.tvContent = (TextView)convertView.findViewById(R.id.question_content_1);
-                viewHoler.btnContact =(Button)convertView.findViewById(R.id.question_contact_1);
-                viewHoler.btnResult = (Button)convertView.findViewById(R.id.question_result_1);
-                convertView.setTag(viewHoler);
-            }else {
-                viewHoler = (ViewHoler)convertView.getTag();
-            }
+
             ResultQuestion resultQuestion = mResult.get(position);
             if(resultQuestion!=null){
                 Question question = mListQuest.get(Integer.parseInt(resultQuestion.id)-1);
-                viewHoler.tvContent.setText(question.question_cn);
-                if(resultQuestion.result == 1) {
-                    viewHoler.btnResult.setText("是");
-                    viewHoler.btnResult.setBackgroundResource(R.drawable.buttoncustom);
-                }else if(resultQuestion.result == 0) {
-                    viewHoler.btnResult.setText("否");
-                    viewHoler.btnResult.setBackgroundResource(R.drawable.buttoncustom_green);
-                }else {
-                    viewHoler.btnResult.setText("跳过");
-                    viewHoler.btnResult.setBackgroundResource(R.drawable.buttoncustom_white);
-                }
-                if (resultQuestion.id.equals("15") || resultQuestion.id.equals("17")) {
-                    viewHoler.btnContact.setText("联系有关部门");
-                    viewHoler.btnContact.setVisibility(View.VISIBLE);
-                } else if (resultQuestion.id.equals("14")) {
-                    viewHoler.btnContact.setText("联系翻译");
-                    viewHoler.btnContact.setVisibility(View.VISIBLE);
-                } else {
-                    viewHoler.btnContact.setVisibility(View.GONE);
-                }
-
-                viewHoler.btnContact.setOnClickListener(new View.OnClickListener(){
-
-                    @Override
-                    public void onClick(View v) {
-                        ViewHoler viewHolder = (ViewHoler)v.getParent();
+                if (question != null ) {
+                    ViewHoler viewHoler;
+                    if (convertView == null) {
+                        convertView = inflater.inflate(R.layout.question_result_item_1, parent, false);
+                        viewHoler = new ViewHoler();
+                        viewHoler.tvContent = (TextView)convertView.findViewById(R.id.question_content_1);
+                        viewHoler.btnContact =(Button)convertView.findViewById(R.id.question_contact_1);
+                        viewHoler.btnResult = (Button)convertView.findViewById(R.id.question_result_1);
+                        convertView.setTag(viewHoler);
+                    }else {
+                        viewHoler = (ViewHoler)convertView.getTag();
                     }
-                });
+                    viewHoler.tvContent.setText(question.question_cn.substring(3));
+                    if (resultQuestion.result == 1) {
+                        viewHoler.btnResult.setText("是");
+                        viewHoler.btnResult.setBackgroundResource(R.drawable.buttoncustom);
+                    } else if (resultQuestion.result == 0) {
+                        viewHoler.btnResult.setText("否");
+                        viewHoler.btnResult.setBackgroundResource(R.drawable.buttoncustom_green);
+                    } else {
+                        viewHoler.btnResult.setText("跳过");
+                        viewHoler.btnResult.setBackgroundResource(R.drawable.buttoncustom_white);
+                    }
+                    if (resultQuestion.id.equals("15") || resultQuestion.id.equals("17")) {
+                        viewHoler.btnContact.setText("联系有关部门");
+                        viewHoler.btnContact.setVisibility(View.VISIBLE);
+                    } else if (resultQuestion.id.equals("14")) {
+                        viewHoler.btnContact.setText("联系翻译");
+                        viewHoler.btnContact.setVisibility(View.VISIBLE);
+                    }
+
+                    viewHoler.btnContact.setOnClickListener(new View.OnClickListener(){
+
+                        @Override
+                        public void onClick(View v) {
+                            Button This = (Button) v;
+                            MainActivity activity = (MainActivity) getActivity();
+                            if (This.getText().equals("联系有关部门")) {
+                                activity.didSelectMenuItem(new MenuItem(getResources().getString(R.string.menu_link_related_section), "SectionFragment", "section", 0));
+                            } else {
+                                activity.didSelectMenuItem(new MenuItem(getResources().getString(R.string.menu_link_translate), "TranslatorFragment", "translate", 0));
+                            }
+                        }
+                    });
+                }
             }
 
             return convertView;

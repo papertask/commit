@@ -26,14 +26,14 @@
 
                 <TextView
                     android:id="@+id/title"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
-                    android:textAlignment="center"
                     android:gravity="left"
+                    android:textAlignment="center"
                     android:text="aaa"
-                    android:layout_marginRight="30dp"
+                    android:paddingRight="30dp"
                     android:textColor="@color/vline"
                     android:textSize="18sp"
                     android:textStyle="bold" />

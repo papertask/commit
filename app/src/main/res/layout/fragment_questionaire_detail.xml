@@ -114,22 +114,24 @@
             <Button
                 android:layout_width="10dp"
                 android:layout_height="36dp"
+                android:id="@+id/btn_qdetail_delete"
                 android:layout_marginRight="3dp"
                 android:layout_weight="1"
                 android:background="@drawable/buttoncustom"
                 android:text="删除"
                 android:textColor="@color/White"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
 
             <Button
                 android:layout_width="0dp"
+                android:id="@+id/btn_qdetail_share"
                 android:layout_height="36dp"
                 android:layout_marginLeft="3dp"
                 android:layout_weight="1"
                 android:background="@drawable/buttoncustom_white"
                 android:text="分享"
                 android:textColor="@color/colorPrimary"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
         </LinearLayout>
 
         <View

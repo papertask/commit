@@ -239,6 +239,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:onClick="make_call"
                             android:text="(86) 10 653 21889" />
                     </LinearLayout>
                 </LinearLayout>
@@ -455,6 +456,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:onClick="make_call"
                             android:layout_gravity="center_vertical"
                             android:text="(86) 20 838 79005" />
                     </LinearLayout>
@@ -677,6 +679,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:onClick="make_call"
                             android:layout_gravity="center_vertical"
                             android:text="(852) 2546 0718" />
                     </LinearLayout>
@@ -899,6 +902,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:onClick="make_call"
                             android:layout_gravity="center_vertical"
                             android:text="(86) 21 5101 5857" />
                     </LinearLayout>
@@ -1121,6 +1125,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:onClick="make_call"
                             android:layout_gravity="center_vertical"
                             android:text="(86) 23 8911 6416; 8911 6417" />
                     </LinearLayout>
@@ -1343,6 +1348,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:onClick="make_call"
                             android:layout_gravity="center_vertical"
                             android:text="(86) 871 331 7320" />
                     </LinearLayout>

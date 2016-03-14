@@ -151,6 +151,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:paddingLeft="10dp"
+                            android:onClick="make_call"
                             android:text="(86) 15011339209" />
                     </LinearLayout>
                 </LinearLayout>
@@ -248,6 +249,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:paddingLeft="10dp"
+                            android:onClick="make_call"
                             android:text="(86) 13760663465" />
                     </LinearLayout>
                 </LinearLayout>
@@ -377,6 +379,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:paddingLeft="10dp"
+                            android:onClick="make_call"
                             android:text="(86) 15077105823" />
                     </LinearLayout>
                 </LinearLayout>
@@ -532,6 +535,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
                                 android:paddingLeft="10dp"
+                                android:onClick="make_call"
                                 android:text="(86) 13152656622" />
                         </LinearLayout>
                     </LinearLayout>
@@ -661,6 +665,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
                                 android:paddingLeft="10dp"
+                                android:onClick="make_call"
                                 android:text="(86) 15288108840" />
                         </LinearLayout>
                     </LinearLayout>
@@ -812,6 +817,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
                                 android:paddingLeft="10dp"
+                                android:onClick="make_call"
                                 android:text="(86) 13701133671" />
                         </LinearLayout>
                     </LinearLayout>
@@ -941,6 +947,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
                                 android:paddingLeft="10dp"
+                                android:onClick="make_call"
                                 android:text="(86) 13367717164" />
                         </LinearLayout>
                     </LinearLayout>
@@ -1070,6 +1077,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
                                 android:paddingLeft="10dp"
+                                android:onClick="make_call"
                                 android:text="(86) 18669116230" />
                         </LinearLayout>
                     </LinearLayout>
@@ -1222,6 +1230,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
                                 android:paddingLeft="10dp"
+                                android:onClick="make_call"
                                 android:text="(86) 18702007785" />
                         </LinearLayout>
                     </LinearLayout>
@@ -1351,6 +1360,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
                                 android:paddingLeft="10dp"
+                                android:onClick="make_call"
                                 android:text="(86) 18623115596" />
                         </LinearLayout>
                     </LinearLayout>
@@ -1480,6 +1490,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
                                 android:paddingLeft="10dp"
+                                android:onClick="make_call"
                                 android:text="(86) 13901307447" />
                         </LinearLayout>
                     </LinearLayout>

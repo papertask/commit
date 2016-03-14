@@ -1,6 +1,9 @@
 package com.interview.iso.fragments;
 
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -55,6 +58,39 @@ public class QuestionnaireDetailFragment extends BaseFragment {
         TextView tvGender = (TextView)rootView.findViewById(R.id.tv_gender);
         TextView tvLocation = (TextView)rootView.findViewById(R.id.tv_location);
         TextView tvName = (TextView)rootView.findViewById(R.id.tv_name);
+        Button tvBtnDelete = (Button) rootView.findViewById(R.id.btn_qdetail_delete);
+        Button tvBtnShare = (Button) rootView.findViewById(R.id.btn_qdetail_share);
+
+        tvBtnDelete.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder adb =	 new AlertDialog.Builder((Activity) v.getContext());
+                adb.setTitle("删除");
+                adb.setMessage("确定删除这个问卷？");
+                //final int positionToRemove = position;
+                adb.setNegativeButton("取消", null);
+                adb.setPositiveButton("确定", new AlertDialog.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        Person person = AppData.getInstance().getPerson_selection();
+                        MainActivity activity = (MainActivity) getActivity();
+                        DBHelper db = new DBHelper(activity);
+                        db.deletePerson(person.getID());
+                        activity.didSelectMenuItem(new MenuItem(getResources().getString(R.string.menu_question_list), "ListNameFragment", "list_interviewer", 0));
+                    }
+                });
+                adb.show();
+            }
+        });
+
+        tvBtnShare.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+            }
+
+        });
 
         Person person = AppData.getInstance().getPerson_selection();
         if(person.getAvatarPath()!=null && !person.getAvatarPath().equals(""))
@@ -186,7 +222,7 @@ public class QuestionnaireDetailFragment extends BaseFragment {
             if(resultQuestion!=null){
                 viewHoler.tvID.setText(resultQuestion.id);
                 Question question = mListQuest.get(Integer.parseInt(resultQuestion.id)-1);
-                viewHoler.tvContent.setText(question.question_cn);
+                viewHoler.tvContent.setText(question.question_cn.substring(3));
                 if(resultQuestion.result == 1) {
                     viewHoler.btnResult.setText("是");
                     viewHoler.btnResult.setBackgroundResource(R.drawable.buttoncustom);

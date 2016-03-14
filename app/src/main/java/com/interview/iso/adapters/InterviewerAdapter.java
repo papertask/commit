@@ -26,6 +26,8 @@ import com.interview.iso.utils.Constants;
 import com.interview.iso.utils.DBHelper;
 import com.joooonho.SelectableRoundedImageView;
 
+import org.w3c.dom.Text;
+
 import java.util.List;
 
 
@@ -69,8 +71,8 @@ public class InterviewerAdapter extends BaseAdapter {
             holder.tvName = (TextView)convertView.findViewById(R.id.tvName);
             holder.tvDesc = (TextView)convertView.findViewById(R.id.tvDesc);
             holder.rdCheck =(SelectableRoundedImageView)convertView.findViewById(R.id.image_avatar);
-            holder.ivDelete = (LinearLayout)convertView.findViewById(R.id.icon_delete);
-            holder.ivShare = (LinearLayout) convertView.findViewById(R.id.icon_share);
+            holder.ivDelete = (TextView)convertView.findViewById(R.id.btn_qlist_delete);
+            holder.ivShare = (TextView) convertView.findViewById(R.id.btn_qlist_share);
             holder.ivDelete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -108,11 +110,11 @@ public class InterviewerAdapter extends BaseAdapter {
             convertView.setTag(holder);
         }else
             holder = (ViewHolder)convertView.getTag();
-        if(person.getInterview_type()== Constants.POLICY_TYPE)
+        /* if(person.getInterview_type()== Constants.POLICY_TYPE)
             holder.tvName.setText("警方排查");
         else
-            holder.tvName.setText("外籍人员在华登记询问");
-
+            holder.tvName.setText("外籍人员在华登记询问"); */
+        holder.tvName.setText(person.getFirstName() + " " + person.getLastName());
         holder.tvDesc.setText(person.getTime());
 
         //holder.rdCheck.setChecked(true);
@@ -126,8 +128,8 @@ public class InterviewerAdapter extends BaseAdapter {
         TextView tvName;
         TextView tvDesc;
         SelectableRoundedImageView rdCheck;
-        LinearLayout ivDelete;
-        LinearLayout ivShare;
+        TextView ivDelete;
+        TextView ivShare;
     }
     private void setFullImageFromFilePath(final String imagePath,final ImageView imageView,long delay) {
 

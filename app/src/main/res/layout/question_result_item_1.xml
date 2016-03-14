@@ -13,8 +13,8 @@
 
         <Button
             android:id="@+id/question_result_1"
-            android:layout_width="70dp"
-            android:layout_height="40dp"
+            android:layout_width="48dp"
+            android:layout_height="24dp"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
             android:layout_marginLeft="5dp"
@@ -23,7 +23,7 @@
             android:gravity="center"
             android:text="是"
             android:textColor="@color/White"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/question_content_1"
@@ -36,26 +36,26 @@
             android:gravity="center_vertical"
             android:text=""
             android:textColor="#000"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
     </RelativeLayout>
 
     <Button
         android:id="@+id/question_contact_1"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="36dp"
         android:layout_below="@+id/rlt_result"
         android:layout_centerVertical="true"
         android:layout_marginBottom="20dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:background="@drawable/buttoncustom_white"
         android:gravity="center"
         android:padding="3dp"
         android:text="联系翻译"
         android:visibility="gone"
         android:textColor="@color/colorPrimary"
-        android:textSize="20sp" />
+        android:textSize="16sp" />
 
 
 </RelativeLayout>

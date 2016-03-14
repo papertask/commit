@@ -69,7 +69,6 @@ public class QuestionFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_question, container, false);
         radioGroup = (RadioGroup) rootView.findViewById(R.id.answer_radio_group);
-        //Button btn_fullScreen = (Button) rootView.findViewById(R.id.btn_zoom);
         Button btn_share = (Button) rootView.findViewById(R.id.btn_share_intent);
         btn_play_audio = (Button) rootView.findViewById(R.id.btn_play_audio);
         btn_next = (LinearLayout) rootView.findViewById(R.id.next);
@@ -117,12 +116,12 @@ public class QuestionFragment extends BaseFragment {
             tv_gov_term_title_fo.setTypeface(tf_mm3);
             tv_gov_term_desc_fo.setTypeface(tf_mm3);
         } else if (AppData.getInstance().getLanguage().equals("my")) {
-            Typeface tf_mm3 = Typeface.createFromAsset(getActivity().getAssets(), "fonts/mm.ttf");
+            /* Typeface tf_mm3 = Typeface.createFromAsset(getActivity().getAssets(), "fonts/mm.ttf");
             tv_question_en.setTypeface(tf_mm3);
             tv_question_basic_en.setTypeface(tf_mm3);
             tv_question_cn.setTypeface(tf_mm3);
             tv_gov_term_title_fo.setTypeface(tf_mm3);
-            tv_gov_term_desc_fo.setTypeface(tf_mm3);
+            tv_gov_term_desc_fo.setTypeface(tf_mm3); */
         } else if (AppData.getInstance().getLanguage().equals("km")) {
             Typeface tf_mm3 = Typeface.createFromAsset(getActivity().getAssets(), "fonts/khmerOS.ttf");
             tv_question_en.setTypeface(tf_mm3);
@@ -166,7 +165,7 @@ public class QuestionFragment extends BaseFragment {
         tv_question_basic_cn.setVisibility(View.VISIBLE);
         tv_question_basic_en.setVisibility(View.VISIBLE);
         if (AppData.getInstance().getApptype() == Constants.POLICY_TYPE) {
-
+            tv_question_cn.setTextSize(18);
             if (AppData.getInstance().getLanguage().equals("lao")) {
                 // tv_question_en.setText(getString(R.string.question_policy_lao1));
                 // tv_question_basic_en.setText(getString(R.string.question_policy_lao));
@@ -311,7 +310,6 @@ public class QuestionFragment extends BaseFragment {
         } else {
             showYesNoButton(true);
         }
-
     }
 
     View.OnClickListener onClickListener = new View.OnClickListener() {
@@ -436,8 +434,8 @@ public class QuestionFragment extends BaseFragment {
                     need_extra_question = false;
                     showHideQ13Confirm(false);
                     if (AppData.getInstance().getApptype() == Constants.POLICY_TYPE) {
-                        current_question = 18;
-                        loadNextStep_Policy1(0);
+                        current_question = 17;
+                        Policy_Extra_Process();
                     } else {
                         current_question = 4;
                         loadNextStep_Government();
@@ -551,7 +549,7 @@ public class QuestionFragment extends BaseFragment {
             else
                 current_question++;
         } else {
-            ++current_question;
+            current_question++;
         }
 
         mQueueQuestion.add(current_question);
@@ -578,6 +576,31 @@ public class QuestionFragment extends BaseFragment {
             RadioButton rdNo = (RadioButton) rootView.findViewById(R.id.rd_no);
             rdNo.setVisibility(View.VISIBLE);
         }
+
+        if (current_question == 3) {
+            //store current and play audio
+            if (radioGroup.getCheckedRadioButtonId() == R.id.rd_yes) {
+                mAnswer.put(current_question + 1 + "", 1);
+            } else {
+                mAnswer.put(current_question + 1 + "", 0);
+            }
+
+            mQueueQuestion.add(current_question);
+            current_question++;
+            return;
+        }
+
+        if (mPlayer != null && mPlayer.isPlaying()) {
+            mPlayer.pause();
+            mPlayer = new MediaPlayer();
+            // Drawable img = getContext().getResources().getDrawable(R.drawable.button_broadcast);
+            // btn_play_audio.setCompoundDrawablesWithIntrinsicBounds(img, null, null, null);
+            btn_play_audio.setBackgroundResource(R.drawable.oval_play);
+        }
+
+        if (mAnswer == null)
+            mAnswer = new HashMap<>();
+
         if (current_question > 3) {
             MainActivity activity = (MainActivity) getActivity();
             DBHelper db = new DBHelper(activity);
@@ -589,51 +612,18 @@ public class QuestionFragment extends BaseFragment {
             activity.didSelectMenuItem(new MenuItem("问卷内容", "QuestionnaireDetailMarriage", "detail", 0));
             return;
         }
-        if (current_question == 3) {
-            //store current and play audio
-            if (radioGroup.getCheckedRadioButtonId() == R.id.rd_yes) {
-                {
-                    mAnswer.put(current_question + 1 + "", 1);
-                }
-            } else {
-                mAnswer.put(current_question + 1 + "", 0);
-            }
-
-            // String filename = String.format("Sound/government/%s/%d.mp3", AppData.getInstance().getLanguage(), current_question);
-            // Play(filename);
-            //Drawable img = getContext().getResources().getDrawable(R.drawable.icon_pause);
-            // btn_play_audio.setCompoundDrawablesWithIntrinsicBounds(img, null, null, null);
-            current_question++;
-            mQueueQuestion.add(current_question);
-            loadNextStep_Government();
-            return;
-        }
-        if (mPlayer != null && mPlayer.isPlaying()) {
-            mPlayer.pause();
-            mPlayer = new MediaPlayer();
-            // Drawable img = getContext().getResources().getDrawable(R.drawable.button_broadcast);
-            // btn_play_audio.setCompoundDrawablesWithIntrinsicBounds(img, null, null, null);
-            btn_play_audio.setBackgroundResource(R.drawable.oval_play);
-        }
-        if (mAnswer == null)
-            mAnswer = new HashMap<>();
-
 
         if (radioGroup.getCheckedRadioButtonId() == R.id.rd_yes) {
-            {
-                mAnswer.put(current_question + 1 + "", 1);
-            }
+            mAnswer.put(current_question + 1 + "", 1);
         } else {
             mAnswer.put(current_question + 1 + "", 0);
         }
 
         radioGroup.check(0);
-        current_question++;
-        if ( current_question > 3) {
-            loadNextStep_Government();
-            return;
-        }
+
+
         mQueueQuestion.add(current_question);
+        current_question++;
         if (AppData.getInstance().getLanguage().equals("vn")) {
             tv_question_en.setText(mListQuestion.get(current_question).question_vn);
 
@@ -663,6 +653,33 @@ public class QuestionFragment extends BaseFragment {
             RadioButton rdNo = (RadioButton) rootView.findViewById(R.id.rd_no);
             rdNo.setVisibility(View.VISIBLE);
         }
+
+        if (current_question == 3) {
+            if ( q13_confirmed  == false ) {
+                showHideQ13Confirm(true);
+                mAnswer.put(current_question + 1 + "", value);
+                mQueueQuestion.add(current_question);
+                current_question++;
+                q13_confirmed = true;
+                return;
+            }
+        }
+        if (mPlayer != null && mPlayer.isPlaying()) {
+            mPlayer.pause();
+            mPlayer = new MediaPlayer();
+            btn_play_audio.setBackgroundResource(R.drawable.oval_play);
+        }
+        if (mAnswer == null)
+            mAnswer = new HashMap<>();
+
+        if (current_question <= 4 && current_question >= 0) {
+            mAnswer.put(current_question + 1 + "", value);
+            mQueueQuestion.add(current_question);
+            current_question++;
+        } else {
+            current_question ++;
+        }
+
         if (current_question > 3) {
             MainActivity activity = (MainActivity) getActivity();
             DBHelper db = new DBHelper(activity);
@@ -672,50 +689,6 @@ public class QuestionFragment extends BaseFragment {
             AppData.getInstance().setPerson_selection(person);
             Pause();
             activity.didSelectMenuItem(new MenuItem("问卷内容", "QuestionnaireDetailMarriage", "detail", 0));
-            return;
-        }
-        if (current_question == 3) {
-            if ( q13_confirmed  == false ) {
-                showHideQ13Confirm(true);
-                q13_confirmed = true;
-                return;
-            }
-
-             //store current and play audio
-            // mAnswer.put(current_question + 1 + "", value);
-            /*MainActivity activity = (MainActivity) getActivity();
-            mAnswer = new TreeMap<String, Integer>(mAnswer);
-            JSONObject json = new JSONObject(mAnswer);
-            DBHelper db = new DBHelper(activity);
-            db.createAnswer(AppData.getInstance().getPersonID(), json.toString());
-            String filename = String.format("Sound/government/%s/%d.mp3", AppData.getInstance().getLanguage(), current_question);
-            Play(filename);
-            //Drawable img = getContext().getResources().getDrawable(R.drawable.icon_pause);
-            // btn_play_audio.setCompoundDrawablesWithIntrinsicBounds(img, null, null, null);
-            current_question++;
-            mQueueQuestion.add(current_question);
-            // loadNextStep_Government();
-            return; */
-
-        }
-        if (mPlayer != null && mPlayer.isPlaying()) {
-            mPlayer.pause();
-            mPlayer = new MediaPlayer();
-            // Drawable img = getContext().getResources().getDrawable(R.drawable.button_broadcast);
-            // btn_play_audio.setCompoundDrawablesWithIntrinsicBounds(img, null, null, null);
-            btn_play_audio.setBackgroundResource(R.drawable.oval_play);
-        }
-        if (mAnswer == null)
-            mAnswer = new HashMap<>();
-
-        mAnswer.put(current_question + 1 + "", value);
-
-        //current_question = current_question > 3 ? 3 : current_question;
-        mQueueQuestion.add(current_question);
-        current_question++;
-
-        if (current_question > 3) {
-            loadNextStep_Government();
             return;
         }
 
@@ -844,10 +817,12 @@ public class QuestionFragment extends BaseFragment {
             // loadNextStep_Policy1(0);
             return;
         }
-        if (radioGroup.getCheckedRadioButtonId() == R.id.rd_yes) {
-            mAnswer.put(current_question + 1 + "", 1);
-        } else {
-            mAnswer.put(current_question + 1 + "", 0);
+        if ( current_question < 17) {
+            if (radioGroup.getCheckedRadioButtonId() == R.id.rd_yes) {
+                mAnswer.put(current_question + 1 + "", 1);
+            } else {
+                mAnswer.put(current_question + 1 + "", 0);
+            }
         }
         MainActivity activity = (MainActivity) getActivity();
         mAnswer = new TreeMap<String, Integer>(mAnswer);
@@ -905,6 +880,7 @@ public class QuestionFragment extends BaseFragment {
                 btn_play_audio.setBackgroundResource(R.drawable.oval_play);
             }
         } else {
+            mQueueQuestion.clear();
             MainActivity mainActivity = (MainActivity) getActivity();
             mainActivity.updateActionBar(false);
             initQuestion();

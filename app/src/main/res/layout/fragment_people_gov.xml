@@ -47,7 +47,7 @@
                     android:layout_height="wrap_content"
                     android:padding="20dp"
                     android:text="@string/people_gov_content_1"
-                    android:textSize="14sp" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -55,7 +55,7 @@
                     android:layout_marginTop="10dp"
                     android:padding="20dp"
                     android:text="@string/people_gov_content_2"
-                    android:textSize="12sp" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/btn_readmore_people_gov"
@@ -64,6 +64,8 @@
                     android:layout_marginTop="10dp"
                     android:clickable="true"
                     android:padding="20dp"
+                    android:textSize="20sp"
+                    android:layout_marginBottom="20dp"
                     android:text="点击阅读全文"
                     android:textAlignment="center" />
             </LinearLayout>

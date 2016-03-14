@@ -5,8 +5,8 @@
 
     <TextView
         android:id="@+id/quest_number"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
         android:layout_centerVertical="true"
         android:layout_marginLeft="5dp"
         android:background="@drawable/buttoncustom"
@@ -18,8 +18,8 @@
 
     <Button
         android:id="@+id/question_result"
-        android:layout_width="70dp"
-        android:layout_height="40dp"
+        android:layout_width="48dp"
+        android:layout_height="24dp"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:layout_marginLeft="5dp"
@@ -28,7 +28,7 @@
         android:gravity="center"
         android:text="是"
         android:textColor="@color/White"
-        android:textSize="20sp" />
+        android:textSize="14sp" />
 
     <TextView
         android:id="@+id/question_content"
@@ -44,7 +44,7 @@
         android:gravity="center_vertical"
         android:text="XXXXXXXXXXXXXXXXXXXXXXXXXX"
         android:textColor="#000"
-        android:textSize="20sp" />
+        android:textSize="16sp" />
 
 
 </RelativeLayout>

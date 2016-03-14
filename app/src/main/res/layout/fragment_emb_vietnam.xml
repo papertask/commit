@@ -117,6 +117,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:onClick="make_call"
                             android:layout_gravity="center_vertical"
                             android:text="(86) 10 65321155" />
                     </LinearLayout>
@@ -269,6 +270,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:onClick="make_call"
                                 android:layout_gravity="center_vertical"
                                 android:text="(86) 871 3522669" />
                         </LinearLayout>
@@ -419,6 +421,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:onClick="make_call"
                             android:layout_gravity="center_vertical"
                             android:text="(86) 20 83305910-11" />
                     </LinearLayout>

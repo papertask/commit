@@ -119,23 +119,25 @@
 
                 <Button
                     android:layout_width="0dp"
-                    android:layout_height="40dp"
+                    android:id="@+id/btn_qdetail_ma_delete"
+                    android:layout_height="36dp"
                     android:layout_marginRight="3dp"
                     android:layout_weight="1"
                     android:background="@drawable/buttoncustom"
                     android:text="删除"
                     android:textColor="@color/White"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
 
                 <Button
                     android:layout_width="0dp"
-                    android:layout_height="40dp"
+                    android:id="@+id/btn_qdetail_ma_share"
+                    android:layout_height="36dp"
                     android:layout_marginLeft="3dp"
                     android:layout_weight="1"
                     android:background="@drawable/buttoncustom_white"
                     android:text="分享"
                     android:textColor="@color/colorPrimary"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
             </LinearLayout>
 
             <View
@@ -200,15 +202,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="谢谢你的配合"
-                    android:textSize="20sp" />
+                    android:layout_marginTop="10dp"
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/tv_result"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="60dp"
                     android:text="Dong y"
-                    android:textSize="20sp" />
+                    android:textSize="18sp" />
 
                 <ImageView
                     android:visibility="gone"
@@ -233,7 +237,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="谢谢你的配合"
-                    android:textSize="20sp" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:visibility="gone"
@@ -243,43 +247,46 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="60dp"
                     android:text="Dong y"
-                    android:textSize="20sp" />
+                    android:textSize="18sp" />
 
                 <Button
                     android:id="@+id/btn_marrage_translate"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="36dp"
                     android:layout_marginBottom="20dp"
-                    android:layout_marginLeft="3dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
                     android:layout_weight="1"
                     android:background="@drawable/buttoncustom_white"
                     android:text="联系翻译"
                     android:textColor="@color/colorPrimary"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
 
                 <Button
                     android:id="@+id/btn_marrage_section"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="36dp"
                     android:layout_marginBottom="20dp"
-                    android:layout_marginLeft="3dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
                     android:layout_weight="1"
                     android:background="@drawable/buttoncustom_white"
                     android:text="联系有关部门"
                     android:textColor="@color/colorPrimary"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
 
                 <Button
                     android:id="@+id/btn_marrage_embassy"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="36dp"
                     android:layout_marginBottom="50dp"
-                    android:layout_marginLeft="3dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
                     android:layout_weight="1"
                     android:background="@drawable/buttoncustom_white"
                     android:text="联系使馆"
                     android:textColor="@color/colorPrimary"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
 
             </LinearLayout>
 

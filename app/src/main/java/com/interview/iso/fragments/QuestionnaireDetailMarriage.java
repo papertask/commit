@@ -1,6 +1,9 @@
 package com.interview.iso.fragments;
 
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -65,6 +68,31 @@ public class QuestionnaireDetailMarriage extends Fragment {
         TextView tvResultCn_1 = (TextView) rootView.findViewById(R.id.tv_result_cn_1);
         TextView tvResult_1 = (TextView) rootView.findViewById(R.id.tv_result_1);
         ImageView imgPlayAnounce = (ImageView) rootView.findViewById(R.id.img_play_anounce);
+        Button btnDelete = (Button) rootView.findViewById(R.id.btn_qdetail_ma_delete);
+        Button btnShare = (Button) rootView.findViewById(R.id.btn_qdetail_ma_share);
+
+        btnDelete.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder adb =	 new AlertDialog.Builder((Activity) v.getContext());
+                adb.setTitle("删除");
+                adb.setMessage("确定删除这个问卷？");
+                //final int positionToRemove = position;
+                adb.setNegativeButton("取消", null);
+                adb.setPositiveButton("确定", new AlertDialog.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        Person person = AppData.getInstance().getPerson_selection();
+                        MainActivity activity = (MainActivity) getActivity();
+                        DBHelper db = new DBHelper(activity);
+                        db.deletePerson(person.getID());
+                        activity.didSelectMenuItem(new MenuItem(getResources().getString(R.string.menu_question_list), "ListNameFragment", "list_interviewer", 0));
+                    }
+                });
+                adb.show();
+            }
+
+        });
 
         Button btnGotoTranslate = (Button) rootView.findViewById(R.id.btn_marrage_translate);
         Button btnGotoSection = (Button) rootView.findViewById(R.id.btn_marrage_section);
@@ -300,17 +328,19 @@ public class QuestionnaireDetailMarriage extends Fragment {
             if(resultQuestion!=null){
                 viewHoler.tvID.setText(resultQuestion.id);
 
-                    Question question = mListQuest.get(Integer.parseInt(resultQuestion.id)-1);
-                if (resultQuestion.result) {
-                    viewHoler.tvContent.setText(question.question_cn);
-                    viewHoler.btnResult.setText("是");
-                    viewHoler.btnResult.setBackgroundResource(R.drawable.buttoncustom);
-                } else {
-                    viewHoler.tvContent.setText(question.question_cn);
-                    viewHoler.btnResult.setText("否");
-                    viewHoler.btnResult.setBackgroundResource(R.drawable.buttoncustom_green);
-                }
+                Question question = mListQuest.get(Integer.parseInt(resultQuestion.id)-1);
 
+                if (question != null ) {
+                    if (resultQuestion.result) {
+                        viewHoler.tvContent.setText(question.question_cn.substring(3));
+                        viewHoler.btnResult.setText("是");
+                        viewHoler.btnResult.setBackgroundResource(R.drawable.buttoncustom);
+                    } else {
+                        viewHoler.tvContent.setText(question.question_cn.substring(3));
+                        viewHoler.btnResult.setText("否");
+                        viewHoler.btnResult.setBackgroundResource(R.drawable.buttoncustom_green);
+                    }
+                }
             }
 
             return convertView;

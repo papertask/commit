@@ -68,7 +68,7 @@
                     android:layout_height="wrap_content"
                     android:padding="10dp"
                     android:text="@string/people_gov_detail_content"
-                    android:textSize="12sp" />
+                    android:textSize="16sp" />
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

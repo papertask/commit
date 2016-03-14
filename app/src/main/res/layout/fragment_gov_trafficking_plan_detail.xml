@@ -47,18 +47,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/trafficking_plan_detail_prefix"
-                    android:textSize="14sp" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
+                    android:textSize="16sp"
                     android:layout_marginTop="10dp"
                     android:text="@string/trafficking_plan_detail_prefix_1" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textSize="16sp"
                     android:text="（此件公开发布）" />
 
                 <TextView

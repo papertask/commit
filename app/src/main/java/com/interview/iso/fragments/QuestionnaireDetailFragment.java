@@ -75,7 +75,7 @@ public class QuestionnaireDetailFragment extends BaseFragment {
                         Person person = AppData.getInstance().getPerson_selection();
                         MainActivity activity = (MainActivity) getActivity();
                         DBHelper db = new DBHelper(activity);
-                        db.deletePerson(person.getID());
+                        db.deletePerson(person.getnID());
                         activity.didSelectMenuItem(new MenuItem(getResources().getString(R.string.menu_question_list), "ListNameFragment", "list_interviewer", 0));
                     }
                 });
@@ -96,16 +96,13 @@ public class QuestionnaireDetailFragment extends BaseFragment {
         if(person.getAvatarPath()!=null && !person.getAvatarPath().equals(""))
             setFullImageFromFilePath(person.getAvatarPath(), rdAvatar);
 
-        tvName.setText(person.getFirstName()+" "+person.getLastName());
-        tvInterviewDate.setText(person.getTime());
-        if(person.getGender().equals("Male"))
-            tvGender.setText(getString(R.string.Male));
-        else
-            tvGender.setText(getString(R.string.Female));
-        tvLocation.setText(person.getAdd());
+        tvName.setText(person.getStrFirstName()+" "+person.getStrLastName());
+        tvInterviewDate.setText(person.getStrInterviewDate());
+        tvGender.setText(getString(R.string.Female));
+        tvLocation.setText(person.getStrPosition());
 
         DBHelper db = new DBHelper(getActivity());
-        Answer answer = db.getListQuestionByPersion(person.getID());
+        Answer answer = db.getListQuestionByPersion(person.getnID());
         if(answer!= null) {
             JSONObject object = answer.convertToJsonArray();
 //        Map<String , Boolean> mResult;
@@ -230,9 +227,8 @@ public class QuestionnaireDetailFragment extends BaseFragment {
                     viewHoler.btnResult.setText("否");
                     viewHoler.btnResult.setBackgroundResource(R.drawable.buttoncustom_green);
                 }else {
-                    viewHoler.btnResult.setText("跳过");
-                    viewHoler.btnResult.setTextColor(Color.BLACK);
-                    viewHoler.btnResult.setBackgroundResource(R.drawable.buttoncustom_black);
+                    viewHoler.btnResult.setText("否");
+                    viewHoler.btnResult.setBackgroundResource(R.drawable.buttoncustom_green);
                 }
             }
 
@@ -319,11 +315,14 @@ public class QuestionnaireDetailFragment extends BaseFragment {
                     }
                     if (resultQuestion.id.equals("15") || resultQuestion.id.equals("17")) {
                         viewHoler.btnContact.setText("联系有关部门");
-                        viewHoler.btnContact.setVisibility(View.VISIBLE);
                     } else if (resultQuestion.id.equals("14")) {
                         viewHoler.btnContact.setText("联系翻译");
-                        viewHoler.btnContact.setVisibility(View.VISIBLE);
                     }
+
+                    if (resultQuestion.result == 0)
+                        viewHoler.btnContact.setVisibility(View.VISIBLE);
+                    else
+                        viewHoler.btnContact.setVisibility(View.GONE);
 
                     viewHoler.btnContact.setOnClickListener(new View.OnClickListener(){
 

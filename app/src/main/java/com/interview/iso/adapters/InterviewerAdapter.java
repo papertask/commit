@@ -84,7 +84,7 @@ public class InterviewerAdapter extends BaseAdapter {
                     adb.setPositiveButton("确定", new AlertDialog.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             DBHelper db = new DBHelper(mContext);
-                            db.deletePerson(person.getID());
+                            db.deletePerson(person.getnID());
                             List<Person> lsPerson = db.getAllPerson();
                             updateListPerson(lsPerson);
                         }
@@ -114,8 +114,8 @@ public class InterviewerAdapter extends BaseAdapter {
             holder.tvName.setText("警方排查");
         else
             holder.tvName.setText("外籍人员在华登记询问"); */
-        holder.tvName.setText(person.getFirstName() + " " + person.getLastName());
-        holder.tvDesc.setText(person.getTime());
+        holder.tvName.setText(person.getStrFirstName() + " " + person.getStrLastName());
+        holder.tvDesc.setText(person.getStrInterviewDate());
 
         //holder.rdCheck.setChecked(true);
         if(person.getAvatarPath()!=null && !person.getAvatarPath().equals("")){

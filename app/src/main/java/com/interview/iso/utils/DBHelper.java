@@ -38,8 +38,9 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String KEY_ID = "id";
     private static final String KEY_FIRSTNAME = "firstname";
     private static final String KEY_LASTNAME = "lastname";
-    private static final String KEY_BIRTHDAY = "birthday";
-    private static final String KEY_ADD = "address";
+    private static final String KEY_ADDRESS = "address";
+    private static final String KEY_POSITION = "position";
+    private static final String KEY_CITY = "city";
     private static final String KEY_PHONE = "phone";
     private static final String KEY_GENDER = "gender";
     
@@ -53,10 +54,10 @@ public class DBHelper extends SQLiteOpenHelper {
     ///////Statement Create Table
     private static final String CREATE_TABLE_PERSON = "CREATE TABLE "
     + TABLE_PERSON + "(" + KEY_ID + " INTEGER PRIMARY KEY  AUTOINCREMENT," + KEY_FIRSTNAME
-    + " TEXT," + KEY_LASTNAME + " TEXT," + KEY_AVATAR + " TEXT," + KEY_BIRTHDAY + " TEXT," + KEY_INTERVIEW_DATE
+    + " TEXT," + KEY_LASTNAME + " TEXT," + KEY_AVATAR + " TEXT," + KEY_ADDRESS + " TEXT," + KEY_INTERVIEW_DATE
     + " TEXT," + KEY_INTERVIEW_TYPE
-    + " INTEGER," + KEY_ADD + " TEXT," + KEY_PHONE + " TEXT," + KEY_GENDER
-    + " TEXT" + ")";
+    + " INTEGER," + KEY_CITY + " TEXT," + KEY_PHONE + " TEXT," + KEY_GENDER + " TEXT,"
+    + KEY_POSITION + " TEXT" + ")";
     
     
     private static final String CREATE_TABLE_RESULT = "CREATE TABLE "
@@ -96,12 +97,14 @@ public class DBHelper extends SQLiteOpenHelper {
     public long createPerson(Person ans) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(KEY_FIRSTNAME, ans.getFirstName());
-        values.put(KEY_LASTNAME, ans.getLastName());
-        values.put(KEY_BIRTHDAY, ans.getBirthDay());
-        values.put(KEY_INTERVIEW_DATE, ans.getTime());
-        values.put(KEY_ADD, ans.getAdd());
-        values.put(KEY_GENDER, ans.getGender());
+        values.put(KEY_FIRSTNAME, ans.getStrFirstName());
+        values.put(KEY_LASTNAME, ans.getStrLastName());
+        values.put(KEY_ADDRESS, ans.getStrAddress());
+        values.put(KEY_INTERVIEW_DATE, ans.getStrInterviewDate());
+        values.put(KEY_CITY, ans.getStrCity());
+        values.put(KEY_POSITION, ans.getStrPosition());
+        values.put(KEY_PHONE, ans.getStrTelphone());
+        values.put(KEY_GENDER, "Female");
         values.put(KEY_AVATAR, ans.getAvatarPath());
         values.put(KEY_INTERVIEW_TYPE, AppData.getInstance().getApptype());
         long ans_id = 0;
@@ -123,14 +126,16 @@ public class DBHelper extends SQLiteOpenHelper {
             c.moveToFirst();
         
         Person td = new Person();
-        td.setID(c.getInt(c.getColumnIndex(KEY_ID)));
-        td.setFirstName((c.getString(c.getColumnIndex(KEY_FIRSTNAME))));
-        td.setLastName((c.getString(c.getColumnIndex(KEY_LASTNAME))));
-        td.setAdd((c.getString(c.getColumnIndex(KEY_ADD))));
-        td.setGender((c.getString(c.getColumnIndex(KEY_GENDER))));
+        td.setnID(c.getInt(c.getColumnIndex(KEY_ID)));
+        td.setStrFirstName((c.getString(c.getColumnIndex(KEY_FIRSTNAME))));
+        td.setStrLastName((c.getString(c.getColumnIndex(KEY_LASTNAME))));
+        td.setStrAddress((c.getString(c.getColumnIndex(KEY_ADDRESS))));
         td.setAvatar((c.getString(c.getColumnIndex(KEY_AVATAR))));
         td.setInterview_type((c.getInt(c.getColumnIndex(KEY_INTERVIEW_TYPE))));
-        td.setTime(c.getString(c.getColumnIndex(KEY_INTERVIEW_DATE)));
+        td.setStrInterviewDate(c.getString(c.getColumnIndex(KEY_INTERVIEW_DATE)));
+        td.setStrPosition(c.getString(c.getColumnIndex(KEY_POSITION)));
+        td.setStrCity(c.getString(c.getColumnIndex(KEY_CITY)));
+        td.setStrTelphone(c.getString(c.getColumnIndex(KEY_PHONE)));
         c.close();
         db.close();
         
@@ -140,7 +145,7 @@ public class DBHelper extends SQLiteOpenHelper {
     private long CheckExistPerson(Person person) {
         SQLiteDatabase db = this.getReadableDatabase();
         String selectQuery = "SELECT  ID FROM " + TABLE_PERSON + " WHERE "
-        + KEY_FIRSTNAME + " = '" + person.getFirstName() + "' and "+  KEY_LASTNAME + " = '" + person.getLastName() + "' and "+ KEY_BIRTHDAY +" = '" + person.getBirthDay() + "'" ;
+        + KEY_FIRSTNAME + " = '" + person.getStrFirstName() + "' and "+  KEY_LASTNAME + " = '" + person.getStrLastName() + "' and "+ KEY_PHONE +" = '" + person.getStrTelphone() + "'" ;
         
         Log.e(LOG, selectQuery);
         Cursor c = db.rawQuery(selectQuery, null);
@@ -168,14 +173,16 @@ public class DBHelper extends SQLiteOpenHelper {
         if (c.moveToFirst()) {
             do {
                 Person td = new Person();
-                td.setID(c.getInt(c.getColumnIndex(KEY_ID)));
-                td.setFirstName(c.getString(c.getColumnIndex(KEY_FIRSTNAME)));
-                td.setLastName(c.getString(c.getColumnIndex(KEY_LASTNAME)));
-                td.setAdd(c.getString(c.getColumnIndex(KEY_ADD)));
-                td.setGender(c.getString(c.getColumnIndex(KEY_GENDER)));
+                td.setnID(c.getInt(c.getColumnIndex(KEY_ID)));
+                td.setStrFirstName(c.getString(c.getColumnIndex(KEY_FIRSTNAME)));
+                td.setStrLastName(c.getString(c.getColumnIndex(KEY_LASTNAME)));
+                td.setStrAddress(c.getString(c.getColumnIndex(KEY_ADDRESS)));
                 td.setAvatar(c.getString(c.getColumnIndex(KEY_AVATAR)));
                 td.setInterview_type(c.getInt(c.getColumnIndex(KEY_INTERVIEW_TYPE)));
-                td.setTime(c.getString(c.getColumnIndex(KEY_INTERVIEW_DATE)));
+                td.setStrInterviewDate(c.getString(c.getColumnIndex(KEY_INTERVIEW_DATE)));
+                td.setStrPosition(c.getString(c.getColumnIndex(KEY_POSITION)));
+                td.setStrTelphone(c.getString(c.getColumnIndex(KEY_PHONE)));
+                td.setStrCity(c.getString(c.getColumnIndex(KEY_CITY)));
                 lstAns.add(td);
             } while (c.moveToNext());
         }
@@ -188,7 +195,7 @@ public class DBHelper extends SQLiteOpenHelper {
         List<Person> lstAns = new ArrayList<Person>();
         String selectQuery = "SELECT  * FROM " + TABLE_PERSON + " WHERE " + KEY_FIRSTNAME + " LIKE '%"
         + term + "%' OR " + KEY_LASTNAME + " LIKE '%" + term + "%' OR " + KEY_INTERVIEW_DATE + " LIKE '%" + term + "%' OR "
-        + KEY_ADD + " LIKE '%" + term + "%'";
+        + KEY_POSITION + " LIKE '%" + term + "%'";
         
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = db.rawQuery(selectQuery, null);
@@ -196,15 +203,16 @@ public class DBHelper extends SQLiteOpenHelper {
         if (c.moveToFirst()) {
             do {
                 Person td = new Person();
-                td.setID(c.getInt(c.getColumnIndex(KEY_ID)));
-                td.setFirstName((c.getString(c.getColumnIndex(KEY_FIRSTNAME))));
-                td.setLastName((c.getString(c.getColumnIndex(KEY_LASTNAME))));
-
-                // td.setPhone((c.getString(c.getColumnIndex(KEY_PHONE))));
-                td.setAdd((c.getString(c.getColumnIndex(KEY_ADD))));
-                // td.setOld((c.getString(c.getColumnIndex(KEY_OLD))));
-                td.setGender((c.getString(c.getColumnIndex(KEY_GENDER))));
-                td.setAvatar((c.getString(c.getColumnIndex(KEY_AVATAR))));
+                td.setnID(c.getInt(c.getColumnIndex(KEY_ID)));
+                td.setStrFirstName(c.getString(c.getColumnIndex(KEY_FIRSTNAME)));
+                td.setStrLastName(c.getString(c.getColumnIndex(KEY_LASTNAME)));
+                td.setStrAddress(c.getString(c.getColumnIndex(KEY_ADDRESS)));
+                td.setAvatar(c.getString(c.getColumnIndex(KEY_AVATAR)));
+                td.setInterview_type(c.getInt(c.getColumnIndex(KEY_INTERVIEW_TYPE)));
+                td.setStrInterviewDate(c.getString(c.getColumnIndex(KEY_INTERVIEW_DATE)));
+                td.setStrPosition(c.getString(c.getColumnIndex(KEY_POSITION)));
+                td.setStrTelphone(c.getString(c.getColumnIndex(KEY_PHONE)));
+                td.setStrCity(c.getString(c.getColumnIndex(KEY_CITY)));
                 lstAns.add(td);
             } while (c.moveToNext());
         }
@@ -217,15 +225,16 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         
         ContentValues values = new ContentValues();
-        values.put(KEY_FIRSTNAME, ans.getFirstName());
-        values.put(KEY_LASTNAME, ans.getLastName());
-        values.put(KEY_ADD, ans.getAdd());
-        values.put(KEY_BIRTHDAY, ans.getBirthDay());
-        values.put(KEY_INTERVIEW_DATE, ans.getTime());
-        values.put(KEY_GENDER, ans.getGender());
+        values.put(KEY_FIRSTNAME, ans.getStrFirstName());
+        values.put(KEY_LASTNAME, ans.getStrLastName());
+        values.put(KEY_ADDRESS, ans.getStrAddress());
+        values.put(KEY_CITY, ans.getStrCity());
+        values.put(KEY_INTERVIEW_DATE, ans.getStrInterviewDate());
+        values.put(KEY_POSITION, ans.getStrPosition());
+        values.put(KEY_PHONE, ans.getStrTelphone());
         values.put(KEY_AVATAR, ans.getAvatarPath());
         return db.update(TABLE_PERSON, values, KEY_ID + " = ?",
-                         new String[]{String.valueOf(ans.getID())});
+                         new String[]{String.valueOf(ans.getnID())});
     }
     
     public void deletePerson(long ans_id) {

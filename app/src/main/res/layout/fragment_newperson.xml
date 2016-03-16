@@ -7,7 +7,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         tools:context=".MainActivity">
 
         <TextView
@@ -16,18 +16,27 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="10dp"
-            android:text="@string/addnew_l11"
+            android:text="照片 (建议将访谈对象的证件进行拍照)"
             android:textColor="@color/vline" />
 
         <TextView
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_below="@+id/txtaddnewl11"
             android:layout_marginLeft="0dp"
             android:layout_marginRight="0dp"
             android:layout_marginTop="5dp"
-
             android:background="#DCDCDC" />
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/txt_newperson_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:layout_below="@id/txtaddnewl11"
+            android:text=""
+            />
 
         <com.joooonho.SelectableRoundedImageView
 
@@ -35,10 +44,10 @@
             android:id="@+id/img_avatar"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:layout_below="@+id/txtaddnewl11"
+            android:layout_below="@+id/txt_newperson_comment"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="20px"
-            android:layout_marginTop="15dp"
             android:scaleType="centerCrop"
             android:src="@drawable/icon_camera"
             app:sriv_border_color="#ff9c10"
@@ -117,7 +126,10 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/container_new_name"
             android:orientation="horizontal"
-            android:padding="10dp">
+            android:paddingTop="0dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
 
             <TextView
                 android:id="@+id/txtaddnewl333"
@@ -147,24 +159,37 @@
             android:layout_marginTop="-5dp"
             android:background="#DCDCDC" />
 
-        <RelativeLayout
+        <LinearLayout
             android:id="@+id/ll_l2"
+            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/container_new_position"
-            android:paddingTop="10dp">
+            android:paddingTop="0dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
 
             <TextView
                 android:id="@+id/txtadnew_l2"
-                android:layout_width="wrap_content"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="20dp"
-                android:paddingRight="30dp"
-                android:text="@string/addnew_l2" />
+                android:layout_marginLeft="10dp"
+                android:text="电话" />
+            <EditText
+                android:id="@+id/editTelPhone"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_gravity="right"
+                android:background="#FFFF"
+                android:paddingLeft="10dp"
+                android:layout_marginRight="13dp"
+                android:singleLine="true" />
 
             <RadioGroup
+                android:visibility="gone"
                 android:id="@+id/rdog_addnew_gender"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -193,7 +218,7 @@
 
             </RadioGroup>
 
-        </RelativeLayout>
+        </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
@@ -219,17 +244,17 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="10dp"
-                android:text="生日" />
+                android:text="地址" />
 
-            <TextView
-                android:id="@+id/tvBirthday"
+            <EditText
+                android:id="@+id/editAddress"
                 android:layout_width="match_parent"
                 android:layout_height="38dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginRight="13dp"
                 android:paddingTop="10dp"
-                android:paddingLeft="10dp"
-                android:singleLine="true" />
+                android:background="@color/White"
+                android:paddingLeft="10dp" />
         </LinearLayout>
 
         <TextView
@@ -258,8 +283,8 @@
                 android:layout_marginLeft="10dp"
                 android:text="@string/addnew_l4" />
 
-            <TextView
-                android:id="@+id/tvInterviewDate"
+            <EditText
+                android:id="@+id/txt_city"
                 android:layout_width="match_parent"
                 android:layout_height="38dp"
                 android:layout_gravity="center_vertical"
@@ -267,6 +292,7 @@
                 android:paddingLeft="10dp"
                 android:paddingTop="10dp"
                 android:singleLine="true"
+                android:background="@color/White"
                 android:text="" />
         </LinearLayout>
 
@@ -285,7 +311,10 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/container_new_city"
             android:orientation="horizontal"
-            android:padding="10dp">
+            android:paddingTop="0dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp">
 
             <TextView
                 android:id="@+id/txtaddnewl5"

@@ -50,7 +50,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -65,13 +64,8 @@ public class NewQuestionnaireFragment extends BaseFragment {
     private SelectableRoundedImageView imgCamera;
     private MediaRecorder recorder;
 
-    private String date="";
-    private String time="";
     private DBHelper db;
-    private EditText edtFirstName,edtLastName, edtAdd;
-    private TextView tvTime,tvDate;
-    private RadioGroup rdoGender;
-    int selectDatefrom = -1;
+    private EditText edtFirstName,edtLastName, edtTelphone, edtAddress, edtCity, edtPosition;
     static final int REQUEST_TAKE_PHOTO = 11111;
     public NewQuestionnaireFragment(){}
     private boolean hasChange = false;
@@ -85,87 +79,42 @@ public class NewQuestionnaireFragment extends BaseFragment {
         imgCamera =(SelectableRoundedImageView)rootView.findViewById(R.id.img_avatar);
         imgCamera.setOnClickListener(myAddClickListener);
         mContentResolver = getActivity().getContentResolver();
-//        imgCamera.getLayoutParams().height = (int)InterviewerAdapter.convertDpToPixel(80,getActivity());
-//        imgCamera.getLayoutParams().width = (int)InterviewerAdapter.convertDpToPixel(80,getActivity());
-//        imgCamera.requestLayout();
         btnCreateAccount.setOnClickListener(myAddClickListener);
 
+        // Initialize Edit boxes
         edtFirstName = (EditText)rootView.findViewById(R.id.edtFirstName);
+        edtFirstName.addTextChangedListener(onTextChangeListener);
         edtLastName = (EditText)rootView.findViewById(R.id.edtLastName);
-
-        tvDate = (TextView)rootView.findViewById(R.id.tvInterviewDate);
-        tvTime = (TextView)rootView.findViewById(R.id.tvBirthday);
-        edtAdd = (EditText)rootView.findViewById(R.id.edtaddnew_l5);
-        edtAdd.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                hasChange = true;
-            }
-        });
-        edtLastName.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                hasChange = true;
-            }
-        });
-        rdoGender = (RadioGroup)rootView.findViewById(R.id.rdog_addnew_gender);
-        Calendar newCalendar = Calendar.getInstance();
-        dateFormatter_birth = new SimpleDateFormat("yyyy年MM月dd天");
+        edtLastName.addTextChangedListener(onTextChangeListener);
+        edtAddress = (EditText)rootView.findViewById(R.id.editAddress);
+        edtAddress.addTextChangedListener(onTextChangeListener);
+        edtTelphone = (EditText)rootView.findViewById(R.id.editTelPhone);
+        edtTelphone.addTextChangedListener(onTextChangeListener);
+        edtCity = (EditText)rootView.findViewById(R.id.txt_city);
+        edtCity.addTextChangedListener(onTextChangeListener);
+        edtPosition = (EditText)rootView.findViewById(R.id.edtaddnew_l5);
+        edtPosition.addTextChangedListener(onTextChangeListener);
         dateFormatter_interview = new SimpleDateFormat("yyyy年MM月dd天, HH点mm分");//2015年11月1日，15点51分
-        Date date = new Date();
-        tvTime.setText(dateFormatter_birth.format(date.getTime()));
-        tvDate.setText(dateFormatter_interview.format(date.getTime()));
-        fromDatePickerDialog = new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
 
-            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                hasChange = true;
-                newDate = Calendar.getInstance();
-                newDate.set(year, monthOfYear, dayOfMonth);
-                if (selectDatefrom ==1)
-                    tvDate.setText(dateFormatter_interview.format(newDate.getTime()));
-                else
-                    tvTime.setText(dateFormatter_birth.format(newDate.getTime()));
-
-            }
-
-        }, newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
-
-        tvDate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                selectDatefrom = 1;
-                fromDatePickerDialog.show();
-            }
-        });
-        tvTime.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                selectDatefrom = 2;
-                fromDatePickerDialog.show();
-            }
-        });
         return rootView;
     }
+
+    TextWatcher onTextChangeListener = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+            hasChange = true;
+        }
+    };
 
     View.OnClickListener myAddClickListener = new View.OnClickListener() {
         @Override
@@ -173,24 +122,31 @@ public class NewQuestionnaireFragment extends BaseFragment {
             try{
                 switch (v.getId()){
                     case R.id.btn_next:
-                        if(edtLastName.getText().length()>0 && edtFirstName.getText().length()>0 && tvDate.getText().length()>0 & tvTime.getText().length()>0 & edtAdd.getText().length()>0)
+                        if(     edtLastName.getText().length()>0 &&
+                                edtFirstName.getText().length()>0 &&
+                                edtAddress.getText().length()>0 &&
+                                edtTelphone.getText().length() > 0 &&
+                                edtCity.getText().length() > 0 &&
+                                edtPosition.getText().length() > 0 )
                         {
-                            int idxgender_selected = rdoGender.indexOfChild(rdoGender.findViewById(rdoGender.getCheckedRadioButtonId()));
-                            String strGender="";
-                            if(idxgender_selected==0) strGender="Female";
-                            else strGender="Male";
                             Person pr = new Person();
-                            pr.setLastName(edtLastName.getText().toString());
-                            pr.setFirstName(edtFirstName.getText().toString());
-                            pr.setBirthDay(tvTime.getText().toString());
-                            pr.setTime(tvDate.getText().toString());
-                            pr.setAdd(edtAdd.getText().toString());
-                            pr.setGender(strGender);
+                            pr.setStrLastName(edtLastName.getText().toString());
+                            pr.setStrFirstName(edtFirstName.getText().toString());
+                            pr.setStrAddress(edtAddress.getText().toString());
+                            pr.setStrTelphone(edtTelphone.getText().toString());
+                            pr.setStrCity(edtCity.getText().toString());
+                            pr.setStrPosition(edtPosition.getText().toString());
+                            pr.setStrInterviewDate(dateFormatter_interview.format(new Date()));
+
                             CameraActivity cameraActivity = (CameraActivity)getActivity();
+
                             pr.setAvatar(cameraActivity.getCurrentPhotoPath());
+
                             if (!isStored && hasChange)
                                 AppData.getInstance().setPersonID(db.createPerson(pr));
+
                             Log.d("current Person",AppData.getInstance().getPersonID() + "");
+
                             //next question
                             MainActivity activity = (MainActivity) getActivity();
                             activity.didSelectMenuItem(new MenuItem(getString(R.string.language), "LanguageChooseFragment","Language", 0));
@@ -378,20 +334,23 @@ public class NewQuestionnaireFragment extends BaseFragment {
         imgCamera.setImageBitmap(bitmap);
     }
     boolean isStored = false;
+
     public void storeInterviewer(){
-        if(edtFirstName.getText().length()>0 && edtLastName.getText().length()>0 && tvDate.getText().length()>0 & tvTime.getText().length()>0 & edtAdd.getText().length()>0)
+        if( edtFirstName.getText().length() > 0 &&
+                edtLastName.getText().length() > 0 &&
+                edtAddress.getText().length() > 0 &&
+                edtTelphone.getText().length() > 0 &&
+                edtCity.getText().length() > 0 &&
+                edtPosition.getText().length() > 0)
         {
-            int idxgender_selected = rdoGender.indexOfChild(rdoGender.findViewById(rdoGender.getCheckedRadioButtonId()));
-            String strGender="";
-            if(idxgender_selected==0) strGender="Female";
-            else strGender="Male";
             Person pr = new Person();
-            pr.setFirstName(edtFirstName.getText().toString());
-            pr.setLastName(edtLastName.getText().toString());
-            pr.setBirthDay(tvTime.getText().toString());
-            pr.setTime(tvDate.getText().toString());
-            pr.setAdd(edtAdd.getText().toString());
-            pr.setGender(strGender);
+            pr.setStrFirstName(edtFirstName.getText().toString());
+            pr.setStrLastName(edtLastName.getText().toString());
+            pr.setStrCity(edtCity.getText().toString());
+            pr.setStrPosition(edtPosition.getText().toString());
+            pr.setStrAddress(edtAddress.getText().toString());
+            pr.setStrTelphone(edtTelphone.getText().toString());
+            pr.setStrInterviewDate(dateFormatter_interview.format(new Date()));
             CameraActivity activity = (CameraActivity)getActivity();
             pr.setAvatar(activity.getCurrentPhotoPath());
             if(hasChange)

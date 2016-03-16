@@ -85,7 +85,7 @@ public class QuestionnaireDetailMarriage extends Fragment {
                         Person person = AppData.getInstance().getPerson_selection();
                         MainActivity activity = (MainActivity) getActivity();
                         DBHelper db = new DBHelper(activity);
-                        db.deletePerson(person.getID());
+                        db.deletePerson(person.getnID());
                         activity.didSelectMenuItem(new MenuItem(getResources().getString(R.string.menu_question_list), "ListNameFragment", "list_interviewer", 0));
                     }
                 });
@@ -131,16 +131,13 @@ public class QuestionnaireDetailMarriage extends Fragment {
         if(person.getAvatarPath()!=null && !person.getAvatarPath().equals(""))
             setFullImageFromFilePath(person.getAvatarPath(), rdAvatar);
 
-        tvInterviewDate.setText(person.getTime());
-        if(person.getGender().equals("Male"))
-            tvGender.setText(getString(R.string.Male));
-        else
-            tvGender.setText(getString(R.string.Female));
-        tvName.setText(person.getFirstName()+" "+person.getLastName());
-        tvLocation.setText(person.getAdd());
+        tvInterviewDate.setText(person.getStrInterviewDate());
+        tvGender.setText(getString(R.string.Female));
+        tvName.setText(person.getStrFirstName()+" "+person.getStrLastName());
+        tvLocation.setText(person.getStrPosition());
 
         DBHelper db = new DBHelper(getActivity());
-        Answer answer = db.getListQuestionByPersion(person.getID());
+        Answer answer = db.getListQuestionByPersion(person.getnID());
         number = 0;
         if(answer!= null) {
             JSONObject object = answer.convertToJsonArray();

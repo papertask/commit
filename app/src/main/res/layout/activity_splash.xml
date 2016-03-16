@@ -59,7 +59,7 @@
             android:paddingRight="25dp"
             android:textSize="24sp"
             android:textDirection="anyRtl"
-            android:text="拐卖受害人初步识别语音软件"
+            android:text="拐卖受害人识别"
             android:layout_alignParentLeft="true"
             android:textAlignment="center" />
     </RelativeLayout>

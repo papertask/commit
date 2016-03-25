@@ -43,6 +43,7 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String KEY_CITY = "city";
     private static final String KEY_PHONE = "phone";
     private static final String KEY_GENDER = "gender";
+    private static final String KEY_LANG = "lang";
     
     private static final String KEY_RESULT = "result";
     private static final String KEY_INTERVIEW_DATE = "interview_date";
@@ -56,7 +57,7 @@ public class DBHelper extends SQLiteOpenHelper {
     + TABLE_PERSON + "(" + KEY_ID + " INTEGER PRIMARY KEY  AUTOINCREMENT," + KEY_FIRSTNAME
     + " TEXT," + KEY_LASTNAME + " TEXT," + KEY_AVATAR + " TEXT," + KEY_ADDRESS + " TEXT," + KEY_INTERVIEW_DATE
     + " TEXT," + KEY_INTERVIEW_TYPE
-    + " INTEGER," + KEY_CITY + " TEXT," + KEY_PHONE + " TEXT," + KEY_GENDER + " TEXT,"
+    + " INTEGER," + KEY_CITY + " TEXT," + KEY_PHONE + " TEXT," + KEY_GENDER + " TEXT," + KEY_LANG + " TEXT,"
     + KEY_POSITION + " TEXT" + ")";
     
     
@@ -106,6 +107,7 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put(KEY_PHONE, ans.getStrTelphone());
         values.put(KEY_GENDER, "Female");
         values.put(KEY_AVATAR, ans.getAvatarPath());
+        values.put(KEY_LANG, ans.getLang());
         values.put(KEY_INTERVIEW_TYPE, AppData.getInstance().getApptype());
         long ans_id = 0;
         long id = 0;
@@ -136,6 +138,7 @@ public class DBHelper extends SQLiteOpenHelper {
         td.setStrPosition(c.getString(c.getColumnIndex(KEY_POSITION)));
         td.setStrCity(c.getString(c.getColumnIndex(KEY_CITY)));
         td.setStrTelphone(c.getString(c.getColumnIndex(KEY_PHONE)));
+        td.setLang(c.getString(c.getColumnIndex(KEY_LANG)));
         c.close();
         db.close();
         
@@ -183,6 +186,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 td.setStrPosition(c.getString(c.getColumnIndex(KEY_POSITION)));
                 td.setStrTelphone(c.getString(c.getColumnIndex(KEY_PHONE)));
                 td.setStrCity(c.getString(c.getColumnIndex(KEY_CITY)));
+                td.setLang(c.getString(c.getColumnIndex(KEY_LANG)));
                 lstAns.add(td);
             } while (c.moveToNext());
         }
@@ -213,6 +217,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 td.setStrPosition(c.getString(c.getColumnIndex(KEY_POSITION)));
                 td.setStrTelphone(c.getString(c.getColumnIndex(KEY_PHONE)));
                 td.setStrCity(c.getString(c.getColumnIndex(KEY_CITY)));
+                td.setLang(c.getString(c.getColumnIndex(KEY_LANG)));
                 lstAns.add(td);
             } while (c.moveToNext());
         }
@@ -233,6 +238,7 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put(KEY_POSITION, ans.getStrPosition());
         values.put(KEY_PHONE, ans.getStrTelphone());
         values.put(KEY_AVATAR, ans.getAvatarPath());
+        values.put(KEY_LANG, ans.getLang());
         return db.update(TABLE_PERSON, values, KEY_ID + " = ?",
                          new String[]{String.valueOf(ans.getnID())});
     }

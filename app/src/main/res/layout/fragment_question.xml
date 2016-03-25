@@ -70,14 +70,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:paddingBottom="10dp">
+            android:paddingBottom="0dp">
 
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="8dp"
-                android:paddingTop="20dp">
+                android:paddingTop="0dp">
 
                 <TextView
                     android:id="@+id/marrage_title_cn"
@@ -94,7 +94,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/marrage_title_cn"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="0dp"
                     android:padding="5dp"
                     android:text="@string/title_gov_term"
                     android:textAlignment="center"
@@ -106,7 +106,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/marrage_title_fo"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="0dp"
                     android:padding="5dp"
                     android:text="@string/header_gov_term"
                     android:textAlignment="center"
@@ -115,11 +115,11 @@
 
                 <TextView
                     android:id="@+id/marrage_title_fo_1"
-                    android:layout_below="@+id/marrage_title_cn_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/marrage_title_cn_1"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginTop="0dp"
                     android:padding="5dp"
                     android:text="@string/title_gov_term"
                     android:textAlignment="center"
@@ -146,7 +146,7 @@
                     android:paddingLeft="15dp"
                     android:paddingRight="15dp"
                     android:paddingTop="5dp"
-                    android:text="Do you have a passport or any other ID?"
+                    android:text=""
                     android:textSize="18sp" />
 
                 <TextView
@@ -157,18 +157,17 @@
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp"
                     android:text="\n告知/Informing:\n"
-                    android:visibility="gone"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/question_header_space"
-                    android:visibility="gone"
                     android:layout_width="30dp"
                     android:layout_height="1dp"
                     android:layout_below="@+id/header"
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="-10dp"
-                    android:background="@color/colorPrimary" />
+                    android:background="@color/colorPrimary"
+                    android:visibility="gone" />
 
                 <TextView
                     android:id="@+id/basic_query_en"
@@ -540,6 +539,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:editable="false"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:text=""
@@ -575,6 +575,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
                         android:background="@android:color/transparent"
+                        android:editable="false"
                         android:text="是"
                         android:textColor="#FFFF"
                         android:textSize="20sp"
@@ -608,6 +609,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
                         android:background="@android:color/transparent"
+                        android:editable="false"
                         android:text="否"
                         android:textColor="#FFFF"
                         android:textSize="20sp"

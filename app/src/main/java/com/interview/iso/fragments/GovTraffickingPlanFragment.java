@@ -29,7 +29,7 @@ public class GovTraffickingPlanFragment extends BaseFragment {
         public void onClick(View v) {
             if (v.getId() == R.id.btn_readmore_gov_plan) {
                 MainActivity activity = (MainActivity)getActivity();
-                activity.didSelectMenuItem(new MenuItem(getResources().getString(R.string.menu_anti_trafficking_plan), "GovTraffickingPlanDetailFragment", "police_guide", 0));
+                activity.didSelectMenuItem(new MenuItem(getResources().getString(R.string.menu_anti_trafficking_plan), "GovTraffickingPlanDetailFragment", "police_guide_plan", 0));
             }
         }
     };

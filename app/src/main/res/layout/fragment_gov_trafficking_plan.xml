@@ -32,6 +32,7 @@
                         android:layout_gravity="center_vertical"
                         android:text="@string/trafficking_plan_title"
                         android:textAlignment="center"
+                        android:editable="false"
                         android:textColor="@color/White"
                         android:textSize="24sp" />
                 </LinearLayout>
@@ -48,6 +49,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/trafficking_plan_content"
                     android:textAlignment="center"
+                    android:editable="false"
                     android:textSize="16sp" />
 
                 <TextView
@@ -57,6 +59,7 @@
                     android:layout_marginTop="10dp"
                     android:clickable="true"
                     android:textSize="20sp"
+                    android:editable="false"
                     android:layout_marginBottom="20dp"
                     android:text="点击阅读全文"
                     android:textAlignment="center" />

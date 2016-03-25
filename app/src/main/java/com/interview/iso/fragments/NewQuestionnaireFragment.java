@@ -95,6 +95,8 @@ public class NewQuestionnaireFragment extends BaseFragment {
         edtPosition = (EditText)rootView.findViewById(R.id.edtaddnew_l5);
         edtPosition.addTextChangedListener(onTextChangeListener);
         dateFormatter_interview = new SimpleDateFormat("yyyy年MM月dd天, HH点mm分");//2015年11月1日，15点51分
+        CameraActivity cameraActivity = (CameraActivity)getActivity();
+        cameraActivity.init();
 
         return rootView;
     }
@@ -122,11 +124,8 @@ public class NewQuestionnaireFragment extends BaseFragment {
             try{
                 switch (v.getId()){
                     case R.id.btn_next:
-                        if(     edtLastName.getText().length()>0 &&
-                                edtFirstName.getText().length()>0 &&
-                                edtAddress.getText().length()>0 &&
+                        if(     edtFirstName.getText().length()>0 &&
                                 edtTelphone.getText().length() > 0 &&
-                                edtCity.getText().length() > 0 &&
                                 edtPosition.getText().length() > 0 )
                         {
                             Person pr = new Person();
@@ -336,11 +335,9 @@ public class NewQuestionnaireFragment extends BaseFragment {
     boolean isStored = false;
 
     public void storeInterviewer(){
-        if( edtFirstName.getText().length() > 0 &&
-                edtLastName.getText().length() > 0 &&
-                edtAddress.getText().length() > 0 &&
+        if(
+                edtFirstName.getText().length() > 0 &&
                 edtTelphone.getText().length() > 0 &&
-                edtCity.getText().length() > 0 &&
                 edtPosition.getText().length() > 0)
         {
             Person pr = new Person();
@@ -430,8 +427,6 @@ public class NewQuestionnaireFragment extends BaseFragment {
     @Override
     public void onResume() {
         super.onResume();
-
-
     }
 }
 

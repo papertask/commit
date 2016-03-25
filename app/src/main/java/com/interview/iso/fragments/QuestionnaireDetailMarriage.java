@@ -37,9 +37,15 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+
+import com.tencent.mm.sdk.modelmsg.SendMessageToWX;
+import com.tencent.mm.sdk.openapi.IWXAPI;
+import com.tencent.mm.sdk.modelmsg.WXMediaMessage;
+import com.tencent.mm.sdk.modelmsg.WXTextObject;
 
 /**
  * Created by lu.nguyenvan2 on 11/11/2015.
@@ -49,7 +55,16 @@ public class QuestionnaireDetailMarriage extends Fragment {
     private List<ResultQuestion> mList;
     private ExpandableHeightListView mListView;
     SelectableRoundedImageView rdAvatar;
+    TextView ctrlTxtLang;
+    Map<String, Integer> mAnswer=null;
+    private String str_share = "";
     private  int number;
+
+    private IWXAPI api;
+
+    private String buildTransaction(final String type) {
+        return (type == null) ? String.valueOf(System.currentTimeMillis()) : type + System.currentTimeMillis();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -57,7 +72,6 @@ public class QuestionnaireDetailMarriage extends Fragment {
         mListView = (ExpandableHeightListView) rootView.findViewById(R.id.list_questionnaire);
         rdAvatar = (SelectableRoundedImageView) rootView.findViewById(R.id.image_avatar);
         TextView tvInterviewDate = (TextView)rootView.findViewById(R.id.tv_interviewDate);
-        TextView tvGender = (TextView)rootView.findViewById(R.id.tv_gender);
         TextView tvExtraText = (TextView)rootView.findViewById(R.id.extra_information);
         TextView tvLocation = (TextView)rootView.findViewById(R.id.tv_location);
         TextView tvName = (TextView)rootView.findViewById(R.id.tv_name);
@@ -70,6 +84,27 @@ public class QuestionnaireDetailMarriage extends Fragment {
         ImageView imgPlayAnounce = (ImageView) rootView.findViewById(R.id.img_play_anounce);
         Button btnDelete = (Button) rootView.findViewById(R.id.btn_qdetail_ma_delete);
         Button btnShare = (Button) rootView.findViewById(R.id.btn_qdetail_ma_share);
+        ctrlTxtLang = (TextView) rootView.findViewById(R.id.tv_gender);
+        mAnswer = new HashMap<>();
+
+        api = AppData.getInstance().getWeChatAPI();
+
+        btnShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String text = str_share;
+                WXTextObject textObj = new WXTextObject();
+                textObj.text = text;
+                WXMediaMessage msg = new WXMediaMessage();
+                msg.mediaObject = textObj;
+                msg.description = text;
+                SendMessageToWX.Req req = new SendMessageToWX.Req();
+                req.transaction = buildTransaction("text");
+                req.message = msg;
+                req.scene = SendMessageToWX.Req.WXSceneSession;
+                api.sendReq(req);
+            }
+        });
 
         btnDelete.setOnClickListener(new View.OnClickListener(){
 
@@ -116,7 +151,7 @@ public class QuestionnaireDetailMarriage extends Fragment {
                     This.setImageDrawable(getResources().getDrawable(R.drawable.oval_play));
                 } else {
                     String file_name;
-                    if (number == 1) {
+                    if (mAnswer.get("2")*1==1 && mAnswer.get("3")*1 == 0 && mAnswer.get("4")*1==0) {
                         file_name = String.format("Sound/%s/%s/r1.mp3", "government", AppData.getInstance().getLanguage());//1
                     } else {
                         file_name = String.format("Sound/%s/%s/r2.mp3", "government", AppData.getInstance().getLanguage());//1
@@ -131,14 +166,34 @@ public class QuestionnaireDetailMarriage extends Fragment {
         if(person.getAvatarPath()!=null && !person.getAvatarPath().equals(""))
             setFullImageFromFilePath(person.getAvatarPath(), rdAvatar);
 
-        tvInterviewDate.setText(person.getStrInterviewDate());
-        tvGender.setText(getString(R.string.Female));
+        str_share += "姓名 : " + person.getStrFirstName()+" "+person.getStrLastName() + "\n";
+        str_share += "电话 : " + person.getStrTelphone() + "\n";
+        str_share += "时间 : " + person.getStrInterviewDate() + "\n";
+        str_share += "地址 : " + person.getStrPosition() + "\n";
+
+        if (person.getLang().equals("vn")) {
+            ctrlTxtLang.setText("语言 : 越南");
+            str_share += "语言 : 越南" + "\n";
+        } else if (person.getLang().equals("km")) {
+            ctrlTxtLang.setText("语言 : 柬埔寨");
+            str_share += "语言 : 柬埔寨" + "\n";
+        } else if (person.getLang().equals("lao")) {
+            ctrlTxtLang.setText("语言 : 老挝");
+            str_share += "语言 : 老挝" + "\n";
+        } else if (person.getLang().equals("my")) {
+            ctrlTxtLang.setText("语言 : 缅甸");
+            str_share += "语言 : 缅甸" + "\n";
+        }
+
+        tvInterviewDate.setText("时间 : " + person.getStrInterviewDate());
         tvName.setText(person.getStrFirstName()+" "+person.getStrLastName());
-        tvLocation.setText(person.getStrPosition());
+        tvLocation.setText("地址 : " + person.getStrPosition());
 
         DBHelper db = new DBHelper(getActivity());
         Answer answer = db.getListQuestionByPersion(person.getnID());
+        AppData.getInstance().setLanguage(person.getLang());
         number = 0;
+
         if(answer!= null) {
             JSONObject object = answer.convertToJsonArray();
 //        Map<String , Boolean> mResult;
@@ -151,26 +206,65 @@ public class QuestionnaireDetailMarriage extends Fragment {
                         resultQuestion.id = key.next();
                         resultQuestion.result = object.get(resultQuestion.id) == 1 ? true : false;
 
-                        if (resultQuestion.id.equals("0") == false)
+                        if (resultQuestion.id.equals("0") == false) {
                             mList.add(resultQuestion);
+                            mAnswer.put(resultQuestion.id, (int)(object.get(resultQuestion.id)));
+                        }
                     } catch (Exception ex) {
                     }
                 }
             }
         }
 
-        if(number == 1) {
+        str_share += "\n结果建议\n\n";
+
+        if(mAnswer.get("2")*1==1 && mAnswer.get("3")*1 == 0 && mAnswer.get("4")*1==0){
             //tvExtraText.setText(getString(R.string.quetion_gov_cn));
             lblResult.setText("同意办证：");
-            tvResultCn.setText(getString(R.string.header_gov_term).substring(3));
+            str_share += "同意办证: \n\n";
+            str_share += getString(R.string.marriage_res_approve_cn) + "\n\n";
+            tvResultCn.setText(getString(R.string.marriage_res_approve_cn));
             if (AppData.getInstance().getLanguage().equals("vn")) {
-                tvResult.setText(getString(R.string.header_gov_term_vn).substring(3));
+                tvResult.setText(getString(R.string.marriage_res_approve_vn));
+            } else if (AppData.getInstance().getLanguage().equals("km")) {
+                tvResult.setText(getString(R.string.marriage_res_approve_km));
+            } else if (AppData.getInstance().getLanguage().equals("lao")) {
+                tvResult.setText(getString(R.string.marriage_res_approve_lao));
+            } else if (AppData.getInstance().getLanguage().equals("my")) {
+                tvResult.setText(getString(R.string.marriage_res_approve_my));
+            } else {
+                tvResult.setText("");
+            }
+        } else  {//tvExtraText.setText(getString(R.string.quetion_gov_cn));
+
+            lblResult.setText("疑似拐卖: ");
+            str_share += "疑似拐卖: \n\n";
+            str_share += getString(R.string.marriage_res_potential_cn) + "\n\n";
+            tvResultCn.setText(getString(R.string.marriage_res_potential_cn));
+            if (AppData.getInstance().getLanguage().equals("vn")) {
+                tvResult.setText(getString(R.string.marriage_res_potential_vn));
+            } else if (AppData.getInstance().getLanguage().equals("km")) {
+                tvResult.setText(getString(R.string.marriage_res_potential_km));
+            } else if (AppData.getInstance().getLanguage().equals("lao")) {
+                tvResult.setText(getString(R.string.marriage_res_potential_lao));
+            } else if (AppData.getInstance().getLanguage().equals("my")) {
+                tvResult.setText(getString(R.string.marriage_res_potential_my));
+            } else {
+                tvResult.setText("");
             }
         }
-        else {
-            lblResult.setText("疑似拐卖: ");
-            tvResultCn.setText(getString(R.string.quetion_gov_cn1).substring(3));
-            tvResult.setText(getString(R.string.quetion_gov_vn1).substring(3));
+
+        str_share += "\n问卷\n\n";
+
+        Map<Integer,Question> mListQuest;
+        mListQuest = AppData.getInstance().getListQuestion(person.getInterview_type());
+        if (mList != null && mList.size() > 0) {
+            Collections.sort(mList,new MyCompare());
+            for (int i = 0; i < mList.size(); i ++) {
+                ResultQuestion row = (ResultQuestion)(mList.get(i));
+                Question question = mListQuest.get(Integer.parseInt(row.id)-1);
+                str_share += question.question_cn + (row.result ? " 是 " : " 否 ") + "\n";
+            }
         }
 
         QuestionDetailAdapter adapter = new QuestionDetailAdapter(getActivity(),mList,person);
@@ -329,11 +423,11 @@ public class QuestionnaireDetailMarriage extends Fragment {
 
                 if (question != null ) {
                     if (resultQuestion.result) {
-                        viewHoler.tvContent.setText(question.question_cn.substring(3));
+                        viewHoler.tvContent.setText(question.question_cn.substring(2));
                         viewHoler.btnResult.setText("是");
                         viewHoler.btnResult.setBackgroundResource(R.drawable.buttoncustom);
                     } else {
-                        viewHoler.tvContent.setText(question.question_cn.substring(3));
+                        viewHoler.tvContent.setText(question.question_cn.substring(2));
                         viewHoler.btnResult.setText("否");
                         viewHoler.btnResult.setBackgroundResource(R.drawable.buttoncustom_green);
                     }
@@ -347,15 +441,15 @@ public class QuestionnaireDetailMarriage extends Fragment {
             TextView tvID;
             Button btnResult;
         }
-        class MyCompare implements Comparator<ResultQuestion> {
+    }
+    class MyCompare implements Comparator<ResultQuestion> {
 
-            @Override
-            public int compare(ResultQuestion lhs, ResultQuestion rhs) {
-                if(Integer.parseInt(lhs.id) <Integer.parseInt(rhs.id))
-                    return -1;
-                else
-                    return 1;
-            }
+        @Override
+        public int compare(ResultQuestion lhs, ResultQuestion rhs) {
+            if(Integer.parseInt(lhs.id) <Integer.parseInt(rhs.id))
+                return -1;
+            else
+                return 1;
         }
     }
 }

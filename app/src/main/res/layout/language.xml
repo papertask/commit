@@ -3,24 +3,40 @@
     android:layout_height="fill_parent"
     android:layout_marginTop="1dp"
     android:orientation="vertical" >
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="你是哪里人？"
+        android:textSize="20dp"
+        android:padding="20dp"
+        />
+    <TextView
+        android:layout_width="20dp"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimary"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="-10dp"
+        android:layout_marginBottom="10dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="请让被询问人选择其语言"
+        android:textColor="#bcbcbc"
+        android:paddingLeft="20dp"
+        android:layout_marginBottom="10dp"
+        />
     <ListView
         android:id="@+id/lsvlanguage"
         android:layout_width="match_parent"
         android:choiceMode="singleChoice"
         android:layout_height="wrap_content"
         android:dividerHeight="1dp"
-        android:divider="#DCDCDC"
-        android:headerDividersEnabled="true"
+        android:paddingLeft="15dp"
+        android:paddingRight="0dp"
+        android:divider="@color/transparent"
+        android:headerDividersEnabled="false"
         android:cacheColorHint="#FFFF33"
-        />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#DCDCDC"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
         />
 
 </LinearLayout>

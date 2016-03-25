@@ -9,6 +9,7 @@ public class Person {
 	private String strPosition;
 	private String strCity;
 	private String strTelphone;
+	private String strLang;
 	private String strInterviewDate;
 	private String strAvatar = null;
 
@@ -32,6 +33,7 @@ public class Person {
 		strLastName = "";
 		strFirstName = "";
 		strGender = "Female";
+		strLang = "cn";
 		strAddress = "";
 		strPosition = "";
 		strCity = "";
@@ -109,6 +111,14 @@ public class Person {
 
 	public void setStrInterviewDate(String strInterviewDate) {
 		this.strInterviewDate = strInterviewDate;
+	}
+
+	public void setLang( String str_lang ) {
+		this.strLang = str_lang;
+	}
+
+	public String getLang() {
+		return strLang;
 	}
 
 }

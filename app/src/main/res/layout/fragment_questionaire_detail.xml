@@ -43,6 +43,7 @@
             android:layout_marginLeft="13dp"
             android:layout_marginRight="13dp"
             android:background="#FFFF"
+            android:editable="false"
             android:gravity="center"
             android:imeOptions="actionDone"
             android:maxLines="1"
@@ -62,6 +63,7 @@
             android:background="#FFFF"
             android:drawableLeft="@drawable/infor_location"
             android:drawablePadding="5dp"
+            android:editable="false"
             android:gravity="center_vertical"
             android:imeOptions="actionDone"
             android:maxLines="1"
@@ -74,35 +76,40 @@
 
         <TextView
             android:id="@+id/tv_interviewDate"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_location"
             android:layout_marginLeft="13dp"
             android:layout_marginRight="13dp"
             android:drawableLeft="@drawable/info_date"
             android:drawablePadding="5dp"
+            android:editable="false"
             android:padding="10dp"
             android:text="text2"
             android:textColor="#000"
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/tv_gender"
-            android:layout_width="wrap_content"
+            android:id="@+id/tv_userLang"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_interviewDate"
-            android:layout_toRightOf="@id/image_avatar"
-            android:paddingLeft="10dp"
-            android:text="Female"
-            android:visibility="gone"
-
-            />
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"
+            android:drawableLeft="@drawable/flag"
+            android:drawablePadding="5dp"
+            android:editable="false"
+            android:padding="10dp"
+            android:text=""
+            android:textColor="#000"
+            android:textSize="16sp" />
 
         <LinearLayout
             android:id="@+id/ln_action_profile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_interviewDate"
+            android:layout_below="@+id/tv_userLang"
             android:layout_marginBottom="3dp"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
@@ -112,9 +119,9 @@
             android:weightSum="2">
 
             <Button
+                android:id="@+id/btn_qdetail_delete"
                 android:layout_width="10dp"
                 android:layout_height="36dp"
-                android:id="@+id/btn_qdetail_delete"
                 android:layout_marginRight="3dp"
                 android:layout_weight="1"
                 android:background="@drawable/buttoncustom"
@@ -123,8 +130,8 @@
                 android:textSize="16sp" />
 
             <Button
-                android:layout_width="0dp"
                 android:id="@+id/btn_qdetail_share"
+                android:layout_width="0dp"
                 android:layout_height="36dp"
                 android:layout_marginLeft="3dp"
                 android:layout_weight="1"
@@ -156,6 +163,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:editable="false"
                 android:text="答卷详情"
                 android:textSize="20sp" />
 
@@ -164,6 +172,18 @@
                 android:layout_height="1dp"
                 android:layout_marginTop="10dp"
                 android:background="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/txt_addition_q_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:editable="false"
+                android:text="@string/police_res_desc_1"
+                android:textSize="16sp"
+                android:visibility="gone" />
         </LinearLayout>
 
         <com.interview.iso.view.ExpandableHeightListView
@@ -174,9 +194,9 @@
             android:divider="@color/transparent"
             android:dividerHeight="0dp"
             android:footerDividersEnabled="false"
-            android:paddingTop="15dp"
             android:paddingLeft="15dp"
-            android:paddingRight="15dp"/>
+            android:paddingRight="15dp"
+            android:paddingTop="15dp" />
 
 
         <View
@@ -184,12 +204,11 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_below="@+id/list_questionnaire_1"
+            android:layout_marginBottom="60dp"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
-            android:layout_marginBottom="60dp"
             android:layout_marginTop="10dp"
-            android:background="@color/transparent"
-            />
+            android:background="@color/transparent" />
 
         <LinearLayout
             android:id="@+id/ln_result_2"
@@ -202,6 +221,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:editable="false"
                 android:text="问卷"
                 android:textSize="20sp" />
 

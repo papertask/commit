@@ -150,9 +150,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
-                            android:paddingLeft="10dp"
+                            android:layout_marginLeft="10dp"
                             android:onClick="make_call"
-                            android:text="(86) 15011339209" />
+                            android:background="@drawable/hyper_line"
+                            android:text="15011339209" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -248,9 +249,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
-                            android:paddingLeft="10dp"
+                            android:layout_marginLeft="10dp"
                             android:onClick="make_call"
-                            android:text="(86) 13760663465" />
+                            android:background="@drawable/hyper_line"
+                            android:text="13760663465" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -378,9 +380,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
-                            android:paddingLeft="10dp"
+                            android:layout_marginLeft="10dp"
                             android:onClick="make_call"
-                            android:text="(86) 15077105823" />
+                            android:background="@drawable/hyper_line"
+                            android:text="15077105823" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -534,9 +537,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
-                                android:paddingLeft="10dp"
+                                android:layout_marginLeft="10dp"
                                 android:onClick="make_call"
-                                android:text="(86) 13152656622" />
+                                android:background="@drawable/hyper_line"
+                                android:text="13152656622" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -664,9 +668,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
-                                android:paddingLeft="10dp"
+                                android:layout_marginLeft="10dp"
                                 android:onClick="make_call"
-                                android:text="(86) 15288108840" />
+                                android:background="@drawable/hyper_line"
+                                android:text="15288108840" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -816,9 +821,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
-                                android:paddingLeft="10dp"
+                                android:layout_marginLeft="10dp"
                                 android:onClick="make_call"
-                                android:text="(86) 13701133671" />
+                                android:background="@drawable/hyper_line"
+                                android:text="13701133671" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -939,16 +945,17 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
-                                android:paddingLeft="10dp"
+                                android:layout_marginLeft="10dp"
                                 android:text="电话：" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
-                                android:paddingLeft="10dp"
+                                android:layout_marginLeft="10dp"
                                 android:onClick="make_call"
-                                android:text="(86) 13367717164" />
+                                android:background="@drawable/hyper_line"
+                                android:text="13367717164" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -1076,9 +1083,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
-                                android:paddingLeft="10dp"
+                                android:layout_marginLeft="10dp"
+                                android:background="@drawable/hyper_line"
                                 android:onClick="make_call"
-                                android:text="(86) 18669116230" />
+                                android:text="18669116230" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -1229,9 +1237,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
-                                android:paddingLeft="10dp"
+                                android:layout_marginLeft="10dp"
                                 android:onClick="make_call"
-                                android:text="(86) 18702007785" />
+                                android:background="@drawable/hyper_line"
+                                android:text="18702007785" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -1352,16 +1361,17 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
-                                android:paddingLeft="10dp"
+                                android:layout_marginLeft="10dp"
                                 android:text="电话：" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
-                                android:paddingLeft="10dp"
+                                android:layout_marginLeft="10dp"
                                 android:onClick="make_call"
-                                android:text="(86) 18623115596" />
+                                android:background="@drawable/hyper_line"
+                                android:text="18623115596" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -1489,9 +1499,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
-                                android:paddingLeft="10dp"
+                                android:layout_marginLeft="10dp"
                                 android:onClick="make_call"
-                                android:text="(86) 13901307447" />
+                                android:background="@drawable/hyper_line"
+                                android:text="13901307447" />
                         </LinearLayout>
                     </LinearLayout>
 

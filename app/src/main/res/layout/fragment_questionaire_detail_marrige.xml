@@ -48,6 +48,7 @@
                 android:layout_marginLeft="13dp"
                 android:layout_marginRight="13dp"
                 android:background="#FFFF"
+                android:editable="false"
                 android:gravity="center"
                 android:imeOptions="actionDone"
                 android:maxLines="1"
@@ -67,6 +68,7 @@
                 android:background="#FFFF"
                 android:drawableLeft="@drawable/infor_location"
                 android:drawablePadding="5dp"
+                android:editable="false"
                 android:gravity="center_vertical"
                 android:imeOptions="actionDone"
                 android:maxLines="1"
@@ -86,6 +88,7 @@
                 android:layout_marginRight="13dp"
                 android:drawableLeft="@drawable/info_date"
                 android:drawablePadding="5dp"
+                android:editable="false"
                 android:padding="10dp"
                 android:text="text2"
                 android:textColor="#000"
@@ -96,18 +99,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_interviewDate"
-                android:layout_toRightOf="@id/image_avatar"
-                android:paddingLeft="10dp"
-                android:text="Female"
-                android:visibility="gone"
+                android:layout_marginLeft="13dp"
+                android:drawableLeft="@drawable/flag"
+                android:drawablePadding="5dp"
+                android:padding="10dp"
 
-                />
+                android:paddingLeft="10dp"
+                android:text=""
+                android:textColor="#000"
+                android:textSize="16sp" />
 
             <LinearLayout
                 android:id="@+id/ln_action_profile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_interviewDate"
+                android:layout_below="@+id/tv_gender"
                 android:layout_marginBottom="3dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
@@ -118,8 +124,8 @@
                 android:weightSum="2">
 
                 <Button
-                    android:layout_width="0dp"
                     android:id="@+id/btn_qdetail_ma_delete"
+                    android:layout_width="0dp"
                     android:layout_height="36dp"
                     android:layout_marginRight="3dp"
                     android:layout_weight="1"
@@ -129,8 +135,8 @@
                     android:textSize="16sp" />
 
                 <Button
-                    android:layout_width="0dp"
                     android:id="@+id/btn_qdetail_ma_share"
+                    android:layout_width="0dp"
                     android:layout_height="36dp"
                     android:layout_marginLeft="3dp"
                     android:layout_weight="1"
@@ -162,6 +168,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:editable="false"
                     android:text="答卷详情"
                     android:textSize="20sp" />
 
@@ -194,6 +201,7 @@
                     android:id="@+id/lbl_result"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:editable="false"
                     android:text="同意办证:"
                     android:textSize="20sp" />
 
@@ -201,53 +209,57 @@
                     android:id="@+id/tv_result_cn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="谢谢你的配合"
                     android:layout_marginTop="10dp"
+                    android:editable="false"
+                    android:text="谢谢你的配合"
                     android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/tv_result"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="60dp"
+                    android:layout_marginTop="10dp"
+                    android:editable="false"
                     android:text="Dong y"
                     android:textSize="18sp" />
 
                 <ImageView
-                    android:visibility="gone"
                     android:id="@+id/img_play_anounce_1"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_gravity="center_horizontal"
                     android:clickable="true"
-                    android:src="@drawable/oval_play" />
+                    android:src="@drawable/oval_play"
+                    android:visibility="gone" />
 
                 <TextView
-                    android:visibility="gone"
                     android:id="@+id/lbl_result_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:editable="false"
                     android:text="同意办证:"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:visibility="gone" />
 
                 <TextView
-                    android:visibility="gone"
                     android:id="@+id/tv_result_cn_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:editable="false"
                     android:text="谢谢你的配合"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:visibility="gone" />
 
                 <TextView
-                    android:visibility="gone"
                     android:id="@+id/tv_result_1"
-                    android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="60dp"
+                    android:layout_marginTop="10dp"
                     android:text="Dong y"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:visibility="gone" />
 
                 <Button
                     android:id="@+id/btn_marrage_translate"
@@ -301,6 +313,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:editable="false"
                     android:text="问卷"
                     android:textSize="20sp" />
 
@@ -326,41 +339,44 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/list_questionnaire"
                 android:layout_marginTop="15dp"
+                android:editable="false"
                 android:padding="15dp"
                 android:text="建议："
-                android:visibility="gone"
                 android:textColor="#000"
-                android:textSize="22sp" />
+                android:textSize="22sp"
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/textnologe"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/nonolege"
+                android:editable="false"
                 android:paddingLeft="25dp"
                 android:paddingRight="15dp"
-                android:visibility="gone"
-                android:text="通知公安进一步筛查并播放“疑似拐卖”的录音告知申请人" />
+                android:text="通知公安进一步筛查并播放“疑似拐卖”的录音告知申请人"
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/textnologe1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/textnologe"
+                android:editable="false"
                 android:paddingBottom="10dp"
                 android:paddingLeft="25dp"
                 android:paddingRight="15dp"
-                android:visibility="gone"
                 android:paddingTop="10dp"
-                android:text="播放“同意结婚申请”的录音 " />
+                android:text="播放“同意结婚申请”的录音 "
+                android:visibility="gone" />
 
             <RelativeLayout
                 android:id="@+id/extra_info_header"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:visibility="gone"
                 android:layout_below="@+id/textnologe1"
-                android:background="#ededed">
+                android:background="#ededed"
+                android:visibility="gone">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -378,6 +394,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/extra_info_header"
+                android:editable="false"
                 android:gravity="left"
                 android:paddingLeft="15dp"
                 android:paddingRight="15dp"

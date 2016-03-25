@@ -33,6 +33,7 @@
             android:id="@+id/txt_splash_comment"
             android:paddingLeft="25dp"
             android:paddingRight="25dp"
+            android:editable="false"
             android:paddingBottom="10dp"
             android:textSize="24sp"
             android:textDirection="anyRtl"
@@ -46,16 +47,77 @@
             android:layout_height="1dp"
             android:layout_centerInParent="true"></FrameLayout>
         <TextView
+            android:id="@+id/container_help"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/txt_splash_comment"
             android:paddingTop="40dp"
             android:paddingLeft="25dp"
+            android:editable="false"
             android:paddingRight="25dp"
             android:textSize="16sp"
             android:textDirection="anyRtl"
             android:text="@string/page_about"
             android:layout_alignParentLeft="true" />
+        <LinearLayout
+            android:layout_below="@+id/container_help"
+            android:id="@+id/container_help_tel"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="电    话:"
+                android:gravity="right"
+                android:layout_marginLeft="25dp"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="18811411217"
+                android:onClick="make_call"
+                android:background="@drawable/hyper_line"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/container_help_tel"
+            android:id="@+id/container_help_tel_1"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="微    信:"
+                android:gravity="right"
+                android:layout_marginLeft="25dp"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="18811411217"
+                android:onClick="make_call"
+                android:background="@drawable/hyper_line"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/container_help_tel_1"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="微信号:"
+                android:gravity="right"
+                android:layout_marginLeft="25dp"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="UN-ACT"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
     </RelativeLayout>
 
 </LinearLayout>

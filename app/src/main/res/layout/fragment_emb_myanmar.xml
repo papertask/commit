@@ -147,8 +147,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:onClick="make_call"
+                            android:background="@drawable/hyper_line"
                             android:layout_gravity="center_vertical"
-                            android:text="(86 10) 6532 0351" />
+                            android:text="010 6532 0351" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -176,10 +177,12 @@
                             android:text="传真：" />
 
                         <TextView
+                            android:background="@drawable/hyper_line"
+                            android:onClick="make_call"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
-                            android:text="(86 10) 6532 0408" />
+                            android:text="010 6532 0408" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>

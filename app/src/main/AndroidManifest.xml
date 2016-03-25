@@ -25,6 +25,7 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="sensorPortrait"
+            android:exported="true"
             android:configChanges="orientation|keyboardHidden|screenSize">
             </activity>
         <activity android:name=".activity.FirstAppActivity"

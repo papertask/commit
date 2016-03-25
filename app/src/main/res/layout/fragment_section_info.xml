@@ -118,8 +118,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="left"
+                            android:background="@drawable/hyper_line"
                             android:onClick="make_call"
-                            android:paddingLeft="10dp"
+                            android:layout_marginLeft="10dp"
                             android:text="@string/section_phone_1" />
                     </LinearLayout>
 
@@ -134,9 +135,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:paddingLeft="94dp"
+                        android:layout_marginLeft="94dp"
+                        android:background="@drawable/hyper_line"
                         android:onClick="make_call"
-                        android:text="(86) 10 6626 2091" />
+                        android:text="01066262091" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -148,9 +150,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:paddingLeft="94dp"
+                        android:layout_marginLeft="94dp"
+                        android:background="@drawable/hyper_line"
                         android:onClick="make_call"
-                        android:text="(86) 10 6626 2888" />
+                        android:text="01066262888" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -235,9 +238,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="left"
-                            android:paddingLeft="10dp"
+                            android:background="@drawable/hyper_line"
                             android:onClick="make_call"
-                            android:text="(86) 10 5812 3255" />
+                            android:text="010 5812 3255" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -325,9 +328,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="left"
-                            android:paddingLeft="10dp"
                             android:onClick="make_call"
-                            android:text="(86) 10 6510 3186" />
+                            android:background="@drawable/hyper_line"
+                            android:text="010 6510 3186" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -359,8 +362,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="left"
-                            android:paddingLeft="10dp"
-                            android:text="(86) 12338 妇女维权" />
+                            android:background="@drawable/hyper_line"
+                            android:text="12338" />
+                        <TextView
+                            android:text="妇女维权"
+                            android:paddingLeft="5dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -448,9 +456,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="left"
-                            android:paddingLeft="10dp"
                             android:onClick="make_call"
-                            android:text="(86) 10 64073800" />
+                            android:background="@drawable/hyper_line"
+                            android:text="010 64073800" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -464,9 +472,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:paddingLeft="94dp"
+                        android:layout_marginLeft="84dp"
                         android:onClick="make_call"
-                        android:text="(84) 10 64033383" />
+                        android:background="@drawable/hyper_line"
+                        android:text="010 64033383" />
                 </LinearLayout>
 
 
@@ -501,6 +510,7 @@
                     android:paddingTop="10dp">
 
                     <LinearLayout
+                        android:orientation="horizontal"
                         android:layout_width="wrap_content"
                         android:layout_height="20dp"
                         android:layout_gravity="left">
@@ -518,12 +528,6 @@
                             android:paddingRight="40dp"
                             android:text="联合国反对拐卖人口合作行动项目 (UN-ACT) 中国办公室" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:paddingLeft="10dp"
-                            android:text="" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -551,42 +555,17 @@
                             android:text="电话：" />
 
                         <TextView
+                            android:onClick="make_call"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="left"
-                            android:paddingLeft="10dp"
-                            android:text="(86) 10 6420 1827" />
+                            android:layout_marginLeft="10dp"
+                            android:background="@drawable/hyper_line"
+                            android:text="13811788171" />
                     </LinearLayout>
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="20dp"
-                    android:layout_gravity="left">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:paddingLeft="94dp"
-                        android:onClick="make_call"
-                        android:text="(84) 10 6420 3307" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="20dp"
-                    android:layout_gravity="left">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:paddingLeft="94dp"
-                        android:onClick="make_call"
-                        android:text="(84) 1381 1788 171" />
-                </LinearLayout>
 
             </LinearLayout>
         </ScrollView>

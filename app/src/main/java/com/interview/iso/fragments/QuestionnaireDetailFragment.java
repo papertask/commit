@@ -38,6 +38,11 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import com.tencent.mm.sdk.modelmsg.SendMessageToWX;
+import com.tencent.mm.sdk.openapi.IWXAPI;
+import com.tencent.mm.sdk.modelmsg.WXMediaMessage;
+import com.tencent.mm.sdk.modelmsg.WXTextObject;
+
 /**
  * Created by lu.nguyenvan2 on 11/3/2015.
  */
@@ -47,6 +52,15 @@ public class QuestionnaireDetailFragment extends BaseFragment {
     private ExpandableHeightListView mListView;
     private ExpandableHeightListView mListView1;
     SelectableRoundedImageView rdAvatar;
+    private TextView ctrlTxtLang;
+    private TextView ctrlTxtDescAddition;
+    private String str_share = "";
+
+    private IWXAPI api;
+
+    private String buildTransaction(final String type) {
+        return (type == null) ? String.valueOf(System.currentTimeMillis()) : type + System.currentTimeMillis();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -58,9 +72,20 @@ public class QuestionnaireDetailFragment extends BaseFragment {
         TextView tvGender = (TextView)rootView.findViewById(R.id.tv_gender);
         TextView tvLocation = (TextView)rootView.findViewById(R.id.tv_location);
         TextView tvName = (TextView)rootView.findViewById(R.id.tv_name);
+        ctrlTxtLang = (TextView) rootView.findViewById(R.id.tv_userLang);
         Button tvBtnDelete = (Button) rootView.findViewById(R.id.btn_qdetail_delete);
         Button tvBtnShare = (Button) rootView.findViewById(R.id.btn_qdetail_share);
+        ctrlTxtDescAddition = (TextView) rootView.findViewById(R.id.txt_addition_q_desc);
 
+        tvBtnShare.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+
+            }
+
+        });
+        api = AppData.getInstance().getWeChatAPI();
         tvBtnDelete.setOnClickListener(new View.OnClickListener(){
 
             @Override
@@ -87,22 +112,52 @@ public class QuestionnaireDetailFragment extends BaseFragment {
 
             @Override
             public void onClick(View v) {
-
+                String text = str_share;
+                WXTextObject textObj = new WXTextObject();
+                textObj.text = text;
+                WXMediaMessage msg = new WXMediaMessage();
+                msg.mediaObject = textObj;
+                msg.description = text;
+                SendMessageToWX.Req req = new SendMessageToWX.Req();
+                req.transaction = buildTransaction("text");
+                req.message = msg;
+                req.scene = SendMessageToWX.Req.WXSceneSession;
+                api.sendReq(req);
             }
 
         });
 
         Person person = AppData.getInstance().getPerson_selection();
+        str_share += "姓名 : " + person.getStrFirstName()+" "+person.getStrLastName() + "\n";
+        str_share += "电话 : " + person.getStrTelphone() + "\n";
+
         if(person.getAvatarPath()!=null && !person.getAvatarPath().equals(""))
             setFullImageFromFilePath(person.getAvatarPath(), rdAvatar);
 
         tvName.setText(person.getStrFirstName()+" "+person.getStrLastName());
-        tvInterviewDate.setText(person.getStrInterviewDate());
-        tvGender.setText(getString(R.string.Female));
-        tvLocation.setText(person.getStrPosition());
+        tvInterviewDate.setText("时间 : " + person.getStrInterviewDate());
+        str_share += "时间 : " + person.getStrInterviewDate() + "\n";
+//        tvGender.setText(getString(R.string.Female));
+        tvLocation.setText("地址 : " + person.getStrPosition());
+        str_share += "地址 : " + person.getStrPosition() + "\n";
+        if (person.getLang().equals("vn")) {
+            ctrlTxtLang.setText("语言 : 越南");
+            str_share += "语言 : 越南" + "\n";
+        } else if (person.getLang().equals("km")) {
+            ctrlTxtLang.setText("语言 : 柬埔寨");
+            str_share += "语言 : 柬埔寨" + "\n";
+        } else if (person.getLang().equals("lao")) {
+            ctrlTxtLang.setText("语言 : 老挝");
+            str_share += "语言 : 老挝" + "\n";
+        } else if (person.getLang().equals("my")) {
+            ctrlTxtLang.setText("语言 : 缅甸");
+            str_share += "语言 : 缅甸" + "\n";
+        }
 
+        str_share += "\n\n" + "结果建议" + "\n\n";
         DBHelper db = new DBHelper(getActivity());
         Answer answer = db.getListQuestionByPersion(person.getnID());
+        boolean b_ispotential = true;
         if(answer!= null) {
             JSONObject object = answer.convertToJsonArray();
 //        Map<String , Boolean> mResult;
@@ -117,6 +172,8 @@ public class QuestionnaireDetailFragment extends BaseFragment {
                         resultQuestion.result = object.getInt(resultQuestion.id);
                         if (Integer.parseInt(resultQuestion.id) > 0 && Integer.parseInt(resultQuestion.id) < 14) {
                             mList.add(resultQuestion);
+                            if (resultQuestion.result != 1)
+                                b_ispotential = false;
                         } else {
                             mList1.add(resultQuestion);
                         }
@@ -125,6 +182,16 @@ public class QuestionnaireDetailFragment extends BaseFragment {
                 }
             }
         }
+        if (b_ispotential) {
+            ctrlTxtDescAddition.setText(getResources().getString(R.string.police_res_desc_1));
+            ctrlTxtDescAddition.setVisibility(View.VISIBLE);
+            str_share += getResources().getString(R.string.police_res_desc_1) + "\n\n";
+        } else {
+            ctrlTxtDescAddition.setText(getResources().getString(R.string.police_res_desc_2));
+            ctrlTxtDescAddition.setVisibility(View.VISIBLE);
+            str_share += getResources().getString(R.string.police_res_desc_2) + "\n\n";
+        }
+        setQuestionDetails(person);
         QuestionDetailAdapter adapter = new QuestionDetailAdapter(getActivity(),mList,person);
         QuestionDetailAdapter1 adapter1 = new QuestionDetailAdapter1(getActivity(),mList1,person);
         mListView.setAdapter(adapter);
@@ -133,6 +200,30 @@ public class QuestionnaireDetailFragment extends BaseFragment {
         mListView1.setExpanded(true);
         return rootView;
     }
+
+    private void setQuestionDetails(Person person) {
+        Map<Integer,Question> mListQuest;
+        mListQuest = AppData.getInstance().getListQuestion(person.getInterview_type());
+        if (mList1 != null && mList1.size() > 0) {
+            Collections.sort(mList1,new MyCompare());
+            for (int i = 0; i < mList1.size(); i ++) {
+                ResultQuestion row = (ResultQuestion)(mList1.get(i));
+                Question question = mListQuest.get(Integer.parseInt(row.id)-1);
+                str_share += question.question_cn.substring(3) + (row.result == 1 ? " 是 " : " 否 ") + "\n\n";
+            }
+        }
+        str_share += "\n问卷\n\n";
+
+        if (mList != null) {
+            Collections.sort(mList,new MyCompare());
+            for (int i = 0; i < mList.size(); i ++) {
+                ResultQuestion row = (ResultQuestion)(mList.get(i));
+                Question question = mListQuest.get(Integer.parseInt(row.id)-1);
+                str_share += question.question_cn + (row.result == 1 ? " 是 " : " 否 ") + "\n";
+            }
+        }
+    }
+
     class ResultQuestion {
         public String id;
         public int result;
@@ -219,7 +310,11 @@ public class QuestionnaireDetailFragment extends BaseFragment {
             if(resultQuestion!=null){
                 viewHoler.tvID.setText(resultQuestion.id);
                 Question question = mListQuest.get(Integer.parseInt(resultQuestion.id)-1);
-                viewHoler.tvContent.setText(question.question_cn.substring(3));
+                if (Integer.parseInt(resultQuestion.id) >= 10) {
+                    viewHoler.tvContent.setText(question.question_cn.substring(3));
+                } else {
+                    viewHoler.tvContent.setText(question.question_cn.substring(2));
+                }
                 if(resultQuestion.result == 1) {
                     viewHoler.btnResult.setText("是");
                     viewHoler.btnResult.setBackgroundResource(R.drawable.buttoncustom);
@@ -239,18 +334,18 @@ public class QuestionnaireDetailFragment extends BaseFragment {
             TextView tvID;
             Button btnResult;
         }
-        class MyCompare implements Comparator<ResultQuestion>{
 
-            @Override
-            public int compare(ResultQuestion lhs, ResultQuestion rhs) {
-                if(Integer.parseInt(lhs.id) <Integer.parseInt(rhs.id))
-                    return -1;
-                else
-                    return 1;
-            }
+    }
+    class MyCompare implements Comparator<ResultQuestion>{
+
+        @Override
+        public int compare(ResultQuestion lhs, ResultQuestion rhs) {
+            if(Integer.parseInt(lhs.id) <Integer.parseInt(rhs.id))
+                return -1;
+            else
+                return 1;
         }
     }
-
     class QuestionDetailAdapter1 extends BaseAdapter {
 
         Context mContext;
@@ -298,11 +393,13 @@ public class QuestionnaireDetailFragment extends BaseFragment {
                         viewHoler.tvContent = (TextView)convertView.findViewById(R.id.question_content_1);
                         viewHoler.btnContact =(Button)convertView.findViewById(R.id.question_contact_1);
                         viewHoler.btnResult = (Button)convertView.findViewById(R.id.question_result_1);
+                        viewHoler.tvNumber = (TextView)convertView.findViewById(R.id.quest_number_additional);
                         convertView.setTag(viewHoler);
                     }else {
                         viewHoler = (ViewHoler)convertView.getTag();
                     }
                     viewHoler.tvContent.setText(question.question_cn.substring(3));
+                    viewHoler.tvNumber.setText(resultQuestion.id);
                     if (resultQuestion.result == 1) {
                         viewHoler.btnResult.setText("是");
                         viewHoler.btnResult.setBackgroundResource(R.drawable.buttoncustom);
@@ -320,9 +417,9 @@ public class QuestionnaireDetailFragment extends BaseFragment {
                     }
 
                     if (resultQuestion.result == 0)
-                        viewHoler.btnContact.setVisibility(View.VISIBLE);
-                    else
                         viewHoler.btnContact.setVisibility(View.GONE);
+                    else
+                        viewHoler.btnContact.setVisibility(View.VISIBLE);
 
                     viewHoler.btnContact.setOnClickListener(new View.OnClickListener(){
 
@@ -347,6 +444,7 @@ public class QuestionnaireDetailFragment extends BaseFragment {
             TextView tvContent;
             Button btnResult;
             Button btnContact;
+            TextView tvNumber;
         }
         class MyCompare implements Comparator<ResultQuestion>{
 

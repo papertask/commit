@@ -73,6 +73,11 @@ public class CameraActivity extends ActionBarActivity {
      * Getters and setters.
      */
 
+    public void init() {
+        this.mCapturedImageURI = null;
+        this.mCurrentPhotoPath = null;
+    }
+
     public String getCurrentPhotoPath() {
         return mCurrentPhotoPath;
     }

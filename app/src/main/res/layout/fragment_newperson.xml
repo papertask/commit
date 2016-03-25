@@ -7,7 +7,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         tools:context=".MainActivity">
 
         <TextView
@@ -46,8 +46,8 @@
             android:layout_height="70dp"
             android:layout_below="@+id/txt_newperson_comment"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20px"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
             android:scaleType="centerCrop"
             android:src="@drawable/icon_camera"
             app:sriv_border_color="#ff9c10"
@@ -79,8 +79,7 @@
             android:layout_below="@+id/txtaddnewl1"
             android:layout_marginLeft="0dp"
             android:layout_marginRight="0dp"
-            android:layout_marginTop="5dp"
-            android:background="#DCDCDC" />
+            android:layout_marginTop="5dp" />
 
         <LinearLayout
             android:id="@+id/container_new_name"
@@ -112,13 +111,13 @@
         </LinearLayout>
 
         <TextView
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_below="@+id/container_new_name"
             android:layout_marginLeft="13dp"
             android:layout_marginRight="13dp"
-            android:layout_marginTop="-5dp"
-            android:background="#DCDCDC" />
+            android:layout_marginTop="-5dp" />
 
         <LinearLayout
             android:id="@+id/container_new_position"
@@ -128,6 +127,7 @@
             android:orientation="horizontal"
             android:paddingTop="0dp"
             android:paddingBottom="10dp"
+            android:visibility="gone"
             android:paddingLeft="10dp"
             android:paddingRight="10dp">
 
@@ -156,8 +156,7 @@
             android:layout_below="@+id/container_new_position"
             android:layout_marginLeft="13dp"
             android:layout_marginRight="13dp"
-            android:layout_marginTop="-5dp"
-            android:background="#DCDCDC" />
+            android:layout_marginTop="-5dp" />
 
         <LinearLayout
             android:id="@+id/ll_l2"
@@ -166,7 +165,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/container_new_position"
-            android:paddingTop="0dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp">
 
@@ -227,13 +227,15 @@
             android:layout_marginLeft="13dp"
             android:layout_marginRight="13dp"
             android:layout_marginTop="5dp"
-            android:background="#DCDCDC" />
+            android:visibility="gone"
+            />
 
         <LinearLayout
             android:id="@+id/container_new_address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/ll_l2"
+            android:visibility="gone"
             android:layout_marginTop="5dp"
             android:orientation="horizontal"
             android:padding="10dp">
@@ -252,7 +254,7 @@
                 android:layout_height="38dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginRight="13dp"
-                android:paddingTop="10dp"
+                android:singleLine="true"
                 android:background="@color/White"
                 android:paddingLeft="10dp" />
         </LinearLayout>
@@ -263,8 +265,7 @@
             android:layout_below="@+id/container_new_address"
             android:layout_marginLeft="13dp"
             android:layout_marginRight="13dp"
-            android:layout_marginTop="-5dp"
-            android:background="#DCDCDC" />
+            android:layout_marginTop="-5dp" />
 
         <LinearLayout
             android:id="@+id/container_new_city"
@@ -273,6 +274,7 @@
             android:layout_below="@id/container_new_address"
             android:orientation="horizontal"
             android:layout_marginTop="-5dp"
+            android:visibility="gone"
             android:padding="10dp">
 
             <TextView
@@ -290,7 +292,6 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginRight="13dp"
                 android:paddingLeft="10dp"
-                android:paddingTop="10dp"
                 android:singleLine="true"
                 android:background="@color/White"
                 android:text="" />
@@ -302,8 +303,7 @@
             android:layout_below="@+id/container_new_city"
             android:layout_marginLeft="13dp"
             android:layout_marginRight="13dp"
-            android:layout_marginTop="-5dp"
-            android:background="#DCDCDC" />
+            android:layout_marginTop="-5dp" />
 
         <LinearLayout
             android:id="@+id/container_new_location"
@@ -311,7 +311,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/container_new_city"
             android:orientation="horizontal"
-            android:paddingTop="0dp"
+            android:paddingTop="10dp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:paddingBottom="10dp">
@@ -354,7 +354,7 @@
             android:layout_marginLeft="13dp"
             android:layout_marginRight="13dp"
             android:layout_marginTop="-5dp"
-            android:background="#DCDCDC" />
+            />
 
         <Button
             android:id="@+id/btn_next"

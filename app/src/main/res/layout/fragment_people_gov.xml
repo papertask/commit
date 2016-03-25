@@ -10,7 +10,8 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingBottom="20dp">
 
 
             <LinearLayout
@@ -34,6 +35,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:text="@string/people_gov_title"
                             android:textAlignment="center"
                             android:textColor="@color/White"
@@ -42,32 +44,81 @@
 
                 </LinearLayout>
 
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:padding="10dp"
+                    android:src="@drawable/victim" />
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:editable="false"
                     android:padding="20dp"
                     android:text="@string/people_gov_content_1"
                     android:textSize="16sp" />
 
-                <TextView
+                <LinearLayout
+                    android:id="@+id/btn_people_chapter_1"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:padding="20dp"
-                    android:text="@string/people_gov_content_2"
-                    android:textSize="16sp" />
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/btn_readmore_people_gov"
+                    <TextView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="20dp"
+                        android:background="@drawable/buttoncustom"
+                        android:editable="false"
+                        android:gravity="center_vertical"
+                        android:text="1"
+                        android:textAlignment="center"
+                        android:textColor="@color/White"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:editable="false"
+                        android:text="有必要进一步调查的直观指标"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btn_people_chapter_2"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:clickable="true"
-                    android:padding="20dp"
-                    android:textSize="20sp"
-                    android:layout_marginBottom="20dp"
-                    android:text="点击阅读全文"
-                    android:textAlignment="center" />
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="20dp"
+                        android:background="@drawable/buttoncustom"
+                        android:editable="false"
+                        android:gravity="center_vertical"
+                        android:text="2"
+                        android:textAlignment="center"
+                        android:textColor="@color/White"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:editable="false"
+                        android:text="一线官员/社会服务工作者可以使用的基本筛查问题"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

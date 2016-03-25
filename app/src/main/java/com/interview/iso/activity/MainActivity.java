@@ -30,18 +30,21 @@ import android.widget.TextView;
 import com.interview.iso.R;
 import com.interview.iso.base.MenuItem;
 import com.interview.iso.fragments.BaseFragment;
-import com.interview.iso.fragments.FunctionSelectFragment;
-import com.interview.iso.fragments.HelpFragment;
+import com.interview.iso.fragments.GovInternationalFragment;
+import com.interview.iso.fragments.GovTraffickingPlanDetailFragment;
+import com.interview.iso.fragments.GuoneidingyiFragment;
 import com.interview.iso.fragments.ListNameFragment;
+import com.interview.iso.fragments.MinzhengDetailFragment;
 import com.interview.iso.fragments.NewQuestionnaireFragment;
+import com.interview.iso.fragments.PeopleGovDetailFragment;
 import com.interview.iso.fragments.PoliceGuideChapterFragment;
-import com.interview.iso.fragments.PoliceGuideFragment;
 import com.interview.iso.fragments.QuestionFragment;
 import com.interview.iso.models.Person;
 import com.interview.iso.utils.AppData;
-import com.interview.iso.utils.Constants;
 import com.interview.iso.utils.DBHelper;
-import com.interview.iso.utils.DataPreferenceManager;
+
+import com.tencent.mm.sdk.openapi.IWXAPI;
+import com.tencent.mm.sdk.openapi.WXAPIFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,6 +66,8 @@ public class MainActivity extends CameraActivity implements FragmentManager.OnBa
     ImageView img_zc_dropdown;
     FrameLayout container_cnt_questions;
     TextView txt_cnt_questions;
+
+    private IWXAPI api;
 
     public static MainActivity shareActivity;
 
@@ -132,6 +137,11 @@ public class MainActivity extends CameraActivity implements FragmentManager.OnBa
 
         updateCountQuestions();
         didSelectMenuItem(new MenuItem(getResources().getString(R.string.addnew_header), "NewQuestionnaireFragment", "add_new", 0));
+
+        api = WXAPIFactory.createWXAPI(this, AppData.getInstance().getWechatID(), false);
+        api.registerApp(AppData.getInstance().getWechatID());
+
+        AppData.getInstance().setWeChatAPI(api);
     }
 
     public void reset_textbox_color(int num) {
@@ -204,13 +214,13 @@ public class MainActivity extends CameraActivity implements FragmentManager.OnBa
                 didSelectMenuItem(new MenuItem(getResources().getString(R.string.menu_police_crackdown_guide), "PoliceGuideFragment", "police_guide", 0));
                 break;
             case R.id.container_zhengce_sub_minzheng:
-                didSelectMenuItem(new MenuItem(getResources().getString(R.string.menu_people_rescue_procedure), "PeopleGovFragment", "police_guide", 0));
+                didSelectMenuItem(new MenuItem(getResources().getString(R.string.menu_people_rescue_procedure), "MinzhengFragment", "police_guide", 0));
                 break;
             case R.id.container_zhengce_sub_shouhai:
                 didSelectMenuItem(new MenuItem(getResources().getString(R.string.menu_trafficking_victims_indicators), "PeopleGovFragment", "police_guide", 0));
                 break;
             case R.id.container_zhengce_sub_guojidingyi:
-                didSelectMenuItem(new MenuItem(getResources().getString(R.string.menu_legal_definition), "GovInternationalFragment", "police_guide", 0));
+                didSelectMenuItem(new MenuItem(getResources().getString(R.string.menu_legal_definition), "GuojidingyiFragment", "police_guide", 0));
                 break;
             case R.id.container_zhengce_sub_guojiajihua:
                 didSelectMenuItem(new MenuItem(getResources().getString(R.string.menu_anti_trafficking_plan), "GovTraffickingPlanFragment", "police_guide", 0));
@@ -228,7 +238,7 @@ public class MainActivity extends CameraActivity implements FragmentManager.OnBa
         TextView This = (TextView) v;
         Intent intent = new Intent(Intent.ACTION_CALL);
 
-        intent.setData(Uri.parse("tel:00" + This.getText().toString().replace("(","").replace(")", "").replace(" ", "")));
+        intent.setData(Uri.parse("tel:" + This.getText().toString().replace("(", "").replace(")", "").replace(" ", "")));
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
             startActivity(intent);
         }
@@ -255,11 +265,16 @@ public class MainActivity extends CameraActivity implements FragmentManager.OnBa
     }
 
     public void didSelectMenuItem(MenuItem item) {
+        didSelectMenuItem(item, 0);
+    }
+
+    public void didSelectMenuItem(MenuItem item, int customparam) {
         final Fragment fragment = item.fragment(this);
         if (QuestionFragment.mPlayer != null) {
             QuestionFragment.mPlayer.pause();
             QuestionFragment.mPlayer = null;
         }
+
         if (fragment != null) {
             //getSupportActionBar().setTitle(item.getTitle());
             if (item.identifier.equals("add_new")) {
@@ -341,6 +356,7 @@ public class MainActivity extends CameraActivity implements FragmentManager.OnBa
                 close_menu(null);
             } else if (item.identifier.equals("police_guide_chapter")) {
                 mBack.setBackgroundResource(R.drawable.btn_back);
+                mBack.setVisibility(View.VISIBLE);
                 mBack.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -352,7 +368,64 @@ public class MainActivity extends CameraActivity implements FragmentManager.OnBa
             } else if (item.identifier.equals("people_gov")) {
                 reset_textbox_color(MENU_ZHENGCE);
                 close_menu(null);
-            } else {
+            } else if (item.identifier.equals("people_gov_chapter")) {
+                reset_textbox_color(MENU_ZHENGCE);
+                mBack.setVisibility(View.VISIBLE);
+                mBack.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //show
+                        PeopleGovDetailFragment frListName = (PeopleGovDetailFragment) fragment;
+                        frListName.doBackAction();
+                    }
+                });
+                ((PeopleGovDetailFragment) fragment).setChapterIndex(customparam);
+                close_menu(null);
+            } else if (item.identifier.equals("police_guide_guoji")) {
+                mBack.setBackgroundResource(R.drawable.btn_back);
+                mBack.setVisibility(View.VISIBLE);
+                mBack.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //show
+                        GovInternationalFragment frListName = (GovInternationalFragment) fragment;
+                        frListName.doBackAction();
+                    }
+                });
+            }else if (item.identifier.equals("police_guide_guonei")) {
+                mBack.setBackgroundResource(R.drawable.btn_back);
+                mBack.setVisibility(View.VISIBLE);
+                mBack.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //show
+                        GuoneidingyiFragment frListName = (GuoneidingyiFragment) fragment;
+                        frListName.doBackAction();
+                    }
+                });
+            } else if (item.identifier.equals("police_guide_plan")) {
+                mBack.setBackgroundResource(R.drawable.btn_back);
+                mBack.setVisibility(View.VISIBLE);
+                mBack.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //show
+                        GovTraffickingPlanDetailFragment frListName = (GovTraffickingPlanDetailFragment) fragment;
+                        frListName.doBackAction();
+                    }
+                });
+            }else if (item.identifier.equals("police_guide_minzheng")) {
+                mBack.setBackgroundResource(R.drawable.btn_back);
+                mBack.setVisibility(View.VISIBLE);
+                mBack.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //show
+                        MinzhengDetailFragment frListName = (MinzhengDetailFragment) fragment;
+                        frListName.doBackAction();
+                    }
+                });
+            }else {
                 mSearch.setVisibility(View.GONE);
                 mTick.setVisibility(View.GONE);
                 mBack.setVisibility(View.GONE);

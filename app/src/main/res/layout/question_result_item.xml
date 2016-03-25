@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="70dp">
+    android:layout_height="wrap_content"
+    android:paddingBottom="5dp"
+    android:paddingTop="5dp">
 
     <TextView
         android:id="@+id/quest_number"
@@ -10,6 +12,7 @@
         android:layout_centerVertical="true"
         android:layout_marginLeft="5dp"
         android:background="@drawable/buttoncustom"
+        android:editable="false"
         android:gravity="center"
         android:text="1"
         android:textColor="@color/White"
@@ -39,10 +42,12 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_toLeftOf="@+id/question_result"
+
         android:layout_toRightOf="@+id/quest_number"
-        android:ellipsize="end"
+        android:editable="false"
+        android:ellipsize="none"
         android:gravity="center_vertical"
-        android:text="XXXXXXXXXXXXXXXXXXXXXXXXXX"
+        android:text=""
         android:textColor="#000"
         android:textSize="16sp" />
 

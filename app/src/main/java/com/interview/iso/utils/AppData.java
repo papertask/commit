@@ -1,10 +1,7 @@
 package com.interview.iso.utils;
 
-import android.app.Activity;
-import android.app.Application;
-import android.content.Context;
-
 import com.interview.iso.activity.MainActivity;
+import com.interview.iso.models.Answer;
 import com.interview.iso.models.Person;
 import com.interview.iso.models.Question;
 
@@ -13,9 +10,12 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.Map;
 import java.util.TreeMap;
+
+import com.tencent.mm.sdk.modelbase.BaseReq;
+import com.tencent.mm.sdk.modelbase.BaseResp;
+import com.tencent.mm.sdk.openapi.IWXAPI;
 
 /**
  * Created by lu.nguyenvan2 on 10/27/2015.
@@ -25,12 +25,16 @@ public class AppData {
 
     private static AppData _instance;
 
+    private IWXAPI api;
+
     public int getApptype() {
         return apptype;
     }
 
     private int int_police_guide_title_id = 0;
     private int int_police_guide_content_id = 0;
+
+    private String str_wechat_id = "wx7ff5bafb39b68867";
 
     public int getPoliceChapterTitleId() { return int_police_guide_title_id; }
     public int getPoliceChapterContentId() { return int_police_guide_content_id; }
@@ -178,4 +182,15 @@ public class AppData {
         return json;
     }
 
+    public String getWechatID() {
+        return this.str_wechat_id;
+    }
+
+    public IWXAPI getWeChatAPI() {
+        return this.api;
+    }
+
+    public void setWeChatAPI( IWXAPI api ) {
+        this.api = api;
+    }
 }

@@ -118,8 +118,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:onClick="make_call"
+                            android:background="@drawable/hyper_line"
                             android:layout_gravity="center_vertical"
-                            android:text="(86) 10 65321155" />
+                            android:text="010 65321155" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -149,8 +150,10 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:onClick="make_call"
+                            android:background="@drawable/hyper_line"
                             android:layout_gravity="center_vertical"
-                            android:text="(86) 10 65324215" />
+                            android:text="010 65324215" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -271,8 +274,9 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:onClick="make_call"
+                                android:background="@drawable/hyper_line"
                                 android:layout_gravity="center_vertical"
-                                android:text="(86) 871 3522669" />
+                                android:text="0871 3522669" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -300,10 +304,12 @@
                                 android:text="传真：" />
 
                             <TextView
+                                android:onClick="make_call"
+                                android:background="@drawable/hyper_line"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
-                                android:text="(86) 871 3516667" />
+                                android:text="0871 3516667" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -423,7 +429,8 @@
                             android:layout_height="wrap_content"
                             android:onClick="make_call"
                             android:layout_gravity="center_vertical"
-                            android:text="(86) 20 83305910-11" />
+                            android:background="@drawable/hyper_line"
+                            android:text="020 83305910-11" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -484,8 +491,10 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:onClick="make_call"
+                            android:background="@drawable/hyper_line"
                             android:layout_gravity="center_vertical"
-                            android:text="(86) 20 83305915" />
+                            android:text="020 83305915" />
                     </LinearLayout>
                 </LinearLayout>
 

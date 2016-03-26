@@ -42,11 +42,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import com.tencent.mm.sdk.modelmsg.SendMessageToWX;
-import com.tencent.mm.sdk.openapi.IWXAPI;
-import com.tencent.mm.sdk.modelmsg.WXMediaMessage;
-import com.tencent.mm.sdk.modelmsg.WXTextObject;
-
 /**
  * Created by lu.nguyenvan2 on 11/11/2015.
  */
@@ -59,8 +54,6 @@ public class QuestionnaireDetailMarriage extends Fragment {
     Map<String, Integer> mAnswer=null;
     private String str_share = "";
     private  int number;
-
-    private IWXAPI api;
 
     private String buildTransaction(final String type) {
         return (type == null) ? String.valueOf(System.currentTimeMillis()) : type + System.currentTimeMillis();
@@ -87,22 +80,11 @@ public class QuestionnaireDetailMarriage extends Fragment {
         ctrlTxtLang = (TextView) rootView.findViewById(R.id.tv_gender);
         mAnswer = new HashMap<>();
 
-        api = AppData.getInstance().getWeChatAPI();
-
         btnShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String text = str_share;
-                WXTextObject textObj = new WXTextObject();
-                textObj.text = text;
-                WXMediaMessage msg = new WXMediaMessage();
-                msg.mediaObject = textObj;
-                msg.description = text;
-                SendMessageToWX.Req req = new SendMessageToWX.Req();
-                req.transaction = buildTransaction("text");
-                req.message = msg;
-                req.scene = SendMessageToWX.Req.WXSceneSession;
-                api.sendReq(req);
+                MainActivity mainActivity = (MainActivity)getActivity();
+                mainActivity.ShareInterview(str_share);
             }
         });
 

@@ -38,11 +38,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import com.tencent.mm.sdk.modelmsg.SendMessageToWX;
-import com.tencent.mm.sdk.openapi.IWXAPI;
-import com.tencent.mm.sdk.modelmsg.WXMediaMessage;
-import com.tencent.mm.sdk.modelmsg.WXTextObject;
-
 /**
  * Created by lu.nguyenvan2 on 11/3/2015.
  */
@@ -56,8 +51,6 @@ public class QuestionnaireDetailFragment extends BaseFragment {
     private TextView ctrlTxtDescAddition;
     private String str_share = "";
 
-    private IWXAPI api;
-
     private String buildTransaction(final String type) {
         return (type == null) ? String.valueOf(System.currentTimeMillis()) : type + System.currentTimeMillis();
     }
@@ -68,16 +61,16 @@ public class QuestionnaireDetailFragment extends BaseFragment {
         mListView = (ExpandableHeightListView) rootView.findViewById(R.id.list_questionnaire);
         mListView1 = (ExpandableHeightListView) rootView.findViewById(R.id.list_questionnaire_1);
         rdAvatar = (SelectableRoundedImageView) rootView.findViewById(R.id.image_avatar);
-        TextView tvInterviewDate = (TextView)rootView.findViewById(R.id.tv_interviewDate);
-        TextView tvGender = (TextView)rootView.findViewById(R.id.tv_gender);
-        TextView tvLocation = (TextView)rootView.findViewById(R.id.tv_location);
-        TextView tvName = (TextView)rootView.findViewById(R.id.tv_name);
+        TextView tvInterviewDate = (TextView) rootView.findViewById(R.id.tv_interviewDate);
+        TextView tvGender = (TextView) rootView.findViewById(R.id.tv_gender);
+        TextView tvLocation = (TextView) rootView.findViewById(R.id.tv_location);
+        TextView tvName = (TextView) rootView.findViewById(R.id.tv_name);
         ctrlTxtLang = (TextView) rootView.findViewById(R.id.tv_userLang);
         Button tvBtnDelete = (Button) rootView.findViewById(R.id.btn_qdetail_delete);
         Button tvBtnShare = (Button) rootView.findViewById(R.id.btn_qdetail_share);
         ctrlTxtDescAddition = (TextView) rootView.findViewById(R.id.txt_addition_q_desc);
 
-        tvBtnShare.setOnClickListener(new View.OnClickListener(){
+        tvBtnShare.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -85,12 +78,12 @@ public class QuestionnaireDetailFragment extends BaseFragment {
             }
 
         });
-        api = AppData.getInstance().getWeChatAPI();
-        tvBtnDelete.setOnClickListener(new View.OnClickListener(){
+
+        tvBtnDelete.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder adb =	 new AlertDialog.Builder((Activity) v.getContext());
+                AlertDialog.Builder adb = new AlertDialog.Builder((Activity) v.getContext());
                 adb.setTitle("删除");
                 adb.setMessage("确定删除这个问卷？");
                 //final int positionToRemove = position;
@@ -112,29 +105,20 @@ public class QuestionnaireDetailFragment extends BaseFragment {
 
             @Override
             public void onClick(View v) {
-                String text = str_share;
-                WXTextObject textObj = new WXTextObject();
-                textObj.text = text;
-                WXMediaMessage msg = new WXMediaMessage();
-                msg.mediaObject = textObj;
-                msg.description = text;
-                SendMessageToWX.Req req = new SendMessageToWX.Req();
-                req.transaction = buildTransaction("text");
-                req.message = msg;
-                req.scene = SendMessageToWX.Req.WXSceneSession;
-                api.sendReq(req);
+                MainActivity mainActivity = (MainActivity) getActivity();
+                mainActivity.ShareInterview(str_share);
             }
 
         });
 
         Person person = AppData.getInstance().getPerson_selection();
-        str_share += "姓名 : " + person.getStrFirstName()+" "+person.getStrLastName() + "\n";
+        str_share += "姓名 : " + person.getStrFirstName() + " " + person.getStrLastName() + "\n";
         str_share += "电话 : " + person.getStrTelphone() + "\n";
 
-        if(person.getAvatarPath()!=null && !person.getAvatarPath().equals(""))
+        if (person.getAvatarPath() != null && !person.getAvatarPath().equals(""))
             setFullImageFromFilePath(person.getAvatarPath(), rdAvatar);
 
-        tvName.setText(person.getStrFirstName()+" "+person.getStrLastName());
+        tvName.setText(person.getStrFirstName() + " " + person.getStrLastName());
         tvInterviewDate.setText("时间 : " + person.getStrInterviewDate());
         str_share += "时间 : " + person.getStrInterviewDate() + "\n";
 //        tvGender.setText(getString(R.string.Female));
@@ -158,7 +142,7 @@ public class QuestionnaireDetailFragment extends BaseFragment {
         DBHelper db = new DBHelper(getActivity());
         Answer answer = db.getListQuestionByPersion(person.getnID());
         boolean b_ispotential = true;
-        if(answer!= null) {
+        if (answer != null) {
             JSONObject object = answer.convertToJsonArray();
 //        Map<String , Boolean> mResult;
             if (object != null) {
@@ -192,8 +176,8 @@ public class QuestionnaireDetailFragment extends BaseFragment {
             str_share += getResources().getString(R.string.police_res_desc_2) + "\n\n";
         }
         setQuestionDetails(person);
-        QuestionDetailAdapter adapter = new QuestionDetailAdapter(getActivity(),mList,person);
-        QuestionDetailAdapter1 adapter1 = new QuestionDetailAdapter1(getActivity(),mList1,person);
+        QuestionDetailAdapter adapter = new QuestionDetailAdapter(getActivity(), mList, person);
+        QuestionDetailAdapter1 adapter1 = new QuestionDetailAdapter1(getActivity(), mList1, person);
         mListView.setAdapter(adapter);
         mListView.setExpanded(true);
         mListView1.setAdapter(adapter1);
@@ -202,23 +186,23 @@ public class QuestionnaireDetailFragment extends BaseFragment {
     }
 
     private void setQuestionDetails(Person person) {
-        Map<Integer,Question> mListQuest;
+        Map<Integer, Question> mListQuest;
         mListQuest = AppData.getInstance().getListQuestion(person.getInterview_type());
         if (mList1 != null && mList1.size() > 0) {
-            Collections.sort(mList1,new MyCompare());
-            for (int i = 0; i < mList1.size(); i ++) {
-                ResultQuestion row = (ResultQuestion)(mList1.get(i));
-                Question question = mListQuest.get(Integer.parseInt(row.id)-1);
+            Collections.sort(mList1, new MyCompare());
+            for (int i = 0; i < mList1.size(); i++) {
+                ResultQuestion row = (ResultQuestion) (mList1.get(i));
+                Question question = mListQuest.get(Integer.parseInt(row.id) - 1);
                 str_share += question.question_cn.substring(3) + (row.result == 1 ? " 是 " : " 否 ") + "\n\n";
             }
         }
         str_share += "\n问卷\n\n";
 
         if (mList != null) {
-            Collections.sort(mList,new MyCompare());
-            for (int i = 0; i < mList.size(); i ++) {
-                ResultQuestion row = (ResultQuestion)(mList.get(i));
-                Question question = mListQuest.get(Integer.parseInt(row.id)-1);
+            Collections.sort(mList, new MyCompare());
+            for (int i = 0; i < mList.size(); i++) {
+                ResultQuestion row = (ResultQuestion) (mList.get(i));
+                Question question = mListQuest.get(Integer.parseInt(row.id) - 1);
                 str_share += question.question_cn + (row.result == 1 ? " 是 " : " 否 ") + "\n";
             }
         }
@@ -228,6 +212,7 @@ public class QuestionnaireDetailFragment extends BaseFragment {
         public String id;
         public int result;
     }
+
     private void setFullImageFromFilePath(final String imagePath, final ImageView imageView) {
 
         int targetW = (int) convertDpToPixel(80.0f, getActivity());
@@ -266,20 +251,21 @@ public class QuestionnaireDetailFragment extends BaseFragment {
         LayoutInflater inflater;
         List<ResultQuestion> mResult;
         Person mPerson;
-        Map<Integer,Question> mListQuest;
-        public QuestionDetailAdapter(Context context , List<ResultQuestion> mResult,Person person) {
+        Map<Integer, Question> mListQuest;
+
+        public QuestionDetailAdapter(Context context, List<ResultQuestion> mResult, Person person) {
             mContext = context;
             this.mResult = mResult;
             mListQuest = AppData.getInstance().getListQuestion(person.getInterview_type());
-            if(mResult!=null)
-                Collections.sort(mResult,new MyCompare());
+            if (mResult != null)
+                Collections.sort(mResult, new MyCompare());
             inflater = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         }
 
         @Override
         public int getCount() {
 
-            return mResult!=null? mResult.size():0;
+            return mResult != null ? mResult.size() : 0;
         }
 
         @Override
@@ -299,29 +285,29 @@ public class QuestionnaireDetailFragment extends BaseFragment {
             if (convertView == null) {
                 convertView = inflater.inflate(R.layout.question_result_item, parent, false);
                 viewHoler = new ViewHoler();
-                viewHoler.tvContent = (TextView)convertView.findViewById(R.id.question_content);
-                viewHoler.tvID =(TextView)convertView.findViewById(R.id.quest_number);
-                viewHoler.btnResult = (Button)convertView.findViewById(R.id.question_result);
+                viewHoler.tvContent = (TextView) convertView.findViewById(R.id.question_content);
+                viewHoler.tvID = (TextView) convertView.findViewById(R.id.quest_number);
+                viewHoler.btnResult = (Button) convertView.findViewById(R.id.question_result);
                 convertView.setTag(viewHoler);
-            }else {
-                viewHoler = (ViewHoler)convertView.getTag();
+            } else {
+                viewHoler = (ViewHoler) convertView.getTag();
             }
             ResultQuestion resultQuestion = mResult.get(position);
-            if(resultQuestion!=null){
+            if (resultQuestion != null) {
                 viewHoler.tvID.setText(resultQuestion.id);
-                Question question = mListQuest.get(Integer.parseInt(resultQuestion.id)-1);
+                Question question = mListQuest.get(Integer.parseInt(resultQuestion.id) - 1);
                 if (Integer.parseInt(resultQuestion.id) >= 10) {
                     viewHoler.tvContent.setText(question.question_cn.substring(3));
                 } else {
                     viewHoler.tvContent.setText(question.question_cn.substring(2));
                 }
-                if(resultQuestion.result == 1) {
+                if (resultQuestion.result == 1) {
                     viewHoler.btnResult.setText("是");
                     viewHoler.btnResult.setBackgroundResource(R.drawable.buttoncustom);
-                }else if(resultQuestion.result == 0) {
+                } else if (resultQuestion.result == 0) {
                     viewHoler.btnResult.setText("否");
                     viewHoler.btnResult.setBackgroundResource(R.drawable.buttoncustom_green);
-                }else {
+                } else {
                     viewHoler.btnResult.setText("否");
                     viewHoler.btnResult.setBackgroundResource(R.drawable.buttoncustom_green);
                 }
@@ -329,6 +315,7 @@ public class QuestionnaireDetailFragment extends BaseFragment {
 
             return convertView;
         }
+
         class ViewHoler {
             TextView tvContent;
             TextView tvID;
@@ -336,36 +323,39 @@ public class QuestionnaireDetailFragment extends BaseFragment {
         }
 
     }
-    class MyCompare implements Comparator<ResultQuestion>{
+
+    class MyCompare implements Comparator<ResultQuestion> {
 
         @Override
         public int compare(ResultQuestion lhs, ResultQuestion rhs) {
-            if(Integer.parseInt(lhs.id) <Integer.parseInt(rhs.id))
+            if (Integer.parseInt(lhs.id) < Integer.parseInt(rhs.id))
                 return -1;
             else
                 return 1;
         }
     }
+
     class QuestionDetailAdapter1 extends BaseAdapter {
 
         Context mContext;
         LayoutInflater inflater;
         List<ResultQuestion> mResult;
         Person mPerson;
-        Map<Integer,Question> mListQuest;
-        public QuestionDetailAdapter1(Context context , List<ResultQuestion> mResult,Person person) {
+        Map<Integer, Question> mListQuest;
+
+        public QuestionDetailAdapter1(Context context, List<ResultQuestion> mResult, Person person) {
             mContext = context;
             this.mResult = mResult;
             mListQuest = AppData.getInstance().getListQuestion(person.getInterview_type());
-            if(mResult!=null)
-                Collections.sort(mResult,new MyCompare());
+            if (mResult != null)
+                Collections.sort(mResult, new MyCompare());
             inflater = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         }
 
         @Override
         public int getCount() {
 
-            return mResult!=null? mResult.size():0;
+            return mResult != null ? mResult.size() : 0;
         }
 
         @Override
@@ -383,20 +373,20 @@ public class QuestionnaireDetailFragment extends BaseFragment {
             convertView = null;
 
             ResultQuestion resultQuestion = mResult.get(position);
-            if(resultQuestion!=null){
-                Question question = mListQuest.get(Integer.parseInt(resultQuestion.id)-1);
-                if (question != null ) {
+            if (resultQuestion != null) {
+                Question question = mListQuest.get(Integer.parseInt(resultQuestion.id) - 1);
+                if (question != null) {
                     ViewHoler viewHoler;
                     if (convertView == null) {
                         convertView = inflater.inflate(R.layout.question_result_item_1, parent, false);
                         viewHoler = new ViewHoler();
-                        viewHoler.tvContent = (TextView)convertView.findViewById(R.id.question_content_1);
-                        viewHoler.btnContact =(Button)convertView.findViewById(R.id.question_contact_1);
-                        viewHoler.btnResult = (Button)convertView.findViewById(R.id.question_result_1);
-                        viewHoler.tvNumber = (TextView)convertView.findViewById(R.id.quest_number_additional);
+                        viewHoler.tvContent = (TextView) convertView.findViewById(R.id.question_content_1);
+                        viewHoler.btnContact = (Button) convertView.findViewById(R.id.question_contact_1);
+                        viewHoler.btnResult = (Button) convertView.findViewById(R.id.question_result_1);
+                        viewHoler.tvNumber = (TextView) convertView.findViewById(R.id.quest_number_additional);
                         convertView.setTag(viewHoler);
-                    }else {
-                        viewHoler = (ViewHoler)convertView.getTag();
+                    } else {
+                        viewHoler = (ViewHoler) convertView.getTag();
                     }
                     viewHoler.tvContent.setText(question.question_cn.substring(3));
                     viewHoler.tvNumber.setText(resultQuestion.id);
@@ -421,7 +411,7 @@ public class QuestionnaireDetailFragment extends BaseFragment {
                     else
                         viewHoler.btnContact.setVisibility(View.VISIBLE);
 
-                    viewHoler.btnContact.setOnClickListener(new View.OnClickListener(){
+                    viewHoler.btnContact.setOnClickListener(new View.OnClickListener() {
 
                         @Override
                         public void onClick(View v) {
@@ -446,11 +436,12 @@ public class QuestionnaireDetailFragment extends BaseFragment {
             Button btnContact;
             TextView tvNumber;
         }
-        class MyCompare implements Comparator<ResultQuestion>{
+
+        class MyCompare implements Comparator<ResultQuestion> {
 
             @Override
             public int compare(ResultQuestion lhs, ResultQuestion rhs) {
-                if(Integer.parseInt(lhs.id) <Integer.parseInt(rhs.id))
+                if (Integer.parseInt(lhs.id) < Integer.parseInt(rhs.id))
                     return -1;
                 else
                     return 1;

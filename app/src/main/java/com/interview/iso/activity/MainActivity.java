@@ -43,9 +43,6 @@ import com.interview.iso.models.Person;
 import com.interview.iso.utils.AppData;
 import com.interview.iso.utils.DBHelper;
 
-import com.tencent.mm.sdk.openapi.IWXAPI;
-import com.tencent.mm.sdk.openapi.WXAPIFactory;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -66,8 +63,6 @@ public class MainActivity extends CameraActivity implements FragmentManager.OnBa
     ImageView img_zc_dropdown;
     FrameLayout container_cnt_questions;
     TextView txt_cnt_questions;
-
-    private IWXAPI api;
 
     public static MainActivity shareActivity;
 
@@ -138,10 +133,6 @@ public class MainActivity extends CameraActivity implements FragmentManager.OnBa
         updateCountQuestions();
         didSelectMenuItem(new MenuItem(getResources().getString(R.string.addnew_header), "NewQuestionnaireFragment", "add_new", 0));
 
-        api = WXAPIFactory.createWXAPI(this, AppData.getInstance().getWechatID(), false);
-        api.registerApp(AppData.getInstance().getWechatID());
-
-        AppData.getInstance().setWeChatAPI(api);
     }
 
     public void reset_textbox_color(int num) {
@@ -511,6 +502,14 @@ public class MainActivity extends CameraActivity implements FragmentManager.OnBa
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void ShareInterview(String str_share) {
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        sendIntent.putExtra(Intent.EXTRA_TEXT, str_share);
+        sendIntent.setType("text/plain");
+        startActivity(sendIntent);
     }
 
     class MenuAdapter extends BaseAdapter {

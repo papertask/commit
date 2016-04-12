@@ -294,9 +294,9 @@ public class QuestionFragment extends BaseFragment {
                     break;
                 case R.id.ln_skip:
                     if (AppData.getInstance().getApptype() == Constants.POLICY_TYPE)
-                        checkNextPolicyQuestion(-1);
+                        checkNextPolicyQuestion(0);
                     else
-                        checkGovernmentQuestion(-1);
+                        checkGovernmentQuestion(0);
 
                     break;
                 case R.id.next:
@@ -335,7 +335,7 @@ public class QuestionFragment extends BaseFragment {
                     }
                     break;
                 case R.id.btn_share_intent:
-                    shareIntent();
+
                     break;
                 case R.id.btn_13_yes: // need to continue
                     // Confirm Yes after Question 13
@@ -414,14 +414,6 @@ public class QuestionFragment extends BaseFragment {
     public void setHeaderTitle(String str_title) {
         MainActivity activity = (MainActivity) getActivity();
         ((TextView) activity.findViewById(R.id.title)).setText(str_title);
-    }
-
-    private void shareIntent() {
-        Intent sendIntent = new Intent();
-        sendIntent.setAction(Intent.ACTION_SEND);
-        sendIntent.putExtra(Intent.EXTRA_TEXT, "Interview shared");
-        sendIntent.setType("text/plain");
-        startActivity(sendIntent);
     }
 
     public void doBackQuestion() {
@@ -559,6 +551,11 @@ public class QuestionFragment extends BaseFragment {
 
     public void storeToResult() {
         MainActivity activity = (MainActivity) getActivity();
+        if (AppData.getInstance().getApptype() == Constants.POLICY_TYPE) {
+            if (mQueueQuestion.size() <13) return;
+        } else {
+            if (mQueueQuestion.size() < 4 ) return;
+        }
         mAnswer = new TreeMap<String, Integer>(mAnswer);
         JSONObject json = new JSONObject(mAnswer);
         DBHelper db = new DBHelper(activity);

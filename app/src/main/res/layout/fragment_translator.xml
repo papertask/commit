@@ -31,6 +31,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:textIsSelectable="true"
                         android:text="各语言翻译信息"
                         android:textAlignment="center"
                         android:textColor="@color/White"
@@ -47,6 +48,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:textIsSelectable="true"
                         android:text="越南语"
                         android:textSize="18sp" />
                 </LinearLayout>
@@ -79,6 +81,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:textIsSelectable="true"
                             android:paddingLeft="10dp"
                             android:text="姓名：" />
 
@@ -86,6 +89,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:textIsSelectable="true"
                             android:paddingLeft="10dp"
                             android:text="黎玲玲（女）" />
                     </LinearLayout>
@@ -111,6 +115,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:textIsSelectable="true"
                             android:paddingLeft="10dp"
                             android:text="地址：" />
 
@@ -118,6 +123,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:textIsSelectable="true"
                             android:paddingLeft="10dp"
                             android:text="北京外国语大学" />
                     </LinearLayout>
@@ -143,6 +149,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:textIsSelectable="true"
                             android:paddingLeft="10dp"
                             android:text="电话：" />
 
@@ -151,8 +158,9 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:layout_marginLeft="10dp"
-                            android:onClick="make_call"
                             android:background="@drawable/hyper_line"
+                            android:textIsSelectable="true"
+                            android:onClick="make_call"
                             android:text="15011339209" />
                     </LinearLayout>
                 </LinearLayout>
@@ -178,6 +186,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:textIsSelectable="true"
                             android:paddingLeft="10dp"
                             android:text="姓名：" />
 
@@ -185,6 +194,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:textIsSelectable="true"
                             android:paddingLeft="10dp"
                             android:text="陈继华（男）" />
                     </LinearLayout>
@@ -210,6 +220,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:textIsSelectable="true"
                             android:paddingLeft="10dp"
                             android:text="地址：" />
 
@@ -217,6 +228,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:textIsSelectable="true"
                             android:paddingLeft="10dp"
                             android:text="广东外贸外语大学" />
                     </LinearLayout>
@@ -242,6 +254,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:textIsSelectable="true"
                             android:paddingLeft="10dp"
                             android:text="电话：" />
 
@@ -250,8 +263,9 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:layout_marginLeft="10dp"
-                            android:onClick="make_call"
                             android:background="@drawable/hyper_line"
+                            android:textIsSelectable="true"
+                            android:onClick="make_call"
                             android:text="13760663465" />
                     </LinearLayout>
                 </LinearLayout>
@@ -276,6 +290,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:textIsSelectable="true"
                             android:paddingLeft="10dp"
                             android:text="邮箱：" />
 
@@ -283,6 +298,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:textIsSelectable="true"
                             android:paddingLeft="10dp"
                             android:text="cjhblue@163.com" />
                     </LinearLayout>
@@ -309,6 +325,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:textIsSelectable="true"
                             android:paddingLeft="10dp"
                             android:text="姓名：" />
 
@@ -316,6 +333,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:textIsSelectable="true"
                             android:paddingLeft="10dp"
                             android:text="徐淑媛 （女）" />
                     </LinearLayout>
@@ -341,6 +359,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:textIsSelectable="true"
                             android:paddingLeft="10dp"
                             android:text="地址：" />
 
@@ -348,6 +367,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:textIsSelectable="true"
                             android:paddingLeft="10dp"
                             android:text="广西民族大学外语学院" />
                     </LinearLayout>
@@ -373,6 +393,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:textIsSelectable="true"
                             android:paddingLeft="10dp"
                             android:text="电话：" />
 
@@ -381,8 +402,9 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:layout_marginLeft="10dp"
-                            android:onClick="make_call"
                             android:background="@drawable/hyper_line"
+                            android:textIsSelectable="true"
+                            android:onClick="make_call"
                             android:text="15077105823" />
                     </LinearLayout>
                 </LinearLayout>
@@ -407,6 +429,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:textIsSelectable="true"
                             android:paddingLeft="10dp"
                             android:text="邮箱：" />
 
@@ -414,6 +437,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:textIsSelectable="true"
                             android:paddingLeft="10dp"
                             android:text="314401833@qq.com" />
                     </LinearLayout>
@@ -434,6 +458,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:textIsSelectable="true"
                             android:text="老挝语"
                             android:textSize="18sp" />
                     </LinearLayout>
@@ -466,6 +491,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="姓名：" />
 
@@ -473,6 +499,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="谢英（女）" />
                         </LinearLayout>
@@ -498,6 +525,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="地址：" />
 
@@ -505,6 +533,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="广西民族大学外语学院" />
                         </LinearLayout>
@@ -530,6 +559,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="电话：" />
 
@@ -538,8 +568,9 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
                                 android:layout_marginLeft="10dp"
-                                android:onClick="make_call"
                                 android:background="@drawable/hyper_line"
+                                android:textIsSelectable="true"
+                                android:onClick="make_call"
                                 android:text="13152656622" />
                         </LinearLayout>
                     </LinearLayout>
@@ -564,6 +595,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="邮箱：" />
 
@@ -571,6 +603,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="40752032@qq.com" />
                         </LinearLayout>
@@ -597,6 +630,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="姓名：" />
 
@@ -604,6 +638,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="陶文娟（女）" />
                         </LinearLayout>
@@ -629,6 +664,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="地址：" />
 
@@ -636,6 +672,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="云南民族大学" />
                         </LinearLayout>
@@ -661,6 +698,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="电话：" />
 
@@ -669,8 +707,9 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
                                 android:layout_marginLeft="10dp"
-                                android:onClick="make_call"
                                 android:background="@drawable/hyper_line"
+                                android:textIsSelectable="true"
+                                android:onClick="make_call"
                                 android:text="15288108840" />
                         </LinearLayout>
                     </LinearLayout>
@@ -695,6 +734,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="邮箱：" />
 
@@ -702,6 +742,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="1474710248@qq.com" />
                         </LinearLayout>
@@ -718,6 +759,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:textIsSelectable="true"
                             android:text="柬埔寨语"
                             android:textSize="18sp" />
                     </LinearLayout>
@@ -750,6 +792,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="姓名：" />
 
@@ -757,6 +800,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="张泽（男）" />
                         </LinearLayout>
@@ -782,6 +826,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="地址：" />
 
@@ -789,6 +834,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="北京外国语大学" />
                         </LinearLayout>
@@ -814,6 +860,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="电话：" />
 
@@ -822,8 +869,9 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
                                 android:layout_marginLeft="10dp"
-                                android:onClick="make_call"
                                 android:background="@drawable/hyper_line"
+                                android:textIsSelectable="true"
+                                android:onClick="make_call"
                                 android:text="13701133671" />
                         </LinearLayout>
                     </LinearLayout>
@@ -848,6 +896,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="邮箱：" />
 
@@ -855,6 +904,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="zztio2@163.com" />
                         </LinearLayout>
@@ -881,6 +931,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="姓名：" />
 
@@ -888,6 +939,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="罗宇菲（女）" />
                         </LinearLayout>
@@ -913,6 +965,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="地址：" />
 
@@ -920,6 +973,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="广西民族大学外语学院" />
                         </LinearLayout>
@@ -946,6 +1000,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
                                 android:layout_marginLeft="10dp"
+                                android:textIsSelectable="true"
                                 android:text="电话：" />
 
                             <TextView
@@ -953,8 +1008,9 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
                                 android:layout_marginLeft="10dp"
-                                android:onClick="make_call"
                                 android:background="@drawable/hyper_line"
+                                android:textIsSelectable="true"
+                                android:onClick="make_call"
                                 android:text="13367717164" />
                         </LinearLayout>
                     </LinearLayout>
@@ -979,6 +1035,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="邮箱：" />
 
@@ -986,6 +1043,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="luo_yufei@hotmail.com" />
                         </LinearLayout>
@@ -1012,6 +1070,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="姓名：" />
 
@@ -1019,6 +1078,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="张云涛（男）" />
                         </LinearLayout>
@@ -1044,6 +1104,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="地址：" />
 
@@ -1051,6 +1112,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="云南民族大学" />
                         </LinearLayout>
@@ -1076,6 +1138,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="电话：" />
 
@@ -1085,6 +1148,7 @@
                                 android:layout_gravity="center_vertical"
                                 android:layout_marginLeft="10dp"
                                 android:background="@drawable/hyper_line"
+                                android:textIsSelectable="true"
                                 android:onClick="make_call"
                                 android:text="18669116230" />
                         </LinearLayout>
@@ -1110,6 +1174,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="邮箱：" />
 
@@ -1117,6 +1182,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="nothingzyt@sina.com" />
                         </LinearLayout>
@@ -1134,6 +1200,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:textIsSelectable="true"
                             android:text="缅甸语"
                             android:textSize="18sp" />
                     </LinearLayout>
@@ -1166,6 +1233,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="姓名：" />
 
@@ -1173,6 +1241,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="赵彩军 (男)" />
                         </LinearLayout>
@@ -1198,6 +1267,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="地址：" />
 
@@ -1205,6 +1275,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="广东外贸外语大学" />
                         </LinearLayout>
@@ -1238,8 +1309,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
                                 android:layout_marginLeft="10dp"
-                                android:onClick="make_call"
                                 android:background="@drawable/hyper_line"
+                                android:onClick="make_call"
                                 android:text="18702007785" />
                         </LinearLayout>
                     </LinearLayout>
@@ -1264,6 +1335,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="邮箱：" />
 
@@ -1271,6 +1343,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="1366418181@qq.com" />
                         </LinearLayout>
@@ -1297,6 +1370,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="姓名：" />
 
@@ -1329,6 +1403,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="地址：" />
 
@@ -1336,6 +1411,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="广东外贸外语大学" />
                         </LinearLayout>
@@ -1362,6 +1438,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
                                 android:layout_marginLeft="10dp"
+                                android:textIsSelectable="true"
                                 android:text="电话：" />
 
                             <TextView
@@ -1369,8 +1446,9 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
                                 android:layout_marginLeft="10dp"
-                                android:onClick="make_call"
                                 android:background="@drawable/hyper_line"
+                                android:textIsSelectable="true"
+                                android:onClick="make_call"
                                 android:text="18623115596" />
                         </LinearLayout>
                     </LinearLayout>
@@ -1395,6 +1473,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="邮箱：" />
 
@@ -1402,6 +1481,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="546467210@qq.com" />
                         </LinearLayout>
@@ -1428,6 +1508,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="姓名：" />
 
@@ -1435,6 +1516,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="李健 (男)" />
                         </LinearLayout>
@@ -1460,6 +1542,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="地址：" />
 
@@ -1467,6 +1550,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="云南民族大学" />
                         </LinearLayout>
@@ -1492,6 +1576,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="电话：" />
 
@@ -1500,8 +1585,9 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
                                 android:layout_marginLeft="10dp"
-                                android:onClick="make_call"
                                 android:background="@drawable/hyper_line"
+                                android:textIsSelectable="true"
+                                android:onClick="make_call"
                                 android:text="13901307447" />
                         </LinearLayout>
                     </LinearLayout>
@@ -1526,6 +1612,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="邮箱：" />
 
@@ -1533,6 +1620,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="stephanstephan@126.com" />
                         </LinearLayout>

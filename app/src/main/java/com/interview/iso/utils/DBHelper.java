@@ -175,19 +175,21 @@ public class DBHelper extends SQLiteOpenHelper {
         // looping through all rows and adding to list
         if (c.moveToFirst()) {
             do {
-                Person td = new Person();
-                td.setnID(c.getInt(c.getColumnIndex(KEY_ID)));
-                td.setStrFirstName(c.getString(c.getColumnIndex(KEY_FIRSTNAME)));
-                td.setStrLastName(c.getString(c.getColumnIndex(KEY_LASTNAME)));
-                td.setStrAddress(c.getString(c.getColumnIndex(KEY_ADDRESS)));
-                td.setAvatar(c.getString(c.getColumnIndex(KEY_AVATAR)));
-                td.setInterview_type(c.getInt(c.getColumnIndex(KEY_INTERVIEW_TYPE)));
-                td.setStrInterviewDate(c.getString(c.getColumnIndex(KEY_INTERVIEW_DATE)));
-                td.setStrPosition(c.getString(c.getColumnIndex(KEY_POSITION)));
-                td.setStrTelphone(c.getString(c.getColumnIndex(KEY_PHONE)));
-                td.setStrCity(c.getString(c.getColumnIndex(KEY_CITY)));
-                td.setLang(c.getString(c.getColumnIndex(KEY_LANG)));
-                lstAns.add(td);
+                if (getListQuestionByPersion(c.getInt(c.getColumnIndex(KEY_ID))) != null) {
+                    Person td = new Person();
+                    td.setnID(c.getInt(c.getColumnIndex(KEY_ID)));
+                    td.setStrFirstName(c.getString(c.getColumnIndex(KEY_FIRSTNAME)));
+                    td.setStrLastName(c.getString(c.getColumnIndex(KEY_LASTNAME)));
+                    td.setStrAddress(c.getString(c.getColumnIndex(KEY_ADDRESS)));
+                    td.setAvatar(c.getString(c.getColumnIndex(KEY_AVATAR)));
+                    td.setInterview_type(c.getInt(c.getColumnIndex(KEY_INTERVIEW_TYPE)));
+                    td.setStrInterviewDate(c.getString(c.getColumnIndex(KEY_INTERVIEW_DATE)));
+                    td.setStrPosition(c.getString(c.getColumnIndex(KEY_POSITION)));
+                    td.setStrTelphone(c.getString(c.getColumnIndex(KEY_PHONE)));
+                    td.setStrCity(c.getString(c.getColumnIndex(KEY_CITY)));
+                    td.setLang(c.getString(c.getColumnIndex(KEY_LANG)));
+                    lstAns.add(td);
+                }
             } while (c.moveToNext());
         }
         db.close();
@@ -206,19 +208,21 @@ public class DBHelper extends SQLiteOpenHelper {
         // looping through all rows and adding to list
         if (c.moveToFirst()) {
             do {
-                Person td = new Person();
-                td.setnID(c.getInt(c.getColumnIndex(KEY_ID)));
-                td.setStrFirstName(c.getString(c.getColumnIndex(KEY_FIRSTNAME)));
-                td.setStrLastName(c.getString(c.getColumnIndex(KEY_LASTNAME)));
-                td.setStrAddress(c.getString(c.getColumnIndex(KEY_ADDRESS)));
-                td.setAvatar(c.getString(c.getColumnIndex(KEY_AVATAR)));
-                td.setInterview_type(c.getInt(c.getColumnIndex(KEY_INTERVIEW_TYPE)));
-                td.setStrInterviewDate(c.getString(c.getColumnIndex(KEY_INTERVIEW_DATE)));
-                td.setStrPosition(c.getString(c.getColumnIndex(KEY_POSITION)));
-                td.setStrTelphone(c.getString(c.getColumnIndex(KEY_PHONE)));
-                td.setStrCity(c.getString(c.getColumnIndex(KEY_CITY)));
-                td.setLang(c.getString(c.getColumnIndex(KEY_LANG)));
-                lstAns.add(td);
+                if (getListQuestionByPersion(c.getInt(c.getColumnIndex(KEY_ID)))!=null) {
+                    Person td = new Person();
+                    td.setnID(c.getInt(c.getColumnIndex(KEY_ID)));
+                    td.setStrFirstName(c.getString(c.getColumnIndex(KEY_FIRSTNAME)));
+                    td.setStrLastName(c.getString(c.getColumnIndex(KEY_LASTNAME)));
+                    td.setStrAddress(c.getString(c.getColumnIndex(KEY_ADDRESS)));
+                    td.setAvatar(c.getString(c.getColumnIndex(KEY_AVATAR)));
+                    td.setInterview_type(c.getInt(c.getColumnIndex(KEY_INTERVIEW_TYPE)));
+                    td.setStrInterviewDate(c.getString(c.getColumnIndex(KEY_INTERVIEW_DATE)));
+                    td.setStrPosition(c.getString(c.getColumnIndex(KEY_POSITION)));
+                    td.setStrTelphone(c.getString(c.getColumnIndex(KEY_PHONE)));
+                    td.setStrCity(c.getString(c.getColumnIndex(KEY_CITY)));
+                    td.setLang(c.getString(c.getColumnIndex(KEY_LANG)));
+                    lstAns.add(td);
+                }
             } while (c.moveToNext());
         }
         return lstAns;

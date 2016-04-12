@@ -80,6 +80,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:paddingLeft="10dp"
+                            android:textIsSelectable="true"
                             android:text="公安部刑侦局打拐办" />
 
                         <TextView
@@ -121,6 +122,7 @@
                             android:background="@drawable/hyper_line"
                             android:onClick="make_call"
                             android:layout_marginLeft="10dp"
+                            android:textIsSelectable="true"
                             android:text="@string/section_phone_1" />
                     </LinearLayout>
 
@@ -138,6 +140,7 @@
                         android:layout_marginLeft="94dp"
                         android:background="@drawable/hyper_line"
                         android:onClick="make_call"
+                        android:textIsSelectable="true"
                         android:text="01066262091" />
                 </LinearLayout>
 
@@ -153,6 +156,7 @@
                         android:layout_marginLeft="94dp"
                         android:background="@drawable/hyper_line"
                         android:onClick="make_call"
+                        android:textIsSelectable="true"
                         android:text="01066262888" />
                 </LinearLayout>
 
@@ -167,6 +171,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="民政救助系统"
+                        android:textIsSelectable="true"
                         android:textColor="@color/colorPrimary"
                         android:textSize="18sp" />
                 </LinearLayout>
@@ -200,6 +205,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:paddingLeft="10dp"
+                            android:textIsSelectable="true"
                             android:text="民政部社会事务司救助处" />
 
                         <TextView
@@ -238,6 +244,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="left"
+                            android:textIsSelectable="true"
                             android:background="@drawable/hyper_line"
                             android:onClick="make_call"
                             android:text="010 5812 3255" />
@@ -257,6 +264,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="妇女权益"
+                        android:textIsSelectable="true"
                         android:textColor="@color/colorPrimary"
                         android:textSize="18sp" />
                 </LinearLayout>
@@ -290,6 +298,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:paddingLeft="10dp"
+                            android:textIsSelectable="true"
                             android:text="全国妇联权益部信访处" />
 
                         <TextView
@@ -329,6 +338,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="left"
                             android:onClick="make_call"
+                            android:textIsSelectable="true"
                             android:background="@drawable/hyper_line"
                             android:text="010 6510 3186" />
                     </LinearLayout>
@@ -362,10 +372,12 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="left"
+                            android:textIsSelectable="true"
                             android:background="@drawable/hyper_line"
                             android:text="12338" />
                         <TextView
                             android:text="妇女维权"
+                            android:textIsSelectable="true"
                             android:paddingLeft="5dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -385,6 +397,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="心理咨询"
+                        android:textIsSelectable="true"
                         android:textColor="@color/colorPrimary"
                         android:textSize="18sp" />
                 </LinearLayout>
@@ -418,6 +431,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:paddingLeft="10dp"
+                            android:textIsSelectable="true"
                             android:text="红枫公益热线" />
 
                         <TextView
@@ -456,6 +470,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="left"
+                            android:textIsSelectable="true"
                             android:onClick="make_call"
                             android:background="@drawable/hyper_line"
                             android:text="010 64073800" />
@@ -489,6 +504,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:textIsSelectable="true"
                         android:paddingRight="40dp"
                         android:text="联系相关语言翻译、心理辅导、民间救助和送返资源"
                         android:textColor="@color/colorPrimary"
@@ -523,6 +539,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:textIsSelectable="true"
                             android:layout_gravity="center_vertical"
                             android:paddingLeft="10dp"
                             android:paddingRight="40dp"
@@ -560,6 +577,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="left"
                             android:layout_marginLeft="10dp"
+                            android:textIsSelectable="true"
                             android:background="@drawable/hyper_line"
                             android:text="13811788171" />
                     </LinearLayout>

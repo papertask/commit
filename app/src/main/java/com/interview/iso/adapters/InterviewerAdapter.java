@@ -265,9 +265,10 @@ public class InterviewerAdapter extends BaseAdapter {
                 }
             }
         } else {
-            boolean b_ispotential = true;
+            boolean b_ispotential = false;
             String str_additional = "";
             if (mList1 != null && mList1.size() > 0) {
+                b_ispotential = true;
                 Collections.sort(mList1, new MyCompare1());
                 for (int i = 0; i < mList1.size(); i++) {
                     ResultQuestion1 row = (ResultQuestion1) (mList1.get(i));
@@ -283,13 +284,11 @@ public class InterviewerAdapter extends BaseAdapter {
                 for (int i = 0; i < mList.size(); i++) {
                     ResultQuestion1 row = (ResultQuestion1) (mList.get(i));
                     Question question = mListQuest.get(Integer.parseInt(row.id) - 1);
-                    if (row.result != 1)
-                        b_ispotential = false;
                     str_additional += question.question_cn + (row.result == 1 ? " 是 " : " 否 ") + "\n";
                 }
             }
 
-            if (b_ispotential)
+            if (b_ispotential == true)
                 str_share += activity.getResources().getString(R.string.police_res_desc_1) + "\n";
             else
                 str_share += activity.getResources().getString(R.string.police_res_desc_2) + "\n";

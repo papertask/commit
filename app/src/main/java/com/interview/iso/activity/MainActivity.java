@@ -40,7 +40,6 @@ import com.interview.iso.fragments.PeopleGovDetailFragment;
 import com.interview.iso.fragments.PoliceGuideChapterFragment;
 import com.interview.iso.fragments.QuestionFragment;
 import com.interview.iso.models.Person;
-import com.interview.iso.utils.AppData;
 import com.interview.iso.utils.DBHelper;
 
 import java.util.ArrayList;
@@ -224,7 +223,6 @@ public class MainActivity extends CameraActivity implements FragmentManager.OnBa
 
     }
 
-
     public void make_call(View v) {
         TextView This = (TextView) v;
         Intent intent = new Intent(Intent.ACTION_CALL);
@@ -235,6 +233,7 @@ public class MainActivity extends CameraActivity implements FragmentManager.OnBa
         }
 
     }
+
     public void close_menu(View v) {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
@@ -243,7 +242,7 @@ public class MainActivity extends CameraActivity implements FragmentManager.OnBa
     }
 
     public void updateCountQuestions() {
-        DBHelper db = new DBHelper( this );
+        DBHelper db = new DBHelper(this);
 
         List<Person> mListPerson = db.getAllPerson();
 
@@ -333,13 +332,13 @@ public class MainActivity extends CameraActivity implements FragmentManager.OnBa
             } else if (item.identifier.equals("translate")) {
                 reset_textbox_color(MENU_FANYI);
                 close_menu(null);
-            } else if ( item.identifier.equals("about")) {
+            } else if (item.identifier.equals("about")) {
                 reset_textbox_color(MENU_BANGZHU);
                 close_menu(null);
-            } else if ( item.identifier.equals("submenu_shiguan")) {
+            } else if (item.identifier.equals("submenu_shiguan")) {
                 reset_textbox_color(MENU_SHIGUAN);
                 close_menu(null);
-            } else if ( item.identifier.equals("police_guide")) {
+            } else if (item.identifier.equals("police_guide")) {
                 reset_textbox_color(MENU_ZHENGCE);
                 mSearch.setVisibility(View.GONE);
                 mTick.setVisibility(View.GONE);
@@ -383,7 +382,7 @@ public class MainActivity extends CameraActivity implements FragmentManager.OnBa
                         frListName.doBackAction();
                     }
                 });
-            }else if (item.identifier.equals("police_guide_guonei")) {
+            } else if (item.identifier.equals("police_guide_guonei")) {
                 mBack.setBackgroundResource(R.drawable.btn_back);
                 mBack.setVisibility(View.VISIBLE);
                 mBack.setOnClickListener(new View.OnClickListener() {
@@ -405,7 +404,7 @@ public class MainActivity extends CameraActivity implements FragmentManager.OnBa
                         frListName.doBackAction();
                     }
                 });
-            }else if (item.identifier.equals("police_guide_minzheng")) {
+            } else if (item.identifier.equals("police_guide_minzheng")) {
                 mBack.setBackgroundResource(R.drawable.btn_back);
                 mBack.setVisibility(View.VISIBLE);
                 mBack.setOnClickListener(new View.OnClickListener() {
@@ -416,7 +415,7 @@ public class MainActivity extends CameraActivity implements FragmentManager.OnBa
                         frListName.doBackAction();
                     }
                 });
-            }else {
+            } else {
                 mSearch.setVisibility(View.GONE);
                 mTick.setVisibility(View.GONE);
                 mBack.setVisibility(View.GONE);
@@ -505,11 +504,10 @@ public class MainActivity extends CameraActivity implements FragmentManager.OnBa
     }
 
     public void ShareInterview(String str_share) {
-        Intent sendIntent = new Intent();
-        sendIntent.setAction(Intent.ACTION_SEND);
-        sendIntent.putExtra(Intent.EXTRA_TEXT, str_share);
-        sendIntent.setType("text/plain");
-        startActivity(sendIntent);
+        Intent sharingIntent = new Intent(Intent.ACTION_SEND);
+        sharingIntent.setType("text/plain");
+        sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, str_share);
+        startActivity(Intent.createChooser(sharingIntent, "Share via"));
     }
 
     class MenuAdapter extends BaseAdapter {

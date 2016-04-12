@@ -9,7 +9,6 @@
         android:orientation="vertical">
 
 
-
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -32,6 +31,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:textIsSelectable="true"
                         android:text="越南使馆在华信息"
                         android:textAlignment="center"
                         android:textColor="@color/White"
@@ -48,6 +48,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:textIsSelectable="true"
                         android:text="越南驻中国大使馆"
                         android:textSize="18sp" />
                 </LinearLayout>
@@ -80,6 +81,7 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:textIsSelectable="true"
                             android:paddingLeft="10dp"
                             android:text="地址：" />
 
@@ -87,6 +89,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:textIsSelectable="true"
                             android:text="中国北京建国门外光华路32号" />
                     </LinearLayout>
                 </LinearLayout>
@@ -111,15 +114,17 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:textIsSelectable="true"
                             android:paddingLeft="10dp"
                             android:text="电话：" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:onClick="make_call"
-                            android:background="@drawable/hyper_line"
                             android:layout_gravity="center_vertical"
+                            android:background="@drawable/hyper_line"
+                            android:textIsSelectable="true"
+                            android:onClick="make_call"
                             android:text="010 65321155" />
                     </LinearLayout>
                 </LinearLayout>
@@ -144,15 +149,17 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:textIsSelectable="true"
                             android:paddingLeft="10dp"
                             android:text="传真：" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:onClick="make_call"
-                            android:background="@drawable/hyper_line"
                             android:layout_gravity="center_vertical"
+                            android:background="@drawable/hyper_line"
+                            android:textIsSelectable="true"
+                            android:onClick="make_call"
                             android:text="010 65324215" />
                     </LinearLayout>
                 </LinearLayout>
@@ -173,6 +180,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:textIsSelectable="true"
                             android:text="越南驻中国总领馆"
                             android:textSize="18sp" />
                     </LinearLayout>
@@ -205,6 +213,7 @@
                                 android:layout_width="60dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="地址：" />
 
@@ -212,6 +221,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:text="云南昆明北京路155号红塔楼507号" />
                         </LinearLayout>
                     </LinearLayout>
@@ -236,6 +246,7 @@
                                 android:layout_width="60dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="邮箱：" />
 
@@ -243,6 +254,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:text="tlsqcm@yahoo.com" />
                         </LinearLayout>
                     </LinearLayout>
@@ -267,15 +279,17 @@
                                 android:layout_width="60dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="电话：" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:onClick="make_call"
-                                android:background="@drawable/hyper_line"
                                 android:layout_gravity="center_vertical"
+                                android:background="@drawable/hyper_line"
+                                android:textIsSelectable="true"
+                                android:onClick="make_call"
                                 android:text="0871 3522669" />
                         </LinearLayout>
                     </LinearLayout>
@@ -300,15 +314,17 @@
                                 android:layout_width="60dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:textIsSelectable="true"
                                 android:paddingLeft="10dp"
                                 android:text="传真：" />
 
                             <TextView
-                                android:onClick="make_call"
-                                android:background="@drawable/hyper_line"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:background="@drawable/hyper_line"
+                                android:textIsSelectable="true"
+                                android:onClick="make_call"
                                 android:text="0871 3516667" />
                         </LinearLayout>
                     </LinearLayout>
@@ -325,6 +341,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:textIsSelectable="true"
                         android:text="越南驻广西总领馆"
                         android:textSize="18sp" />
                 </LinearLayout>
@@ -350,22 +367,24 @@
 
                         <ImageView
                             android:layout_width="14dp"
-                            android:layout_gravity="top"
                             android:layout_height="18dp"
+                            android:layout_gravity="top"
                             android:src="@drawable/address" />
 
                         <TextView
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="top"
+                            android:textIsSelectable="true"
                             android:paddingLeft="10dp"
                             android:text="地址：" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:paddingRight="20dp"
                             android:layout_gravity="center_vertical"
+                            android:textIsSelectable="true"
+                            android:paddingRight="20dp"
                             android:text="中国广西南宁津湖路55号Yahang 财富中心27层" />
                     </LinearLayout>
                 </LinearLayout>
@@ -390,6 +409,7 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:textIsSelectable="true"
                             android:paddingLeft="10dp"
                             android:text="邮箱：" />
 
@@ -397,6 +417,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:textIsSelectable="true"
                             android:text="tlsqvn@rediffmail.com" />
                     </LinearLayout>
                 </LinearLayout>
@@ -421,15 +442,17 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:textIsSelectable="true"
                             android:paddingLeft="10dp"
                             android:text="电话：" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:onClick="make_call"
                             android:layout_gravity="center_vertical"
                             android:background="@drawable/hyper_line"
+                            android:textIsSelectable="true"
+                            android:onClick="make_call"
                             android:text="020 83305910-11" />
                     </LinearLayout>
                 </LinearLayout>
@@ -447,12 +470,13 @@
 
                         <ImageView
                             android:layout_width="14dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content" />
 
                         <TextView
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:textIsSelectable="true"
                             android:paddingLeft="10dp"
                             android:text="" />
 
@@ -460,6 +484,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:textIsSelectable="true"
                             android:text="(84) 4 62 844 844 保护越南人热线" />
                     </LinearLayout>
                 </LinearLayout>
@@ -479,21 +504,23 @@
                         <ImageView
                             android:layout_width="14dp"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/fax"/>
+                            android:src="@drawable/fax" />
 
                         <TextView
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:textIsSelectable="true"
                             android:paddingLeft="10dp"
                             android:text="传真" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:onClick="make_call"
-                            android:background="@drawable/hyper_line"
                             android:layout_gravity="center_vertical"
+                            android:background="@drawable/hyper_line"
+                            android:textIsSelectable="true"
+                            android:onClick="make_call"
                             android:text="020 83305915" />
                     </LinearLayout>
                 </LinearLayout>

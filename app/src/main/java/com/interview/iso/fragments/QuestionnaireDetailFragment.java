@@ -141,7 +141,7 @@ public class QuestionnaireDetailFragment extends BaseFragment {
         str_share += "\n\n" + "结果建议" + "\n\n";
         DBHelper db = new DBHelper(getActivity());
         Answer answer = db.getListQuestionByPersion(person.getnID());
-        boolean b_ispotential = true;
+        boolean b_ispotential = false;
         if (answer != null) {
             JSONObject object = answer.convertToJsonArray();
 //        Map<String , Boolean> mResult;
@@ -156,17 +156,16 @@ public class QuestionnaireDetailFragment extends BaseFragment {
                         resultQuestion.result = object.getInt(resultQuestion.id);
                         if (Integer.parseInt(resultQuestion.id) > 0 && Integer.parseInt(resultQuestion.id) < 14) {
                             mList.add(resultQuestion);
-                            if (resultQuestion.result != 1)
-                                b_ispotential = false;
                         } else {
                             mList1.add(resultQuestion);
+                            b_ispotential = true;
                         }
                     } catch (Exception ex) {
                     }
                 }
             }
         }
-        if (b_ispotential) {
+        if (b_ispotential==true) {
             ctrlTxtDescAddition.setText(getResources().getString(R.string.police_res_desc_1));
             ctrlTxtDescAddition.setVisibility(View.VISIBLE);
             str_share += getResources().getString(R.string.police_res_desc_1) + "\n\n";

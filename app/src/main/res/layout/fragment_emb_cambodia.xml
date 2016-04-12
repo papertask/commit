@@ -31,6 +31,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:editable="false"
                         android:text="柬埔寨使馆在华信息"
                         android:textAlignment="center"
                         android:textColor="@color/White"
@@ -47,6 +48,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:editable="false"
                         android:text="柬埔寨驻华使、领馆"
                         android:textSize="18sp" />
                 </LinearLayout>
@@ -79,6 +81,7 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="姓名：" />
 
@@ -86,6 +89,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:text="Mrs. Khek Cai Mealy Sysoda" />
                     </LinearLayout>
                 </LinearLayout>
@@ -109,6 +113,7 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="职务：" />
 
@@ -116,6 +121,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:text="特命全权大使" />
                     </LinearLayout>
                 </LinearLayout>
@@ -139,6 +145,7 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="部门：" />
 
@@ -146,6 +153,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:text="柬埔寨皇家大使馆（北京）" />
                     </LinearLayout>
                 </LinearLayout>
@@ -170,6 +178,7 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="地址：" />
 
@@ -177,6 +186,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:text="中国北京东直门外大街9号 100600" />
                     </LinearLayout>
                 </LinearLayout>
@@ -201,6 +211,7 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="邮箱：" />
 
@@ -208,6 +219,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:text="camemb.chn@mfa.gov.kh" />
                     </LinearLayout>
                 </LinearLayout>
@@ -232,6 +244,7 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="电话：" />
 
@@ -239,8 +252,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
-                            android:onClick="make_call"
                             android:background="@drawable/hyper_line"
+                            android:editable="false"
+                            android:onClick="make_call"
                             android:text="010 653 21889" />
                     </LinearLayout>
                 </LinearLayout>
@@ -265,15 +279,17 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="传真：" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:onClick="make_call"
-                            android:background="@drawable/hyper_line"
                             android:layout_gravity="center_vertical"
+                            android:background="@drawable/hyper_line"
+                            android:editable="false"
+                            android:onClick="make_call"
                             android:text="010 653 23507" />
                     </LinearLayout>
                 </LinearLayout>
@@ -299,6 +315,7 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="姓名：" />
 
@@ -306,6 +323,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:text="Mr. Hour Sophara" />
                     </LinearLayout>
                 </LinearLayout>
@@ -329,6 +347,7 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="职务：" />
 
@@ -336,6 +355,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:text="总领事" />
                     </LinearLayout>
                 </LinearLayout>
@@ -359,6 +379,7 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="部门：" />
 
@@ -366,6 +387,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:text="柬埔寨皇家总领事（广州）" />
                     </LinearLayout>
                 </LinearLayout>
@@ -390,6 +412,7 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="地址：" />
 
@@ -397,6 +420,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:text="中国广州环市路花园酒店811室510064" />
                     </LinearLayout>
                 </LinearLayout>
@@ -421,6 +445,7 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="邮箱：" />
 
@@ -428,6 +453,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:text="camcg.gqz@mfa.gov.kh" />
                     </LinearLayout>
                 </LinearLayout>
@@ -453,15 +479,17 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="电话：" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:onClick="make_call"
                             android:layout_gravity="center_vertical"
                             android:background="@drawable/hyper_line"
+                            android:editable="false"
+                            android:onClick="make_call"
                             android:text="020 838 79005" />
                     </LinearLayout>
                 </LinearLayout>
@@ -487,15 +515,17 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="传真：" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:onClick="make_call"
-                            android:background="@drawable/hyper_line"
                             android:layout_gravity="center_vertical"
+                            android:background="@drawable/hyper_line"
+                            android:editable="false"
+                            android:onClick="make_call"
                             android:text="020 838 79006" />
                     </LinearLayout>
                 </LinearLayout>
@@ -522,6 +552,7 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="姓名：" />
 
@@ -529,6 +560,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:text="Mr. Phan Peuv" />
                     </LinearLayout>
                 </LinearLayout>
@@ -553,6 +585,7 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="职务：" />
 
@@ -560,6 +593,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:text="总领事" />
                     </LinearLayout>
                 </LinearLayout>
@@ -583,6 +617,7 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="部门：" />
 
@@ -590,6 +625,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:text="柬埔寨皇家总领事（香港）" />
                     </LinearLayout>
                 </LinearLayout>
@@ -614,6 +650,7 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="地址：" />
 
@@ -621,6 +658,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingRight="20dp"
                             android:text="中国香港Tsim Sha Tsui, Kowloom, Salisbury路3号, Star House 12层1218单元" />
                     </LinearLayout>
@@ -647,6 +685,7 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="邮箱：" />
 
@@ -654,6 +693,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:text="camcg.hk@mfa.gov.kh jn" />
                     </LinearLayout>
                 </LinearLayout>
@@ -679,15 +719,17 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="电话：" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:onClick="make_call"
-                            android:background="@drawable/hyper_line"
                             android:layout_gravity="center_vertical"
+                            android:background="@drawable/hyper_line"
+                            android:editable="false"
+                            android:onClick="make_call"
                             android:text="00852 2546 0718" />
                     </LinearLayout>
                 </LinearLayout>
@@ -713,14 +755,16 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="传真：" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/hyper_line"
                             android:layout_gravity="center_vertical"
+                            android:background="@drawable/hyper_line"
+                            android:editable="false"
                             android:text="00852 2803 0570" />
                     </LinearLayout>
                 </LinearLayout>
@@ -747,6 +791,7 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="姓名：" />
 
@@ -754,6 +799,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:text="Mr. Phin Vicheawathana" />
                     </LinearLayout>
                 </LinearLayout>
@@ -778,6 +824,7 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="职务：" />
 
@@ -785,6 +832,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:text="总领事" />
                     </LinearLayout>
                 </LinearLayout>
@@ -808,6 +856,7 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="部门：" />
 
@@ -815,6 +864,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:text="柬埔寨皇家总领事（上海）" />
                     </LinearLayout>
                 </LinearLayout>
@@ -839,6 +889,7 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="地址：" />
 
@@ -846,6 +897,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingRight="20dp"
                             android:text="中国上海中天目路Sapphire 大厦A座12层253-267号, 200070" />
                     </LinearLayout>
@@ -872,6 +924,7 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="邮箱：" />
 
@@ -879,6 +932,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:text="camcg.sh@mfa.gov.kh" />
                     </LinearLayout>
                 </LinearLayout>
@@ -904,15 +958,17 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="电话：" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:onClick="make_call"
-                            android:background="@drawable/hyper_line"
                             android:layout_gravity="center_vertical"
+                            android:background="@drawable/hyper_line"
+                            android:editable="false"
+                            android:onClick="make_call"
                             android:text="021 5101 5857" />
                     </LinearLayout>
                 </LinearLayout>
@@ -938,14 +994,16 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="传真：" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/hyper_line"
                             android:layout_gravity="center_vertical"
+                            android:background="@drawable/hyper_line"
+                            android:editable="false"
                             android:text="021 5101 5855" />
                     </LinearLayout>
                 </LinearLayout>
@@ -972,6 +1030,7 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="姓名：" />
 
@@ -979,6 +1038,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:text="Mr. Neang Samrithkomar" />
                     </LinearLayout>
                 </LinearLayout>
@@ -1003,6 +1063,7 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="职务：" />
 
@@ -1010,6 +1071,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:text="总领事" />
                     </LinearLayout>
                 </LinearLayout>
@@ -1033,6 +1095,7 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="部门：" />
 
@@ -1040,6 +1103,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:text="柬埔寨皇家总领事（重庆）" />
                     </LinearLayout>
                 </LinearLayout>
@@ -1064,6 +1128,7 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="地址：" />
 
@@ -1071,6 +1136,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingRight="20dp"
                             android:text="中国重庆江北区扬河路9号A座 #1902" />
                     </LinearLayout>
@@ -1097,6 +1163,7 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="邮箱：" />
 
@@ -1104,6 +1171,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:text="camcg.cqg@mfa.gov.kh" />
                     </LinearLayout>
                 </LinearLayout>
@@ -1129,26 +1197,32 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="电话：" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:onClick="make_call"
-                            android:background="@drawable/hyper_line"
                             android:layout_gravity="center_vertical"
-                            android:text="023 8911 6416" />
-                        <TextView
-                            android:text=" ; "
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-                        <TextView
                             android:background="@drawable/hyper_line"
+                            android:editable="false"
                             android:onClick="make_call"
-                            android:text="023 8911 6417"
+                            android:text="023 8911 6416" />
+
+                        <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:editable="false"
+                            android:text=" ; " />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/hyper_line"
+                            android:editable="false"
+                            android:onClick="make_call"
+                            android:text="023 8911 6417" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -1173,14 +1247,16 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="传真：" />
 
                         <TextView
-                            android:background="@drawable/hyper_line"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:background="@drawable/hyper_line"
+                            android:editable="false"
                             android:text="023 8911 1369" />
                     </LinearLayout>
                 </LinearLayout>
@@ -1207,6 +1283,7 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="姓名：" />
 
@@ -1214,6 +1291,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:text="Mr. Sao Kharadin" />
                     </LinearLayout>
                 </LinearLayout>
@@ -1238,6 +1316,7 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="职务：" />
 
@@ -1245,6 +1324,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:text="总领事" />
                     </LinearLayout>
                 </LinearLayout>
@@ -1268,6 +1348,7 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="部门：" />
 
@@ -1275,6 +1356,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:text="柬埔寨皇家总领事（云南）" />
                     </LinearLayout>
                 </LinearLayout>
@@ -1299,6 +1381,7 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="地址：" />
 
@@ -1306,6 +1389,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingRight="20dp"
                             android:text="中国云南昆明白云路Guan Fang Plaza, 14层258号" />
                     </LinearLayout>
@@ -1332,6 +1416,7 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="邮箱：" />
 
@@ -1339,6 +1424,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:text="camcg.kmg@mfa.gov.kh" />
                     </LinearLayout>
                 </LinearLayout>
@@ -1364,15 +1450,17 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="电话：" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:onClick="make_call"
-                            android:background="@drawable/hyper_line"
                             android:layout_gravity="center_vertical"
+                            android:background="@drawable/hyper_line"
+                            android:editable="false"
+                            android:onClick="make_call"
                             android:text="0871 331 7320" />
                     </LinearLayout>
                 </LinearLayout>
@@ -1398,15 +1486,17 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="传真：" />
 
                         <TextView
-                            android:background="@drawable/hyper_line"
-                            android:onClick="make_call"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:background="@drawable/hyper_line"
+                            android:editable="false"
+                            android:onClick="make_call"
                             android:text="0871 331 6220" />
                     </LinearLayout>
                 </LinearLayout>
@@ -1433,6 +1523,7 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="姓名：" />
 
@@ -1440,6 +1531,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:text="Mr. Im Sophy" />
                     </LinearLayout>
                 </LinearLayout>
@@ -1464,6 +1556,7 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="职务：" />
 
@@ -1471,6 +1564,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:text="总领事" />
                     </LinearLayout>
                 </LinearLayout>
@@ -1494,6 +1588,7 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="部门：" />
 
@@ -1501,6 +1596,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:text="柬埔寨皇家总领事（广西）" />
                     </LinearLayout>
                 </LinearLayout>
@@ -1525,6 +1621,7 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingLeft="10dp"
                             android:text="地址：" />
 
@@ -1532,6 +1629,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:editable="false"
                             android:paddingRight="20dp"
                             android:text="中国广西南宁民族街85号南僧楼2层  530022" />
                     </LinearLayout>
@@ -1558,6 +1656,7 @@
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:textIsSelectable="true"
                             android:paddingLeft="10dp"
                             android:text="邮箱：" />
 

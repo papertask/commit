@@ -1,148 +1,454 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-<LinearLayout
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="20dp">
-    <RelativeLayout
-        android:layout_marginTop="40dp"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="@color/colorPrimary">
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:textColor="#FFFFFF"
-            android:textSize="30sp"
-            android:text="警用问卷"
-            android:layout_centerVertical="true"
-            android:padding="8dp"/>
-
-    </RelativeLayout>
+    android:layout_height="fill_parent">
 
     <RelativeLayout
+        android:id="@+id/container_top"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="8dp"
-        android:paddingTop="20dp">
-        <TextView
-            android:id="@+id/basic_query_cn"
+        android:layout_alignParentTop="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginTop="40dp"
+            android:background="@color/colorPrimary"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_centerVertical="true"
+                android:padding="8dp"
+                android:text="警用问卷"
+                android:textColor="#FFFFFF"
+                android:textSize="30sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_play_audio"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1.5"
+                android:background="@drawable/oval_play"
+                android:drawablePadding="5dp"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="20dp"
+                android:stateListAnimator="@null"
+                android:text=""
+                android:textColor="@color/White"
+                android:textSize="20sp" />
+
+            <View
+                android:id="@+id/space_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/btn_play_audio"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollview_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/container_bottom"
+        android:layout_below="@+id/container_top">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="0dp">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="8dp"
+                android:paddingTop="0dp">
+
+                <TextView
+                    android:id="@+id/marrage_title_cn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="@string/title_gov_term"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/marrage_title_fo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/marrage_title_cn"
+                    android:layout_marginTop="0dp"
+                    android:padding="5dp"
+                    android:text="@string/title_gov_term"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/marrage_title_cn_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/marrage_title_fo"
+                    android:layout_marginTop="0dp"
+                    android:padding="5dp"
+                    android:text="@string/header_gov_term"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/marrage_title_fo_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/marrage_title_cn_1"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginTop="0dp"
+                    android:padding="5dp"
+                    android:text="@string/title_gov_term"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/basic_query_cn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/marrage_title_fo_1"
+                    android:gravity="left"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="5dp"
+                    android:textSize="18sp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tv_question_cn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/basic_query_cn"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="5dp"
+                    android:text=""
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_question_cn"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:text="\n告知/Informing:\n"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/question_header_space"
+                    android:layout_width="30dp"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/header"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="-10dp"
+                    android:background="@color/colorPrimary"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/basic_query_en"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/header"
+                    android:gravity="left"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:text=""
+                    android:textSize="18sp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tv_question_en"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/basic_query_en"
+                    android:ellipsize="end"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:text=""
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/container_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:id="@+id/ln_action_question"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:paddingBottom="20dp">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+
+                <LinearLayout
+                    android:id="@+id/ln_yes"
+                    android:layout_width="110dp"
+                    android:layout_height="36dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/buttoncustom_green"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="10dp"
+                        android:contentDescription=""
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/yes" />
+
+                    <TextView
+                        android:id="@+id/btn_yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:background="@android:color/transparent"
+                        android:text="是"
+                        android:textColor="#FFFF"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ln_no"
+                    android:layout_width="110dp"
+                    android:layout_height="36dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/buttoncustom"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="10dp"
+                        android:contentDescription=""
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/no" />
+
+                    <TextView
+                        android:id="@+id/btn_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:background="@android:color/transparent"
+                        android:text="否"
+                        android:textColor="#FFFF"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/ln_skip"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/buttoncustom_white"
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="28dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginRight="10dp"
+                    android:contentDescription=""
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/arrow_orange" />
+
+                <TextView
+                    android:id="@+id/btn_skip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@android:color/transparent"
+                    android:text="跳过"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ln_yes_ma"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/buttoncustom_green"
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginRight="10dp"
+                    android:contentDescription=""
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/yes" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@android:color/transparent"
+                    android:text="是"
+                    android:textColor="#FFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ln_no_ma"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/buttoncustom"
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginRight="10dp"
+                    android:contentDescription=""
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/no" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@android:color/transparent"
+                    android:text="否"
+                    android:textColor="#FFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:paddingBottom="20dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_quest_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="答案"
+                android:textSize="20sp" />
+
+            <RadioGroup
+                android:id="@+id/answer_radio_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="25dp"
+                android:layout_toRightOf="@id/tv_quest_desc"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rd_yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/header"
+                    android:text="YES   "
+                    android:textColor="#A8A8A8" />
+
+                <RadioButton
+                    android:id="@+id/rd_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/header"
+                    android:text="NO"
+                    android:textColor="#A8A8A8" />
+
+
+            </RadioGroup>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/rl_l6"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
             android:visibility="gone"
-            android:paddingTop="5dp"
-            android:gravity="left"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            />
-        <TextView
-            android:id="@+id/tv_question_cn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Do you have a passport or any other ID?"
-            android:textSize="18sp"
-            android:paddingTop="5dp"
-            android:layout_below="@+id/basic_query_cn"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            />
-        <TextView
-            android:id="@+id/header"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
-            android:layout_below="@+id/tv_question_cn"
-            android:text="\n告知/Informing:\n"
-            android:visibility="gone"
-            android:textStyle="bold"
-            />
-        <TextView
-            android:id="@+id/basic_query_en"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textSize="16sp"
-            android:visibility="gone"
-            android:gravity="left"
-            android:layout_below="@+id/header"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            />
-        <TextView
-            android:id="@+id/tv_question_en"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textSize="18sp"
-            android:layout_below="@+id/basic_query_en"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            />
-    </RelativeLayout>
-    <RelativeLayout
-        android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp">
-        <TextView
-            android:layout_centerVertical="true"
-            android:id="@+id/tv_quest_desc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="答案"
-            android:textSize="20sp"
-            />
-       <RadioGroup
-           android:id="@+id/answer_radio_group"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:layout_toRightOf="@id/tv_quest_desc"
-           android:layout_centerVertical="true"
-           android:layout_marginLeft="25dp"
-           android:orientation="horizontal"
-           >
-           <RadioButton
-               android:id="@+id/rd_yes"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:buttonTint="@color/header"
-               android:text="YES   "
-               android:textColor="#A8A8A8"
-               />
-           <RadioButton
-               android:id="@+id/rd_no"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:buttonTint="@color/header"
-               android:textColor="#A8A8A8"
-               android:text="NO"
-               />
-
-
-       </RadioGroup>
-    </RelativeLayout>
-
-
-    <LinearLayout
-        android:id="@+id/rl_l6"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:weightSum="3"
-        >
-        <!--<Button-->
+            android:weightSum="3">
+            <!--<Button-->
             <!--android:id="@+id/btn_zoom"-->
             <!--android:layout_height="wrap_content"-->
             <!--android:layout_width="0dp"-->
@@ -157,62 +463,159 @@
             <!--android:textSize="20sp"-->
             <!--android:layout_toLeftOf="@+id/btn_share_intent"-->
             <!--android:background="@drawable/buttoncustom">-->
-        <!--</Button>-->
-        <Button
-            android:id="@+id/btn_share_intent"
-            android:layout_height="wrap_content"
-            android:layout_width="0dp"
-            android:layout_weight="1.5"
-            android:text="分享"
-            android:drawableLeft="@drawable/icon_share"
-            android:background="@drawable/buttoncustom"
-            android:layout_centerHorizontal="true"
-            android:stateListAnimator="@null"
-            android:textColor="@color/White"
-            android:drawablePadding="5dp"
-            android:paddingLeft="20dp"
-            android:textSize="20sp"
-            android:gravity="center_vertical|left"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="60dp"
-            android:layout_centerVertical="true" >
-        </Button>
-        <Button
-            android:id="@+id/btn_play_audio"
-            android:layout_height="wrap_content"
-            android:layout_width="0dp"
-            android:layout_weight="1.5"
-            android:text=""
-            android:gravity="center_vertical|left"
-            android:drawableLeft="@drawable/button_broadcast"
-            android:stateListAnimator="@null"
-            android:paddingLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:textColor="@color/White"
-            android:drawablePadding="5dp"
-            android:textSize="20sp"
-            android:layout_toRightOf="@+id/btn_share_intent"
-            android:background="@drawable/buttoncustom">
-        </Button>
-    </LinearLayout>
-    <RelativeLayout
-        android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Button
-            android:id="@+id/next"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="0dp"
+            <!--</Button>-->
+            <Button
+                android:id="@+id/btn_share_intent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="60dp"
+                android:background="@drawable/buttoncustom"
+                android:drawableLeft="@drawable/icon_share"
+                android:drawablePadding="5dp"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:stateListAnimator="@null"
+                android:text="分享"
+                android:textColor="@color/White"
+                android:textSize="20sp"></Button>
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:background="@drawable/buttoncustom"
-            android:layout_centerInParent="true"
-            android:text="下一步"
-            android:textStyle="bold"
-            android:textColor="#FFFF"
-            android:textSize="20sp" />
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/next"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/buttoncustom"
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="24dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginRight="5dp"
+                    android:contentDescription=""
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/arrow" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text=" 下一个"
+                    android:textColor="#FFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
     </RelativeLayout>
 
-</LinearLayout>
-</ScrollView>
+    <RelativeLayout
+        android:id="@+id/container_q_13_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_confirm_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:editable="false"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text=""
+                android:textSize="28sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="40dp">
+
+                <LinearLayout
+                    android:id="@+id/btn_13_yes"
+                    android:layout_width="110dp"
+                    android:layout_height="36dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:background="@drawable/buttoncustom_green"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="10dp"
+                        android:contentDescription=""
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/yes" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:background="@android:color/transparent"
+                        android:editable="false"
+                        android:text="是"
+                        android:textColor="#FFFF"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btn_13_no"
+                    android:layout_width="110dp"
+                    android:layout_height="36dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/buttoncustom"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="10dp"
+                        android:contentDescription=""
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/no" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:background="@android:color/transparent"
+                        android:editable="false"
+                        android:text="否"
+                        android:textColor="#FFFF"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

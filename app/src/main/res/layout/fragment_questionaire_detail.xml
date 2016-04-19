@@ -14,20 +14,19 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:layout_marginTop="20dp"
-            android:background="#D8D8D8" />
+            android:background="#D8D8D8"
+            android:visibility="gone" />
 
-        <com.joooonho.SelectableRoundedImageView
-            xmlns:app="http://schemas.android.com/apk/res-auto"
+        <com.joooonho.SelectableRoundedImageView xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/image_avatar"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:layout_below="@+id/header_space"
+            android:layout_centerHorizontal="true"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="10dp"
             android:scaleType="centerCrop"
             android:src="@drawable/icon_w"
-            app:sriv_border_color="#ff9c10"
-            app:sriv_border_width="2dip"
             app:sriv_left_bottom_corner_radius="48dip"
             app:sriv_left_top_corner_radius="16dip"
             app:sriv_oval="true"
@@ -37,46 +36,211 @@
             />
 
         <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="fill_parent"
+            android:layout_height="39dp"
+            android:layout_below="@+id/image_avatar"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"
+            android:background="#FFFF"
+            android:editable="false"
+            android:gravity="center"
+            android:imeOptions="actionDone"
+            android:maxLines="1"
+            android:paddingLeft="10dp"
+            android:paddingRight="8dp"
+            android:text="Nguyen A"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_location"
+            android:layout_width="fill_parent"
+            android:layout_height="39dp"
+            android:layout_below="@id/tv_name"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"
+            android:background="#FFFF"
+            android:drawableLeft="@drawable/infor_location"
+            android:drawablePadding="5dp"
+            android:editable="false"
+            android:gravity="center_vertical"
+            android:imeOptions="actionDone"
+            android:maxLines="1"
+            android:paddingLeft="10dp"
+            android:paddingRight="8dp"
+            android:text="text1"
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+
+        <TextView
             android:id="@+id/tv_interviewDate"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/header_space"
-            android:layout_toRightOf="@+id/image_avatar"
+            android:layout_below="@+id/tv_location"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"
+            android:drawableLeft="@drawable/info_date"
+            android:drawablePadding="5dp"
+            android:editable="false"
+            android:padding="10dp"
+            android:text="text2"
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_userLang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_interviewDate"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"
+            android:drawableLeft="@drawable/flag"
+            android:drawablePadding="5dp"
+            android:editable="false"
             android:padding="10dp"
             android:text=""
             android:textColor="#000"
-            android:textStyle="bold" />
+            android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/tv_gender"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/ln_action_profile"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_interviewDate"
-            android:layout_toRightOf="@id/image_avatar"
-            android:paddingLeft="10dp"
-            android:text="Female"
+            android:layout_below="@+id/tv_userLang"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:orientation="horizontal"
+            android:paddingLeft="1.5dp"
+            android:paddingRight="1.5dp"
+            android:weightSum="2">
 
-            />
+            <Button
+                android:id="@+id/btn_qdetail_delete"
+                android:layout_width="10dp"
+                android:layout_height="36dp"
+                android:layout_marginRight="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/buttoncustom"
+                android:text="删除"
+                android:textColor="@color/White"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/btn_qdetail_share"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginLeft="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/buttoncustom_white"
+                android:text="分享"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/space_bottom_1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/ln_action_profile"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="20dp"
+            android:background="#D8D8D8" />
+
+        <LinearLayout
+            android:id="@+id/ln_result_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/space_bottom_1"
+            android:layout_marginLeft="15dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:text="答卷详情"
+                android:textSize="20sp" />
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/txt_addition_q_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:editable="false"
+                android:text="@string/police_res_desc_1"
+                android:textSize="16sp"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <com.interview.iso.view.ExpandableHeightListView
+            android:id="@+id/list_questionnaire_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ln_result_1"
+            android:divider="@color/transparent"
+            android:dividerHeight="0dp"
+            android:footerDividersEnabled="false"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="15dp" />
+
 
         <View
             android:id="@+id/space_bottom"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_below="@+id/image_avatar"
+            android:layout_below="@+id/list_questionnaire_1"
+            android:layout_marginBottom="60dp"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:layout_marginTop="10dp"
-            android:background="#D8D8D8" />
+            android:background="@color/transparent" />
 
+        <LinearLayout
+            android:id="@+id/ln_result_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/space_bottom"
+            android:layout_marginLeft="15dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:text="问卷"
+                android:textSize="20sp" />
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorPrimary" />
+        </LinearLayout>
 
         <com.interview.iso.view.ExpandableHeightListView
             android:id="@+id/list_questionnaire"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/space_bottom"
-            android:divider="@null"
+            android:layout_below="@+id/ln_result_2"
+            android:divider="@color/transparent"
+            android:dividerHeight="0.5dp"
+            android:footerDividersEnabled="true"
             android:padding="15dp" />
-
 
 
     </RelativeLayout>

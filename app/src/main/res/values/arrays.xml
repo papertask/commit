@@ -2,10 +2,10 @@
 <resources>
 
     <string-array name="CountryCodes" >
-        <item>VN,Việt Nam,越南语</item>
-        <item>LAO,Laos,老挝语</item>
-        <item>MY,Myanmar,缅甸语</item>
-        <item>KM,Khmer,高棉语</item>
+        <item>KM,ខ្មែរ,柬埔寨</item>
+        <item>LAO,ເມືອງລາວ,老挝</item>
+        <item>MY,မြန်မာ,缅甸</item>
+        <item>VN,tiếng Việt,越南</item>
     </string-array>
     <declare-styleable name="CropOverlayView">
         <attr name="guideLines" format="boolean"/>

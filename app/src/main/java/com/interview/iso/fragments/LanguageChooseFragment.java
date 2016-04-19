@@ -15,10 +15,15 @@ import android.widget.TextView;
 import com.interview.iso.R;
 import com.interview.iso.activity.MainActivity;
 import com.interview.iso.base.MenuItem;
+import com.interview.iso.models.Person;
 import com.interview.iso.utils.AppData;
 import com.interview.iso.utils.Constants;
+import com.interview.iso.utils.DBHelper;
+
+import org.json.JSONObject;
 
 import java.util.Locale;
+import java.util.TreeMap;
 
 /**
  * Created by lu.nguyenvan2 on 11/3/2015.
@@ -43,10 +48,17 @@ public class LanguageChooseFragment extends BaseFragment {
                 String item = adpCountry.getItem(position);
                 String code = item.split(",")[0];
                 AppData.getInstance().setLanguage(code.toLowerCase());
+
+                MainActivity activity = (MainActivity) getActivity();
+                DBHelper db = new DBHelper(activity);
+                Person person = db.getPerson(AppData.getInstance().getPersonID());
+                person.setLang(code.toLowerCase());
+                db.updatePerson(person);
+                
                 if(AppData.getInstance().getApptype()== Constants.POLICY_TYPE)
-                    mainActivity.didSelectMenuItem(new MenuItem("公安问卷",0,"QuestionFragment","question"));
+                    mainActivity.didSelectMenuItem(new MenuItem("公安问卷 - 基本询问","QuestionFragment","question", 0));
                 else
-                    mainActivity.didSelectMenuItem(new MenuItem("婚姻登记问卷",0,"QuestionFragment","question"));
+                    mainActivity.didSelectMenuItem(new MenuItem("婚姻登记问卷", "QuestionFragment","question", 0));
             }
         });
         return rootView;

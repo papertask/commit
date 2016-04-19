@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:textSize="16sp"
+            android:text="说明： 2015年12月15-16日在马来西亚吉隆坡，包括中国在内的湄公河次区域六国（COMMIT）与东盟成员国政府代表，召开识别人口贩运（即通常所说“人口拐卖”）受害人及相关剥削形式研讨会。经讨论，产出了以下供一线执法和服务工作者参考的共同识别指标，其中包括目测直观迹象和初步识别指标，可供一线官员和其他基层工作人员用来判断某种情形是否需要作为人口贩运案件或者相关剥削案件开展进一步调查。"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="@string/gov_victim_content"
+            android:textSize="16sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>

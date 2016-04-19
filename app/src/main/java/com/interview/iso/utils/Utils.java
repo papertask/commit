@@ -7,8 +7,16 @@ import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Rect;
 import android.net.Uri;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.util.List;
 
@@ -53,5 +61,26 @@ public class Utils {
             }
         }
         return true;
+    }
+
+    public static byte[] textToPNG(String str_text) {
+        float textSize = 30;
+        String text = "testing";
+        TextPaint tp = new TextPaint(TextPaint.ANTI_ALIAS_FLAG);
+        tp.setColor(Color.WHITE);
+        tp.setTextSize(textSize);
+        Rect bounds = new Rect();
+        tp.getTextBounds(text , 0, text.length(), bounds);
+        StaticLayout sl = new StaticLayout(text , tp, bounds.width()+5,
+                Layout.Alignment.ALIGN_NORMAL, 1f, 0f, false);
+
+        Bitmap bmp = Bitmap.createBitmap(bounds.width()+5, bounds.height()+5,
+                Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bmp);
+        sl.draw(canvas);
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bmp.compress(Bitmap.CompressFormat.PNG, 100, stream);
+        byte[] image = stream.toByteArray();
+        return image;
     }
 }

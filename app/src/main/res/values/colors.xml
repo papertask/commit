@@ -11,4 +11,5 @@
     <color name="navigationBarColor">#000000</color>
     <color name="colorAccent">#FF80AB</color>
     <color name="menuleft">#80ff6600</color>
+    <color name="menuForecolor">#595968</color>
 </resources>

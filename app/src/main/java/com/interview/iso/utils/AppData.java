@@ -1,10 +1,7 @@
 package com.interview.iso.utils;
 
-import android.app.Activity;
-import android.app.Application;
-import android.content.Context;
-
 import com.interview.iso.activity.MainActivity;
+import com.interview.iso.models.Answer;
 import com.interview.iso.models.Person;
 import com.interview.iso.models.Question;
 
@@ -13,12 +10,12 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.Map;
 import java.util.TreeMap;
 
 /**
  * Created by lu.nguyenvan2 on 10/27/2015.
+ * Modfiied by Castorim on 3/8/2016.
  */
 public class AppData {
 
@@ -26,6 +23,27 @@ public class AppData {
 
     public int getApptype() {
         return apptype;
+    }
+
+    private int int_police_guide_title_id = 0;
+    private int int_police_guide_content_id = 0;
+
+    private String str_wechat_id = "wx7ff5bafb39b68867";
+
+    public int getPoliceChapterTitleId() {
+        return int_police_guide_title_id;
+    }
+
+    public int getPoliceChapterContentId() {
+        return int_police_guide_content_id;
+    }
+
+    public void setPoliceChapterTitleId(int iIndex) {
+        this.int_police_guide_title_id = iIndex;
+    }
+
+    public void setPoliceChapterContentId(int iIndex) {
+        this.int_police_guide_content_id = iIndex;
     }
 
     public void setApptype(int apptype) {
@@ -78,10 +96,10 @@ public class AppData {
                 loadQuestion(apptype);
             return mListQuestion;
         } else {
-            if(mListQuestion1 == null)
+            if (mListQuestion1 == null)
                 loadQuestion(apptype);
-                return mListQuestion1;
-            }
+            return mListQuestion1;
+        }
     }
 
     public Map<String, Boolean> getmAnswer() {
@@ -132,16 +150,16 @@ public class AppData {
                 for (int i = 0; i < array.length(); i++) {
                     JSONObject object = array.getJSONObject(i);
                     Question question = new Question(object.getString("question_cn"), object.getString("question_vn"),
-                            object.getString("question_my"),object.getString("question_lo"),object.getString("question_km"));
+                            object.getString("question_my"), object.getString("question_lo"), object.getString("question_km"));
                     mListQuestion.put(i, question);
                 }
             } else {
-                mListQuestion1 =  new TreeMap<Integer, Question>();
+                mListQuestion1 = new TreeMap<Integer, Question>();
                 JSONArray array = jsonObject.getJSONArray("government");
                 for (int i = 0; i < array.length(); i++) {
                     JSONObject object = array.getJSONObject(i);
                     Question question = new Question(object.getString("question_cn"), object.getString("question_vn"),
-                            object.getString("question_my"),object.getString("question_lo"),object.getString("question_km"));
+                            object.getString("question_my"), object.getString("question_lo"), object.getString("question_km"));
                     mListQuestion1.put(i, question);
                 }
             }
@@ -166,6 +184,10 @@ public class AppData {
             return null;
         }
         return json;
+    }
+
+    public String getWechatID() {
+        return this.str_wechat_id;
     }
 
 }

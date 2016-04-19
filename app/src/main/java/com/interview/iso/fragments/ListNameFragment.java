@@ -71,9 +71,9 @@ public class ListNameFragment extends BaseFragment {
                 AppData.getInstance().setPerson_selection(person);
                 MainActivity activity = (MainActivity)getActivity();
                 if(person.getInterview_type()== Constants.POLICY_TYPE)
-                    activity.didSelectMenuItem(new MenuItem("问卷内容",0,"QuestionnaireDetailFragment","NewQuestionnaire"));
+                    activity.didSelectMenuItem(new MenuItem("答卷详情", "QuestionnaireDetailFragment","NewQuestionnaire", 0));
                 else
-                    activity.didSelectMenuItem(new MenuItem("问卷内容",0,"QuestionnaireDetailMarriage","NewQuestionnaire"));
+                    activity.didSelectMenuItem(new MenuItem("答卷详情", "QuestionnaireDetailMarriage","NewQuestionnaire", 0));
             }
         });
         return v;

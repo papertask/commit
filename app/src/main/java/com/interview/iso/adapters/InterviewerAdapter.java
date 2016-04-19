@@ -7,26 +7,42 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
-import android.media.Image;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Rect;
 import android.os.Handler;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.RadioButton;
 import android.widget.TextView;
 import android.app.Activity;
 
 import com.interview.iso.R;
+import com.interview.iso.activity.MainActivity;
+import com.interview.iso.models.Answer;
 import com.interview.iso.models.Person;
+import com.interview.iso.models.Question;
+import com.interview.iso.utils.AppData;
 import com.interview.iso.utils.Constants;
 import com.interview.iso.utils.DBHelper;
 import com.joooonho.SelectableRoundedImageView;
 
+import java.io.ByteArrayOutputStream;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
+import org.json.JSONObject;
 
 /**
  * Created by lu.nguyenvan2 on 10/30/2015.
@@ -34,17 +50,20 @@ import java.util.List;
 public class InterviewerAdapter extends BaseAdapter {
     private List<Person> mPersons;
     private Context mContext;
-    public InterviewerAdapter(Context context, List<Person> list){
+
+    public InterviewerAdapter(Context context, List<Person> list) {
         mContext = context;
         mPersons = list;
     }
-    public void updateListPerson(List<Person> lsPerson){
+
+    public void updateListPerson(List<Person> lsPerson) {
         mPersons = lsPerson;
         this.notifyDataSetChanged();
     }
+
     @Override
     public int getCount() {
-        return mPersons!=null ? mPersons.size() : 0;
+        return mPersons != null ? mPersons.size() : 0;
     }
 
     @Override
@@ -62,17 +81,18 @@ public class InterviewerAdapter extends BaseAdapter {
         ViewHolder holder;
         final Person person = mPersons.get(position);
         convertView = null;
-        if(convertView==null){
+        if (convertView == null) {
             holder = new ViewHolder();
-            convertView = LayoutInflater.from(mContext).inflate(R.layout.listitem_choice_name,parent,false);
-            holder.tvName = (TextView)convertView.findViewById(R.id.tvName);
-            holder.tvDesc = (TextView)convertView.findViewById(R.id.tvDesc);
-            holder.rdCheck =(SelectableRoundedImageView)convertView.findViewById(R.id.image_avatar);
-            holder.ivDelete = (ImageView)convertView.findViewById(R.id.icon_delete);
+            convertView = LayoutInflater.from(mContext).inflate(R.layout.listitem_choice_name, parent, false);
+            holder.tvName = (TextView) convertView.findViewById(R.id.tvName);
+            holder.tvDesc = (TextView) convertView.findViewById(R.id.tvDesc);
+            holder.rdCheck = (SelectableRoundedImageView) convertView.findViewById(R.id.image_avatar);
+            holder.ivDelete = (TextView) convertView.findViewById(R.id.btn_qlist_delete);
+            holder.ivShare = (TextView) convertView.findViewById(R.id.btn_qlist_share);
             holder.ivDelete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    AlertDialog.Builder adb =	 new AlertDialog.Builder((Activity) v.getContext());
+                    AlertDialog.Builder adb = new AlertDialog.Builder((Activity) v.getContext());
                     adb.setTitle("删除");
                     adb.setMessage("确定删除这个问卷？");
                     //final int positionToRemove = position;
@@ -80,46 +100,65 @@ public class InterviewerAdapter extends BaseAdapter {
                     adb.setPositiveButton("确定", new AlertDialog.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             DBHelper db = new DBHelper(mContext);
-                            db.deletePerson(person.getID());
+                            db.deletePerson(person.getnID());
                             List<Person> lsPerson = db.getAllPerson();
                             updateListPerson(lsPerson);
                         }
                     });
                     adb.show();
-
-
+                }
+            });
+            holder.ivShare.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    AlertDialog.Builder adb = new AlertDialog.Builder((Activity) v.getContext());
+                    adb.setTitle("分享");
+                    adb.setMessage("确定分享这个问卷？");
+                    //final int positionToRemove = position;
+                    adb.setNegativeButton("取消", null);
+                    adb.setPositiveButton("确定", new AlertDialog.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            String text = getShareString(person);
+                            MainActivity activity = (MainActivity) mContext;
+                            activity.ShareInterview(text);
+                        }
+                    });
+                    adb.show();
                 }
             });
             convertView.setTag(holder);
-        }else
-            holder = (ViewHolder)convertView.getTag();
-        if(person.getInterview_type()== Constants.POLICY_TYPE)
-            holder.tvDesc.setText("警方排查");
+        } else
+            holder = (ViewHolder) convertView.getTag();
+        /* if(person.getInterview_type()== Constants.POLICY_TYPE)
+            holder.tvName.setText("警方排查");
         else
-            holder.tvDesc.setText("外籍人员在华登记询问");
-
-        holder.tvName.setText(person.getTime());
+            holder.tvName.setText("外籍人员在华登记询问"); */
+        holder.tvName.setText(person.getStrFirstName() + " " + person.getStrLastName());
+        holder.tvDesc.setText(person.getStrPosition() + ", " + person.getStrInterviewDate());
 
         //holder.rdCheck.setChecked(true);
-        if(person.getAvatarPath()!=null && !person.getAvatarPath().equals("")){
-            setFullImageFromFilePath(person.getAvatarPath(),holder.rdCheck,100*position);
+        if (person.getAvatarPath() != null && !person.getAvatarPath().equals("")) {
+            setFullImageFromFilePath(person.getAvatarPath(), holder.rdCheck, 100 * position);
         }
 
         return convertView;
     }
+
     private class ViewHolder {
         TextView tvName;
         TextView tvDesc;
         SelectableRoundedImageView rdCheck;
-        ImageView ivDelete;
+        TextView ivDelete;
+        TextView ivShare;
     }
-    private void setFullImageFromFilePath(final String imagePath,final ImageView imageView,long delay) {
+
+    private void setFullImageFromFilePath(final String imagePath, final ImageView imageView, long delay) {
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                int targetW = (int)convertDpToPixel(80.0f,mContext);
-                int targetH = (int)convertDpToPixel(80.0f,mContext);
+                int targetW = (int) convertDpToPixel(80.0f, mContext);
+                int targetH = (int) convertDpToPixel(80.0f, mContext);
 
                 // Get the dimensions of the bitmap
                 BitmapFactory.Options bmOptions = new BitmapFactory.Options();
@@ -129,7 +168,7 @@ public class InterviewerAdapter extends BaseAdapter {
                 int photoH = bmOptions.outHeight;
 
                 // Determine how much to scale down the image
-                int scaleFactor = Math.min(photoW/targetW, photoH/targetH);
+                int scaleFactor = Math.min(photoW / targetW, photoH / targetH);
 
                 // Decode the image file into a Bitmap sized to fill the View
                 bmOptions.inJustDecodeBounds = false;
@@ -139,14 +178,140 @@ public class InterviewerAdapter extends BaseAdapter {
                 Bitmap bitmap = BitmapFactory.decodeFile(imagePath, bmOptions);
                 imageView.setImageBitmap(bitmap);
             }
-        },delay);
+        }, delay);
 
     }
-    public static float convertDpToPixel(float dp, Context context){
+
+    public static float convertDpToPixel(float dp, Context context) {
         Resources resources = context.getResources();
         DisplayMetrics metrics = resources.getDisplayMetrics();
         float px = dp * (metrics.densityDpi / 160f);
         return px;
     }
 
+    public String getShareString(Person person) {
+        MainActivity activity = (MainActivity) mContext;
+        String str_share = "";
+        str_share += "姓名 : " + person.getStrFirstName() + " " + person.getStrLastName() + "\n";
+        str_share += "电话 : " + person.getStrTelphone() + "\n";
+        str_share += "时间 : " + person.getStrInterviewDate() + "\n";
+        str_share += "地址 : " + person.getStrPosition() + "\n";
+
+        if (person.getLang().equals("vn")) {
+            str_share += "语言 : 越南" + "\n";
+        } else if (person.getLang().equals("km")) {
+            str_share += "语言 : 柬埔寨" + "\n";
+        } else if (person.getLang().equals("lao")) {
+            str_share += "语言 : 老挝" + "\n";
+        } else if (person.getLang().equals("my")) {
+            str_share += "语言 : 缅甸" + "\n";
+        }
+
+        str_share += "\n结果建议\n\n";
+
+        DBHelper db = new DBHelper(activity);
+        Answer answer = db.getListQuestionByPersion(person.getnID());
+        List<ResultQuestion1> mList = null;
+        List<ResultQuestion1> mList1 = null;
+        Map<String, Integer> mAnswer = new HashMap<>();
+        if (answer != null) {
+            JSONObject object = answer.convertToJsonArray();
+//        Map<String , Boolean> mResult;
+            if (object != null) {
+                Iterator<String> key = object.keys();
+                mList = new ArrayList<>();
+                mList1 = new ArrayList<>();
+                while (key.hasNext()) {
+                    try {
+                        ResultQuestion1 resultQuestion = new ResultQuestion1();
+                        resultQuestion.id = key.next();
+                        resultQuestion.result = object.getInt(resultQuestion.id);
+                        if (Integer.parseInt(resultQuestion.id) > 0 && Integer.parseInt(resultQuestion.id) < 14) {
+                            mList.add(resultQuestion);
+                            mAnswer.put(resultQuestion.id, (int) (object.get(resultQuestion.id)));
+                        } else {
+                            mList1.add(resultQuestion);
+                        }
+
+                    } catch (Exception ex) {
+                    }
+                }
+            }
+        }
+
+        Map<Integer, Question> mListQuest;
+        mListQuest = AppData.getInstance().getListQuestion(person.getInterview_type());
+
+        if (person.getInterview_type() == Constants.GOVERNMENT_TYPE) {
+            if (mAnswer.get("2") * 1 == 1 && mAnswer.get("3") * 1 == 0 && mAnswer.get("4") * 1 == 0) {
+                str_share += "同意办证: \n\n";
+                str_share += activity.getResources().getString(R.string.marriage_res_approve_cn) + "\n\n";
+            } else {
+                //tvExtraText.setText(getString(R.string.quetion_gov_cn));
+
+                str_share += "疑似拐卖: \n\n";
+                str_share += activity.getResources().getString(R.string.marriage_res_potential_cn) + "\n\n";
+            }
+
+            str_share += "\n问卷\n\n";
+
+
+            if (mList != null && mList.size() > 0) {
+                Collections.sort(mList, new MyCompare1());
+                for (int i = 0; i < mList.size(); i++) {
+                    ResultQuestion1 row = (ResultQuestion1) (mList.get(i));
+                    Question question = mListQuest.get(Integer.parseInt(row.id) - 1);
+                    str_share += question.question_cn + (row.result == 1 ? " 是 " : " 否 ") + "\n";
+                }
+            }
+        } else {
+            boolean b_ispotential = false;
+            String str_additional = "";
+            if (mList1 != null && mList1.size() > 0) {
+                b_ispotential = true;
+                Collections.sort(mList1, new MyCompare1());
+                for (int i = 0; i < mList1.size(); i++) {
+                    ResultQuestion1 row = (ResultQuestion1) (mList1.get(i));
+                    Question question = mListQuest.get(Integer.parseInt(row.id) - 1);
+                    str_additional += question.question_cn.substring(3) + (row.result == 1 ? " 是 " : " 否 ") + "\n\n";
+                }
+            }
+
+            str_additional += "\n问卷\n\n";
+
+            if (mList != null) {
+                Collections.sort(mList, new MyCompare1());
+                for (int i = 0; i < mList.size(); i++) {
+                    ResultQuestion1 row = (ResultQuestion1) (mList.get(i));
+                    Question question = mListQuest.get(Integer.parseInt(row.id) - 1);
+                    str_additional += question.question_cn + (row.result == 1 ? " 是 " : " 否 ") + "\n";
+                }
+            }
+
+            if (b_ispotential == true)
+                str_share += activity.getResources().getString(R.string.police_res_desc_1) + "\n";
+            else
+                str_share += activity.getResources().getString(R.string.police_res_desc_2) + "\n";
+
+            str_share += str_additional;
+        }
+
+        return str_share;
+    }
+
+    class ResultQuestion1 {
+        public String id;
+        public int result;
+    }
+
+    class MyCompare1 implements Comparator<ResultQuestion1> {
+
+        @Override
+        public int compare(ResultQuestion1 lhs, ResultQuestion1 rhs) {
+            if (Integer.parseInt(lhs.id) < Integer.parseInt(rhs.id))
+                return -1;
+            else
+                return 1;
+        }
+    }
 }

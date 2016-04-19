@@ -1,30 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="70dp"
+    android:layout_height="wrap_content"
+    android:paddingBottom="5dp"
+    android:paddingTop="5dp">
 
-    >
     <TextView
         android:id="@+id/quest_number"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#000"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:text="1."
+        android:layout_width="24dp"
+        android:layout_height="24dp"
         android:layout_centerVertical="true"
-        />
+        android:layout_marginLeft="5dp"
+        android:background="@drawable/buttoncustom"
+        android:editable="false"
+        android:gravity="center"
+        android:text="1"
+        android:textColor="@color/White"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/question_result"
+        android:layout_width="48dp"
+        android:layout_height="24dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/buttoncustom"
+        android:gravity="center"
+        android:text="是"
+        android:textColor="@color/White"
+        android:textSize="14sp" />
+
     <TextView
         android:id="@+id/question_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/quest_number"
-        android:text="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
         android:layout_centerVertical="true"
-        android:textSize="20sp"
+        android:layout_marginBottom="20dp"
         android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_toLeftOf="@+id/question_result"
+
+        android:layout_toRightOf="@+id/quest_number"
+        android:editable="false"
+        android:ellipsize="none"
+        android:gravity="center_vertical"
+        android:text=""
         android:textColor="#000"
-        />
+        android:textSize="16sp" />
+
 
 </RelativeLayout>

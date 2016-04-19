@@ -8,25 +8,38 @@ import android.support.v4.app.Fragment;
  */
 public class MenuItem  {
     public String mTitle;
-    public int mIconResource;
     public String mFragmentClass;
     public String identifier;
-    public MenuItem(String title , int iconResource,  String fragmentClass,String identifier) {
+    public boolean hasSubItems;
+
+    public MenuItem(String title , String fragmentClass, String identifier, int subitems) {
         mTitle = title;
-        mIconResource = iconResource;
         this.identifier = identifier;
         mFragmentClass = fragmentClass;
+
+        if (subitems != 0) {
+            hasSubItems = false;
+        } else {
+            hasSubItems = true;
+        }
     }
+
     public String getTitle(){
         return mTitle;
     }
+
+    public boolean hasSubItem() {
+        return hasSubItems;
+    }
+
     public Fragment fragment(Context context) {
         if (mFragmentClass == null) {
             return null;
         }
         return Fragment.instantiate(context, "com.interview.iso.fragments." + mFragmentClass);
     }
-    public static Fragment getFragment(Context context,String mFragmentClass) {
+
+    public static Fragment getFragment(Context context, String mFragmentClass) {
         if (mFragmentClass == null) {
             return null;
         }

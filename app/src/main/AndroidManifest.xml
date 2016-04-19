@@ -3,6 +3,7 @@
     package="com.interview.iso" >
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-feature android:name="android.hardware.camera" />
     android:allowBackup="true"
     <application
@@ -24,6 +25,7 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="sensorPortrait"
+            android:exported="true"
             android:configChanges="orientation|keyboardHidden|screenSize">
             </activity>
         <activity android:name=".activity.FirstAppActivity"
